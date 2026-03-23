@@ -25,8 +25,11 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             />
           </div>
           <h1 className="sr-only">המוסך של צביקה – מוסך מקצועי בירושלים</h1>
-          <p className="text-sm md:text-[15px] text-white/75 font-normal mb-10 max-w-md mx-auto leading-relaxed tracking-wide">
+            <p className="text-sm md:text-[15px] text-white/70 font-normal mb-4 max-w-md mx-auto leading-relaxed tracking-wide">
             מוסך מקצועי בגבעת שאול, ירושלים. שירות אישי, שקיפות מלאה וניסיון של מעל 30 שנה בטיפול בכל סוגי הרכבים.
+          </p>
+          <p className="text-[11px] text-white/40 mb-10 tracking-wider font-medium">
+            האופה 4, גבעת שאול · א׳–ה׳ 08:00–16:30
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <button
