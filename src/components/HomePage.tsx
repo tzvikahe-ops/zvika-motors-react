@@ -17,21 +17,18 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           style={{
             backgroundImage: `url('${logoImage}')`,
             backgroundSize: "contain",
-            backgroundPosition: "center",
+            backgroundPosition: "top center",
             backgroundRepeat: "no-repeat",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background: `hsla(216,33%,96%,0.75)`,
+            background: `hsla(216,33%,96%,0.55)`,
           }}
         />
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
-          <div className="max-w-[560px] mr-auto">
-            <h1 className="text-[clamp(36px,5vw,64px)] font-black leading-tight text-primary mb-6">
-              המוסך של צביקה<br />המקצוענים שלך<br />בירושלים
-            </h1>
+          <div className="max-w-[560px] mr-auto mt-[35vh]">
             <p className="text-[17px] text-muted-foreground leading-7 mb-9 max-w-[420px]">
               שירות אישי, שקיפות מלאה וניסיון של שנים בטיפול בכל סוגי הרכבים. אנחנו כאן כדי לשמור על הבטיחות שלך על הכביש.
             </p>
