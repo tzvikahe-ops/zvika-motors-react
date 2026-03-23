@@ -23,9 +23,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <span
           onClick={() => setPage("home")}
-          className="font-serif font-extrabold text-lg tracking-widest text-primary uppercase cursor-pointer"
+          className="font-extrabold text-lg text-primary cursor-pointer"
         >
-          MODERN MECHANIST
+          המוסך של צביקה
         </span>
 
         {/* Desktop */}
