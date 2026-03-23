@@ -1,5 +1,4 @@
 import HeroSection from "./home/HeroSection";
-import StatsStrip from "./home/StatsStrip";
 import ServicesSection from "./home/ServicesSection";
 import WhyUsSection from "./home/WhyUsSection";
 import ReviewsSection from "./home/ReviewsSection";
@@ -11,7 +10,6 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <div>
       <HeroSection setPage={setPage} />
-      <StatsStrip />
       <ServicesSection setPage={setPage} />
       <WhyUsSection />
       <ReviewsSection />
