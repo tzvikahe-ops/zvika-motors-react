@@ -9,11 +9,10 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
     <div dir="rtl">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center pt-[72px]">
-        {/* Black background */}
         <div className="absolute inset-0 bg-black" />
 
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-32">
-          <div className="mx-auto mb-8 w-[92vw] max-w-[380px] md:w-[680px] md:max-w-none aspect-[945/540]">
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20 md:py-28">
+          <div className="mx-auto mb-6 w-[85vw] max-w-[340px] md:w-[600px] md:max-w-none aspect-[945/540]">
             <img
               src={logoImage}
               alt="לוגו המוסך"
@@ -25,19 +24,19 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               className="w-full h-full object-contain"
             />
           </div>
-          <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
+          <p className="text-sm md:text-base text-white/80 font-normal mb-10 max-w-lg mx-auto leading-relaxed">
             שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
           </p>
-          <div className="flex gap-4 flex-wrap justify-center">
+          <div className="flex gap-3 flex-wrap justify-center">
             <button
               onClick={() => setPage("contact")}
-              className="bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors shadow-lg"
+              className="bg-brand-red text-accent-foreground border-none rounded-lg px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03] shadow-lg"
             >
               קבע תור עכשיו
             </button>
             <button
               onClick={() => setPage("services")}
-              className="bg-white/15 text-white border border-white/30 rounded px-7 py-3.5 text-[15px] font-semibold cursor-pointer hover:bg-white/25 transition-colors backdrop-blur-sm"
+              className="bg-white/10 text-white border border-white/25 rounded-lg px-7 py-3.5 text-[15px] font-medium cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm"
             >
               צפה בשירותים שלנו
             </button>
@@ -46,8 +45,8 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-gray-bg py-8 px-6">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="bg-gray-bg py-10 px-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: <ClockIcon />, title: "זמינות גבוהה", sub: "טיפול מהיר ויעיל" },
             { icon: <EyeIcon />, title: "שקיפות מלאה", sub: "ללא הפתעות בחשבון" },
@@ -58,7 +57,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               <span className="text-primary opacity-70">{icon}</span>
               <div className="text-right">
                 <div className="font-bold text-primary text-[15px]">{title}</div>
-                <div className="text-[13px] text-muted-foreground">{sub}</div>
+                <div className="text-[13px] text-muted-foreground leading-relaxed">{sub}</div>
               </div>
             </div>
           ))}
@@ -66,51 +65,51 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 px-6 bg-background">
+      <section id="services" className="py-16 md:py-24 px-6 bg-background">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-primary mb-3">השירותים שלנו</h2>
-            <p className="text-muted-foreground text-base">
-              כל מה שהרכב שלך צריך תחת קורת גג אחת, בסטנדרט הגבוה ביותר בירושלים.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">השירותים שלנו</h2>
+            <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto leading-relaxed">
+              כל מה שהרכב שלך צריך תחת קורת גג אחת, בסטנדרט הגבוה ביותר
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* מיזוג אוויר */}
-            <div className="bg-gray-bg-light rounded-xl p-10 flex flex-col gap-4">
+            <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <SnowflakeIcon />
-              <h3 className="font-extrabold text-[22px] text-primary">מיזוג אוויר</h3>
-              <p className="text-muted-foreground leading-7">
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">מיזוג אוויר</h3>
+              <p className="text-muted-foreground leading-7 text-sm">
                 מילוי גז, תיקון דליפות ושדרוג מערכות קירור לימי הקיץ.
               </p>
             </div>
 
             {/* מכונאות כללית */}
-            <div className="bg-gray-bg-light rounded-xl p-10 grid grid-cols-[1fr_auto] items-start gap-4">
+            <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 grid grid-cols-[1fr_auto] items-start gap-4">
               <div>
-                <h3 className="font-extrabold text-[22px] text-primary mb-3">מכונאות כללית</h3>
-                <p className="text-muted-foreground leading-7">
+                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">מכונאות כללית</h3>
+                <p className="text-muted-foreground leading-7 text-sm">
                   דיאגנוסטיקה ממוחשבת, טיפולים שוטפים ותיקוני מנוע ברמה הגבוהה ביותר לכל יצרני הרכב.
                 </p>
               </div>
-              <div className="opacity-15"><WrenchIcon /></div>
+              <div className="opacity-15 hidden md:block"><WrenchIcon /></div>
             </div>
 
             {/* דיאגנוסטיקה */}
-            <div className="bg-gray-bg-light rounded-xl p-10 grid grid-cols-[auto_1fr] items-start gap-6">
-              <div className="opacity-30"><DiagIcon /></div>
+            <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-4 md:gap-6">
+              <div className="opacity-30 hidden md:block"><DiagIcon /></div>
               <div>
-                <h3 className="font-extrabold text-[22px] text-primary mb-3">דיאגנוסטיקה ממוחשבת</h3>
-                <p className="text-muted-foreground leading-7">
+                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">דיאגנוסטיקה ממוחשבת</h3>
+                <p className="text-muted-foreground leading-7 text-sm">
                   איתור תקלות מדויק באמצעות ציוד סריקה מתקדם המותאם לרכבים חדישים.
                 </p>
               </div>
             </div>
 
             {/* הכנה לטסט */}
-            <div className="bg-gray-bg-light rounded-xl p-10 flex flex-col gap-4">
+            <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <ChecklistIcon />
-              <h3 className="font-extrabold text-[22px] text-primary">הכנה לטסט</h3>
-              <p className="text-muted-foreground leading-7">
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">הכנה לטסט</h3>
+              <p className="text-muted-foreground leading-7 text-sm">
                 בדיקה מקיפה והעברת מבחן הרישוי השנתי בראש שקט עבורך.
               </p>
             </div>
@@ -119,21 +118,21 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* WHY US */}
-      <section className="bg-gray-bg-light py-20 px-6">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <section className="bg-gray-bg-light py-16 md:py-24 px-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-[34px] font-black text-primary mb-10">למה לבחור דווקא בנו?</h2>
+            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-8 md:mb-10">למה לבחור דווקא בנו?</h2>
             {[
               { num: "01", title: "מקצועיות ללא פשרות", desc: "צוות המוסך עובר השתלמויות תקופתיות כדי להישאר בחזית הטכנולוגיה של עולם הרכב." },
               { num: "02", title: "שקיפות ויושרה", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר ומאושר על ידי הלקוח מראש." },
               { num: "03", title: "מיקום מרכזי בירושלים", desc: "ממוקמים בלב אזור התעשייה גבעת שאול, נגישים וקרובים למרכז העיר." },
             ].map(({ num, title, desc }) => (
-              <div key={num} className="grid grid-cols-[auto_1fr] gap-5 mb-8 items-start">
-                <div className="bg-primary text-primary-foreground w-11 h-11 rounded flex items-center justify-center text-[13px] font-bold shrink-0">
+              <div key={num} className="grid grid-cols-[auto_1fr] gap-4 md:gap-5 mb-7 items-start">
+                <div className="bg-primary text-primary-foreground w-10 h-10 md:w-11 md:h-11 rounded flex items-center justify-center text-[13px] font-bold shrink-0">
                   {num}
                 </div>
                 <div className="text-right">
-                  <h4 className="font-extrabold text-base text-primary mb-1.5">{title}</h4>
+                  <h4 className="font-extrabold text-[15px] text-primary mb-1">{title}</h4>
                   <p className="text-muted-foreground leading-relaxed text-sm">{desc}</p>
                 </div>
               </div>
@@ -144,29 +143,30 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               src={mechanicImage}
               alt="מוסך מקצועי"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>
       </section>
 
       {/* REVIEWS */}
-      <section className="bg-background py-20 px-6">
+      <section className="bg-background py-16 md:py-24 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-center text-[34px] font-black text-primary mb-14">לקוחות מספרים</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-center text-3xl md:text-[34px] font-black text-primary mb-12">לקוחות מספרים</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { text: "שירות VIP. הכנה לטסט זריזה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. זה המוסך הקבוע שלי מעכשיו.", author: "דוד מזרחי, ירושלים" },
               { text: "מוסך נקי, מסודר והכי חשוב - אמין. צביקה תמיד מסביר בדיוק מה הבעיה ומראה את החלקים שהוחלפו. מומלץ בחום!", author: "רונית לוי, מבשרת ציון" },
               { text: "הגעתי לצביקה עם תקלה שמוסכים אחרים לא הצליחו לפתור. תוך שעה האוטו היה מוכן במחיר הוגן ביותר. שירות מעל המצופה.", author: "יוסי כהן, ירושלים" },
             ].map(({ text, author }) => (
-              <div key={author} className="bg-gray-bg-light rounded-xl p-8 border-b-[3px] border-brand-red flex flex-col gap-4">
+              <div key={author} className="bg-gray-bg-light rounded-xl p-7 border-b-[3px] border-brand-red flex flex-col gap-3">
                 <div className="flex gap-1 justify-end">
                   {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
                 </div>
                 <p className="text-muted-foreground leading-7 text-sm text-right italic">
                   "{text}"
                 </p>
-                <p className="font-bold text-primary text-sm text-left">
+                <p className="font-bold text-primary text-sm text-left mt-auto">
                   — {author}
                 </p>
               </div>
@@ -177,7 +177,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               href="https://reviewthis.biz/dry-bird-8259"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-brand-red text-accent-foreground border-none rounded-lg px-8 py-4 text-[17px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-105 no-underline shadow-lg"
+              className="inline-flex items-center gap-3 bg-brand-red text-accent-foreground border-none rounded-lg px-8 py-4 text-base font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03] no-underline shadow-lg"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" fill="#4285F4"/>
@@ -192,16 +192,16 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* CTA BANNER */}
-      <section className="bg-primary py-20 px-6 text-center">
-        <h2 className="text-[34px] font-extrabold text-primary-foreground mb-4 tracking-wide">
+      <section className="bg-primary py-16 md:py-20 px-6 text-center">
+        <h2 className="text-2xl md:text-[34px] font-extrabold text-primary-foreground mb-4 tracking-wide">
           צריכים טיפול לרכב? אנחנו כאן בשבילכם
         </h2>
-        <p className="text-muted-foreground text-base mb-10 max-w-[500px] mx-auto">
+        <p className="text-primary-foreground/60 text-sm md:text-base mb-8 max-w-[500px] mx-auto leading-relaxed">
           קבעו תור עוד היום ותנו לנו לדאוג לרכב שלכם בצורה הטובה ביותר.
         </p>
         <button
           onClick={() => setPage("contact")}
-          className="bg-brand-red text-accent-foreground border-none rounded px-8 py-4 text-base font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
+          className="bg-brand-red text-accent-foreground border-none rounded-lg px-8 py-4 text-base font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03]"
         >
           קבע תור עכשיו
         </button>

@@ -68,7 +68,7 @@ const ServicesPage = () => {
   return (
     <main dir="rtl" className="bg-background">
       {/* HERO */}
-      <section className="relative py-20 md:py-28 bg-primary">
+      <section className="relative pt-[72px] py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h1 className="text-3xl md:text-[42px] font-black text-primary-foreground mb-5 leading-tight">
             שירותי מוסך מקצועיים בירושלים
