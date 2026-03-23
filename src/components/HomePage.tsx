@@ -8,7 +8,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <div dir="rtl">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center pt-[72px] overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-[72px] overflow-hidden">
         {/* Background image with slow zoom animation */}
         <div
           className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
