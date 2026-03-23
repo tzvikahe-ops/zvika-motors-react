@@ -168,14 +168,20 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%9E%D7%95%D7%A1%D7%9A+%D7%A9%D7%9C+%D7%A6%D7%91%D7%99%D7%A7%D7%94+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => {
+                const reviewUrl = "https://www.google.com/maps?cid=11342985376033029774774291";
+                const popup = window.open(reviewUrl, "_blank", "noopener,noreferrer");
+
+                if (!popup) {
+                  window.location.href = reviewUrl;
+                }
+              }}
               className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
             >
               כתבו לנו ביקורת בגוגל
-            </a>
+            </button>
           </div>
         </div>
       </section>
