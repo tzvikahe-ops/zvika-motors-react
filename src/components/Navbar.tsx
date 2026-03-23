@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logo from "@/assets/logo-clean.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
@@ -24,9 +23,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <div
           onClick={() => setPage("home")}
-          className="cursor-pointer"
+          className="cursor-pointer font-bold text-white text-lg"
         >
-          <img src={logo} alt="לוגו המוסך של צביקה - אור-צת שירותי רכב, מתחדשים משנת 1993" className="h-14 w-auto" />
+          המוסך של צביקה
         </div>
 
         {/* Desktop */}
