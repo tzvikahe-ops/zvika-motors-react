@@ -172,31 +172,14 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             ))}
           </div>
           <div className="text-center mt-10">
-            <button
-              type="button"
-              onClick={async () => {
-                const reviewUrl = "https://www.google.com/maps?cid=11342985376033029774774291";
-                const isEmbeddedPreview = window.self !== window.top;
-
-                if (isEmbeddedPreview) {
-                  try {
-                    await navigator.clipboard.writeText(reviewUrl);
-                    alert("במצב תצוגה מקדימה קישורי Google נחסמים. הקישור לביקורת הועתק ללוח.");
-                  } catch {
-                    alert("במצב תצוגה מקדימה קישורי Google נחסמים. העתיקו ידנית: https://www.google.com/maps?cid=11342985376033029774774291");
-                  }
-                  return;
-                }
-
-                const popup = window.open(reviewUrl, "_blank", "noopener,noreferrer");
-                if (!popup) {
-                  alert("הדפדפן חסם חלון קופץ. אפשר להעתיק את הקישור: https://www.google.com/maps?cid=11342985376033029774774291");
-                }
-              }}
-              className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
+            <a
+              href="https://g.page/r/CWH4eCfd2MAOEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors no-underline"
             >
               כתבו לנו ביקורת בגוגל
-            </button>
+            </a>
           </div>
         </div>
       </section>
