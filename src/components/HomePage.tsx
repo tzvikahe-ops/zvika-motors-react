@@ -180,10 +180,13 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* CTA BANNER */}
       <section className="bg-primary py-16 md:py-20 px-6 text-center" aria-label="יצירת קשר">
         <h2 className="text-2xl md:text-[32px] font-extrabold text-primary-foreground mb-3 tracking-wide">
-          מחפשים מוסך אמין בירושלים?
+          צריכים טיפול לרכב? אנחנו כאן בשבילכם
         </h2>
-        <p className="text-primary-foreground/60 text-sm mb-9 max-w-[440px] mx-auto leading-relaxed">
-          התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
+        <p className="text-primary-foreground/65 text-sm mb-4 max-w-[480px] mx-auto leading-relaxed">
+          התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי בזמן שמתאים לכם.
+        </p>
+        <p className="text-primary-foreground/35 text-xs mb-9">
+          מעל 30 שנות ניסיון · שקיפות מלאה · אחריות על כל טיפול
         </p>
         <div className="flex gap-3 flex-wrap justify-center">
           <button
