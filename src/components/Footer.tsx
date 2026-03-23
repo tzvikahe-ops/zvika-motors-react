@@ -18,7 +18,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           {["שירותים", "אודות", "גלריה"].map((item) => (
             <button
               key={item}
-              onClick={() => setPage(item === "גלריה" ? "gallery" : "home")}
+              onClick={() => setPage(item === "גלריה" ? "gallery" : item === "אודות" ? "about" : "home")}
               className="block bg-transparent border-none text-muted-foreground text-sm cursor-pointer py-1 text-right hover:text-primary-foreground transition-colors"
             >
               {item}
