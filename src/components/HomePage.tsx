@@ -79,10 +79,10 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { icon: <SnowflakeIcon />, title: "מיזוג אוויר לרכב בירושלים", desc: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים, בלי הפתעות במחיר." },
-              { icon: <WrenchIcon />, title: "מכונאות רכב כללית", desc: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה." },
-              { icon: <DiagIcon />, title: "דיאגנוסטיקה ממוחשבת לרכב", desc: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים." },
-              { icon: <ChecklistIcon />, title: "הכנה לטסט שנתי בירושלים", desc: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות." },
+              { icon: <WrenchIcon />, title: "מכונאות רכב כללית", desc: "טיפולים שוטפים, החלפת שמנים, תיקוני מנוע ובלמים. הרכב שלכם יוצא מהמוסך בטוח, מטופל ומוכן לדרך." },
+              { icon: <DiagIcon />, title: "דיאגנוסטיקה ממוחשבת", desc: "אבחון תקלות מדויק עם ציוד סריקה מתקדם – חוסך לכם זמן, כסף ותיקונים מיותרים." },
+              { icon: <SnowflakeIcon />, title: "מיזוג אוויר לרכב", desc: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נסיעה נעימה גם בקיץ הירושלמי, בלי הפתעות במחיר." },
+              { icon: <ChecklistIcon />, title: "הכנה לטסט שנתי", desc: "בדיקה מקיפה לפני מבחן הרישוי – נטפל בהכל כדי שתעברו בפעם הראשונה, בראש שקט." },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="bg-gray-bg-light rounded-xl p-8 md:p-9 flex flex-col gap-4 border border-transparent hover:border-border transition-all duration-200 group">
                 <div className="text-primary/60 group-hover:text-primary/80 transition-colors duration-200">{icon}</div>
