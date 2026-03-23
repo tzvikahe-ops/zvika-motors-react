@@ -10,7 +10,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
     <div dir="rtl">
       {/* HERO */}
       <section
-        className="min-h-screen flex items-center pt-[72px] bg-cover bg-center relative overflow-hidden"
+        className="min-h-screen flex items-center pt-[72px] bg-cover bg-center relative overflow-visible"
       >
         <div
           className="absolute inset-0"
