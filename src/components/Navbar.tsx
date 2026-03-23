@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
 
-type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
+type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 interface NavbarProps {
   currentPage: Page;
@@ -13,7 +13,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   const links: { label: string; page: Page }[] = [
     { label: "שירותים", page: "home" },
-    { label: "אודות", page: "home" },
+    { label: "אודות", page: "about" },
     { label: "גלריה", page: "gallery" },
     { label: "צור קשר", page: "contact" },
   ];
@@ -63,7 +63,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
       {mobileOpen && (
         <div className="md:hidden bg-primary px-6 py-4 flex flex-col gap-4 border-t border-white/10">
-          {links.filter(l => l.label !== "אודות").map(({ label, page }) => (
+          {links.map(({ label, page }) => (
             <button
               key={label}
               onClick={() => { setPage(page); setMobileOpen(false); }}

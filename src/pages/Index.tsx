@@ -4,11 +4,12 @@ import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
 import GalleryPage from "@/components/GalleryPage";
 import ContactPage from "@/components/ContactPage";
+import AboutPage from "@/components/AboutPage";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import AccessibilityStatement from "@/components/AccessibilityStatement";
 import { WhatsAppIcon } from "@/components/Icons";
 
-type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
+type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -27,6 +28,7 @@ const Index = () => {
       {currentPage === "home" && <HomePage setPage={setPage} />}
       {currentPage === "gallery" && <GalleryPage />}
       {currentPage === "contact" && <ContactPage />}
+      {currentPage === "about" && <AboutPage />}
       {currentPage === "privacy" && <PrivacyPolicy />}
       {currentPage === "accessibility" && <AccessibilityStatement />}
       <Footer setPage={setPage} />

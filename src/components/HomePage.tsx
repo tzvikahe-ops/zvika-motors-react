@@ -2,7 +2,7 @@ import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon,
 import logoImage from "@/assets/logo-full-transparent.png";
 import mechanicImage from "@/assets/mechanic-work.jpg";
 
-type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
+type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
