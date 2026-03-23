@@ -100,12 +100,12 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div>
             <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">למה לקוחות בירושלים בוחרים בנו?</h2>
             <p className="text-muted-foreground text-sm mb-10 leading-relaxed">
-              כי אצלנו הרכב שלכם בידיים בטוחות – עם יחס אישי, שקיפות מלאה ואחריות בכל שלב.
+              כי אצלנו הרכב שלכם בידיים בטוחות – שקיפות מלאה, מחיר הוגן ואחריות על כל טיפול.
             </p>
             {[
-              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "מטפלים בכל סוגי הרכבים ומכירים כל דגם מקרוב. הניסיון שלנו בשירותי רכב בירושלים הוא הביטחון שלכם." },
-              { num: "02", title: "שקיפות מלאה ומחיר הוגן", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר, מתואם ומאושר על ידכם מראש." },
-              { num: "03", title: "שירות אישי ואחריות מלאה", desc: "כל לקוח מקבל יחס צמוד, מענה זמין ואחריות מלאה על כל עבודה שיוצאת מהמוסך." },
+              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "אנחנו מכירים כל רכב מקרוב. מעל שלושה עשורים של טיפול מקצועי בירושלים – זה הביטחון שלכם." },
+              { num: "02", title: "שקיפות מלאה – בלי הפתעות", desc: "לא מחליפים חלקים בלי אישור. כל תיקון מוסבר לפני שמתחילים, והמחיר ברור מראש." },
+              { num: "03", title: "יחס אישי ואחריות מלאה", desc: "אצלנו כל לקוח מקבל מענה ישיר, יחס צמוד ואחריות מלאה על כל עבודה." },
             ].map(({ num, title, desc }) => (
               <div key={num} className="grid grid-cols-[auto_1fr] gap-4 mb-8 items-start">
                 <div className="bg-primary text-primary-foreground w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold shrink-0">
