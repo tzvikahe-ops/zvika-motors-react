@@ -4,18 +4,18 @@ const ServicesPage = () => {
   const services = [
     {
       icon: <WrenchIcon />,
-      title: "מכונאות כללית",
-      description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.",
+      title: "מכונאות רכב כללית",
+      description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.",
     },
     {
       icon: <DiagIcon />,
-      title: "דיאגנוסטיקה ממוחשבת",
+      title: "דיאגנוסטיקה ממוחשבת לרכב",
       description: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.",
     },
     {
       icon: <SnowflakeIcon />,
       title: "מיזוג אוויר לרכב",
-      description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים, בלי הפתעות במחיר.",
+      description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים בירושלים, בלי הפתעות במחיר.",
     },
     {
       icon: <ChecklistIcon />,
@@ -28,7 +28,7 @@ const ServicesPage = () => {
     {
       icon: <ClockIcon />,
       title: "ניסיון של מעל 30 שנה",
-      description: "אנחנו מכירים כל דגם מקרוב. הניסיון שלנו זה הביטחון שלכם.",
+      description: "מכירים כל דגם מקרוב ומטפלים בכל סוגי הרכבים. הניסיון שלנו זה הביטחון שלכם.",
     },
     {
       icon: <DiagIcon />,
@@ -59,7 +59,7 @@ const ServicesPage = () => {
       location: "מבשרת ציון",
     },
     {
-      text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ בחום לכל מי שמחפש מוסך אמין.",
+      text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ בחום לכל מי שמחפש מוסך אמין בירושלים.",
       author: "דוד מזרחי",
       location: "ירושלים",
     },
@@ -71,12 +71,12 @@ const ServicesPage = () => {
       <section className="relative pt-[72px] py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h1 className="text-3xl md:text-[42px] font-black text-primary-foreground mb-5 leading-tight">
-            שירותי מוסך מקצועיים
+            שירותי מוסך מקצועיים בירושלים
             <br />
             <span className="text-brand-red">אמינות, ניסיון ושירות ללא פשרות</span>
           </h1>
           <p className="text-base md:text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            מעל 30 שנות ניסיון בטיפול בכל סוגי הרכבים. שקיפות מלאה, מחיר הוגן ויחס אישי לכל לקוח.
+            מעל 30 שנות ניסיון במכונאות רכב בירושלים. שקיפות מלאה, מחיר הוגן ויחס אישי לכל לקוח.
           </p>
           <a
             href="tel:02-6514446"
@@ -88,13 +88,13 @@ const ServicesPage = () => {
       </section>
 
       {/* SERVICES GRID */}
-      <section id="services-content" className="py-14 md:py-20 bg-background">
+      <section id="services-content" className="py-14 md:py-20 bg-background" aria-label="רשימת שירותי המוסך">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-black text-primary text-center mb-4">
-            השירותים שלנו
+            שירותי מכונאות רכב בירושלים
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto leading-relaxed">
-            טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים, הכל תחת קורת גג אחת
+            טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים – הכל תחת קורת גג אחת בגבעת שאול, ירושלים
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {services.map((service) => (
@@ -114,13 +114,13 @@ const ServicesPage = () => {
       </section>
 
       {/* TRUST SECTION */}
-      <section className="py-14 md:py-20 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary" aria-label="למה לבחור בנו">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-black text-primary text-center mb-3">
-            למה לבחור במוסך של צביקה?
+            למה לקוחות בירושלים בוחרים במוסך של צביקה?
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto text-sm leading-relaxed">
-            כי אצלנו הרכב שלכם בידיים בטוחות, עם יחס אישי ושקיפות מלאה בכל שלב
+            כי אצלנו הרכב שלכם בידיים בטוחות – עם יחס אישי ושקיפות מלאה בכל שלב
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {trustPoints.map((point) => (
@@ -142,13 +142,13 @@ const ServicesPage = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20 bg-background" aria-label="המלצות לקוחות">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-black text-primary text-center mb-3">
-            הלקוחות שלנו ממליצים
+            לקוחות המוסך ממליצים
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto text-sm">
-            אנחנו גאים ביחסים ארוכי טווח עם הלקוחות שלנו
+            לקוחות שמגיעים אלינו חוזרים שנה אחרי שנה
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.map(({ text, author, location }) => (
@@ -194,10 +194,10 @@ const ServicesPage = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-16 md:py-20 bg-primary">
+      <section className="py-16 md:py-20 bg-primary" aria-label="יצירת קשר עם המוסך">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-2xl md:text-[34px] font-black text-primary-foreground mb-3 leading-tight">
-            מחפשים מוסך שאפשר לסמוך עליו?
+            מחפשים מוסך מקצועי בירושלים?
           </h2>
           <p className="text-primary-foreground/70 mb-8 leading-relaxed">
             התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
@@ -207,7 +207,7 @@ const ServicesPage = () => {
               href="tel:02-6514446"
               className="inline-flex items-center gap-2 bg-brand-red text-accent-foreground px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-red-hover transition-all hover:scale-[1.03] shadow-lg no-underline"
             >
-              התקשרו עכשיו — 02-6514446
+              התקשרו עכשיו – 02-6514446
             </a>
             <a
               href="https://wa.me/972526514446"

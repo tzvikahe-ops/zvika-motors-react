@@ -15,7 +15,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div className="mx-auto mb-6 w-[85vw] max-w-[340px] md:w-[600px] md:max-w-none aspect-[945/540]">
             <img
               src={logoImage}
-              alt="לוגו המוסך"
+              alt="המוסך של צביקה – מוסך מקצועי בירושלים, גבעת שאול"
               width={945}
               height={540}
               loading="eager"
@@ -24,28 +24,29 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               className="w-full h-full object-contain"
             />
           </div>
+          <h1 className="sr-only">המוסך של צביקה – מוסך מקצועי בירושלים</h1>
           <p className="text-sm md:text-base text-white/80 font-normal mb-10 max-w-lg mx-auto leading-relaxed">
-            שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
+            מוסך מקצועי בגבעת שאול, ירושלים. שירות אישי, שקיפות מלאה וניסיון של מעל 30 שנה בטיפול בכל סוגי הרכבים.
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <button
               onClick={() => setPage("contact")}
               className="bg-brand-red text-accent-foreground border-none rounded-lg px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03] shadow-lg"
             >
-              קבע תור עכשיו
+              קבעו תור עכשיו
             </button>
             <button
               onClick={() => setPage("services")}
               className="bg-white/10 text-white border border-white/25 rounded-lg px-7 py-3.5 text-[15px] font-medium cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm"
             >
-              צפה בשירותים שלנו
+              לשירותי המוסך שלנו
             </button>
           </div>
         </div>
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-gray-bg py-10 px-6">
+      <section className="bg-gray-bg py-10 px-6" aria-label="יתרונות המוסך">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: <ClockIcon />, title: "מענה מהיר", sub: "תיאום טיפול תוך יום עבודה" },
@@ -65,28 +66,26 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24 px-6 bg-background">
+      <section id="services" className="py-16 md:py-24 px-6 bg-background" aria-label="שירותי המוסך">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">השירותים שלנו</h2>
-            <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto leading-relaxed">
-              טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים, הכל תחת קורת גג אחת
+            <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">שירותי מוסך מקצועיים בירושלים</h2>
+            <p className="text-muted-foreground text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+              מכונאות רכב, דיאגנוסטיקה, מיזוג אוויר והכנה לטסט – הכל תחת קורת גג אחת, בגבעת שאול
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* מיזוג אוויר */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <SnowflakeIcon />
-              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">מיזוג אוויר לרכב</h3>
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">מיזוג אוויר לרכב בירושלים</h3>
               <p className="text-muted-foreground leading-7 text-sm">
                 מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים, בלי הפתעות במחיר.
               </p>
             </div>
 
-            {/* מכונאות כללית */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 grid grid-cols-[1fr_auto] items-start gap-4">
               <div>
-                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">מכונאות כללית</h3>
+                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">מכונאות רכב כללית</h3>
                 <p className="text-muted-foreground leading-7 text-sm">
                   טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.
                 </p>
@@ -94,21 +93,19 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               <div className="opacity-15 hidden md:block"><WrenchIcon /></div>
             </div>
 
-            {/* דיאגנוסטיקה */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-4 md:gap-6">
               <div className="opacity-30 hidden md:block"><DiagIcon /></div>
               <div>
-                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">דיאגנוסטיקה ממוחשבת</h3>
+                <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">דיאגנוסטיקה ממוחשבת לרכב</h3>
                 <p className="text-muted-foreground leading-7 text-sm">
                   איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.
                 </p>
               </div>
             </div>
 
-            {/* הכנה לטסט */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <ChecklistIcon />
-              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">הכנה לטסט שנתי</h3>
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">הכנה לטסט שנתי בירושלים</h3>
               <p className="text-muted-foreground leading-7 text-sm">
                 בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.
               </p>
@@ -118,15 +115,15 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* WHY US */}
-      <section className="bg-gray-bg-light py-16 md:py-24 px-6">
+      <section className="bg-gray-bg-light py-16 md:py-24 px-6" aria-label="למה לבחור בנו">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">למה לבחור דווקא בנו?</h2>
+            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">למה לקוחות בירושלים בוחרים בנו?</h2>
             <p className="text-muted-foreground text-sm mb-8 md:mb-10 leading-relaxed">
-              כי אצלנו הרכב שלכם בידיים בטוחות, עם יחס אישי ושקיפות מלאה בכל שלב.
+              כי אצלנו הרכב שלכם בידיים בטוחות – עם יחס אישי, שקיפות מלאה ואחריות בכל שלב.
             </p>
             {[
-              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "אנחנו מטפלים בכל סוגי הרכבים ומכירים כל דגם מקרוב. הניסיון שלנו זה הביטחון שלכם." },
+              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "מטפלים בכל סוגי הרכבים ומכירים כל דגם מקרוב. הניסיון שלנו בשירותי רכב בירושלים הוא הביטחון שלכם." },
               { num: "02", title: "שקיפות מלאה ומחיר הוגן", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר, מתואם ומאושר על ידכם מראש." },
               { num: "03", title: "שירות אישי ואחריות מלאה", desc: "כל לקוח מקבל יחס צמוד, מענה זמין ואחריות מלאה על כל עבודה שיוצאת מהמוסך." },
             ].map(({ num, title, desc }) => (
@@ -144,7 +141,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div className="rounded-xl overflow-hidden aspect-[4/3]">
             <img
               src={mechanicImage}
-              alt="מוסך מקצועי"
+              alt="עבודת מכונאות מקצועית במוסך בירושלים"
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -153,12 +150,12 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* REVIEWS */}
-      <section className="bg-background py-16 md:py-24 px-6">
+      <section className="bg-background py-16 md:py-24 px-6" aria-label="המלצות לקוחות">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">הלקוחות שלנו ממליצים</h2>
+            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">לקוחות המוסך ממליצים</h2>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
-              אנחנו גאים ביחסים ארוכי טווח עם הלקוחות שלנו. הנה מה שהם אומרים:
+              לקוחות שמגיעים אלינו חוזרים שנה אחרי שנה. הנה מה שהם אומרים:
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -201,9 +198,9 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* CTA BANNER */}
-      <section className="bg-primary py-16 md:py-20 px-6 text-center">
+      <section className="bg-primary py-16 md:py-20 px-6 text-center" aria-label="יצירת קשר">
         <h2 className="text-2xl md:text-[34px] font-extrabold text-primary-foreground mb-3 tracking-wide">
-          מחפשים מוסך שאפשר לסמוך עליו?
+          מחפשים מוסך אמין בירושלים?
         </h2>
         <p className="text-primary-foreground/70 text-sm md:text-base mb-8 max-w-[480px] mx-auto leading-relaxed">
           התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
