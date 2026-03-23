@@ -173,7 +173,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           </div>
           <div className="text-center mt-10">
             <a
-              href="https://g.page/r/CWH4eCfd2MAOEBM/review"
+              href="https://www.google.com/maps?cid=11342985376033029774774291"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors no-underline"
