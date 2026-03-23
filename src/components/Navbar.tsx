@@ -56,7 +56,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary"
+          className="md:hidden bg-transparent border-none cursor-pointer text-white"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
