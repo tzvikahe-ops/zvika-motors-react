@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <HoursIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">שעות פעילות</div>
-                    <div className="text-sm text-muted-foreground">א׳-ה׳: 08:00-18:00 | ו׳: 08:00-13:00</div>
+                    <div className="text-sm text-muted-foreground">א׳-ה׳: 08:00-16:30</div>
                   </div>
                 </div>
               </div>

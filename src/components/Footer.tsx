@@ -45,7 +45,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
       </div>
 
       <div className="border-t border-navy-light py-5 px-6 text-center text-[13px] text-muted-foreground">
-        © {new Date().getFullYear()} המוסך של צביקה. רחוב האופה 4, ירושלים.
+        © {new Date().getFullYear()} המוסך של צביקה. רחוב האופה 4 (בית הדפוס 24), ירושלים.
       </div>
     </footer>
   );
