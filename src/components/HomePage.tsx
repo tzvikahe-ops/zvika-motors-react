@@ -26,7 +26,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             background: `linear-gradient(to left, hsla(216,33%,96%,0.88) 40%, hsla(216,33%,96%,0.7) 100%)`,
           }}
         />
-        <div className="max-w-[1200px] mx-auto px-6 w-full">
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
           <div className="max-w-[560px] mr-auto">
             <h1 className="text-[clamp(36px,5vw,64px)] font-black leading-tight text-primary mb-6">
               המוסך של צביקה<br />המקצוענים שלך<br />בירושלים
