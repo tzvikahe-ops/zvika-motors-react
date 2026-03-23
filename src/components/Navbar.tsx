@@ -47,9 +47,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           ))}
         </div>
 
-        <button
+      <button
           onClick={() => setPage("contact")}
-          className="hidden md:block bg-brand-red text-accent-foreground border-none rounded px-5 py-2.5 text-sm font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
+          className="hidden md:block bg-brand-red text-accent-foreground border-none rounded-lg px-5 py-2.5 text-sm font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03]"
         >
           קבע תור
         </button>

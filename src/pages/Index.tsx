@@ -66,7 +66,7 @@ const Index = () => {
         href="https://wa.me/972526514446"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="fixed bottom-24 md:bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="שלח הודעה בוואטסאפ"
       >
         <WhatsAppIcon />

@@ -24,7 +24,7 @@ export default function AccessibilityWidget({ setPage }: { setPage: (p: Page) =>
       {/* Popup menu */}
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-50 bg-background border border-border rounded-xl shadow-2xl w-[280px] p-5 flex flex-col gap-3"
+          className="fixed bottom-40 md:bottom-24 right-6 z-50 bg-background border border-border rounded-xl shadow-2xl w-[280px] p-5 flex flex-col gap-3"
           dir="rtl"
         >
           <h3 className="font-bold text-primary text-base mb-1">אפשרויות נגישות</h3>
