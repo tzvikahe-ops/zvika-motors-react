@@ -24,7 +24,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div
           className="absolute inset-0"
           style={{
-            background: `hsla(216,33%,96%,0.55)`,
+            background: `hsla(216,33%,96%,0.35)`,
           }}
         />
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
