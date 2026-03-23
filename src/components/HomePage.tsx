@@ -23,7 +23,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         />
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center">
           <div className="mx-auto mt-[55vh]">
-            <p className="text-[17px] text-brand-red font-bold leading-7 mb-9 max-w-[500px] mx-auto">
+            <p className="text-[17px] text-brand-red font-bold leading-7 mb-9 max-w-[500px] mx-auto" style={{ WebkitTextStroke: '0.5px white', paintOrder: 'stroke fill' }}>
               שירות אישי, שקיפות מלאה וניסיון של שנים בטיפול בכל סוגי הרכבים. אנחנו כאן כדי לשמור על הבטיחות שלך על הכביש.
             </p>
             <div className="flex gap-4 flex-wrap justify-center">
