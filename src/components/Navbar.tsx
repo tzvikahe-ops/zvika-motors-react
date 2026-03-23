@@ -35,11 +35,11 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       }`}
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-16">
-        {/* Brand — text only, no badge */}
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
+        {/* Brand */}
         <div onClick={() => setPage("home")} className="cursor-pointer">
-          <span className="font-black text-primary-foreground text-[15px]">המוסך של צביקה</span>
-          <span className="text-primary-foreground/25 text-[11px] font-medium mr-2">מאז 1993</span>
+          <span className="font-black text-primary-foreground text-[14px] md:text-[15px]">המוסך של צביקה</span>
+          <span className="text-primary-foreground/25 text-[10px] md:text-[11px] font-medium mr-2">מאז 1993</span>
         </div>
 
         {/* Desktop nav */}
@@ -74,12 +74,12 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-surface-darker px-6 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
+        <div className="md:hidden bg-surface-darker px-5 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
           {links.map(({ label, page }) => (
             <button
               key={label}
               onClick={() => { setPage(page); setMobileOpen(false); }}
-              className={`bg-transparent border-none cursor-pointer text-[14px] text-right py-2.5 transition-colors duration-200 ${
+              className={`bg-transparent border-none cursor-pointer text-[15px] text-right py-3 transition-colors duration-200 ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/50 font-medium"
@@ -88,12 +88,22 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               {label}
             </button>
           ))}
-          <a
-            href="tel:02-6514446"
-            className="mt-3 text-brand-red text-[14px] font-bold no-underline text-right"
-          >
-            02-6514446
-          </a>
+          <div className="mt-3 pt-3 border-t border-primary-foreground/[0.06] flex gap-3">
+            <a
+              href="tel:02-6514446"
+              className="btn-primary flex-1 text-center no-underline text-[14px]"
+            >
+              התקשרו עכשיו
+            </a>
+            <a
+              href="https://wa.me/972526514446"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-dark flex-1 text-center no-underline text-[14px]"
+            >
+              וואטסאפ
+            </a>
+          </div>
         </div>
       )}
     </nav>
