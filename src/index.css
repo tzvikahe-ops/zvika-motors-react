@@ -4,51 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 220 25% 10%;
+    --background: 220 6% 97%;
+    --foreground: 222 22% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 222 22% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 222 22% 12%;
 
-    --primary: 220 20% 14%;
-    --primary-foreground: 40 20% 96%;
+    --primary: 222 28% 14%;
+    --primary-foreground: 42 18% 94%;
 
-    --secondary: 220 8% 94%;
-    --secondary-foreground: 220 25% 10%;
+    --secondary: 220 10% 93%;
+    --secondary-foreground: 222 22% 12%;
 
-    --muted: 220 8% 94%;
-    --muted-foreground: 220 8% 42%;
+    --muted: 220 10% 93%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 4 72% 44%;
+    --accent: 2 62% 42%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 90%;
-    --input: 220 10% 90%;
-    --ring: 220 20% 14%;
+    --border: 220 12% 89%;
+    --input: 220 12% 89%;
+    --ring: 222 28% 14%;
 
     --radius: 0.5rem;
 
-    /* Brand tokens */
-    --brand-red: 4 72% 44%;
-    --brand-red-hover: 4 72% 50%;
-    --brand-red-glow: 4 72% 44%;
-    --surface-dark: 220 22% 12%;
-    --surface-darker: 220 24% 8%;
-    --surface-warm: 30 12% 96%;
+    /* Brand tokens — refined, less saturated red, deeper surfaces */
+    --brand-red: 2 58% 42%;
+    --brand-red-hover: 2 58% 48%;
+    --brand-red-glow: 2 58% 42%;
+    --surface-dark: 222 24% 13%;
+    --surface-darker: 222 28% 9%;
+    --surface-warm: 34 14% 96%;
     --surface-steel: 220 10% 95%;
-    --gold-accent: 38 60% 56%;
-    --footer-bg: 220 24% 8%;
+    --gold-accent: 40 48% 52%;
+    --footer-bg: 222 28% 9%;
     --gray-bg: 220 8% 94%;
     --gray-bg-light: 220 8% 97%;
 
     /* Section divider */
-    --section-border: 220 10% 88%;
+    --section-border: 220 12% 87%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,11 +59,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --shadow-sm: 0 1px 3px 0 hsl(220 20% 14% / 0.04);
-    --shadow-md: 0 4px 20px -4px hsl(220 20% 14% / 0.08), 0 2px 4px -2px hsl(220 20% 14% / 0.03);
-    --shadow-lg: 0 12px 40px -8px hsl(220 20% 14% / 0.12), 0 4px 8px -4px hsl(220 20% 14% / 0.05);
-    --shadow-xl: 0 24px 56px -12px hsl(220 20% 14% / 0.18);
-    --shadow-card: 0 1px 3px hsl(220 20% 14% / 0.04), 0 0 0 1px hsl(220 10% 90% / 0.6);
+    --shadow-sm: 0 1px 2px 0 hsl(222 28% 14% / 0.03);
+    --shadow-md: 0 4px 16px -4px hsl(222 28% 14% / 0.07), 0 1px 3px -1px hsl(222 28% 14% / 0.03);
+    --shadow-lg: 0 10px 32px -8px hsl(222 28% 14% / 0.10), 0 4px 8px -4px hsl(222 28% 14% / 0.04);
+    --shadow-xl: 0 20px 48px -12px hsl(222 28% 14% / 0.15);
+    --shadow-card: 0 1px 2px hsl(222 28% 14% / 0.03), 0 0 0 1px hsl(220 12% 89% / 0.5);
   }
 }
 
