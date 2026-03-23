@@ -38,6 +38,9 @@ const Index = () => {
       {currentPage === "accessibility" && <AccessibilityStatement />}
       <Footer setPage={setPage} />
 
+      <CookieConsent setPage={setPage} />
+      <AccessibilityWidget setPage={setPage} />
+
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/972526514446"
