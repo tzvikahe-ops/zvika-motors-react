@@ -21,12 +21,12 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
-          <div className="max-w-[560px] mr-auto mt-[35vh]">
-            <p className="text-[17px] text-brand-red font-bold leading-7 mb-9 max-w-[420px]">
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center">
+          <div className="mx-auto mt-[55vh]">
+            <p className="text-[17px] text-brand-red font-bold leading-7 mb-9 max-w-[500px] mx-auto">
               שירות אישי, שקיפות מלאה וניסיון של שנים בטיפול בכל סוגי הרכבים. אנחנו כאן כדי לשמור על הבטיחות שלך על הכביש.
             </p>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex gap-4 flex-wrap justify-center">
               <button
                 onClick={() => setPage("contact")}
                 className="bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
