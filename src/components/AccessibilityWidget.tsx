@@ -10,7 +10,7 @@ export default function AccessibilityWidget({ setPage }: { setPage: (p: Page) =>
       {/* Floating accessibility button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border-none cursor-pointer"
+        className="fixed bottom-24 md:bottom-6 right-6 z-50 w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border-none cursor-pointer"
         aria-label="תפריט נגישות"
       >
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
