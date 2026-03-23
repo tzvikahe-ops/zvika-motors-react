@@ -1,5 +1,5 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
-import heroImage from "@/assets/hero-pdf.jpg";
+import logoImage from "@/assets/logo-clean.png";
 import mechanicImage from "@/assets/mechanic-work.jpg";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
@@ -13,6 +13,11 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="absolute inset-0 bg-black" />
 
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
+          <img
+            src={logoImage}
+            alt="לוגו המוסך"
+            className="mx-auto mb-8 w-[220px] md:w-[320px] h-auto"
+          />
           <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
             שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
           </p>
