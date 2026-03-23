@@ -8,19 +8,20 @@ const points = [
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-background py-16 md:py-24 px-6" dir="rtl" aria-label="למה לבחור בנו">
+    <section className="bg-background py-20 md:py-28 px-6" dir="rtl" aria-label="למה לבחור בנו">
       <div className="max-w-[1100px] mx-auto">
         {/* Editorial header */}
-        <div className="max-w-[600px] mb-12 md:mb-16">
-          <h2 className="text-[24px] md:text-[32px] font-black text-foreground tracking-[-0.02em] leading-[1.15] mb-4">
-            המוסך שלקוחות חוזרים<br className="hidden md:block" /> אליו שנה אחרי שנה
+        <div className="max-w-[620px] mb-14 md:mb-18">
+          <p className="text-brand-red text-[11px] font-bold tracking-wider mb-3">למה אנחנו</p>
+          <h2 className="text-[26px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-4">
+            המוסך שלקוחות חוזרים אליו שנה אחרי שנה
           </h2>
           <p className="text-muted-foreground text-[14px] leading-[1.8] max-w-[480px]">
             אנחנו לא רק מתקנים רכבים. אנחנו בונים אמון — עם שקיפות, מקצועיות, ומחויבות אישית לכל לקוח.
           </p>
         </div>
 
-        {/* Editorial layout: large image + stacked points */}
+        {/* Image + stacked points */}
         <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-start">
           <div className="overflow-hidden aspect-[4/3]">
             <img
@@ -28,10 +29,12 @@ export default function WhyUsSection() {
               alt="עבודת מכונאות מקצועית"
               className="w-full h-full object-cover"
               loading="lazy"
+              width={1024}
+              height={1024}
             />
           </div>
 
-          <div className="md:pt-4">
+          <div className="md:pt-2">
             {points.map(({ title, desc }, i) => (
               <div
                 key={i}

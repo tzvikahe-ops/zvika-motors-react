@@ -5,7 +5,7 @@ type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | 
 export default function HeroSection({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <section className="relative bg-surface-darker overflow-hidden" dir="rtl">
-      {/* Full-bleed image with overlay */}
+      {/* Full-bleed image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -15,53 +15,45 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover object-[55%_center]"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-surface-darker via-surface-darker/95 to-surface-darker/60" />
+        <div className="absolute inset-0 bg-gradient-to-l from-surface-darker via-surface-darker/90 to-surface-darker/40 md:to-transparent" />
+        <div className="absolute inset-0 bg-surface-darker/30" />
       </div>
 
-      {/* Content over image */}
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-28 min-h-[85svh] flex flex-col justify-center">
+      <div className="relative z-10 max-w-[1100px] mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24 min-h-[80svh] flex flex-col justify-center">
         <div className="max-w-[520px]">
-          <p className="text-primary-foreground/30 text-[11px] font-medium tracking-wide mb-5">
+          <p className="text-primary-foreground/35 text-[11px] font-medium tracking-wide mb-5 uppercase">
             אור-צת שירותי רכב · גבעת שאול, ירושלים
           </p>
 
           <h1 className="mb-6">
-            <span className="block text-[34px] md:text-[46px] lg:text-[56px] font-black text-primary-foreground leading-[1.05] tracking-[-0.03em]">
+            <span className="block text-[34px] md:text-[48px] lg:text-[58px] font-black text-primary-foreground leading-[1.02] tracking-[-0.03em]">
               הרכב שלכם
             </span>
-            <span className="block text-[34px] md:text-[46px] lg:text-[56px] font-black leading-[1.05] tracking-[-0.03em] text-brand-red">
+            <span className="block text-[34px] md:text-[48px] lg:text-[58px] font-black leading-[1.02] tracking-[-0.03em] text-brand-red">
               בידיים בטוחות.
             </span>
           </h1>
 
-          <p className="text-primary-foreground/45 text-[15px] leading-[1.8] mb-9 max-w-[400px]">
+          <p className="text-primary-foreground/50 text-[15px] leading-[1.8] mb-9 max-w-[420px]">
             מעל 30 שנה של מקצועיות ושקיפות מלאה.
             טיפולים, תיקונים, דיאגנוסטיקה והכנה לטסט.
           </p>
 
-          <div className="flex items-center gap-5 mb-14">
+          <div className="flex items-center gap-5">
             <button
               onClick={() => setPage("contact")}
-              className="bg-brand-red text-accent-foreground border-none px-7 py-3 text-[13px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors duration-200"
+              className="bg-brand-red text-accent-foreground border-none px-8 py-3.5 text-[13px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors duration-200"
             >
               קבעו תור
             </button>
             <a
               href="tel:02-6514446"
-              className="text-primary-foreground/50 text-[15px] font-bold hover:text-primary-foreground transition-colors duration-200 no-underline"
+              className="text-primary-foreground/55 text-[15px] font-bold hover:text-primary-foreground transition-colors duration-200 no-underline"
             >
               02-6514446
             </a>
-          </div>
-
-          <div className="flex items-center gap-8 text-[11px] text-primary-foreground/20 font-medium">
-            <span>30+ שנות ניסיון</span>
-            <span className="w-px h-3 bg-primary-foreground/10" />
-            <span>שקיפות מלאה</span>
-            <span className="w-px h-3 bg-primary-foreground/10" />
-            <span>אחריות על כל עבודה</span>
           </div>
         </div>
       </div>

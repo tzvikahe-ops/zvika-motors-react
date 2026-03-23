@@ -2,49 +2,50 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 export default function MapSection() {
   return (
-    <section className="bg-surface-steel py-16 md:py-24 px-6" dir="rtl" aria-label="מצאו אותנו על המפה">
+    <section className="bg-surface-darker py-20 md:py-28 px-6" dir="rtl" aria-label="מצאו אותנו">
       <div className="max-w-[1100px] mx-auto">
-        <div className="mb-10">
-          <h2 className="text-[22px] md:text-[30px] font-black text-foreground leading-tight">
-            המוסך שלכם בירושלים
+        <div className="mb-12">
+          <p className="text-brand-red text-[11px] font-bold tracking-wider mb-3">מיקום</p>
+          <h2 className="text-[26px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.12] mb-3">
+            בואו לבקר
           </h2>
-          <p className="text-muted-foreground text-[12.5px] mt-2">
-            גבעת שאול · חניה נוחה · גישה קלה מכל חלקי העיר
+          <p className="text-primary-foreground/35 text-[14px] leading-[1.7] max-w-[400px]">
+            גבעת שאול, ירושלים. חניה נוחה וגישה קלה מכל חלקי העיר.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr] gap-4 items-stretch">
-          {/* Info card */}
-          <div className="bg-card rounded-lg p-7 border border-border flex flex-col justify-between gap-5 order-1">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-0 overflow-hidden border border-primary-foreground/[0.06]">
+          {/* Info side */}
+          <div className="bg-surface-dark p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <h3 className="font-black text-[17px] text-foreground mb-0.5">אור-צת שירותי רכב</h3>
-              <p className="text-muted-foreground text-[11px] mb-5 font-medium">המוסך של צביקה · מאז 1993</p>
+              <h3 className="font-black text-[16px] text-primary-foreground mb-1">אור-צת שירותי רכב</h3>
+              <p className="text-primary-foreground/25 text-[11px] mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-2.5">
-                  <MapPin size={16} className="text-brand-red mt-0.5 shrink-0" />
+              <div className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <MapPin size={15} className="text-brand-red/60 mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-bold text-[13px] text-foreground">האופה 4, ירושלים</p>
-                    <p className="text-muted-foreground text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
+                    <p className="font-bold text-[13px] text-primary-foreground">האופה 4, ירושלים</p>
+                    <p className="text-primary-foreground/30 text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <Phone size={16} className="text-brand-red shrink-0" />
-                  <a href="tel:02-6514446" className="font-bold text-[13px] text-foreground hover:text-brand-red transition-colors no-underline">02-651-4446</a>
+                <div className="flex items-center gap-3">
+                  <Phone size={15} className="text-brand-red/60 shrink-0" />
+                  <a href="tel:02-6514446" className="font-bold text-[13px] text-primary-foreground hover:text-brand-red transition-colors no-underline">02-651-4446</a>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <Clock size={16} className="text-brand-red shrink-0" />
-                  <p className="text-muted-foreground text-[12.5px]">א׳–ה׳ 08:00–16:30</p>
+                <div className="flex items-center gap-3">
+                  <Clock size={15} className="text-brand-red/60 shrink-0" />
+                  <p className="text-primary-foreground/40 text-[12px]">א׳–ה׳ 08:00–16:30</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
+            <div className="flex flex-col gap-2.5 mt-8">
               <a
                 href="https://waze.com/ul?q=האופה%204%2C%20ירושלים&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center bg-brand-red text-accent-foreground rounded-md px-5 py-2.5 text-[13px] font-bold hover:bg-brand-red-hover transition-colors duration-200 no-underline"
+                className="text-center bg-brand-red text-accent-foreground px-5 py-3 text-[13px] font-bold hover:bg-brand-red-hover transition-colors duration-200 no-underline"
               >
                 נווטו עם Waze
               </a>
@@ -52,7 +53,7 @@ export default function MapSection() {
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center bg-foreground/[0.04] text-foreground border border-border rounded-md px-5 py-2.5 text-[13px] font-medium hover:bg-foreground/[0.08] transition-colors duration-200 no-underline"
+                className="text-center border border-primary-foreground/[0.1] text-primary-foreground/50 px-5 py-3 text-[13px] font-medium hover:text-primary-foreground/70 hover:border-primary-foreground/[0.15] transition-colors duration-200 no-underline"
               >
                 Google Maps
               </a>
@@ -60,13 +61,13 @@ export default function MapSection() {
           </div>
 
           {/* Map */}
-          <div className="rounded-lg overflow-hidden border border-border min-h-[280px] md:min-h-[340px] order-2">
+          <div className="min-h-[300px] md:min-h-[420px]">
             <iframe
               title="מיקום המוסך של צביקה – אור-צת שירותי רכב, ירושלים"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3391.5!2d35.1924!3d31.7857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z15TXkNeV16TXlCA0LCDXmdeo15XXqdec15nXnQ!5e0!3m2!1siw!2sil!4v1700000000000"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: 280 }}
+              style={{ border: 0, minHeight: 300 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
