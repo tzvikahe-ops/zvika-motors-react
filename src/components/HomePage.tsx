@@ -1,6 +1,7 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
 import heroImage from "@/assets/hero-garage.jpg";
 import mechanicImage from "@/assets/mechanic-work.jpg";
+import logoImage from "@/assets/logo.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
@@ -9,12 +10,23 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
     <div dir="rtl">
       {/* HERO */}
       <section
-        className="min-h-screen flex items-center pt-[72px] bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(to left, hsla(216,33%,96%,0.92) 45%, hsla(216,33%,96%,0.4) 100%), url('${heroImage}')`,
-        }}
+        className="min-h-screen flex items-center pt-[72px] bg-cover bg-center relative overflow-hidden"
       >
-        <div className="max-w-[1200px] mx-auto px-6 w-full">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('${logoImage}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(to left, hsla(216,33%,96%,0.88) 40%, hsla(216,33%,96%,0.7) 100%)`,
+          }}
+        />
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
           <div className="max-w-[560px] mr-auto">
             <h1 className="text-[clamp(36px,5vw,64px)] font-black leading-tight text-primary mb-6">
               המוסך של צביקה<br />המקצוענים שלך<br />בירושלים
