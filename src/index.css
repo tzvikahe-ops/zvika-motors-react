@@ -149,6 +149,16 @@
   position: relative;
 }
 
+.image-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid hsl(var(--brand-red) / 0.15);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Premium button system */

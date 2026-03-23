@@ -44,7 +44,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           </h1>
 
           <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.85] mb-8 md:mb-9 max-w-[400px]">
-            כבר למעלה מ-30 שנה, אנחנו מטפלים ברכבים באותה המקצועיות והשקיפות שהפכו אותנו למוסך שלקוחות סומכים עליו.
+            מוסך משפחתי בגבעת שאול, ירושלים. מעל 30 שנה של טיפול מקצועי, מחירים הוגנים, ובעל מקצוע שאפשר לדבר איתו ישירות.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -52,12 +52,12 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               onClick={() => setPage("contact")}
               className="btn-primary group"
             >
-              <span>קבעו תור עכשיו</span>
+              <span>תאמו ביקור במוסך</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover:-translate-x-1"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             </button>
             <a
               href="tel:02-6514446"
-              className="btn-outline text-center"
+              className="btn-outline-dark text-center no-underline"
             >
               02-6514446
             </a>
