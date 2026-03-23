@@ -88,7 +88,7 @@ const ServicesPage = () => {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="py-14 md:py-20 bg-background">
+      <section id="services-content" className="py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-black text-primary text-center mb-4">
             השירותים שלנו

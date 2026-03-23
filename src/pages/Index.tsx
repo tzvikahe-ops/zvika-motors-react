@@ -18,15 +18,29 @@ const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
 
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if (currentPage === "services") {
+      requestAnimationFrame(() => {
+        const el = document.getElementById("services-content");
+        if (el) {
+          const navHeight = 72;
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, left: 0, behavior: "auto" });
+          return;
+        }
+      });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
   }, [currentPage]);
 
   const setPage = (page: Page) => {
     if (page === currentPage) return;
     setCurrentPage(page);
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    if (page !== "services") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
   };
 
   return (
