@@ -12,17 +12,8 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
     <div>
       <HeroSection setPage={setPage} />
       <StatsStrip />
-
-      {/* Section divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-section-border to-transparent" />
-
       <ServicesSection setPage={setPage} />
-
       <WhyUsSection />
-
-      {/* Section divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-section-border to-transparent" />
-
       <ReviewsSection />
       <CTASection setPage={setPage} />
     </div>
