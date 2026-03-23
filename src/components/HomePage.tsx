@@ -18,9 +18,6 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="absolute inset-0 bg-primary/45" />
 
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
-          <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
-            שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
-          </p>
           <div className="flex gap-4 flex-wrap justify-center">
             <button
               onClick={() => setPage("contact")}
