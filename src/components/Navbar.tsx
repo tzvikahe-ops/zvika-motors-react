@@ -63,12 +63,12 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background px-6 py-4 flex flex-col gap-4 border-t border-border">
+        <div className="md:hidden bg-primary px-6 py-4 flex flex-col gap-4 border-t border-white/10">
           {links.filter(l => l.label !== "אודות").map(({ label, page }) => (
             <button
               key={label}
               onClick={() => { setPage(page); setMobileOpen(false); }}
-              className="bg-transparent border-none cursor-pointer text-base text-primary text-right py-2"
+              className="bg-transparent border-none cursor-pointer text-base text-white text-right py-2"
             >
               {label}
             </button>
