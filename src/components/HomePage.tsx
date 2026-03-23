@@ -80,7 +80,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               <SnowflakeIcon />
               <h3 className="font-extrabold text-[22px] text-primary">מיזוג אוויר</h3>
               <p className="text-muted-foreground leading-7">
-                מילוי גז, תיקון דליפות ושדרוג מערכות קירור לימי הקיץ הירושלמים.
+                מילוי גז, תיקון דליפות ושדרוג מערכות קירור לימי הקיץ.
               </p>
             </div>
 
