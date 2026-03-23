@@ -19,9 +19,6 @@ const ServicesPage = () => {
       <section className="relative py-20 md:py-28 bg-gradient-to-b from-primary/10 to-background">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6">שירותים</h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            עמוד השירותים החדש בבנייה. בינתיים ריכזנו כאן טמפלט מסודר עד שנעלה את כל התוכן המלא.
-          </p>
         </div>
       </section>
 
