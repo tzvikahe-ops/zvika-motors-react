@@ -1,7 +1,7 @@
 import HeroSection from "./home/HeroSection";
-import InfoStrip from "./home/InfoStrip";
-import ServicesSection from "./home/ServicesSection";
+import TrustStrip from "./home/TrustStrip";
 import WhyUsSection from "./home/WhyUsSection";
+import ServicesSection from "./home/ServicesSection";
 import ReviewsSection from "./home/ReviewsSection";
 import CTASection from "./home/CTASection";
 
@@ -11,9 +11,9 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <div>
       <HeroSection setPage={setPage} />
-      <InfoStrip />
-      <ServicesSection setPage={setPage} />
+      <TrustStrip />
       <WhyUsSection />
+      <ServicesSection setPage={setPage} />
       <ReviewsSection />
       <CTASection setPage={setPage} />
     </div>
