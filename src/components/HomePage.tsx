@@ -193,7 +193,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
 
       {/* CTA BANNER */}
       <section className="bg-primary py-20 px-6 text-center">
-        <h2 className="text-[34px] font-black text-primary-foreground mb-4">
+        <h2 className="text-[34px] font-extrabold text-primary-foreground mb-4 tracking-wide">
           צריכים טיפול לרכב? אנחנו כאן בשבילכם
         </h2>
         <p className="text-muted-foreground text-base mb-10 max-w-[500px] mx-auto">
