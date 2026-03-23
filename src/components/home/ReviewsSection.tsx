@@ -8,19 +8,19 @@ const reviews = [
 
 export default function ReviewsSection() {
   return (
-    <section className="bg-background py-14 md:py-20 px-6" dir="rtl" aria-label="המלצות לקוחות">
+    <section className="bg-background py-16 md:py-24 px-6" dir="rtl" aria-label="המלצות לקוחות">
       <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-[20px] md:text-[26px] font-black text-foreground mb-8">לקוחות ממליצים</h2>
+        <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-10">לקוחות ממליצים</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {reviews.map(({ text, author, location }) => (
             <div key={author}>
-              <div className="flex gap-0.5 mb-2">
+              <div className="flex gap-0.5 mb-3">
                 {[1, 2, 3, 4, 5].map((i) => <StarIcon key={i} />)}
               </div>
-              <p className="text-foreground/60 leading-[1.7] text-[12.5px] mb-3">{text}</p>
-              <p className="text-foreground text-[12.5px] font-bold">{author}</p>
-              <p className="text-muted-foreground text-[11px]">{location}</p>
+              <p className="text-foreground/55 leading-[1.8] text-[13px] mb-4 max-w-[320px]">{text}</p>
+              <p className="text-foreground text-[13px] font-bold">{author}</p>
+              <p className="text-muted-foreground text-[11px] mt-0.5">{location}</p>
             </div>
           ))}
         </div>
@@ -29,7 +29,7 @@ export default function ReviewsSection() {
           href="https://reviewthis.biz/dry-bird-8259"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-muted-foreground text-[12px] font-medium hover:text-foreground transition-colors duration-200 no-underline mt-8"
+          className="inline-flex items-center gap-2 text-muted-foreground text-[12px] font-medium hover:text-foreground transition-colors duration-200 no-underline mt-10"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" fill="#4285F4"/>
