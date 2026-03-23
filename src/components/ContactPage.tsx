@@ -35,6 +35,15 @@ export default function ContactPage() {
                   <div className="text-sm text-muted-foreground">א׳-ה׳: 08:00-16:30</div>
                 </div>
               </div>
+              <div className="flex items-start gap-3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brand-red mt-0.5 shrink-0">
+                  <rect x="2" y="4" width="20" height="16" rx="2" /><polyline points="22,4 12,13 2,4" />
+                </svg>
+                <div>
+                  <div className="font-bold text-sm text-primary">אימייל</div>
+                  <a href="mailto:ortzat1@gmail.com" className="text-sm text-muted-foreground hover:text-brand-red transition-colors">ortzat1@gmail.com</a>
+                </div>
+              </div>
             </div>
           </div>
 
