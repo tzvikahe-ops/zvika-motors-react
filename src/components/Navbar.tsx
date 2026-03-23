@@ -24,16 +24,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <div
           onClick={() => setPage("home")}
-          className="flex items-center gap-3 cursor-pointer"
+          className="cursor-pointer"
         >
-          <img src={logo} alt="לוגו המוסך של צביקה" className="h-10 w-auto" />
-          <div className="flex flex-col leading-tight">
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-black text-xl text-primary">המוסך של צביקה</span>
-              <span className="text-xs text-muted-foreground font-medium">(אור-צת שירותי רכב)</span>
-            </div>
-            <span className="text-[11px] text-muted-foreground">מתחדשים משנת 1993</span>
-          </div>
+          <img src={logo} alt="לוגו המוסך של צביקה - אור-צת שירותי רכב, מתחדשים משנת 1993" className="h-14 w-auto" />
         </div>
 
         {/* Desktop */}
