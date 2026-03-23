@@ -181,7 +181,7 @@ const ServicesPage = () => {
       <section className="py-10 bg-brand-red">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <p className="text-accent-foreground text-xl md:text-2xl font-bold">
-            אל תחכו שהבעיה תחמיר — קבעו טיפול עוד היום
+            אל תחכו שהבעיה תחמיר, קבעו טיפול עוד היום
           </p>
         </div>
       </section>
