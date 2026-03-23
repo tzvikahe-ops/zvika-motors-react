@@ -3,20 +3,23 @@ import { MapPin, Phone, Clock } from "lucide-react";
 export default function MapSection() {
   return (
     <section className="bg-surface-steel py-20 md:py-24 px-6" dir="rtl" aria-label="מצאו אותנו על המפה">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-4 tracking-wider">
-            מיקום המוסך
+      <div className="max-w-[1100px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-8 h-[3px] bg-brand-red rounded-full" />
+              <span className="text-brand-red text-[11px] font-bold tracking-wider">מיקום</span>
+            </div>
+            <h2 className="text-3xl md:text-[34px] font-black text-foreground leading-tight">
+              המוסך שלכם בירושלים
+            </h2>
+            <p className="text-muted-foreground text-sm mt-2">
+              גבעת שאול · חניה נוחה · גישה קלה מכל חלקי העיר
+            </p>
           </div>
-          <h2 className="text-3xl md:text-[34px] font-black text-foreground mb-3">
-            המוסך שלכם בירושלים, במרחק ניווט קצר
-          </h2>
-          <p className="text-muted-foreground text-sm max-w-lg mx-auto leading-relaxed">
-            אור-צת שירותי רכב ממוקמים ברחוב האופה 4, גבעת שאול. נווטו אלינו ישירות.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
           {/* Map embed */}
           <div className="rounded-lg overflow-hidden shadow-[var(--shadow-md)] border border-border min-h-[300px] md:min-h-[360px] order-2 md:order-1">
             <iframe
@@ -32,25 +35,30 @@ export default function MapSection() {
           </div>
 
           {/* Info card */}
-          <div className="bg-card rounded-lg p-8 md:p-10 shadow-[var(--shadow-md)] border border-border flex flex-col justify-between gap-6 order-1 md:order-2">
+          <div className="bg-card rounded-lg p-8 md:p-10 shadow-[var(--shadow-md)] border border-border flex flex-col justify-between gap-6 order-1 md:order-2 relative overflow-hidden">
+            {/* Red accent */}
+            <div className="absolute top-0 right-0 left-0 h-[3px] bg-brand-red" />
+            
             <div>
               <h3 className="font-black text-xl text-foreground mb-1">אור-צת שירותי רכב</h3>
               <p className="text-muted-foreground text-[11px] mb-6 font-medium">המוסך של צביקה · פועלים מאז 1993</p>
 
-              <div className="flex items-start gap-3 mb-5">
-                <MapPin size={18} className="text-brand-red mt-0.5 shrink-0" />
-                <div>
-                  <p className="font-bold text-sm text-foreground">האופה 4, ירושלים</p>
-                  <p className="text-muted-foreground text-[11px] mt-0.5">גבעת שאול · חניה נוחה ליד המוסך</p>
+              <div className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="text-brand-red mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-bold text-sm text-foreground">האופה 4, ירושלים</p>
+                    <p className="text-muted-foreground text-[11px] mt-0.5">גבעת שאול · חניה נוחה ליד המוסך</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-3 mb-5">
-                <Phone size={18} className="text-brand-red shrink-0" />
-                <a href="tel:02-6514446" className="font-bold text-sm text-foreground hover:text-brand-red transition-colors no-underline">02-651-4446</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock size={18} className="text-brand-red shrink-0" />
-                <p className="text-muted-foreground text-[13px]">א׳–ה׳ 08:00–16:30</p>
+                <div className="flex items-center gap-3">
+                  <Phone size={18} className="text-brand-red shrink-0" />
+                  <a href="tel:02-6514446" className="font-bold text-sm text-foreground hover:text-brand-red transition-colors no-underline">02-651-4446</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock size={18} className="text-brand-red shrink-0" />
+                  <p className="text-muted-foreground text-[13px]">א׳–ה׳ 08:00–16:30</p>
+                </div>
               </div>
             </div>
 
