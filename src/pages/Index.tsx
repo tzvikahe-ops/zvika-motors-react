@@ -1,16 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HomePage from "@/components/HomePage";
+import GalleryPage from "@/components/GalleryPage";
+import ContactPage from "@/components/ContactPage";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+type Page = "home" | "gallery" | "contact";
+
+const Index = () => {
+  const [currentPage, setCurrentPage] = useState<Page>("home");
+
+  const setPage = (page: Page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background font-sans">
+      <Navbar currentPage={currentPage} setPage={setPage} />
+      {currentPage === "home" && <HomePage setPage={setPage} />}
+      {currentPage === "gallery" && <GalleryPage />}
+      {currentPage === "contact" && <ContactPage />}
+      <Footer setPage={setPage} />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
