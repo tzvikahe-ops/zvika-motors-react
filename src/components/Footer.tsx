@@ -10,25 +10,25 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
 
   return (
     <footer className="bg-footer text-muted-foreground" dir="rtl">
-      <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-[1100px] mx-auto px-6 pt-14 pb-8 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <div className="font-serif font-extrabold text-lg text-primary-foreground tracking-wider mb-4">
+          <div className="font-sans font-extrabold text-lg text-primary-foreground tracking-wide mb-3">
             המוסך של צביקה
           </div>
-          <p className="text-sm leading-7 text-muted-foreground max-w-[280px]">
-            המוסך של צביקה (אור צת שירותי רכב)
+          <p className="text-[13px] leading-7 text-primary-foreground/50 max-w-[260px]">
+            אור-צת שירותי רכב
             <br />
-            אמינות ומקצועיות בשירות הרכב שלך בירושלים.
+            מוסך מקצועי בגבעת שאול, ירושלים. אמינות ושירות מאז 1993.
           </p>
         </div>
 
         <div>
-          <h4 className="text-primary-foreground font-bold mb-4 text-[15px]">ניווט מהיר</h4>
+          <h4 className="text-primary-foreground font-bold mb-4 text-sm">ניווט מהיר</h4>
           {quickLinks.map(({ label, page }) => (
             <button
               key={label}
               onClick={() => setPage(page)}
-              className="block bg-transparent border-none text-muted-foreground text-sm cursor-pointer py-1 text-right hover:text-primary-foreground transition-colors"
+              className="block bg-transparent border-none text-primary-foreground/50 text-[13px] cursor-pointer py-1.5 text-right hover:text-primary-foreground transition-colors duration-200"
             >
               {label}
             </button>
@@ -36,7 +36,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
 
         <div>
-          <h4 className="text-primary-foreground font-bold mb-4 text-[15px]">עזרה</h4>
+          <h4 className="text-primary-foreground font-bold mb-4 text-sm">עזרה</h4>
           {[
             { label: "צור קשר", action: () => setPage("contact") },
             { label: "מדיניות פרטיות", action: () => setPage("privacy") },
@@ -45,7 +45,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
             <button
               key={label}
               onClick={action}
-              className="block bg-transparent border-none text-muted-foreground text-sm cursor-pointer py-1 text-right hover:text-primary-foreground transition-colors"
+              className="block bg-transparent border-none text-primary-foreground/50 text-[13px] cursor-pointer py-1.5 text-right hover:text-primary-foreground transition-colors duration-200"
             >
               {label}
             </button>
@@ -53,7 +53,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
       </div>
 
-      <div className="border-t border-navy-light py-5 px-6 text-center text-[13px] text-muted-foreground">
+      <div className="border-t border-white/[0.08] py-5 px-6 text-center text-xs text-primary-foreground/40">
         © {new Date().getFullYear()} המוסך של צביקה. רחוב האופה 4 (בית הדפוס 24), ירושלים.
       </div>
     </footer>
