@@ -2,7 +2,7 @@ import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon,
 import heroImage from "@/assets/hero-garage.jpg";
 import mechanicImage from "@/assets/mechanic-work.jpg";
 
-type Page = "home" | "gallery" | "contact";
+type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
 export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
@@ -17,7 +17,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="max-w-[1200px] mx-auto px-6 w-full">
           <div className="max-w-[560px] mr-auto">
             <h1 className="text-[clamp(36px,5vw,64px)] font-black leading-tight text-primary mb-6">
-              המוסך של צביקה –<br />המקצוענים שלך<br />בירושלים
+              המוסך של צביקה<br />המקצוענים שלך<br />בירושלים
             </h1>
             <p className="text-[17px] text-muted-foreground leading-7 mb-9 max-w-[420px]">
               שירות אישי, שקיפות מלאה וניסיון של שנים בטיפול בכל סוגי הרכבים. אנחנו כאן כדי לשמור על הבטיחות שלך על הכביש.
@@ -102,9 +102,9 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             </div>
 
             {/* הכנה לטסט */}
-            <div className="bg-primary rounded-xl p-10 flex flex-col gap-4">
+            <div className="bg-gray-bg-light rounded-xl p-10 flex flex-col gap-4">
               <ChecklistIcon />
-              <h3 className="font-extrabold text-[22px] text-primary-foreground">הכנה לטסט</h3>
+              <h3 className="font-extrabold text-[22px] text-primary">הכנה לטסט</h3>
               <p className="text-muted-foreground leading-7">
                 בדיקה מקיפה והעברת מבחן הרישוי השנתי בראש שקט עבורך.
               </p>
@@ -166,6 +166,16 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              href="https://g.page/r/CWH4eCfd2MAOEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
+            >
+              כתבו לנו ביקורת בגוגל
+            </a>
           </div>
         </div>
       </section>

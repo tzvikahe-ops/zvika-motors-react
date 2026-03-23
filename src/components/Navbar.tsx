@@ -49,7 +49,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           onClick={() => setPage("contact")}
           className="hidden md:block bg-primary text-primary-foreground border-none rounded px-5 py-2.5 text-sm font-bold cursor-pointer hover:bg-navy-light transition-colors"
         >
-          Book Now
+          קבע תור
         </button>
 
         {/* Mobile hamburger */}
