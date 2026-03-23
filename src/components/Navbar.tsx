@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
 
-type Page = "home" | "gallery" | "contact";
+type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
 interface NavbarProps {
   currentPage: Page;
