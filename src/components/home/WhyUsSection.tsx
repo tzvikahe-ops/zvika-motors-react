@@ -8,48 +8,52 @@ const points = [
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-background py-16 md:py-28 px-5 sm:px-6 relative" dir="rtl" aria-label="למה לבחור בנו">
+    <section className="bg-background relative overflow-hidden" dir="rtl" aria-label="למה לבחור בנו">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="max-w-[1100px] mx-auto">
-        {/* Editorial header */}
-        <div className="max-w-[620px] mb-10 md:mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-wider">למה אנחנו</p>
+      {/* Full-width split: image left, content right (RTL) */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {/* Image — edge to edge */}
+        <div className="relative min-h-[300px] md:min-h-[580px]">
+          <img
+            src={mechanicImage}
+            alt="עבודת מכונאות מקצועית במוסך של צביקה"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            width={1024}
+            height={1024}
+          />
+          {/* Gradient blend on desktop */}
+          <div className="hidden md:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent" />
+          {/* Year badge overlay */}
+          <div className="absolute bottom-6 right-6 bg-surface-darker/90 backdrop-blur-sm px-4 py-2.5">
+            <span className="text-brand-red text-[20px] font-black leading-none">1993</span>
+            <span className="text-primary-foreground/40 text-[10px] font-bold block mt-0.5">שנת הקמה</span>
           </div>
-          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-4">
-            לקוחות שמגיעים אלינו<br className="hidden md:block" /> לא ממהרים לחפש מוסך אחר
-          </h2>
-          <p className="text-muted-foreground text-[13px] md:text-[14px] leading-[1.85] max-w-[460px]">
-            יש סיבה שרוב הלקוחות שלנו מגיעים דרך המלצה. כשעובדים ביושר ובמקצועיות, אנשים חוזרים.
-          </p>
         </div>
 
-        {/* Image with frame + stacked points */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 md:gap-16 items-start">
-          <div className="relative">
-            <div className="image-frame overflow-hidden aspect-[4/3]">
-              <img
-                src={mechanicImage}
-                alt="עבודת מכונאות מקצועית במוסך של צביקה"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1024}
-                height={1024}
-              />
-            </div>
+        {/* Content */}
+        <div className="px-6 sm:px-10 md:px-12 lg:px-16 py-16 md:py-20 flex flex-col justify-center">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">למה אנחנו</p>
           </div>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-black text-foreground tracking-[-0.03em] leading-[1.1] mb-4">
+            לקוחות שמגיעים אלינו<br /> לא ממהרים לחפש מוסך אחר
+          </h2>
+          <p className="text-muted-foreground text-[13px] md:text-[14px] leading-[1.85] max-w-[440px] mb-8">
+            יש סיבה שרוב הלקוחות שלנו מגיעים דרך המלצה. כשעובדים ביושר ובמקצועיות, אנשים חוזרים.
+          </p>
 
-          <div className="md:pt-2">
+          <div>
             {points.map(({ num, title, desc }, i) => (
               <div
                 key={i}
-                className={`relative py-6 md:py-7 pr-6 ${i > 0 ? "border-t border-border" : ""}`}
+                className={`relative py-5 md:py-6 pr-7 ${i > 0 ? "border-t border-border" : ""}`}
               >
-                <span className="absolute right-0 top-6 md:top-7 text-[11px] font-black text-brand-red/30">{num}</span>
-                <h4 className="font-bold text-[14px] md:text-[15px] text-foreground tracking-[-0.01em] mb-2">{title}</h4>
-                <p className="text-muted-foreground text-[12.5px] md:text-[13px] leading-[1.85] max-w-[340px]">{desc}</p>
+                <span className="absolute right-0 top-5 md:top-6 text-[11px] font-black text-brand-red/30">{num}</span>
+                <h4 className="font-bold text-[14px] md:text-[15px] text-foreground tracking-[-0.01em] mb-1.5">{title}</h4>
+                <p className="text-muted-foreground text-[12.5px] md:text-[13px] leading-[1.85] max-w-[380px]">{desc}</p>
               </div>
             ))}
           </div>
