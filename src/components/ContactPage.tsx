@@ -90,7 +90,7 @@ export default function ContactPage() {
                   <PhoneIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">טלפון</div>
-                    <div className="text-sm text-muted-foreground">02-652-1234</div>
+                    <div className="text-sm text-muted-foreground">02-6514446</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
