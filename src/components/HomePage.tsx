@@ -16,14 +16,15 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           className="absolute inset-0"
           style={{
             backgroundImage: `url('${logoImage}')`,
-            backgroundSize: "cover",
+            backgroundSize: "contain",
             backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to left, hsla(216,33%,96%,0.88) 40%, hsla(216,33%,96%,0.7) 100%)`,
+            background: `hsla(216,33%,96%,0.75)`,
           }}
         />
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
