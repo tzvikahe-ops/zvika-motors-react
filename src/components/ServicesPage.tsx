@@ -161,11 +161,11 @@ const ServicesPage = () => {
                     <StarIcon key={i} />
                   ))}
                 </div>
-                <p className="text-muted-foreground leading-7 text-[13px] text-right italic flex-1">
+                <p className="text-foreground/80 leading-7 text-[13.5px] text-right italic flex-1">
                   &ldquo;{text}&rdquo;
                 </p>
-                <div className="text-left mt-auto pt-3 border-t border-border/60">
-                  <p className="font-bold text-primary text-sm">{author}</p>
+                <div className="text-right mt-auto pt-3 border-t border-border/60">
+                  <p className="font-bold text-primary text-[13.5px]">{author}</p>
                   <p className="text-muted-foreground text-xs mt-0.5">{location}</p>
                 </div>
               </div>
