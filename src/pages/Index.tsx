@@ -22,14 +22,20 @@ const Index = () => {
   }, [currentPage]);
 
   const setPage = (page: Page) => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if (page === currentPage) return;
     setCurrentPage(page);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar currentPage={currentPage} setPage={setPage} />
-      {currentPage === "home" && <HomePage setPage={setPage} />}
+
+      <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
+        <HomePage setPage={setPage} />
+      </div>
       {currentPage === "services" && <ServicesPage />}
       {currentPage === "gallery" && <GalleryPage />}
       {currentPage === "contact" && <ContactPage />}
