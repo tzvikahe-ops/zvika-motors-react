@@ -23,7 +23,7 @@ const Index = () => {
       requestAnimationFrame(() => {
         const el = document.getElementById("services-content");
         if (el) {
-          const navHeight = 72;
+          const navHeight = 68;
           const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
           window.scrollTo({ top, left: 0, behavior: "auto" });
           return;
@@ -68,7 +68,7 @@ const Index = () => {
         href="https://wa.me/972526514446"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-[6.5rem] md:bottom-6 left-5 z-50 w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-[var(--shadow-lg)] hover:scale-105 transition-all duration-200"
+        className="fixed bottom-24 md:bottom-6 left-5 z-50 w-11 h-11 bg-[#25D366] rounded-md flex items-center justify-center shadow-[var(--shadow-lg)] hover:scale-105 transition-all duration-200"
         aria-label="שלח הודעה בוואטסאפ"
       >
         <WhatsAppIcon />

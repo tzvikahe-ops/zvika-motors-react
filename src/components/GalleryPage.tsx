@@ -13,19 +13,20 @@ export default function GalleryPage() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div dir="rtl" className="pt-[72px] min-h-screen bg-background">
-      <div className="max-w-[1100px] mx-auto px-6 py-20">
+    <div dir="rtl" className="pt-[68px] min-h-screen bg-background">
+      <div className="max-w-[1200px] mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">הגלריה שלנו</h1>
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-4 tracking-wider">גלריה</div>
+          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-3">הגלריה שלנו</h1>
           <p className="text-muted-foreground text-sm">הצצה לעבודה היומיומית במוסך של צביקה</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {galleryImages.map((img, i) => (
             <div
               key={i}
               onClick={() => setSelected(i)}
-              className="rounded-xl overflow-hidden aspect-[4/3] cursor-pointer group"
+              className="rounded-lg overflow-hidden aspect-[4/3] cursor-pointer group"
             >
               <img
                 src={img.src}
@@ -38,16 +39,15 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      {/* Lightbox */}
       {selected !== null && (
         <div
           onClick={() => setSelected(null)}
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6 cursor-pointer"
+          className="fixed inset-0 z-50 bg-surface-darker/90 backdrop-blur-sm flex items-center justify-center p-6 cursor-pointer"
         >
           <img
             src={galleryImages[selected].src.replace("w=600", "w=1200")}
             alt={galleryImages[selected].alt}
-            className="max-w-full max-h-[85vh] rounded-xl object-contain"
+            className="max-w-full max-h-[85vh] rounded-lg object-contain"
           />
         </div>
       )}
