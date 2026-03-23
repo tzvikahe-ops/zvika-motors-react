@@ -18,11 +18,8 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="absolute inset-0 bg-primary/45" />
 
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight drop-shadow-lg">
-            המוסך המוביל בירושלים
-          </h1>
           <p className="text-lg md:text-xl text-white/90 font-semibold leading-9 mb-10 max-w-[600px] mx-auto drop-shadow-md">
-            שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים. המוסך של צביקה – מוסך ירושלים שאפשר לסמוך עליו.
+            שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים.
           </p>
           <div className="flex gap-4 flex-wrap justify-center">
             <button
