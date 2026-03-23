@@ -2,12 +2,17 @@ type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | 
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
   return (
-    <footer className="bg-surface-darker border-t border-primary-foreground/[0.04]" dir="rtl">
-      <div className="max-w-[1100px] mx-auto px-6 py-14">
+    <footer className="bg-surface-darker relative" dir="rtl">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/[0.06] to-transparent" />
+
+      <div className="max-w-[1100px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_0.8fr] gap-10 md:gap-16">
           {/* Brand */}
           <div>
-            <div className="font-black text-[18px] text-primary-foreground mb-2">המוסך של צביקה</div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-0.5 bg-brand-red/40" />
+              <div className="font-black text-[18px] text-primary-foreground">המוסך של צביקה</div>
+            </div>
             <p className="text-primary-foreground/25 text-[12px] leading-[1.8] max-w-[280px] mb-6">
               אור-צת שירותי רכב. מעל 30 שנות ניסיון בטיפול מקצועי ואמין ברכבים, בגבעת שאול ירושלים.
             </p>
