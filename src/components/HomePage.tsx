@@ -12,7 +12,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         {/* Black background */}
         <div className="absolute inset-0 bg-black" />
 
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-32">
           <img
             src={logoImage}
             alt="לוגו המוסך"
