@@ -14,10 +14,10 @@ export default function CTASection({ setPage }: { setPage: (p: Page) => void }) 
               <p className="text-brand-red text-[11px] font-bold tracking-wider">צרו קשר</p>
             </div>
             <h2 className="text-[22px] sm:text-[26px] md:text-[28px] font-black text-primary-foreground tracking-[-0.02em] mb-2">
-              הרכב שלכם צריך טיפול?
+              רוצים לתאם ביקור?
             </h2>
             <p className="text-primary-foreground/35 text-[13px] leading-[1.75] max-w-[380px]">
-              התקשרו, שלחו וואטסאפ, או בואו ישירות למוסך. אנחנו כאן עבורכם א׳–ה׳ 08:00–16:30.
+              תתקשרו או תשלחו וואטסאפ ונתאם. אפשר גם פשוט להגיע, אנחנו כאן א׳–ה׳ 08:00–16:30.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">

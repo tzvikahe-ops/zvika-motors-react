@@ -52,12 +52,12 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               onClick={() => setPage("contact")}
               className="btn-primary group"
             >
-              <span>קבעו תור עכשיו</span>
+              <span>תאמו ביקור במוסך</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover:-translate-x-1"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             </button>
             <a
               href="tel:02-6514446"
-              className="btn-outline text-center"
+              className="btn-outline-dark text-center no-underline"
             >
               02-6514446
             </a>

@@ -19,10 +19,10 @@ export default function WhyUsSection() {
             <p className="text-brand-red text-[11px] font-bold tracking-wider">למה אנחנו</p>
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-4">
-            המוסך שלקוחות חוזרים אליו<br className="hidden md:block" /> שנה אחרי שנה
+            לקוחות שמגיעים אלינו<br className="hidden md:block" /> לא ממהרים לחפש מוסך אחר
           </h2>
           <p className="text-muted-foreground text-[13px] md:text-[14px] leading-[1.85] max-w-[460px]">
-            אנחנו לא רק מתקנים רכבים. אנחנו בונים יחסי אמון ארוכי טווח, עם שירות אנושי, מקצועיות ללא פשרות ומחויבות אישית לכל לקוח.
+            יש סיבה שרוב הלקוחות שלנו מגיעים דרך המלצה. כשעובדים ביושר ובמקצועיות, אנשים חוזרים.
           </p>
         </div>
 
