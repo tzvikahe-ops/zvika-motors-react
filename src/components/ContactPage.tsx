@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <LocationIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">כתובת</div>
-                    <div className="text-sm text-muted-foreground">רחוב האופה 4, גבעת שאול, ירושלים</div>
+                    <div className="text-sm text-muted-foreground">רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
