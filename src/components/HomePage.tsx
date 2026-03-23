@@ -1,7 +1,6 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
 import heroImage from "@/assets/hero-garage.jpg";
 import mechanicImage from "@/assets/mechanic-work.jpg";
-import logoImage from "@/assets/logo.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
@@ -9,37 +8,35 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <div dir="rtl">
       {/* HERO */}
-      <section
-        className="min-h-screen flex items-center pt-[72px] bg-cover bg-center relative overflow-visible"
-      >
+      <section className="relative min-h-[85vh] flex items-center pt-[72px] overflow-hidden">
+        {/* Background image with slow zoom animation */}
         <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url('${logoImage}')`,
-            backgroundSize: "contain",
-            backgroundPosition: "center 72px",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
+          style={{ backgroundImage: `url('${heroImage}')` }}
         />
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center">
-          <div className="mx-auto mt-[55vh]">
-            <p className="text-[20px] text-white font-extrabold leading-8 mb-9 max-w-[500px] mx-auto" style={{ WebkitTextStroke: '0.8px hsl(var(--brand-red))', paintOrder: 'stroke fill', textShadow: '0 0 8px rgba(0,0,0,0.8)' }}>
-              שירות אישי, שקיפות מלאה וניסיון של שנים בטיפול בכל סוגי הרכבים. אנחנו כאן כדי לשמור על הבטיחות שלך על הכביש.
-            </p>
-            <div className="flex gap-4 flex-wrap justify-center">
-              <button
-                onClick={() => setPage("contact")}
-                className="bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
-              >
-                קבע תור עכשיו
-              </button>
-              <button
-                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-gray-bg text-primary border-none rounded px-7 py-3.5 text-[15px] font-semibold cursor-pointer hover:bg-secondary transition-colors"
-              >
-                צפה בשירותים שלנו
-              </button>
-            </div>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-primary/70" />
+
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight drop-shadow-lg">
+            המוסך המוביל בירושלים
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 font-semibold leading-9 mb-10 max-w-[600px] mx-auto drop-shadow-md">
+            שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים. המוסך של צביקה – מוסך ירושלים שאפשר לסמוך עליו.
+          </p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <button
+              onClick={() => setPage("contact")}
+              className="bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors shadow-lg"
+            >
+              קבע תור עכשיו
+            </button>
+            <button
+              onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+              className="bg-white/15 text-white border border-white/30 rounded px-7 py-3.5 text-[15px] font-semibold cursor-pointer hover:bg-white/25 transition-colors backdrop-blur-sm"
+            >
+              צפה בשירותים שלנו
+            </button>
           </div>
         </div>
       </section>
