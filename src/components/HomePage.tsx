@@ -48,10 +48,10 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       <section className="bg-gray-bg py-10 px-6">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { icon: <ClockIcon />, title: "זמינות גבוהה", sub: "טיפול מהיר ויעיל" },
-            { icon: <EyeIcon />, title: "שקיפות מלאה", sub: "ללא הפתעות בחשבון" },
-            { icon: <HistoryIcon />, title: "מעל 30 שנה", sub: "ניסיון מקצועי בשטח" },
-            { icon: <ShieldIcon />, title: "אחריות מלאה", sub: "על כל חלקי החילוף" },
+            { icon: <ClockIcon />, title: "מענה מהיר", sub: "תיאום טיפול תוך יום עבודה" },
+            { icon: <EyeIcon />, title: "שקיפות מלאה", sub: "כל תיקון מוסבר ומאושר מראש" },
+            { icon: <HistoryIcon />, title: "מעל 30 שנה", sub: "ניסיון מוכח בכל סוגי הרכבים" },
+            { icon: <ShieldIcon />, title: "אחריות מלאה", sub: "על כל עבודה וחלקי חילוף" },
           ].map(({ icon, title, sub }) => (
             <div key={title} className="flex items-center gap-3 justify-center">
               <span className="text-primary opacity-70">{icon}</span>
@@ -70,16 +70,16 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-primary mb-3">השירותים שלנו</h2>
             <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto leading-relaxed">
-              כל מה שהרכב שלך צריך תחת קורת גג אחת, בסטנדרט הגבוה ביותר
+              טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים, הכל תחת קורת גג אחת
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* מיזוג אוויר */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <SnowflakeIcon />
-              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">מיזוג אוויר</h3>
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">מיזוג אוויר לרכב</h3>
               <p className="text-muted-foreground leading-7 text-sm">
-                מילוי גז, תיקון דליפות ושדרוג מערכות קירור לימי הקיץ.
+                מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים, בלי הפתעות במחיר.
               </p>
             </div>
 
@@ -88,7 +88,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               <div>
                 <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">מכונאות כללית</h3>
                 <p className="text-muted-foreground leading-7 text-sm">
-                  דיאגנוסטיקה ממוחשבת, טיפולים שוטפים ותיקוני מנוע ברמה הגבוהה ביותר לכל יצרני הרכב.
+                  טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.
                 </p>
               </div>
               <div className="opacity-15 hidden md:block"><WrenchIcon /></div>
@@ -100,7 +100,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               <div>
                 <h3 className="font-extrabold text-xl md:text-[22px] text-primary mb-3">דיאגנוסטיקה ממוחשבת</h3>
                 <p className="text-muted-foreground leading-7 text-sm">
-                  איתור תקלות מדויק באמצעות ציוד סריקה מתקדם המותאם לרכבים חדישים.
+                  איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.
                 </p>
               </div>
             </div>
@@ -108,9 +108,9 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             {/* הכנה לטסט */}
             <div className="bg-gray-bg-light rounded-xl p-8 md:p-10 flex flex-col gap-4">
               <ChecklistIcon />
-              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">הכנה לטסט</h3>
+              <h3 className="font-extrabold text-xl md:text-[22px] text-primary">הכנה לטסט שנתי</h3>
               <p className="text-muted-foreground leading-7 text-sm">
-                בדיקה מקיפה והעברת מבחן הרישוי השנתי בראש שקט עבורך.
+                בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.
               </p>
             </div>
           </div>
@@ -121,11 +121,14 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       <section className="bg-gray-bg-light py-16 md:py-24 px-6">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-8 md:mb-10">למה לבחור דווקא בנו?</h2>
+            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">למה לבחור דווקא בנו?</h2>
+            <p className="text-muted-foreground text-sm mb-8 md:mb-10 leading-relaxed">
+              כי אצלנו הרכב שלכם בידיים בטוחות, עם יחס אישי ושקיפות מלאה בכל שלב.
+            </p>
             {[
-              { num: "01", title: "מקצועיות ללא פשרות", desc: "צוות המוסך עובר השתלמויות תקופתיות כדי להישאר בחזית הטכנולוגיה של עולם הרכב." },
-              { num: "02", title: "שקיפות ויושרה", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר ומאושר על ידי הלקוח מראש." },
-              { num: "03", title: "מיקום מרכזי בירושלים", desc: "ממוקמים בלב אזור התעשייה גבעת שאול, נגישים וקרובים למרכז העיר." },
+              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "אנחנו מטפלים בכל סוגי הרכבים ומכירים כל דגם מקרוב. הניסיון שלנו זה הביטחון שלכם." },
+              { num: "02", title: "שקיפות מלאה ומחיר הוגן", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר, מתואם ומאושר על ידכם מראש." },
+              { num: "03", title: "שירות אישי ואחריות מלאה", desc: "כל לקוח מקבל יחס צמוד, מענה זמין ואחריות מלאה על כל עבודה שיוצאת מהמוסך." },
             ].map(({ num, title, desc }) => (
               <div key={num} className="grid grid-cols-[auto_1fr] gap-4 md:gap-5 mb-7 items-start">
                 <div className="bg-primary text-primary-foreground w-10 h-10 md:w-11 md:h-11 rounded flex items-center justify-center text-[13px] font-bold shrink-0">
@@ -152,23 +155,29 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* REVIEWS */}
       <section className="bg-background py-16 md:py-24 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-center text-3xl md:text-[34px] font-black text-primary mb-12">לקוחות מספרים</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">הלקוחות שלנו ממליצים</h2>
+            <p className="text-muted-foreground text-sm max-w-md mx-auto">
+              אנחנו גאים ביחסים ארוכי טווח עם הלקוחות שלנו. הנה מה שהם אומרים:
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { text: "שירות VIP. הכנה לטסט זריזה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. זה המוסך הקבוע שלי מעכשיו.", author: "דוד מזרחי, ירושלים" },
-              { text: "מוסך נקי, מסודר והכי חשוב - אמין. צביקה תמיד מסביר בדיוק מה הבעיה ומראה את החלקים שהוחלפו. מומלץ בחום!", author: "רונית לוי, מבשרת ציון" },
-              { text: "הגעתי לצביקה עם תקלה שמוסכים אחרים לא הצליחו לפתור. תוך שעה האוטו היה מוכן במחיר הוגן ביותר. שירות מעל המצופה.", author: "יוסי כהן, ירושלים" },
-            ].map(({ text, author }) => (
+              { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. מוסך שאפשר לסמוך עליו.", author: "דוד מזרחי", location: "ירושלים" },
+              { text: "מוסך נקי, מסודר ובעיקר אמין. צביקה תמיד מסביר מה הבעיה לפני שמתחילים לעבוד. אני לקוח קבוע כבר שנים.", author: "רונית לוי", location: "מבשרת ציון" },
+              { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. תוך שעה הרכב היה מוכן, במחיר הוגן ובלי הפתעות.", author: "יוסי כהן", location: "ירושלים" },
+            ].map(({ text, author, location }) => (
               <div key={author} className="bg-gray-bg-light rounded-xl p-7 border-b-[3px] border-brand-red flex flex-col gap-3">
                 <div className="flex gap-1 justify-end">
                   {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
                 </div>
-                <p className="text-muted-foreground leading-7 text-sm text-right italic">
+                <p className="text-muted-foreground leading-7 text-sm text-right italic flex-1">
                   "{text}"
                 </p>
-                <p className="font-bold text-primary text-sm text-left mt-auto">
-                  — {author}
-                </p>
+                <div className="text-left mt-auto pt-2 border-t border-border">
+                  <p className="font-bold text-primary text-sm">{author}</p>
+                  <p className="text-muted-foreground text-xs">{location}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -193,18 +202,26 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
 
       {/* CTA BANNER */}
       <section className="bg-primary py-16 md:py-20 px-6 text-center">
-        <h2 className="text-2xl md:text-[34px] font-extrabold text-primary-foreground mb-4 tracking-wide">
-          צריכים טיפול לרכב? אנחנו כאן בשבילכם
+        <h2 className="text-2xl md:text-[34px] font-extrabold text-primary-foreground mb-3 tracking-wide">
+          מחפשים מוסך שאפשר לסמוך עליו?
         </h2>
-        <p className="text-primary-foreground/60 text-sm md:text-base mb-8 max-w-[500px] mx-auto leading-relaxed">
-          קבעו תור עוד היום ותנו לנו לדאוג לרכב שלכם בצורה הטובה ביותר.
+        <p className="text-primary-foreground/70 text-sm md:text-base mb-8 max-w-[480px] mx-auto leading-relaxed">
+          התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
         </p>
-        <button
-          onClick={() => setPage("contact")}
-          className="bg-brand-red text-accent-foreground border-none rounded-lg px-8 py-4 text-base font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03]"
-        >
-          קבע תור עכשיו
-        </button>
+        <div className="flex gap-3 flex-wrap justify-center">
+          <button
+            onClick={() => setPage("contact")}
+            className="bg-brand-red text-accent-foreground border-none rounded-lg px-8 py-4 text-base font-bold cursor-pointer hover:bg-brand-red-hover transition-all hover:scale-[1.03]"
+          >
+            צרו קשר עכשיו
+          </button>
+          <a
+            href="tel:02-6514446"
+            className="bg-white/15 text-primary-foreground border border-white/25 rounded-lg px-8 py-4 text-base font-semibold hover:bg-white/25 transition-all no-underline"
+          >
+            02-6514446
+          </a>
+        </div>
       </section>
     </div>
   );

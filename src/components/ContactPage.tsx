@@ -5,8 +5,8 @@ export default function ContactPage() {
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
       <div className="max-w-[800px] mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <h1 className="text-4xl font-black text-primary mb-3">צור קשר</h1>
-          <p className="text-muted-foreground text-base">נשמח לשמוע ממך ולקבוע תור</p>
+          <h1 className="text-4xl font-black text-primary mb-3">צרו איתנו קשר</h1>
+          <p className="text-muted-foreground text-base">נשמח לענות על כל שאלה ולתאם טיפול בזמן שנוח לכם</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
