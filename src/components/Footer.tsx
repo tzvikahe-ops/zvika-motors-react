@@ -16,7 +16,9 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
             המוסך של צביקה
           </div>
           <p className="text-sm leading-7 text-muted-foreground max-w-[280px]">
-            המוסך של צביקה (אור צת שירותי רכב) אמינות ומקצועיות בשירות הרכב שלך בירושלים.
+            המוסך של צביקה (אור צת שירותי רכב)
+            <br />
+            אמינות ומקצועיות בשירות הרכב שלך בירושלים.
           </p>
         </div>
 
