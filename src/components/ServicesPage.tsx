@@ -199,8 +199,11 @@ const ServicesPage = () => {
           <h2 className="text-2xl md:text-[32px] font-black text-primary-foreground mb-3 leading-tight">
             מחפשים מוסך מקצועי בירושלים?
           </h2>
-          <p className="text-primary-foreground/60 mb-9 text-sm leading-relaxed max-w-md mx-auto">
-            התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
+          <p className="text-primary-foreground/65 mb-4 text-sm leading-relaxed max-w-md mx-auto">
+            התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי.
+          </p>
+          <p className="text-primary-foreground/35 text-xs mb-9">
+            מעל 30 שנות ניסיון · שקיפות מלאה · אחריות על כל טיפול
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <a

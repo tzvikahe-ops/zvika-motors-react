@@ -189,18 +189,20 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           מעל 30 שנות ניסיון · שקיפות מלאה · אחריות על כל טיפול
         </p>
         <div className="flex gap-3 flex-wrap justify-center">
-          <button
-            onClick={() => setPage("contact")}
-            className="bg-brand-red text-accent-foreground border-none rounded-[10px] px-8 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all duration-200 hover:scale-[1.02] shadow-[0_4px_16px_-4px_hsl(0_68%_32%/0.4)]"
-          >
-            צרו קשר עכשיו
-          </button>
-          <a
-            href="tel:02-6514446"
-            className="bg-white/10 text-primary-foreground border border-white/20 rounded-[10px] px-8 py-3.5 text-[15px] font-semibold hover:bg-white/[0.18] transition-all duration-200 no-underline"
-          >
-            02-6514446
-          </a>
+            <a
+              href="tel:02-6514446"
+              className="inline-flex items-center gap-2 bg-brand-red text-accent-foreground border-none rounded-[10px] px-8 py-3.5 text-[15px] font-bold hover:bg-brand-red-hover transition-all duration-200 hover:scale-[1.02] shadow-[0_4px_16px_-4px_hsl(0_68%_32%/0.4)] no-underline"
+            >
+              התקשרו עכשיו – 02-6514446
+            </a>
+            <a
+              href="https://wa.me/972526514446"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 text-primary-foreground border border-white/20 rounded-[10px] px-8 py-3.5 text-[15px] font-semibold hover:bg-white/[0.18] transition-all duration-200 no-underline"
+            >
+              שלחו הודעה בוואטסאפ
+            </a>
         </div>
       </section>
     </div>
