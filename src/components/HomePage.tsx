@@ -172,15 +172,21 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               type="button"
               onClick={async () => {
                 const reviewUrl = "https://www.google.com/maps?cid=11342985376033029774774291";
-                const popup = window.open(reviewUrl, "_blank", "noopener,noreferrer");
+                const isEmbeddedPreview = window.self !== window.top;
 
-                if (!popup) {
+                if (isEmbeddedPreview) {
                   try {
                     await navigator.clipboard.writeText(reviewUrl);
-                    alert("הדפדפן חסם פתיחה אוטומטית. הקישור הועתק ללוח — הדביקו אותו בדפדפן.");
+                    alert("במצב תצוגה מקדימה קישורי Google נחסמים. הקישור לביקורת הועתק ללוח.");
                   } catch {
-                    alert("הדפדפן חסם פתיחה אוטומטית. העתיקו את הקישור ידנית: https://www.google.com/maps?cid=11342985376033029774774291");
+                    alert("במצב תצוגה מקדימה קישורי Google נחסמים. העתיקו ידנית: https://www.google.com/maps?cid=11342985376033029774774291");
                   }
+                  return;
+                }
+
+                const popup = window.open(reviewUrl, "_blank", "noopener,noreferrer");
+                if (!popup) {
+                  alert("הדפדפן חסם חלון קופץ. אפשר להעתיק את הקישור: https://www.google.com/maps?cid=11342985376033029774774291");
                 }
               }}
               className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
