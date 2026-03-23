@@ -2,31 +2,32 @@ import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icon
 
 export default function ContactPage() {
   return (
-    <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
-      <div className="max-w-[800px] mx-auto px-6 py-20">
+    <div dir="rtl" className="pt-[68px] min-h-screen bg-background">
+      <div className="max-w-[900px] mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">צרו קשר עם המוסך</h1>
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-4 tracking-wider">יצירת קשר</div>
+          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-3">צרו קשר עם המוסך</h1>
           <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
-            נשמח לענות על כל שאלה ולתאם טיפול לרכב שלכם. פנו אלינו בטלפון, וואטסאפ או מייל – ונחזור אליכם במהירות.
+            נשמח לענות על כל שאלה ולתאם טיפול לרכב שלכם. פנו אלינו בטלפון, וואטסאפ או מייל.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Contact Info */}
-          <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40">
-            <h2 className="font-extrabold text-lg text-primary mb-6">פרטי התקשרות</h2>
+          <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-sm)] border border-border">
+            <h2 className="font-bold text-[16px] text-foreground mb-6">פרטי התקשרות</h2>
             <div className="flex flex-col gap-5">
               <div className="flex items-start gap-3">
                 <LocationIcon />
                 <div>
-                  <div className="font-bold text-[13px] text-primary">כתובת המוסך</div>
+                  <div className="font-bold text-[13px] text-foreground">כתובת המוסך</div>
                   <div className="text-[13px] text-muted-foreground mt-0.5">רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <PhoneIcon />
                 <div>
-                  <div className="font-bold text-[13px] text-primary">טלפון</div>
+                  <div className="font-bold text-[13px] text-foreground">טלפון</div>
                   <a href="tel:02-6514446" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">02-6514446</a>
                 </div>
               </div>
@@ -36,7 +37,7 @@ export default function ContactPage() {
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="#25D366" strokeWidth="1.5" fill="none"/>
                 </svg>
                 <div>
-                  <div className="font-bold text-[13px] text-primary">וואטסאפ</div>
+                  <div className="font-bold text-[13px] text-foreground">וואטסאפ</div>
                   <a href="https://wa.me/972526514446" target="_blank" rel="noopener noreferrer" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">שלחו הודעה בוואטסאפ</a>
                 </div>
               </div>
@@ -45,14 +46,14 @@ export default function ContactPage() {
                   <rect x="2" y="4" width="20" height="16" rx="2" /><polyline points="22,4 12,13 2,4" />
                 </svg>
                 <div>
-                  <div className="font-bold text-[13px] text-primary">אימייל</div>
+                  <div className="font-bold text-[13px] text-foreground">אימייל</div>
                   <a href="mailto:ortzat1@gmail.com" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">ortzat1@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <HoursIcon />
                 <div>
-                  <div className="font-bold text-[13px] text-primary">שעות פעילות</div>
+                  <div className="font-bold text-[13px] text-foreground">שעות פעילות</div>
                   <div className="text-[13px] text-muted-foreground mt-0.5">א׳–ה׳: 08:00–16:30</div>
                 </div>
               </div>
@@ -60,17 +61,15 @@ export default function ContactPage() {
           </div>
 
           {/* Navigation Card */}
-          <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 flex flex-col items-center justify-center text-center gap-3">
+          <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-sm)] border border-border flex flex-col items-center justify-center text-center gap-3">
             <MapPinIcon />
-            <h2 className="font-bold text-primary text-[15px]">המוסך ממוקם בגבעת שאול, ירושלים</h2>
-            <p className="text-[13px] text-muted-foreground leading-relaxed">
-              נגישים בקלות מכל חלק בעיר, עם חניה נוחה ליד המוסך
-            </p>
+            <h2 className="font-bold text-foreground text-[15px]">המוסך ממוקם בגבעת שאול, ירושלים</h2>
+            <p className="text-[13px] text-muted-foreground leading-relaxed">נגישים בקלות מכל חלק בעיר, עם חניה נוחה ליד המוסך</p>
             <a
               href="https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%94%D7%90%D7%95%D7%A4%D7%94%204%20%D7%92%D7%91%D7%A2%D7%AA%20%D7%A9%D7%90%D7%95%D7%9C%20%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-2 bg-brand-red text-accent-foreground border-none rounded-[10px] px-5 py-2.5 text-sm font-bold hover:bg-brand-red-hover transition-all duration-200 no-underline"
+              className="inline-flex items-center gap-2 mt-2 bg-brand-red text-accent-foreground rounded-md px-5 py-2.5 text-sm font-bold hover:bg-brand-red-hover transition-all duration-200 no-underline"
             >
               <WazeIcon />
               נווט אלינו ב-Waze
@@ -78,7 +77,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <p className="text-center text-muted-foreground text-xs mt-10 leading-relaxed">
+        <p className="text-center text-muted-foreground text-[11px] mt-10 leading-relaxed">
           המוסך של צביקה (אור-צת שירותי רכב) – מוסך מורשה בגבעת שאול, ירושלים. פועלים מאז 1993 עם אחריות מלאה על כל טיפול.
         </p>
       </div>

@@ -9,13 +9,16 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
   ];
 
   return (
-    <footer className="bg-footer text-muted-foreground" dir="rtl">
-      <div className="max-w-[1100px] mx-auto px-6 pt-14 pb-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-surface-darker text-primary-foreground/50" dir="rtl">
+      <div className="max-w-[1200px] mx-auto px-6 pt-14 pb-8 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <div className="font-sans font-extrabold text-lg text-primary-foreground tracking-wide mb-3">
-            המוסך של צביקה
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-brand-red rounded-md flex items-center justify-center">
+              <span className="text-accent-foreground font-black text-sm">צ</span>
+            </div>
+            <div className="font-bold text-[16px] text-primary-foreground">המוסך של צביקה</div>
           </div>
-          <p className="text-[13px] leading-7 text-primary-foreground/50 max-w-[260px]">
+          <p className="text-[12px] leading-7 text-primary-foreground/35 max-w-[260px]">
             אור-צת שירותי רכב
             <br />
             מוסך מקצועי בגבעת שאול, ירושלים. אמינות ושירות מאז 1993.
@@ -23,12 +26,12 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
 
         <div>
-          <h4 className="text-primary-foreground font-bold mb-4 text-sm">ניווט מהיר</h4>
+          <h4 className="text-primary-foreground/80 font-bold mb-4 text-[13px] tracking-wide">ניווט מהיר</h4>
           {quickLinks.map(({ label, page }) => (
             <button
               key={label}
               onClick={() => setPage(page)}
-              className="block bg-transparent border-none text-primary-foreground/50 text-[13px] cursor-pointer py-1.5 text-right hover:text-primary-foreground transition-colors duration-200"
+              className="block bg-transparent border-none text-primary-foreground/40 text-[12px] cursor-pointer py-1.5 text-right hover:text-primary-foreground/70 transition-colors duration-200"
             >
               {label}
             </button>
@@ -36,7 +39,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
 
         <div>
-          <h4 className="text-primary-foreground font-bold mb-4 text-sm">עזרה</h4>
+          <h4 className="text-primary-foreground/80 font-bold mb-4 text-[13px] tracking-wide">עזרה</h4>
           {[
             { label: "צור קשר", action: () => setPage("contact") },
             { label: "מדיניות פרטיות", action: () => setPage("privacy") },
@@ -45,7 +48,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
             <button
               key={label}
               onClick={action}
-              className="block bg-transparent border-none text-primary-foreground/50 text-[13px] cursor-pointer py-1.5 text-right hover:text-primary-foreground transition-colors duration-200"
+              className="block bg-transparent border-none text-primary-foreground/40 text-[12px] cursor-pointer py-1.5 text-right hover:text-primary-foreground/70 transition-colors duration-200"
             >
               {label}
             </button>
@@ -53,7 +56,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
       </div>
 
-      <div className="border-t border-white/[0.08] py-5 px-6 text-center text-xs text-primary-foreground/40">
+      <div className="border-t border-primary-foreground/[0.06] py-5 px-6 text-center text-[11px] text-primary-foreground/25">
         © {new Date().getFullYear()} המוסך של צביקה. רחוב האופה 4 (בית הדפוס 24), ירושלים.
       </div>
     </footer>
