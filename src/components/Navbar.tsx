@@ -63,7 +63,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
       {mobileOpen && (
         <div className="md:hidden bg-primary px-6 py-4 flex flex-col gap-4 border-t border-white/10">
-          {links.filter(l => l.label !== "אודות").map(({ label, page }) => (
+          {links.map(({ label, page }) => (
             <button
               key={label}
               onClick={() => { setPage(page); setMobileOpen(false); }}
