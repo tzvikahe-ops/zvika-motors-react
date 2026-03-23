@@ -17,7 +17,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           style={{
             backgroundImage: `url('${logoImage}')`,
             backgroundSize: "contain",
-            backgroundPosition: "top center",
+            backgroundPosition: "center 72px",
             backgroundRepeat: "no-repeat",
           }}
         />
