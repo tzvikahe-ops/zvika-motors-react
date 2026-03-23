@@ -11,7 +11,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       <section className="relative min-h-screen flex items-center pt-[72px]">
         <div className="absolute inset-0 bg-black" />
 
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20 md:py-28">
+        <div className="max-w-[1100px] mx-auto px-6 w-full relative z-10 text-center py-20 md:py-28">
           <div className="mx-auto mb-8 w-[85vw] max-w-[340px] md:w-[580px] md:max-w-none aspect-[945/540]">
             <img
               src={logoImage}

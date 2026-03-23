@@ -2,14 +2,14 @@ export default function PrivacyPolicy() {
   return (
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
       <div className="max-w-[800px] mx-auto px-6 py-20">
-        <h1 className="text-4xl font-black text-primary mb-4">מדיניות פרטיות</h1>
+        <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">מדיניות פרטיות</h1>
         <p className="text-muted-foreground text-sm mb-10">
           עדכון אחרון: מרץ 2026
         </p>
 
-        <div className="bg-background rounded-xl p-8 md:p-10 shadow-sm text-sm leading-8 text-muted-foreground flex flex-col gap-8">
+        <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 text-sm leading-8 text-muted-foreground flex flex-col gap-8">
           {/* Introduction */}
-          <p className="text-base leading-8">
+          <p className="text-[15px] leading-8">
             המוסך של צביקה – אור-צת שירותי רכב ("העסק", "אנחנו") מכבד את פרטיות לקוחותיו ומחויב להגנה על המידע האישי שלהם. מדיניות פרטיות זו מפרטת כיצד אנו אוספים, משתמשים, מאחסנים ומגנים על מידע אישי, בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, לרבות תיקון מס' 13 לחוק, ותקנות הגנת הפרטיות (אבטחת מידע), התשע"ז-2017.
           </p>
 
@@ -107,9 +107,9 @@ export default function PrivacyPolicy() {
             </p>
             <div className="bg-gray-bg rounded-lg p-5 flex flex-col gap-2">
               <p><strong className="text-foreground">המוסך של צביקה – אור-צת שירותי רכב</strong></p>
-              <p>כתובת: רחוב האופה 4, גבעת שאול, ירושלים</p>
-              <p>טלפון: <a href="tel:026521234" className="text-primary underline" dir="ltr">02-652-1234</a></p>
-              <p>וואטסאפ: <a href="https://wa.me/972526514446" className="text-primary underline" dir="ltr">052-651-4446</a></p>
+              <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
+              <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
+              <p>אימייל: <a href="mailto:ortzat1@gmail.com" className="text-primary underline">ortzat1@gmail.com</a></p>
             </div>
           </section>
 

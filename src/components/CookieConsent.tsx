@@ -20,7 +20,7 @@ export default function CookieConsent({ setPage }: { setPage: (p: Page) => void 
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[60] p-4 flex justify-center" dir="rtl">
+    <div className="fixed bottom-0 left-0 right-0 z-[60] p-4 pb-[calc(1rem+4.5rem)] md:pb-4 flex justify-center" dir="rtl">
       <div className="bg-background border border-border/60 rounded-xl shadow-[var(--shadow-lg)] max-w-[640px] w-full p-6 flex flex-col gap-3">
         <div className="flex items-start justify-between gap-4">
           <h3 className="font-bold text-primary text-sm">שימוש בעוגיות (Cookies)</h3>
