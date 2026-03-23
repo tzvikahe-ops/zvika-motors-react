@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon } from "./Icons";
+import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icons";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
@@ -104,6 +104,15 @@ export default function ContactPage() {
               <MapPinIcon />
               <h4 className="font-bold text-primary text-base">גבעת שאול, ירושלים</h4>
               <p className="text-sm text-muted-foreground">נגישים בקלות מכל חלק בעיר</p>
+              <a
+                href="https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%94%D7%90%D7%95%D7%A4%D7%94%204%20%D7%92%D7%91%D7%A2%D7%AA%20%D7%A9%D7%90%D7%95%D7%9C%20%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-2 bg-brand-red text-accent-foreground border-none rounded-lg px-5 py-2.5 text-sm font-bold hover:bg-brand-red-hover transition-colors"
+              >
+                <WazeIcon />
+                נווט אלינו ב-Waze
+              </a>
             </div>
           </div>
         </div>
