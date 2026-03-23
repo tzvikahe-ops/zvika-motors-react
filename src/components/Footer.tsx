@@ -1,4 +1,4 @@
-type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
+type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
   return (
