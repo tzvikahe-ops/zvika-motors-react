@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logo from "@/assets/logo-clean.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
