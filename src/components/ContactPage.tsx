@@ -83,21 +83,21 @@ export default function ContactPage() {
                   <LocationIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">כתובת</div>
-                    <div className="text-sm text-muted-foreground">רחוב האופה 4, גבעת שאול, ירושלים</div>
+                    <div className="text-sm text-muted-foreground">רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <PhoneIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">טלפון</div>
-                    <div className="text-sm text-muted-foreground">02-652-1234</div>
+                    <div className="text-sm text-muted-foreground">02-6514446</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <HoursIcon />
                   <div>
                     <div className="font-bold text-sm text-primary">שעות פעילות</div>
-                    <div className="text-sm text-muted-foreground">א׳-ה׳: 08:00-18:00 | ו׳: 08:00-13:00</div>
+                    <div className="text-sm text-muted-foreground">א׳-ה׳: 08:00-16:30</div>
                   </div>
                 </div>
               </div>
