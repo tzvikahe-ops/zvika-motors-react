@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 220 10% 97%;
+    --background: 0 0% 99%;
     --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
@@ -16,11 +16,11 @@
     --primary: 220 20% 14%;
     --primary-foreground: 40 20% 96%;
 
-    --secondary: 220 10% 93%;
+    --secondary: 220 8% 94%;
     --secondary-foreground: 220 25% 10%;
 
-    --muted: 220 10% 93%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 220 8% 94%;
+    --muted-foreground: 220 8% 42%;
 
     --accent: 4 72% 44%;
     --accent-foreground: 0 0% 100%;
@@ -28,8 +28,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 12% 88%;
-    --input: 220 12% 88%;
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
     --ring: 220 20% 14%;
 
     --radius: 0.5rem;
@@ -38,14 +38,17 @@
     --brand-red: 4 72% 44%;
     --brand-red-hover: 4 72% 50%;
     --brand-red-glow: 4 72% 44%;
-    --surface-dark: 220 20% 14%;
-    --surface-darker: 220 22% 9%;
-    --surface-warm: 30 15% 95%;
-    --surface-steel: 220 12% 91%;
+    --surface-dark: 220 22% 12%;
+    --surface-darker: 220 24% 8%;
+    --surface-warm: 30 12% 96%;
+    --surface-steel: 220 10% 95%;
     --gold-accent: 38 60% 56%;
-    --footer-bg: 220 22% 9%;
-    --gray-bg: 220 10% 93%;
-    --gray-bg-light: 220 10% 97%;
+    --footer-bg: 220 24% 8%;
+    --gray-bg: 220 8% 94%;
+    --gray-bg-light: 220 8% 97%;
+
+    /* Section divider */
+    --section-border: 220 10% 88%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,10 +59,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --shadow-sm: 0 1px 3px 0 hsl(220 20% 14% / 0.05);
-    --shadow-md: 0 4px 16px -4px hsl(220 20% 14% / 0.08), 0 2px 4px -2px hsl(220 20% 14% / 0.04);
-    --shadow-lg: 0 12px 32px -8px hsl(220 20% 14% / 0.12), 0 4px 8px -4px hsl(220 20% 14% / 0.06);
-    --shadow-xl: 0 20px 48px -12px hsl(220 20% 14% / 0.18);
+    --shadow-sm: 0 1px 3px 0 hsl(220 20% 14% / 0.04);
+    --shadow-md: 0 4px 20px -4px hsl(220 20% 14% / 0.08), 0 2px 4px -2px hsl(220 20% 14% / 0.03);
+    --shadow-lg: 0 12px 40px -8px hsl(220 20% 14% / 0.12), 0 4px 8px -4px hsl(220 20% 14% / 0.05);
+    --shadow-xl: 0 24px 56px -12px hsl(220 20% 14% / 0.18);
+    --shadow-card: 0 1px 3px hsl(220 20% 14% / 0.04), 0 0 0 1px hsl(220 10% 90% / 0.6);
   }
 }
 
@@ -113,8 +117,8 @@
   }
 
   h1, h2, h3, h4 {
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
   }
 }
 
