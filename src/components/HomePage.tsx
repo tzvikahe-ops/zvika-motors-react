@@ -44,7 +44,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           {[
             { icon: <ClockIcon />, title: "זמינות גבוהה", sub: "טיפול מהיר ויעיל" },
             { icon: <EyeIcon />, title: "שקיפות מלאה", sub: "ללא הפתעות בחשבון" },
-            { icon: <HistoryIcon />, title: "מעל 20 שנה", sub: "ניסיון מקצועי בשטח" },
+            { icon: <HistoryIcon />, title: "מעל 30 שנה", sub: "ניסיון מקצועי בשטח" },
             { icon: <ShieldIcon />, title: "אחריות מלאה", sub: "על כל חלקי החילוף" },
           ].map(({ icon, title, sub }) => (
             <div key={title} className="flex items-center gap-3 justify-center">
