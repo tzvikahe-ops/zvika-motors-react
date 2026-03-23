@@ -140,19 +140,19 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. מוסך שאפשר לסמוך עליו.", author: "דוד מזרחי", location: "ירושלים" },
-              { text: "מוסך נקי, מסודר ובעיקר אמין. צביקה תמיד מסביר מה הבעיה לפני שמתחילים לעבוד. אני לקוח קבוע כבר שנים.", author: "רונית לוי", location: "מבשרת ציון" },
-              { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. תוך שעה הרכב היה מוכן, במחיר הוגן ובלי הפתעות.", author: "יוסי כהן", location: "ירושלים" },
+              { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן את הבעיה תוך דקות ותיקן במחיר הוגן. מוסך שסומכים עליו.", author: "יוסי כהן", location: "ירושלים" },
+              { text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. לקוח קבוע כבר שנים ולא מחליף.", author: "רונית לוי", location: "מבשרת ציון" },
+              { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ לכל מי שמחפש מוסך אמין.", author: "דוד מזרחי", location: "ירושלים" },
             ].map(({ text, author, location }) => (
               <div key={author} className="bg-gray-bg-light rounded-xl p-7 border-b-[3px] border-brand-red flex flex-col gap-3 hover:shadow-[var(--shadow-md)] transition-shadow duration-200">
                 <div className="flex gap-0.5 justify-end">
                   {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
                 </div>
-                <p className="text-muted-foreground leading-7 text-[13px] text-right italic flex-1">
-                  "{text}"
+                <p className="text-foreground/80 leading-7 text-[13.5px] text-right italic flex-1">
+                  &ldquo;{text}&rdquo;
                 </p>
-                <div className="text-left mt-auto pt-3 border-t border-border/60">
-                  <p className="font-bold text-primary text-sm">{author}</p>
+                <div className="text-right mt-auto pt-3 border-t border-border/60">
+                  <p className="font-bold text-primary text-[13.5px]">{author}</p>
                   <p className="text-muted-foreground text-xs mt-0.5">{location}</p>
                 </div>
               </div>
