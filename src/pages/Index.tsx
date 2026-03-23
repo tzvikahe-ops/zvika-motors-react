@@ -10,6 +10,7 @@ import PrivacyPolicy from "@/components/PrivacyPolicy";
 import AccessibilityStatement from "@/components/AccessibilityStatement";
 import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
+import MapSection from "@/components/MapSection";
 import { WhatsAppIcon } from "@/components/Icons";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
