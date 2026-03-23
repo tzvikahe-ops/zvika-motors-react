@@ -20,7 +20,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm" dir="rtl">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-md" dir="rtl">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <div
           onClick={() => setPage("home")}
