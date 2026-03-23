@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
@@ -13,9 +13,12 @@ type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
 
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [currentPage]);
+
   const setPage = (page: Page) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   return (
