@@ -13,11 +13,18 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="absolute inset-0 bg-black" />
 
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-32">
-          <img
-            src={logoImage}
-            alt="לוגו המוסך"
-            className="mx-auto mb-8 w-[92vw] max-w-[380px] md:w-[680px] md:max-w-none h-auto"
-          />
+          <div className="mx-auto mb-8 w-[92vw] max-w-[380px] md:w-[680px] md:max-w-none aspect-[945/540]">
+            <img
+              src={logoImage}
+              alt="לוגו המוסך"
+              width={945}
+              height={540}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full h-full object-contain"
+            />
+          </div>
           <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
             שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
           </p>
