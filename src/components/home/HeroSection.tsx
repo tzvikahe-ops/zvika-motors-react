@@ -44,7 +44,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           </h1>
 
           <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.85] mb-8 md:mb-9 max-w-[400px]">
-            כבר למעלה מ-30 שנה, אנחנו מטפלים ברכבים באותה המקצועיות והשקיפות שהפכו אותנו למוסך שלקוחות סומכים עליו.
+            מוסך משפחתי בגבעת שאול, ירושלים. מעל 30 שנה של טיפול מקצועי, מחירים הוגנים, ובעל מקצוע שאפשר לדבר איתו ישירות.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
