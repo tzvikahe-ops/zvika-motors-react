@@ -24,9 +24,10 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <div
           onClick={() => setPage("home")}
-          className="cursor-pointer font-bold text-white text-lg"
+          className="cursor-pointer flex items-baseline gap-2"
         >
-          המוסך של צביקה
+          <span className="font-bold text-white text-xl">המוסך של צביקה</span>
+          <span className="text-white/70 text-xs font-medium">(אור צת שירותי רכב)</span>
         </div>
 
         {/* Desktop */}
