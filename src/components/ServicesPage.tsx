@@ -49,17 +49,17 @@ const ServicesPage = () => {
 
   const testimonials = [
     {
-      text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן את הבעיה תוך דקות ותיקן במחיר הוגן. מוסך שאפשר לסמוך עליו.",
+      text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן תוך דקות ותיקן במחיר הוגן. מוסך שסומכים עליו.",
       author: "יוסי כהן",
       location: "ירושלים",
     },
     {
-      text: "שירות מקצועי, נקי ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים לעבוד. אני לקוח קבוע כבר שנים ולא מחליף.",
+      text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. לקוח קבוע כבר שנים ולא מחליף.",
       author: "רונית לוי",
       location: "מבשרת ציון",
     },
     {
-      text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ בחום לכל מי שמחפש מוסך אמין בירושלים.",
+      text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ לכל מי שמחפש מוסך אמין.",
       author: "דוד מזרחי",
       location: "ירושלים",
     },
@@ -161,11 +161,11 @@ const ServicesPage = () => {
                     <StarIcon key={i} />
                   ))}
                 </div>
-                <p className="text-muted-foreground leading-7 text-[13px] text-right italic flex-1">
+                <p className="text-foreground/80 leading-7 text-[13.5px] text-right italic flex-1">
                   &ldquo;{text}&rdquo;
                 </p>
-                <div className="text-left mt-auto pt-3 border-t border-border/60">
-                  <p className="font-bold text-primary text-sm">{author}</p>
+                <div className="text-right mt-auto pt-3 border-t border-border/60">
+                  <p className="font-bold text-primary text-[13.5px]">{author}</p>
                   <p className="text-muted-foreground text-xs mt-0.5">{location}</p>
                 </div>
               </div>
@@ -199,8 +199,11 @@ const ServicesPage = () => {
           <h2 className="text-2xl md:text-[32px] font-black text-primary-foreground mb-3 leading-tight">
             מחפשים מוסך מקצועי בירושלים?
           </h2>
-          <p className="text-primary-foreground/60 mb-9 text-sm leading-relaxed max-w-md mx-auto">
-            התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
+          <p className="text-primary-foreground/65 mb-4 text-sm leading-relaxed max-w-md mx-auto">
+            התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי.
+          </p>
+          <p className="text-primary-foreground/35 text-xs mb-9">
+            מעל 30 שנות ניסיון · שקיפות מלאה · אחריות על כל טיפול
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <a

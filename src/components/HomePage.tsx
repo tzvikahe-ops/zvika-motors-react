@@ -25,8 +25,11 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
             />
           </div>
           <h1 className="sr-only">המוסך של צביקה – מוסך מקצועי בירושלים</h1>
-          <p className="text-sm md:text-[15px] text-white/75 font-normal mb-10 max-w-md mx-auto leading-relaxed tracking-wide">
+            <p className="text-sm md:text-[15px] text-white/70 font-normal mb-4 max-w-md mx-auto leading-relaxed tracking-wide">
             מוסך מקצועי בגבעת שאול, ירושלים. שירות אישי, שקיפות מלאה וניסיון של מעל 30 שנה בטיפול בכל סוגי הרכבים.
+          </p>
+          <p className="text-[11px] text-white/40 mb-10 tracking-wider font-medium">
+            האופה 4, גבעת שאול · א׳–ה׳ 08:00–16:30
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <button
@@ -76,10 +79,10 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { icon: <SnowflakeIcon />, title: "מיזוג אוויר לרכב בירושלים", desc: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים, בלי הפתעות במחיר." },
-              { icon: <WrenchIcon />, title: "מכונאות רכב כללית", desc: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה." },
-              { icon: <DiagIcon />, title: "דיאגנוסטיקה ממוחשבת לרכב", desc: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים." },
-              { icon: <ChecklistIcon />, title: "הכנה לטסט שנתי בירושלים", desc: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות." },
+              { icon: <WrenchIcon />, title: "מכונאות רכב כללית", desc: "טיפולים שוטפים, החלפת שמנים, תיקוני מנוע ובלמים. הרכב שלכם יוצא מהמוסך בטוח, מטופל ומוכן לדרך." },
+              { icon: <DiagIcon />, title: "דיאגנוסטיקה ממוחשבת", desc: "אבחון תקלות מדויק עם ציוד סריקה מתקדם – חוסך לכם זמן, כסף ותיקונים מיותרים." },
+              { icon: <SnowflakeIcon />, title: "מיזוג אוויר לרכב", desc: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נסיעה נעימה גם בקיץ הירושלמי, בלי הפתעות במחיר." },
+              { icon: <ChecklistIcon />, title: "הכנה לטסט שנתי", desc: "בדיקה מקיפה לפני מבחן הרישוי – נטפל בהכל כדי שתעברו בפעם הראשונה, בראש שקט." },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="bg-gray-bg-light rounded-xl p-8 md:p-9 flex flex-col gap-4 border border-transparent hover:border-border transition-all duration-200 group">
                 <div className="text-primary/60 group-hover:text-primary/80 transition-colors duration-200">{icon}</div>
@@ -97,12 +100,12 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div>
             <h2 className="text-3xl md:text-[34px] font-black text-primary mb-3">למה לקוחות בירושלים בוחרים בנו?</h2>
             <p className="text-muted-foreground text-sm mb-10 leading-relaxed">
-              כי אצלנו הרכב שלכם בידיים בטוחות – עם יחס אישי, שקיפות מלאה ואחריות בכל שלב.
+              כי אצלנו הרכב שלכם בידיים בטוחות – שקיפות מלאה, מחיר הוגן ואחריות על כל טיפול.
             </p>
             {[
-              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "מטפלים בכל סוגי הרכבים ומכירים כל דגם מקרוב. הניסיון שלנו בשירותי רכב בירושלים הוא הביטחון שלכם." },
-              { num: "02", title: "שקיפות מלאה ומחיר הוגן", desc: "אצלנו לא מחליפים חלקים ללא צורך. כל תיקון מוסבר, מתואם ומאושר על ידכם מראש." },
-              { num: "03", title: "שירות אישי ואחריות מלאה", desc: "כל לקוח מקבל יחס צמוד, מענה זמין ואחריות מלאה על כל עבודה שיוצאת מהמוסך." },
+              { num: "01", title: "ניסיון של מעל 30 שנה", desc: "אנחנו מכירים כל רכב מקרוב. מעל שלושה עשורים של טיפול מקצועי בירושלים – זה הביטחון שלכם." },
+              { num: "02", title: "שקיפות מלאה – בלי הפתעות", desc: "לא מחליפים חלקים בלי אישור. כל תיקון מוסבר לפני שמתחילים, והמחיר ברור מראש." },
+              { num: "03", title: "יחס אישי ואחריות מלאה", desc: "אצלנו כל לקוח מקבל מענה ישיר, יחס צמוד ואחריות מלאה על כל עבודה." },
             ].map(({ num, title, desc }) => (
               <div key={num} className="grid grid-cols-[auto_1fr] gap-4 mb-8 items-start">
                 <div className="bg-primary text-primary-foreground w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold shrink-0">
@@ -137,19 +140,19 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. מוסך שאפשר לסמוך עליו.", author: "דוד מזרחי", location: "ירושלים" },
-              { text: "מוסך נקי, מסודר ובעיקר אמין. צביקה תמיד מסביר מה הבעיה לפני שמתחילים לעבוד. אני לקוח קבוע כבר שנים.", author: "רונית לוי", location: "מבשרת ציון" },
-              { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. תוך שעה הרכב היה מוכן, במחיר הוגן ובלי הפתעות.", author: "יוסי כהן", location: "ירושלים" },
+              { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן את הבעיה תוך דקות ותיקן במחיר הוגן. מוסך שסומכים עליו.", author: "יוסי כהן", location: "ירושלים" },
+              { text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. לקוח קבוע כבר שנים ולא מחליף.", author: "רונית לוי", location: "מבשרת ציון" },
+              { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליץ לכל מי שמחפש מוסך אמין.", author: "דוד מזרחי", location: "ירושלים" },
             ].map(({ text, author, location }) => (
               <div key={author} className="bg-gray-bg-light rounded-xl p-7 border-b-[3px] border-brand-red flex flex-col gap-3 hover:shadow-[var(--shadow-md)] transition-shadow duration-200">
                 <div className="flex gap-0.5 justify-end">
                   {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
                 </div>
-                <p className="text-muted-foreground leading-7 text-[13px] text-right italic flex-1">
-                  "{text}"
+                <p className="text-foreground/80 leading-7 text-[13.5px] text-right italic flex-1">
+                  &ldquo;{text}&rdquo;
                 </p>
-                <div className="text-left mt-auto pt-3 border-t border-border/60">
-                  <p className="font-bold text-primary text-sm">{author}</p>
+                <div className="text-right mt-auto pt-3 border-t border-border/60">
+                  <p className="font-bold text-primary text-[13.5px]">{author}</p>
                   <p className="text-muted-foreground text-xs mt-0.5">{location}</p>
                 </div>
               </div>
@@ -177,24 +180,29 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* CTA BANNER */}
       <section className="bg-primary py-16 md:py-20 px-6 text-center" aria-label="יצירת קשר">
         <h2 className="text-2xl md:text-[32px] font-extrabold text-primary-foreground mb-3 tracking-wide">
-          מחפשים מוסך אמין בירושלים?
+          צריכים טיפול לרכב? אנחנו כאן בשבילכם
         </h2>
-        <p className="text-primary-foreground/60 text-sm mb-9 max-w-[440px] mx-auto leading-relaxed">
-          התקשרו, שלחו הודעה בוואטסאפ או השאירו פרטים. נחזור אליכם במהירות ונתאם טיפול בזמן שמתאים לכם.
+        <p className="text-primary-foreground/65 text-sm mb-4 max-w-[480px] mx-auto leading-relaxed">
+          התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי בזמן שמתאים לכם.
+        </p>
+        <p className="text-primary-foreground/35 text-xs mb-9">
+          מעל 30 שנות ניסיון · שקיפות מלאה · אחריות על כל טיפול
         </p>
         <div className="flex gap-3 flex-wrap justify-center">
-          <button
-            onClick={() => setPage("contact")}
-            className="bg-brand-red text-accent-foreground border-none rounded-[10px] px-8 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all duration-200 hover:scale-[1.02] shadow-[0_4px_16px_-4px_hsl(0_68%_32%/0.4)]"
-          >
-            צרו קשר עכשיו
-          </button>
-          <a
-            href="tel:02-6514446"
-            className="bg-white/10 text-primary-foreground border border-white/20 rounded-[10px] px-8 py-3.5 text-[15px] font-semibold hover:bg-white/[0.18] transition-all duration-200 no-underline"
-          >
-            02-6514446
-          </a>
+            <a
+              href="tel:02-6514446"
+              className="inline-flex items-center gap-2 bg-brand-red text-accent-foreground border-none rounded-[10px] px-8 py-3.5 text-[15px] font-bold hover:bg-brand-red-hover transition-all duration-200 hover:scale-[1.02] shadow-[0_4px_16px_-4px_hsl(0_68%_32%/0.4)] no-underline"
+            >
+              התקשרו עכשיו – 02-6514446
+            </a>
+            <a
+              href="https://wa.me/972526514446"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 text-primary-foreground border border-white/20 rounded-[10px] px-8 py-3.5 text-[15px] font-semibold hover:bg-white/[0.18] transition-all duration-200 no-underline"
+            >
+              שלחו הודעה בוואטסאפ
+            </a>
         </div>
       </section>
     </div>
