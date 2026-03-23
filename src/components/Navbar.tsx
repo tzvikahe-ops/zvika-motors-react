@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
+import logo from "@/assets/logo.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
@@ -21,12 +22,19 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm" dir="rtl">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
-        <span
+        <div
           onClick={() => setPage("home")}
-          className="font-extrabold text-lg text-primary cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer"
         >
-          המוסך של צביקה
-        </span>
+          <img src={logo} alt="לוגו המוסך של צביקה" className="h-10 w-auto" />
+          <div className="flex flex-col leading-tight">
+            <div className="flex items-baseline gap-1.5">
+              <span className="font-black text-xl text-primary">המוסך של צביקה</span>
+              <span className="text-xs text-muted-foreground font-medium">(אור-צת שירותי רכב)</span>
+            </div>
+            <span className="text-[11px] text-muted-foreground">מתחדשים משנת 1993</span>
+          </div>
+        </div>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
