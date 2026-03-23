@@ -16,7 +16,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <img
             src={logoImage}
             alt="לוגו המוסך"
-            className="mx-auto mb-8 w-[340px] md:w-[560px] h-auto"
+            className="mx-auto mb-8 w-[92vw] max-w-[380px] md:w-[680px] md:max-w-none h-auto"
           />
           <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
             שירות אישי, שקיפות מלאה וניסיון של למעלה מ-30 שנה בטיפול בכל סוגי הרכבים
