@@ -1,6 +1,6 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
-const logoImage = "/logo-full-transparent.png";
 import mechanicImage from "@/assets/mechanic-work.jpg";
+const logoImage = "/logo-full-transparent.png";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
