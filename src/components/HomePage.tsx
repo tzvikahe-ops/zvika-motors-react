@@ -2,7 +2,7 @@ import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon,
 import logoImage from "@/assets/logo-full-transparent.png";
 import mechanicImage from "@/assets/mechanic-work.jpg";
 
-type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
@@ -29,7 +29,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               קבע תור עכשיו
             </button>
             <button
-              onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => setPage("services")}
               className="bg-white/15 text-white border border-white/30 rounded px-7 py-3.5 text-[15px] font-semibold cursor-pointer hover:bg-white/25 transition-colors backdrop-blur-sm"
             >
               צפה בשירותים שלנו

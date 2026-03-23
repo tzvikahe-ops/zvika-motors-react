@@ -1,6 +1,13 @@
-type Page = "home" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
+  const quickLinks: { label: string; page: Page }[] = [
+    { label: "בית", page: "home" },
+    { label: "שירותים", page: "services" },
+    { label: "אודות", page: "about" },
+    { label: "גלריה", page: "gallery" },
+  ];
+
   return (
     <footer className="bg-footer text-muted-foreground" dir="rtl">
       <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-8 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -15,13 +22,13 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
 
         <div>
           <h4 className="text-primary-foreground font-bold mb-4 text-[15px]">ניווט מהיר</h4>
-          {["שירותים", "אודות", "גלריה"].map((item) => (
+          {quickLinks.map(({ label, page }) => (
             <button
-              key={item}
-              onClick={() => setPage(item === "גלריה" ? "gallery" : item === "אודות" ? "about" : "home")}
+              key={label}
+              onClick={() => setPage(page)}
               className="block bg-transparent border-none text-muted-foreground text-sm cursor-pointer py-1 text-right hover:text-primary-foreground transition-colors"
             >
-              {item}
+              {label}
             </button>
           ))}
         </div>
