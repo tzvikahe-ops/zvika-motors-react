@@ -170,12 +170,17 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
           <div className="text-center mt-10">
             <button
               type="button"
-              onClick={() => {
+              onClick={async () => {
                 const reviewUrl = "https://www.google.com/maps?cid=11342985376033029774774291";
                 const popup = window.open(reviewUrl, "_blank", "noopener,noreferrer");
 
                 if (!popup) {
-                  window.location.href = reviewUrl;
+                  try {
+                    await navigator.clipboard.writeText(reviewUrl);
+                    alert("הדפדפן חסם פתיחה אוטומטית. הקישור הועתק ללוח — הדביקו אותו בדפדפן.");
+                  } catch {
+                    alert("הדפדפן חסם פתיחה אוטומטית. העתיקו את הקישור ידנית: https://www.google.com/maps?cid=11342985376033029774774291");
+                  }
                 }
               }}
               className="inline-block bg-brand-red text-accent-foreground border-none rounded px-7 py-3.5 text-[15px] font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
