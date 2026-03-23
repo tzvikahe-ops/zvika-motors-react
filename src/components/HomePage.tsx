@@ -1,5 +1,5 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
-import logoImage from "@/assets/logo-clean.png";
+import logoImage from "@/assets/logo-full.png";
 import mechanicImage from "@/assets/mechanic-work.jpg";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
