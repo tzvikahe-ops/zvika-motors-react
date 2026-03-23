@@ -37,8 +37,8 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               onClick={() => setPage(page)}
               className={`bg-transparent border-none cursor-pointer text-[15px] pb-0.5 transition-colors ${
                 currentPage === page
-                  ? "text-primary font-bold border-b-2 border-brand-red"
-                  : "text-muted-foreground font-normal border-b-2 border-transparent hover:text-primary"
+                  ? "text-white font-bold border-b-2 border-brand-red"
+                  : "text-white/70 font-normal border-b-2 border-transparent hover:text-white"
               }`}
             >
               {label}
