@@ -8,7 +8,14 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <div dir="rtl">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center pt-[72px] overflow-hidden bg-black">
+      <section className="relative min-h-screen flex items-center pt-[72px] overflow-hidden">
+        {/* Background image with slow zoom animation */}
+        <div
+          className="absolute inset-0 bg-cover bg-top"
+          style={{ backgroundImage: `url('${heroImage}')` }}
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-primary/45" />
 
         <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 text-center py-20">
           <p className="text-base md:text-lg text-white/85 font-medium mb-10 drop-shadow-md">
