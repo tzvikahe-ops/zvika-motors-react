@@ -7,6 +7,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const text = `שם: ${form.name}\nטלפון: ${form.phone}\nהודעה: ${form.message}`;
+    const url = `https://wa.me/972526514446?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
     setSubmitted(true);
     setForm({ name: "", phone: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
