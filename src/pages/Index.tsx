@@ -8,6 +8,8 @@ import ContactPage from "@/components/ContactPage";
 import AboutPage from "@/components/AboutPage";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import AccessibilityStatement from "@/components/AccessibilityStatement";
+import CookieConsent from "@/components/CookieConsent";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import { WhatsAppIcon } from "@/components/Icons";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
@@ -35,6 +37,9 @@ const Index = () => {
       {currentPage === "privacy" && <PrivacyPolicy />}
       {currentPage === "accessibility" && <AccessibilityStatement />}
       <Footer setPage={setPage} />
+
+      <CookieConsent setPage={setPage} />
+      <AccessibilityWidget setPage={setPage} />
 
       {/* WhatsApp Floating Button */}
       <a
