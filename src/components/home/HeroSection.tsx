@@ -21,43 +21,43 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
         <div className="absolute inset-0 bg-surface-darker/20" />
       </div>
 
-      {/* Subtle grid pattern over image */}
+      {/* Subtle grid pattern */}
       <div className="absolute inset-0 pattern-grid opacity-40" />
 
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24 min-h-[82svh] flex flex-col justify-center">
+      <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-6 pt-24 pb-14 md:pt-36 md:pb-24 min-h-[85svh] md:min-h-[82svh] flex flex-col justify-center">
         <div className="max-w-[520px]">
           {/* Accent line + eyebrow */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-5 md:mb-6">
             <div className="w-8 h-px bg-brand-red/60" />
             <p className="text-primary-foreground/40 text-[11px] font-medium tracking-wider">
               גבעת שאול, ירושלים · מאז 1993
             </p>
           </div>
 
-          <h1 className="mb-6">
-            <span className="block text-[34px] md:text-[48px] lg:text-[58px] font-black text-primary-foreground leading-[1.02] tracking-[-0.03em]">
+          <h1 className="mb-5 md:mb-6">
+            <span className="block text-[30px] sm:text-[36px] md:text-[48px] lg:text-[58px] font-black text-primary-foreground leading-[1.05] tracking-[-0.03em]">
               הרכב שלכם
             </span>
-            <span className="block text-[34px] md:text-[48px] lg:text-[58px] font-black leading-[1.02] tracking-[-0.03em] text-brand-red">
-              בידיים בטוחות.
+            <span className="block text-[30px] sm:text-[36px] md:text-[48px] lg:text-[58px] font-black leading-[1.05] tracking-[-0.03em] text-brand-red">
+              בידיים הכי בטוחות.
             </span>
           </h1>
 
-          <p className="text-primary-foreground/45 text-[15px] leading-[1.8] mb-9 max-w-[420px]">
-            מעל 30 שנה של מקצועיות ושקיפות מלאה.
-            טיפולים, תיקונים, דיאגנוסטיקה והכנה לטסט.
+          <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.85] mb-8 md:mb-9 max-w-[400px]">
+            כבר למעלה מ-30 שנה, אנחנו מטפלים ברכבים באותה המקצועיות והשקיפות שהפכו אותנו למוסך שלקוחות סומכים עליו.
           </p>
 
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <button
               onClick={() => setPage("contact")}
-              className="bg-brand-red text-accent-foreground border-none px-8 py-3.5 text-[13px] font-bold cursor-pointer hover:bg-brand-red-hover transition-all duration-200 shadow-[0_4px_24px_-6px_hsl(var(--brand-red)/0.4)]"
+              className="btn-primary group"
             >
-              קבעו תור
+              <span>קבעו תור עכשיו</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover:-translate-x-1"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             </button>
             <a
               href="tel:02-6514446"
-              className="text-primary-foreground/55 text-[15px] font-bold hover:text-primary-foreground transition-colors duration-200 no-underline"
+              className="btn-outline text-center"
             >
               02-6514446
             </a>

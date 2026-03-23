@@ -1,36 +1,38 @@
 import { StarIcon } from "../Icons";
 
 const reviews = [
-  { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן את הבעיה תוך דקות ותיקן במחיר הוגן.", author: "יוסי כ.", initials: "יכ" },
-  { text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. לקוח קבוע כבר שנים.", author: "רונית ל.", initials: "רל" },
-  { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. ממליצה בחום.", author: "דוד מ.", initials: "דמ" },
+  { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן את הבעיה תוך דקות ותיקן במחיר הוגן. מרגישים שהם באמת מבינים רכבים.", author: "יוסי כ.", initials: "יכ" },
+  { text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. אנחנו לקוחות קבועים כבר שנים ולא מתכוונים להחליף.", author: "רונית ל.", initials: "רל" },
+  { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון. אנושי, ישיר ומקצועי. ממליצה בחום.", author: "דוד מ.", initials: "דמ" },
 ];
 
 export default function ReviewsSection() {
   return (
-    <section className="bg-background py-20 md:py-28 px-6 relative" dir="rtl" aria-label="המלצות לקוחות">
+    <section className="bg-background py-16 md:py-28 px-5 sm:px-6 relative" dir="rtl" aria-label="המלצות לקוחות">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-[1100px] mx-auto">
-        <div className="mb-12">
+        <div className="mb-10 md:mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-brand-red/50" />
             <p className="text-brand-red text-[11px] font-bold tracking-wider">המלצות</p>
           </div>
-          <h2 className="text-[26px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12]">לקוחות ממליצים</h2>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12]">
+            מה הלקוחות שלנו אומרים
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {reviews.map(({ text, author, initials }) => (
-            <div key={author} className="relative bg-card border border-border p-7 md:p-8 shadow-[var(--shadow-card)]">
+            <div key={author} className="relative bg-card border border-border p-6 sm:p-7 md:p-8 shadow-[var(--shadow-card)]">
               {/* Accent corner */}
               <div className="absolute top-0 right-0 w-12 h-px bg-brand-red/30" />
               <div className="absolute top-0 right-0 w-px h-12 bg-brand-red/30" />
 
-              <div className="flex gap-0.5 mb-5">
+              <div className="flex gap-0.5 mb-4 md:mb-5">
                 {[1, 2, 3, 4, 5].map((i) => <StarIcon key={i} />)}
               </div>
-              <blockquote className="text-foreground/60 leading-[1.85] text-[13.5px] mb-6">
+              <blockquote className="text-foreground/55 leading-[1.85] text-[13px] mb-5 md:mb-6">
                 &ldquo;{text}&rdquo;
               </blockquote>
               <div className="flex items-center gap-3">
@@ -43,7 +45,7 @@ export default function ReviewsSection() {
           ))}
         </div>
 
-        <div className="mt-10 pt-8 border-t border-border flex items-center justify-between">
+        <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
           <a
             href="https://reviewthis.biz/dry-bird-8259"
             target="_blank"

@@ -5,15 +5,15 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
     <footer className="bg-surface-darker relative" dir="rtl">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/[0.06] to-transparent" />
 
-      <div className="max-w-[1100px] mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_0.8fr] gap-10 md:gap-16">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.3fr_1fr_0.8fr] gap-8 md:gap-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-brand-red/40" />
-              <div className="font-black text-[18px] text-primary-foreground">המוסך של צביקה</div>
+              <div className="font-black text-[17px] md:text-[18px] text-primary-foreground">המוסך של צביקה</div>
             </div>
-            <p className="text-primary-foreground/25 text-[12px] leading-[1.8] max-w-[280px] mb-6">
+            <p className="text-primary-foreground/25 text-[12px] leading-[1.85] max-w-[280px] mb-5">
               אור-צת שירותי רכב. מעל 30 שנות ניסיון בטיפול מקצועי ואמין ברכבים, בגבעת שאול ירושלים.
             </p>
             <div className="flex items-center gap-5">
@@ -32,7 +32,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           </div>
 
           {/* Navigation */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-1">
               <p className="text-primary-foreground/15 text-[10px] font-bold tracking-wider mb-3">ניווט</p>
               {[
@@ -71,7 +71,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           {/* Info */}
           <div>
             <p className="text-primary-foreground/15 text-[10px] font-bold tracking-wider mb-3">פרטים</p>
-            <div className="space-y-3 text-primary-foreground/30 text-[12px] leading-[1.7]">
+            <div className="space-y-3 text-primary-foreground/30 text-[12px] leading-[1.75]">
               <p>האופה 4, גבעת שאול<br />ירושלים</p>
               <p>א׳–ה׳ 08:00–16:30</p>
             </div>
@@ -79,8 +79,8 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/[0.04] py-5 px-6">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <div className="border-t border-primary-foreground/[0.04] py-4 md:py-5 px-5 sm:px-6">
+        <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
           <p className="text-primary-foreground/15 text-[10px]">
             © {new Date().getFullYear()} המוסך של צביקה — אור-צת שירותי רכב
           </p>
