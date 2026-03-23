@@ -11,16 +11,13 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
         <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-12 md:py-20 order-2 md:order-1">
           <div className="max-w-[500px] mx-auto md:mx-0 md:mr-auto">
 
-            {/* Eyebrow — replaces big logo */}
-            <div className="flex items-center gap-2.5 mb-5 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="w-[3px] h-10 bg-brand-red rounded-full" />
-              <div>
-                <span className="block text-primary-foreground/70 text-[13px] font-bold leading-tight">המוסך של צביקה</span>
-                <span className="block text-primary-foreground/30 text-[11px] font-medium leading-tight">אור-צת שירותי רכב · מאז 1993</span>
-              </div>
+            {/* 1. Trust signal badge */}
+            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-3.5 py-1.5 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-brand-red text-[11px] font-bold tracking-wide">מוסך מורשה · פעיל מאז 1993</span>
             </div>
 
-            {/* Headline */}
+            {/* 2. Headline */}
             <h1 className="opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <span className="block text-[30px] md:text-[44px] lg:text-[52px] font-black text-primary-foreground leading-[1.05]">
                 הרכב שלכם
@@ -30,11 +27,12 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               </span>
             </h1>
 
+            {/* 3. Supporting copy */}
             <p className="text-primary-foreground/40 text-[13px] md:text-[14px] leading-[1.8] mt-5 mb-8 max-w-[380px] opacity-0 animate-fade-up" style={{ animationDelay: "0.35s" }}>
-              טיפולים, תיקונים, דיאגנוסטיקה והכנה לטסט — מעל 30 שנה של מקצועיות ושקיפות מלאה, הכל במקום אחד בגבעת שאול.
+              טיפולים, תיקונים, דיאגנוסטיקה והכנה לטסט — מעל 30 שנה של מקצועיות ושקיפות מלאה, הכל במקום אחד בגבעת שאול, ירושלים.
             </p>
 
-            {/* CTAs */}
+            {/* 4. CTA row */}
             <div className="flex gap-3 flex-wrap opacity-0 animate-fade-up" style={{ animationDelay: "0.5s" }}>
               <button
                 onClick={() => setPage("contact")}
@@ -53,13 +51,21 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               </a>
             </div>
 
-            {/* Trust row — compact, inline */}
-            <div className="flex items-center gap-4 mt-10 text-[11px] text-primary-foreground/25 font-medium opacity-0 animate-fade-up" style={{ animationDelay: "0.65s" }}>
-              <span>30+ שנות ניסיון</span>
-              <span className="w-1 h-1 rounded-full bg-primary-foreground/15" />
-              <span>שקיפות מלאה</span>
-              <span className="w-1 h-1 rounded-full bg-primary-foreground/15" />
-              <span>אחריות על כל טיפול</span>
+            {/* 5. Mini trust facts */}
+            <div className="flex items-center gap-5 mt-10 opacity-0 animate-fade-up" style={{ animationDelay: "0.65s" }}>
+              {[
+                { value: "30+", label: "שנה" },
+                { value: "100%", label: "שקיפות" },
+                { value: "✓", label: "אחריות" },
+              ].map(({ value, label }, i) => (
+                <div key={label} className="flex items-center gap-4">
+                  {i > 0 && <span className="w-px h-6 bg-primary-foreground/[0.08]" />}
+                  <div className="text-center">
+                    <div className="text-primary-foreground/70 font-black text-[16px] md:text-[18px] leading-none">{value}</div>
+                    <div className="text-primary-foreground/25 text-[9px] font-medium mt-1 tracking-wide">{label}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
