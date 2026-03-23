@@ -36,7 +36,7 @@ const AboutPage = () => {
               {
                 icon: <Shield className="w-8 h-8 text-primary" />,
                 title: "שקיפות מלאה",
-                description: "אנחנו מאמינים בשקיפות — תמיד תדעו מה מתוקן ומה העלות.",
+                description: "אנחנו מאמינים בשקיפות, תמיד תדעו מה מתוקן ומה העלות.",
               },
               {
                 icon: <Wrench className="w-8 h-8 text-primary" />,
