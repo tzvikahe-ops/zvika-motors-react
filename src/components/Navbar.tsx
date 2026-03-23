@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-clean.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
@@ -20,7 +20,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm" dir="rtl">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-md" dir="rtl">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px]">
         <div
           onClick={() => setPage("home")}
@@ -37,8 +37,8 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               onClick={() => setPage(page)}
               className={`bg-transparent border-none cursor-pointer text-[15px] pb-0.5 transition-colors ${
                 currentPage === page
-                  ? "text-primary font-bold border-b-2 border-brand-red"
-                  : "text-muted-foreground font-normal border-b-2 border-transparent hover:text-primary"
+                  ? "text-white font-bold border-b-2 border-brand-red"
+                  : "text-white/70 font-normal border-b-2 border-transparent hover:text-white"
               }`}
             >
               {label}
@@ -48,7 +48,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setPage("contact")}
-          className="hidden md:block bg-primary text-primary-foreground border-none rounded px-5 py-2.5 text-sm font-bold cursor-pointer hover:bg-navy-light transition-colors"
+          className="hidden md:block bg-brand-red text-accent-foreground border-none rounded px-5 py-2.5 text-sm font-bold cursor-pointer hover:bg-brand-red-hover transition-colors"
         >
           קבע תור
         </button>
@@ -56,19 +56,19 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary"
+          className="md:hidden bg-transparent border-none cursor-pointer text-white"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background px-6 py-4 flex flex-col gap-4 border-t border-border">
+        <div className="md:hidden bg-primary px-6 py-4 flex flex-col gap-4 border-t border-white/10">
           {links.filter(l => l.label !== "אודות").map(({ label, page }) => (
             <button
               key={label}
               onClick={() => { setPage(page); setMobileOpen(false); }}
-              className="bg-transparent border-none cursor-pointer text-base text-primary text-right py-2"
+              className="bg-transparent border-none cursor-pointer text-base text-white text-right py-2"
             >
               {label}
             </button>
