@@ -1,6 +1,7 @@
 import { ClockIcon, EyeIcon, HistoryIcon, ShieldIcon, SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, StarIcon } from "./Icons";
 import heroImage from "@/assets/hero-garage.jpg";
 import mechanicImage from "@/assets/mechanic-work.jpg";
+import logoImage from "@/assets/logo.png";
 
 type Page = "home" | "gallery" | "contact" | "privacy" | "accessibility";
 
