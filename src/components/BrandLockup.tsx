@@ -1,4 +1,5 @@
 import logoMark from "@/assets/logo-mark-pdf.png";
+import logoText from "@/assets/logo-text-clean.png";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
@@ -10,6 +11,10 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
     ? "w-[260px] h-[57px] md:w-[300px] md:h-[66px]"
     : "w-[200px] h-[44px] md:w-[230px] md:h-[50px]";
 
+  const textClass = isFooter
+    ? "h-[48px] md:h-[54px]"
+    : "h-[36px] md:h-[40px]";
+
   return (
     <div className="flex items-center gap-3 md:gap-3.5">
       <img
@@ -20,24 +25,13 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         width={1200}
         height={273}
       />
-      <div className="flex flex-col justify-center leading-none">
-        <span
-          className={`text-primary-foreground font-black tracking-[-0.01em] ${
-            isFooter ? "text-[22px] md:text-[24px]" : "text-[18px] md:text-[18px]"
-          }`}
-        >
-          המוסך של צביקה
-        </span>
-        <span
-          className={`font-semibold mt-1.5 leading-tight ${
-            isFooter
-              ? "text-primary-foreground/85 text-[15px] md:text-[15px]"
-              : "text-primary-foreground/80 text-[15px] md:text-[15px]"
-          }`}
-        >
-          אור-צת שירותי רכב
-        </span>
-      </div>
+      <img
+        src={logoText}
+        alt="המוסך של צביקה - אור-צת שירותי רכב"
+        className={`${textClass} w-auto object-contain shrink-0`}
+        width={1920}
+        height={395}
+      />
     </div>
   );
 }
