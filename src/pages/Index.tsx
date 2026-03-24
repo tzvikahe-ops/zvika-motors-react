@@ -19,6 +19,7 @@ const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
 
   useLayoutEffect(() => {
+    let timeoutId: number | undefined;
     const resetScroll = () => {
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       document.documentElement.scrollTop = 0;
@@ -35,14 +36,26 @@ const Index = () => {
         }
       });
     } else {
-      // Immediate reset + rAF backup to ensure it sticks after paint
+      // Hard reset for intermittent deep-scroll landings
       resetScroll();
       requestAnimationFrame(resetScroll);
+      timeoutId = window.setTimeout(resetScroll, 60);
     }
+
+    return () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
   }, [currentPage]);
 
   const setPage = (page: Page) => {
     if (page === currentPage) return;
+
+    if (page !== "services") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+
     setCurrentPage(page);
   };
 
