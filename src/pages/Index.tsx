@@ -13,8 +13,7 @@ import AccessibilityWidget from "@/components/AccessibilityWidget";
 import MapSection from "@/components/MapSection";
 import ImageGeneratorPage from "@/components/ImageGeneratorPage";
 import { WhatsAppIcon } from "@/components/Icons";
-
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility" | "image-generator";
+import type { Page } from "@/types/page";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");

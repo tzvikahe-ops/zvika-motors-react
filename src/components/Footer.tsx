@@ -1,6 +1,6 @@
 import logoPrimary from "@/assets/logo-primary.png";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
   return (

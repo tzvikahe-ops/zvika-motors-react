@@ -1,7 +1,7 @@
 import heroImage from "@/assets/hero-garage.jpg";
 import logoMark from "@/assets/logo-mark.png";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 export default function HeroSection({ setPage }: { setPage: (p: Page) => void }) {
   return (
