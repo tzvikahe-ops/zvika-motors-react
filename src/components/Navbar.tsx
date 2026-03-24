@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
 import logoPrimary from "@/assets/logo-primary.png";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 interface NavbarProps {
   currentPage: Page;

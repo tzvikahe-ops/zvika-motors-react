@@ -1,4 +1,4 @@
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 /* Icons — 22×22, consistent stroke weight */
 function WrenchSVG() {

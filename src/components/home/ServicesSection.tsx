@@ -1,6 +1,6 @@
 import diagnosticImage from "@/assets/diagnostic-work.jpg";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 export default function ServicesSection({ setPage }: { setPage: (p: Page) => void }) {
   return (

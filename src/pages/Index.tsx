@@ -11,9 +11,9 @@ import AccessibilityStatement from "@/components/AccessibilityStatement";
 import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import MapSection from "@/components/MapSection";
+import ImageGeneratorPage from "@/components/ImageGeneratorPage";
 import { WhatsAppIcon } from "@/components/Icons";
-
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -57,6 +57,7 @@ const Index = () => {
       {currentPage === "about" && <AboutPage />}
       {currentPage === "privacy" && <PrivacyPolicy />}
       {currentPage === "accessibility" && <AccessibilityStatement />}
+      {currentPage === "image-generator" && <ImageGeneratorPage />}
       {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       <Footer setPage={setPage} />
 

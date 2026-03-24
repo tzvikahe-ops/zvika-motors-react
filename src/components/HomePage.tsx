@@ -5,7 +5,7 @@ import ServicesSection from "./home/ServicesSection";
 import ReviewsSection from "./home/ReviewsSection";
 import CTASection from "./home/CTASection";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
   return (

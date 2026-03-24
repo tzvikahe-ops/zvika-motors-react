@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+import type { Page } from "@/types/page";
 
 export default function AccessibilityWidget({ setPage }: { setPage: (p: Page) => void }) {
   const [open, setOpen] = useState(false);
