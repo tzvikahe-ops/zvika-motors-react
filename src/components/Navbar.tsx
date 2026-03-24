@@ -1,7 +1,42 @@
 import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
 import logoPrimary from "@/assets/logo-primary.png";
-...
+
+type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+
+interface NavbarProps {
+  currentPage: Page;
+  setPage: (p: Page) => void;
+}
+
+export default function Navbar({ currentPage, setPage }: NavbarProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const links: { label: string; page: Page }[] = [
+    { label: "בית", page: "home" },
+    { label: "שירותים", page: "services" },
+    { label: "אודות", page: "about" },
+    { label: "גלריה", page: "gallery" },
+    { label: "צור קשר", page: "contact" },
+  ];
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled
+          ? "bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
+          : "bg-transparent"
+      }`}
+      dir="rtl"
+    >
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
         <button
           onClick={() => setPage("home")}
           className="bg-transparent border-none cursor-pointer flex items-center p-0"

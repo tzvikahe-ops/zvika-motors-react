@@ -1,5 +1,16 @@
 import logoPrimary from "@/assets/logo-primary.png";
-...
+
+type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+
+export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
+  return (
+    <footer className="bg-surface-darker relative" dir="rtl">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/[0.06] to-transparent" />
+
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.3fr_1fr_0.8fr] gap-8 md:gap-16">
+          {/* Brand */}
+          <div>
             <div className="mb-5">
               <img
                 src={logoPrimary}
