@@ -14,9 +14,9 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         src={logoMark}
         alt=""
         aria-hidden="true"
-        className={`${iconSize} object-contain flex-shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]`}
-        width={512}
-        height={512}
+        className={`${iconSize} w-auto object-contain flex-shrink-0`}
+        width={2493}
+        height={615}
       />
       <div className="flex flex-col justify-center leading-none">
         <span
