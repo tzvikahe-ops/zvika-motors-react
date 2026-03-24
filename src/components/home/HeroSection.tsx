@@ -1,17 +1,24 @@
 import heroImage from "@/assets/hero-garage.jpg";
 import logoMark from "@/assets/logo-mark.png";
-...
+
+type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
+
+export default function HeroSection({ setPage }: { setPage: (p: Page) => void }) {
+  return (
+    <section className="relative bg-surface-darker overflow-hidden" dir="rtl">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90svh] md:min-h-[85svh]">
+        {/* Content panel */}
+        <div className="relative z-10 bg-surface-darker flex flex-col justify-center order-2 md:order-1">
+          <div className="absolute inset-0 pattern-grid opacity-30" />
           <img
             src={logoMark}
             alt=""
             aria-hidden="true"
             className="absolute bottom-8 left-6 w-[180px] md:w-[240px] opacity-[0.04] pointer-events-none select-none"
           />
-          {/* Red accent stripe on the edge */}
           <div className="hidden md:block absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-brand-red/40 to-transparent" />
 
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
-            {/* Eyebrow — clean line + text, no giant logo */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-brand-red/50" />
               <p className="text-primary-foreground/35 text-[11px] font-bold tracking-[0.15em] uppercase">
@@ -48,7 +55,6 @@ import logoMark from "@/assets/logo-mark.png";
               </a>
             </div>
 
-            {/* Compact trust badges */}
             <div className="flex items-center gap-6 mt-10 md:mt-12 pt-8 border-t border-primary-foreground/[0.06]">
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">30+</div>
@@ -68,7 +74,7 @@ import logoMark from "@/assets/logo-mark.png";
           </div>
         </div>
 
-        {/* Image panel — full bleed */}
+        {/* Image panel */}
         <div className="relative order-1 md:order-2 min-h-[280px] md:min-h-0">
           <img
             src={heroImage}
