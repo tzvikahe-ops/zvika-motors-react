@@ -1,5 +1,4 @@
 import heroImage from "@/assets/hero-garage.jpg";
-import logoMark from "@/assets/logo-mark.png";
 
 import type { Page } from "@/types/page";
 
@@ -9,13 +8,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90svh] md:min-h-[85svh]">
         {/* Content panel */}
         <div className="relative z-10 bg-surface-darker flex flex-col justify-center order-2 md:order-1">
-          {/* Clean background — no pattern overlay */}
-          <img
-            src={logoMark}
-            alt=""
-            aria-hidden="true"
-            className="absolute bottom-8 left-6 w-[180px] md:w-[240px] opacity-[0.04] pointer-events-none select-none"
-          />
+          {/* Clean background — no decorative texture overlay */}
           <div className="hidden md:block absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-brand-red/40 to-transparent" />
 
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
