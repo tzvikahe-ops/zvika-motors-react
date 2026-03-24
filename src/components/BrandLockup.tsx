@@ -23,16 +23,16 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       <div className="flex flex-col justify-center leading-none">
         <span
           className={`text-primary-foreground font-black tracking-[-0.01em] ${
-            isFooter ? "text-[20px] md:text-[24px]" : "text-[16px] md:text-[18px]"
+            isFooter ? "text-[22px] md:text-[24px]" : "text-[18px] md:text-[18px]"
           }`}
         >
           המוסך של צביקה
         </span>
         <span
-          className={`font-semibold mt-1 leading-tight ${
+          className={`font-semibold mt-1.5 leading-tight ${
             isFooter
-              ? "text-primary-foreground/85 text-[13px] md:text-[14px]"
-              : "text-primary-foreground/80 text-[13px] md:text-[14px]"
+              ? "text-primary-foreground/85 text-[15px] md:text-[15px]"
+              : "text-primary-foreground/80 text-[15px] md:text-[15px]"
           }`}
         >
           אור-צת שירותי רכב
