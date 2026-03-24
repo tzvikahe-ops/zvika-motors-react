@@ -14,8 +14,8 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
 
   return (
     <>
-      {/* ── Desktop: horizontal lockup ── */}
-      <div className={`hidden md:flex ${isFooter ? "flex-col items-start gap-2" : "items-center gap-3"}`}>
+      {/* ── Desktop lockup ── */}
+      <div className={`hidden md:flex ${isFooter ? "flex-col items-start gap-2.5" : "items-center gap-3"}`}>
         <div className="flex items-center gap-3">
           <img
             src={logoMark}
@@ -33,20 +33,21 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             המוסך של צביקה
           </span>
           {!isFooter && (
-            <span className="shrink-0 leading-none whitespace-nowrap rounded-sm font-bold text-surface-darker bg-white/90 px-2 py-1 text-[13px]">
+            <span className="shrink-0 leading-none whitespace-nowrap rounded-sm font-bold text-surface-darker bg-white/90 px-2.5 py-1.5 text-[14px]">
               אור-צת שירותי רכב
             </span>
           )}
         </div>
+
         {isFooter && (
-          <span className="text-primary-foreground/50 text-[15px] font-bold leading-none">
+          <span className="text-primary-foreground/80 text-[20px] font-bold leading-[1.15] whitespace-nowrap">
             אור-צת שירותי רכב
           </span>
         )}
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
-      <div className="flex md:hidden flex-col items-center gap-1.5">
+      <div className="flex md:hidden flex-col items-center gap-2">
         <div className="flex items-center gap-2">
           <img
             src={logoMark}
@@ -64,9 +65,10 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             height={395}
           />
         </div>
+
         <span
-          className={`text-center font-bold text-primary-foreground/70 leading-none whitespace-nowrap ${
-            isFooter ? "text-[14px]" : "text-[12px]"
+          className={`text-center font-bold text-primary-foreground/80 leading-[1.2] whitespace-nowrap ${
+            isFooter ? "text-[16px]" : "text-[14px]"
           }`}
         >
           אור-צת שירותי רכב
