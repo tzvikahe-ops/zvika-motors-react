@@ -36,8 +36,8 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         <span
           className={`font-bold leading-[1.3] whitespace-nowrap ${
             isFooter
-              ? "text-[19px] text-primary-foreground/70 mt-0.5"
-              : "text-[16px] bg-white/10 text-primary-foreground/90 rounded px-2.5 py-1"
+              ? "text-[19px] text-primary-foreground mt-0.5"
+              : "text-[15px] text-primary-foreground/90"
           }`}
         >
           אור-צת שירותי רכב
