@@ -89,10 +89,10 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
 
       <div className="border-t border-primary-foreground/[0.04] py-4 md:py-5 px-5 sm:px-6">
         <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-          <p className="text-primary-foreground/15 text-[10px]">
+          <p className="text-primary-foreground/15 text-[13px] sm:text-[14px]">
             © {new Date().getFullYear()} המוסך של צביקה (אור-צת שירותי רכב)
           </p>
-          <p className="text-primary-foreground/10 text-[10px]">
+          <p className="text-primary-foreground/10 text-[12px] sm:text-[13px]">
             מאז 1993
           </p>
         </div>
