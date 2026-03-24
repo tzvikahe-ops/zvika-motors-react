@@ -14,11 +14,11 @@ export default function GalleryPage() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div dir="rtl" className="pt-[68px] min-h-screen bg-background">
-      <div className="max-w-[1200px] mx-auto px-6 py-20">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-4 tracking-wider">גלריה</div>
-          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-3">הגלריה שלנו</h1>
+    <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
+      <div className="max-w-[1200px] mx-auto px-6 pt-6 md:pt-8 pb-16 md:pb-20">
+        <div className="text-center mb-10 md:mb-12">
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-3 tracking-wider">גלריה</div>
+          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2">הגלריה שלנו</h1>
           <p className="text-muted-foreground text-sm">הצצה לעבודה היומיומית במוסך של צביקה</p>
         </div>
 
