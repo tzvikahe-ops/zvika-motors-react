@@ -1,3 +1,4 @@
+// Logo mark extracted from business PDF – car+wrench icon only, no text
 import logoMark from "@/assets/logo-mark.png";
 
 interface BrandLockupProps {
