@@ -9,7 +9,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90svh] md:min-h-[85svh]">
         {/* Content panel */}
         <div className="relative z-10 bg-surface-darker flex flex-col justify-center order-2 md:order-1">
-          <div className="absolute inset-0 pattern-grid opacity-30" />
+          {/* Clean background — no pattern overlay */}
           <img
             src={logoMark}
             alt=""
