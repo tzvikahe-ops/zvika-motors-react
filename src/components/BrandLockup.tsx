@@ -12,8 +12,8 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
     : "w-[200px] h-[44px] md:w-[230px] md:h-[50px]";
 
   const textClass = isFooter
-    ? "h-[42px] md:h-[48px]"
-    : "h-[34px] md:h-[38px]";
+    ? "h-[48px] md:h-[54px]"
+    : "h-[36px] md:h-[40px]";
 
   return (
     <div className="flex items-center gap-3 md:gap-3.5">
