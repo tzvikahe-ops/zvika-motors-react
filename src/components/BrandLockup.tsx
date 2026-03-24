@@ -33,15 +33,15 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             המוסך של צביקה
           </span>
         </div>
-        <span
-          className={`font-bold leading-[1.3] whitespace-nowrap ${
+        <p
+          className={`font-bold leading-[1.3] whitespace-nowrap bg-transparent border-none shadow-none p-0 m-0 rounded-none ${
             isFooter
-              ? "text-[19px] text-primary-foreground mt-0.5"
+              ? "text-[20px] text-primary-foreground mt-0"
               : "text-[15px] text-primary-foreground/90"
           }`}
         >
           אור-צת שירותי רכב
-        </span>
+        </p>
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
