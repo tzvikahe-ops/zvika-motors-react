@@ -8,12 +8,12 @@ interface BrandLockupProps {
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
   const iconClass = isFooter
-    ? "w-[260px] h-[57px] md:w-[300px] md:h-[66px]"
-    : "w-[200px] h-[44px] md:w-[230px] md:h-[50px]";
+    ? "w-[180px] h-[40px] md:w-[300px] md:h-[66px]"
+    : "w-[140px] h-[31px] md:w-[230px] md:h-[50px]";
 
   const textClass = isFooter
-    ? "h-[48px] md:h-[54px]"
-    : "h-[36px] md:h-[40px]";
+    ? "h-[34px] md:h-[54px]"
+    : "h-[26px] md:h-[40px]";
 
   return (
     <div className="flex items-center gap-3 md:gap-3.5">
