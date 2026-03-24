@@ -15,9 +15,9 @@ export default function GalleryPage() {
 
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
-      <div className="max-w-[1200px] mx-auto px-6 pt-3 md:pt-4 pb-16 md:pb-20">
-        <div className="text-center mb-6 md:mb-8">
-          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-2 tracking-wider">גלריה</div>
+      <div className="max-w-[1200px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
+        <div className="text-center mb-5 md:mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">גלריה</div>
           <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-1">הגלריה שלנו</h1>
           <p className="text-muted-foreground text-sm">הצצה לעבודה היומיומית במוסך של צביקה</p>
         </div>
