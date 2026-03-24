@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
 import BrandLockup from "./BrandLockup";
 
@@ -11,18 +11,6 @@ interface NavbarProps {
 
 export default function Navbar({ currentPage, setPage }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    setScrolled(window.scrollY > 20);
-  }, [currentPage]);
 
   const links: { label: string; page: Page }[] = [
     { label: "בית", page: "home" },
@@ -34,11 +22,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        scrolled
-          ? "bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
-          : "bg-surface-darker/82 backdrop-blur-sm border-b border-primary-foreground/[0.04]"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-[64px] md:h-[72px]">
