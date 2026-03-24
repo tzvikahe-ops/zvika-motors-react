@@ -37,14 +37,25 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       dir="rtl"
     >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
-        {/* Brand */}
-        <div onClick={() => setPage("home")} className="cursor-pointer flex items-center gap-2.5">
-          <img src={logoMark} alt="" width={36} height={36} className="h-7 md:h-8 w-auto object-contain" loading="eager" />
-          <div className="flex flex-col leading-none">
-            <span className="font-black text-primary-foreground text-[13px] md:text-[14px]">המוסך של צביקה</span>
-            <span className="text-primary-foreground/25 text-[9px] md:text-[10px] font-medium mt-0.5">אור-צת שירותי רכב · מאז 1993</span>
+        {/* Brand — restrained lockup: small mark + tight text */}
+        <button
+          onClick={() => setPage("home")}
+          className="bg-transparent border-none cursor-pointer flex items-center gap-2 p-0"
+        >
+          <img
+            src={logoMark}
+            alt=""
+            width={80}
+            height={28}
+            className="h-[22px] md:h-[26px] w-auto object-contain flex-shrink-0"
+            loading="eager"
+          />
+          <div className="w-px h-5 bg-primary-foreground/10 mx-0.5 hidden sm:block" />
+          <div className="flex flex-col leading-none text-right">
+            <span className="font-black text-primary-foreground text-[12px] md:text-[13px] whitespace-nowrap">המוסך של צביקה</span>
+            <span className="text-primary-foreground/20 text-[8px] md:text-[9px] font-medium mt-[2px] whitespace-nowrap hidden sm:block">אור-צת שירותי רכב</span>
           </div>
-        </div>
+        </button>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
@@ -61,6 +72,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               {label}
             </button>
           ))}
+          <div className="w-px h-4 bg-primary-foreground/10" />
           <a
             href="tel:02-6514446"
             className="text-brand-red text-[13px] font-bold no-underline hover:text-brand-red-hover transition-colors duration-200"

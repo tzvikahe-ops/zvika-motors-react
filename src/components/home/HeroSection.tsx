@@ -11,14 +11,20 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
         {/* Content panel */}
         <div className="relative z-10 bg-surface-darker flex flex-col justify-center order-2 md:order-1">
           <div className="absolute inset-0 pattern-grid opacity-30" />
+          {/* Subtle logo watermark — very low opacity, positioned bottom-left */}
+          <img
+            src={logoMark}
+            alt=""
+            aria-hidden="true"
+            className="absolute bottom-12 left-8 w-[220px] md:w-[280px] opacity-[0.03] pointer-events-none select-none"
+          />
           {/* Red accent stripe on the edge */}
           <div className="hidden md:block absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-brand-red/40 to-transparent" />
 
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
-            {/* Eyebrow with logo mark */}
+            {/* Eyebrow — clean line + text, no giant logo */}
             <div className="flex items-center gap-3 mb-6">
-              <img src={logoMark} alt="" width={32} height={32} className="h-7 w-auto object-contain opacity-60" loading="eager" />
-              <div className="w-6 h-[2px] bg-brand-red/40" />
+              <div className="w-8 h-[2px] bg-brand-red/50" />
               <p className="text-primary-foreground/35 text-[11px] font-bold tracking-[0.15em] uppercase">
                 מאז 1993 · גבעת שאול
               </p>
@@ -85,11 +91,8 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Subtle overlay for depth */}
           <div className="absolute inset-0 bg-surface-darker/10" />
-          {/* Gradient blend into content panel on desktop */}
           <div className="hidden md:block absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-surface-darker to-transparent" />
-          {/* Bottom gradient on mobile */}
           <div className="md:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-surface-darker to-transparent" />
         </div>
       </div>
