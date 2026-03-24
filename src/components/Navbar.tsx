@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logoPrimary from "@/assets/logo-full-transparent.png";
+import BrandLockup from "./BrandLockup";
 
 import type { Page } from "@/types/page";
 
@@ -40,15 +40,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         <button
           onClick={() => setPage("home")}
           className="bg-transparent border-none cursor-pointer flex items-center p-0"
+          aria-label="דף הבית — המוסך של צביקה"
         >
-          <img
-            src={logoPrimary}
-            alt="המוסך של צביקה"
-            width={170}
-            height={50}
-            className="h-[56px] md:h-[64px] w-auto object-contain flex-shrink-0"
-            loading="eager"
-          />
+          <BrandLockup size="navbar" />
         </button>
 
         {/* Desktop nav */}
