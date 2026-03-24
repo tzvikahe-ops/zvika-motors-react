@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logoPrimary from "@/assets/logo-primary.png";
+import logoPrimary from "@/assets/logo-full-transparent.png";
 
 import type { Page } from "@/types/page";
 
@@ -46,7 +46,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             alt="המוסך של צביקה"
             width={170}
             height={50}
-            className="h-[56px] md:h-[64px] w-auto object-contain flex-shrink-0 rounded-md"
+            className="h-[56px] md:h-[64px] w-auto object-contain flex-shrink-0"
             loading="eager"
           />
         </button>

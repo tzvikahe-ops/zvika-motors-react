@@ -1,4 +1,4 @@
-import logoPrimary from "@/assets/logo-primary.png";
+import logoPrimary from "@/assets/logo-full-transparent.png";
 
 import type { Page } from "@/types/page";
 
@@ -17,7 +17,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
                 alt="המוסך של צביקה"
                 width={180}
                 height={50}
-                className="h-[72px] md:h-[82px] w-auto object-contain rounded-md"
+                className="h-[72px] md:h-[82px] w-auto object-contain"
                 loading="lazy"
               />
             </div>
