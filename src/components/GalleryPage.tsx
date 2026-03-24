@@ -1,7 +1,8 @@
 import { useState } from "react";
+import garagePhoto from "@/assets/gallery-garage.jpg";
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80", alt: "תיקון מנוע במוסך" },
+  { src: garagePhoto, alt: "חזית המוסך של צביקה בגבעת שאול" },
   { src: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80", alt: "בדיקת רכב מקצועית" },
   { src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80", alt: "מוסך מקצועי בירושלים" },
   { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80", alt: "רכב מטופל" },
