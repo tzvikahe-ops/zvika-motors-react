@@ -3,9 +3,9 @@ import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icon
 export default function ContactPage() {
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
-      <div className="max-w-[900px] mx-auto px-6 pt-3 md:pt-4 pb-16 md:pb-20">
-        <div className="text-center mb-6 md:mb-8">
-          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-2 tracking-wider">יצירת קשר</div>
+      <div className="max-w-[900px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
+        <div className="text-center mb-5 md:mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">יצירת קשר</div>
           <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-1">צרו קשר עם המוסך</h1>
           <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
             נשמח לענות על כל שאלה ולתאם טיפול לרכב שלכם. פנו אלינו בטלפון, וואטסאפ או מייל.
