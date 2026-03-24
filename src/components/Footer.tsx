@@ -1,3 +1,5 @@
+import logoMark from "@/assets/logo-mark.png";
+
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
@@ -10,8 +12,11 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-brand-red/40" />
-              <div className="font-black text-[17px] md:text-[18px] text-primary-foreground">המוסך של צביקה</div>
+              <img src={logoMark} alt="המוסך של צביקה" width={40} height={40} className="h-9 w-auto object-contain" loading="lazy" />
+              <div>
+                <div className="font-black text-[17px] md:text-[18px] text-primary-foreground">המוסך של צביקה</div>
+                <div className="text-primary-foreground/20 text-[10px] font-medium">אור-צת שירותי רכב</div>
+              </div>
             </div>
             <p className="text-primary-foreground/25 text-[12px] leading-[1.85] max-w-[280px] mb-5">
               אור-צת שירותי רכב. מעל 30 שנות ניסיון בטיפול מקצועי ואמין ברכבים, בגבעת שאול ירושלים.

@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-garage.jpg";
+import logoMark from "@/assets/logo-mark.png";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
@@ -14,9 +15,10 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           <div className="hidden md:block absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-brand-red/40 to-transparent" />
 
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
-            {/* Eyebrow */}
+            {/* Eyebrow with logo mark */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-[2px] bg-brand-red/60" />
+              <img src={logoMark} alt="" width={32} height={32} className="h-7 w-auto object-contain opacity-60" loading="eager" />
+              <div className="w-6 h-[2px] bg-brand-red/40" />
               <p className="text-primary-foreground/35 text-[11px] font-bold tracking-[0.15em] uppercase">
                 מאז 1993 · גבעת שאול
               </p>
