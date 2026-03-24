@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
+import logoMark from "@/assets/logo-mark.png";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
