@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MenuIcon, CloseIcon } from "./Icons";
-import logoMark from "@/assets/logo-mark.png";
+import logoPrimary from "@/assets/logo-primary.png";
 
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
@@ -37,24 +37,18 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       dir="rtl"
     >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
-        {/* Brand — restrained lockup: small mark + tight text */}
         <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center gap-2 p-0"
+          className="bg-transparent border-none cursor-pointer flex items-center p-0"
         >
           <img
-            src={logoMark}
-            alt=""
-            width={80}
-            height={28}
-            className="h-[22px] md:h-[26px] w-auto object-contain flex-shrink-0"
+            src={logoPrimary}
+            alt="המוסך של צביקה"
+            width={140}
+            height={40}
+            className="h-[30px] md:h-[36px] w-auto object-contain flex-shrink-0"
             loading="eager"
           />
-          <div className="w-px h-5 bg-primary-foreground/10 mx-0.5 hidden sm:block" />
-          <div className="flex flex-col leading-none text-right">
-            <span className="font-black text-primary-foreground text-[12px] md:text-[13px] whitespace-nowrap">המוסך של צביקה</span>
-            <span className="text-primary-foreground/20 text-[8px] md:text-[9px] font-medium mt-[2px] whitespace-nowrap hidden sm:block">אור-צת שירותי רכב</span>
-          </div>
         </button>
 
         {/* Desktop nav */}
