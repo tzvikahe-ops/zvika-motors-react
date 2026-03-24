@@ -6,7 +6,7 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
-  const iconClass = isFooter ? "w-[110px] h-[110px]" : "w-[68px] h-[68px]";
+  const iconClass = isFooter ? "w-[130px] h-[130px]" : "w-[85px] h-[85px]";
 
   return (
     <div className="flex items-center gap-3 md:gap-3.5">
