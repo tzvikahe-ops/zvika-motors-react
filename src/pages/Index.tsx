@@ -19,6 +19,12 @@ const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
 
   useLayoutEffect(() => {
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
     if (currentPage === "services") {
       requestAnimationFrame(() => {
         const el = document.getElementById("services-content");
@@ -26,22 +32,18 @@ const Index = () => {
           const navHeight = 68;
           const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
           window.scrollTo({ top, left: 0, behavior: "auto" });
-          return;
         }
       });
     } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      // Immediate reset + rAF backup to ensure it sticks after paint
+      resetScroll();
+      requestAnimationFrame(resetScroll);
     }
   }, [currentPage]);
 
   const setPage = (page: Page) => {
     if (page === currentPage) return;
     setCurrentPage(page);
-    if (page !== "services") {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
   };
 
   return (
