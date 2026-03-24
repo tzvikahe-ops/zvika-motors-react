@@ -25,10 +25,10 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-[64px] md:h-[72px]">
+      <div className="max-w-[1100px] mx-auto px-3 sm:px-6 relative flex items-center justify-center md:justify-between h-[68px] md:h-[72px]">
         <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center p-0"
+          className="bg-transparent border-none cursor-pointer flex items-center p-0 min-w-0 max-w-[calc(100%-3.75rem)]"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
@@ -60,7 +60,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1"
+          className="md:hidden absolute left-3 top-1/2 -translate-y-1/2 bg-transparent border-none cursor-pointer text-primary-foreground p-1"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
