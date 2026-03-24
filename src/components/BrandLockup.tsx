@@ -1,5 +1,4 @@
-// Logo mark extracted from business PDF – car+wrench icon only, no text
-import logoMark from "@/assets/logo-mark.png";
+import logoMark from "@/assets/logo-mark-pdf.png";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
@@ -7,7 +6,7 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
-  const iconSize = isFooter ? "h-9 md:h-12" : "h-7 md:h-8";
+  const iconSize = isFooter ? "h-10 md:h-12" : "h-8 md:h-9";
 
   return (
     <div className="flex items-center gap-3 md:gap-3.5">
@@ -15,9 +14,9 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         src={logoMark}
         alt=""
         aria-hidden="true"
-        className={`${iconSize} w-auto object-contain flex-shrink-0`}
-        width={2493}
-        height={615}
+        className={`${iconSize} w-auto max-w-none object-contain shrink-0`}
+        width={1200}
+        height={273}
       />
       <div className="flex flex-col justify-center leading-none">
         <span
