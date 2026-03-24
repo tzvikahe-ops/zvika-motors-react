@@ -6,17 +6,17 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
-  const iconSize = isFooter ? "w-10 h-10 md:w-12 md:h-12" : "w-7 h-7 md:w-8 md:h-8";
+  const iconSize = isFooter ? "w-11 h-11 md:w-14 md:h-14" : "w-9 h-9 md:w-10 md:h-10";
 
   return (
-    <div className="flex items-center gap-2.5 md:gap-3">
+    <div className="flex items-center gap-3 md:gap-3.5">
       <img
         src={logoMark}
         alt=""
         aria-hidden="true"
-        className={`${iconSize} object-contain flex-shrink-0`}
-        width={48}
-        height={48}
+        className={`${iconSize} object-contain flex-shrink-0 brightness-0 invert opacity-90`}
+        width={512}
+        height={512}
       />
       <div className="flex flex-col justify-center leading-none">
         <span
