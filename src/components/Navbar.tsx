@@ -38,9 +38,12 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
     >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
         {/* Brand */}
-        <div onClick={() => setPage("home")} className="cursor-pointer">
-          <span className="font-black text-primary-foreground text-[14px] md:text-[15px]">המוסך של צביקה</span>
-          <span className="text-primary-foreground/25 text-[10px] md:text-[11px] font-medium mr-2">מאז 1993</span>
+        <div onClick={() => setPage("home")} className="cursor-pointer flex items-center gap-2.5">
+          <img src={logoMark} alt="" width={36} height={36} className="h-7 md:h-8 w-auto object-contain" loading="eager" />
+          <div className="flex flex-col leading-none">
+            <span className="font-black text-primary-foreground text-[13px] md:text-[14px]">המוסך של צביקה</span>
+            <span className="text-primary-foreground/25 text-[9px] md:text-[10px] font-medium mt-0.5">אור-צת שירותי רכב · מאז 1993</span>
+          </div>
         </div>
 
         {/* Desktop nav */}
