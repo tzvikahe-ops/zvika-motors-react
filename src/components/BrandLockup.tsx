@@ -14,7 +14,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         src={logoMark}
         alt=""
         aria-hidden="true"
-        className={`${iconSize} object-contain flex-shrink-0 brightness-0 invert opacity-90`}
+        className={`${iconSize} object-contain flex-shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]`}
         width={512}
         height={512}
       />
