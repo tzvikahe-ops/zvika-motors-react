@@ -7,16 +7,21 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
+
+  /* ── responsive sizes ─────────────────────────────────
+   *  Mobile-first → md: breakpoint for desktop.
+   *  Icon (car mark) is ~110-120 % the visual height of the text lockup.
+   *  Gap is tighter on mobile to keep the pair compact.            */
   const iconClass = isFooter
-    ? "w-[180px] h-[40px] md:w-[300px] md:h-[66px]"
-    : "w-[140px] h-[31px] md:w-[230px] md:h-[50px]";
+    ? "h-[38px] w-auto md:h-[62px]"
+    : "h-[30px] w-auto md:h-[48px]";
 
   const textClass = isFooter
-    ? "h-[34px] md:h-[54px]"
-    : "h-[26px] md:h-[40px]";
+    ? "h-[32px] w-auto md:h-[50px]"
+    : "h-[24px] w-auto md:h-[38px]";
 
   return (
-    <div className="flex items-center gap-3 md:gap-3.5">
+    <div className="flex items-center gap-2 md:gap-3">
       <img
         src={logoMark}
         alt=""
@@ -28,7 +33,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       <img
         src={logoText}
         alt="המוסך של צביקה - אור-צת שירותי רכב"
-        className={`${textClass} w-auto object-contain shrink-0`}
+        className={`${textClass} object-contain shrink-0`}
         width={1920}
         height={395}
       />
