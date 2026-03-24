@@ -12,34 +12,18 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
     ? "h-[42px] w-auto md:h-[62px]"
     : "h-[35px] w-auto md:h-[48px]";
 
-  /* Mobile: show combined image lockup */
-  const mobileTextClass = isFooter
-    ? "h-[37px] w-auto md:hidden"
-    : "h-[31px] w-auto md:hidden";
-
   return (
-    <div className="flex items-center gap-2 md:gap-3">
-      {/* Car icon — always visible */}
-      <img
-        src={logoMark}
-        alt=""
-        aria-hidden="true"
-        className={`${iconClass} object-contain shrink-0`}
-        width={1200}
-        height={273}
-      />
-
-      {/* Mobile: combined image lockup */}
-      <img
-        src={logoText}
-        alt="המוסך של צביקה - אור-צת שירותי רכב"
-        className={`${mobileTextClass} object-contain shrink-0`}
-        width={1920}
-        height={395}
-      />
-
-      {/* Desktop: split into two distinct elements */}
-      <div className="hidden md:flex items-center gap-2.5">
+    <>
+      {/* ── Desktop: horizontal lockup ── */}
+      <div className="hidden md:flex items-center gap-3">
+        <img
+          src={logoMark}
+          alt=""
+          aria-hidden="true"
+          className={`${iconClass} object-contain shrink-0`}
+          width={1200}
+          height={273}
+        />
         <span
           className={`font-black text-brand-red shrink-0 leading-none whitespace-nowrap ${
             isFooter ? "text-[26px]" : "text-[22px]"
@@ -57,6 +41,34 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
           אור-צת שירותי רכב
         </span>
       </div>
-    </div>
+
+      {/* ── Mobile: stacked lockup ── */}
+      <div className="flex md:hidden flex-col items-center gap-1.5">
+        <div className="flex items-center gap-2">
+          <img
+            src={logoMark}
+            alt=""
+            aria-hidden="true"
+            className="h-[32px] w-auto object-contain shrink-0"
+            width={1200}
+            height={273}
+          />
+          <img
+            src={logoText}
+            alt="המוסך של צביקה"
+            className="h-[28px] w-auto object-contain shrink-0"
+            width={1920}
+            height={395}
+          />
+        </div>
+        <span
+          className={`text-center font-bold text-primary-foreground/70 leading-none whitespace-nowrap ${
+            isFooter ? "text-[14px]" : "text-[12px]"
+          }`}
+        >
+          אור-צת שירותי רכב
+        </span>
+      </div>
+    </>
   );
 }
