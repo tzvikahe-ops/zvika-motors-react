@@ -24,7 +24,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
               <div className="w-px h-6 bg-primary-foreground/[0.08]" />
               <div>
                 <div className="font-black text-[16px] md:text-[17px] text-primary-foreground leading-tight">המוסך של צביקה</div>
-                <div className="text-primary-foreground/18 text-[9px] font-medium mt-0.5">אור-צת שירותי רכב · מאז 1993</div>
+                <div className="text-primary-foreground/20 text-[9px] font-medium mt-0.5">אור-צת שירותי רכב · מאז 1993</div>
               </div>
             </div>
             <p className="text-primary-foreground/25 text-[12px] leading-[1.85] max-w-[280px] mb-5">
