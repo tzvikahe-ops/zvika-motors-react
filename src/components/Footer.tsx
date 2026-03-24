@@ -1,31 +1,14 @@
-import logoMark from "@/assets/logo-mark.png";
-
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
-
-export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
-  return (
-    <footer className="bg-surface-darker relative" dir="rtl">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/[0.06] to-transparent" />
-
-      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.3fr_1fr_0.8fr] gap-8 md:gap-16">
-          {/* Brand */}
-          <div>
-            {/* Logo lockup — restrained, aligned right */}
-            <div className="flex items-center gap-3 mb-5">
+import logoPrimary from "@/assets/logo-primary.png";
+...
+            <div className="mb-5">
               <img
-                src={logoMark}
+                src={logoPrimary}
                 alt="המוסך של צביקה"
-                width={100}
-                height={36}
-                className="h-8 w-auto object-contain flex-shrink-0"
+                width={180}
+                height={50}
+                className="h-10 md:h-12 w-auto object-contain"
                 loading="lazy"
               />
-              <div className="w-px h-6 bg-primary-foreground/[0.08]" />
-              <div>
-                <div className="font-black text-[16px] md:text-[17px] text-primary-foreground leading-tight">המוסך של צביקה</div>
-                <div className="text-primary-foreground/20 text-[9px] font-medium mt-0.5">אור-צת שירותי רכב · מאז 1993</div>
-              </div>
             </div>
             <p className="text-primary-foreground/25 text-[12px] leading-[1.85] max-w-[280px] mb-5">
               אמינות ומקצועיות בשירות הרכב שלך בירושלים.

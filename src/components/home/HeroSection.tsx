@@ -1,22 +1,11 @@
 import heroImage from "@/assets/hero-garage.jpg";
 import logoMark from "@/assets/logo-mark.png";
-
-type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
-
-export default function HeroSection({ setPage }: { setPage: (p: Page) => void }) {
-  return (
-    <section className="relative bg-surface-darker overflow-hidden" dir="rtl">
-      {/* Split layout: content right, image left (RTL) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90svh] md:min-h-[85svh]">
-        {/* Content panel */}
-        <div className="relative z-10 bg-surface-darker flex flex-col justify-center order-2 md:order-1">
-          <div className="absolute inset-0 pattern-grid opacity-30" />
-          {/* Subtle logo watermark — very low opacity, positioned bottom-left */}
+...
           <img
             src={logoMark}
             alt=""
             aria-hidden="true"
-            className="absolute bottom-12 left-8 w-[220px] md:w-[280px] opacity-[0.03] pointer-events-none select-none"
+            className="absolute bottom-8 left-6 w-[180px] md:w-[240px] opacity-[0.04] pointer-events-none select-none"
           />
           {/* Red accent stripe on the edge */}
           <div className="hidden md:block absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-transparent via-brand-red/40 to-transparent" />
