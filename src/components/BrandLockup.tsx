@@ -15,7 +15,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   return (
     <>
       {/* ── Desktop lockup ── */}
-      <div className={`hidden md:flex ${isFooter ? "flex-col items-start gap-2.5" : "items-center gap-3"}`}>
+      <div className="hidden md:flex flex-col items-start gap-1.5">
         <div className="flex items-center gap-3">
           <img
             src={logoMark}
@@ -32,18 +32,16 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
           >
             המוסך של צביקה
           </span>
-          {!isFooter && (
-            <span className="shrink-0 leading-none whitespace-nowrap font-bold text-primary-foreground/80 text-[15px]">
-              אור-צת שירותי רכב
-            </span>
-          )}
         </div>
-
-        {isFooter && (
-          <span className="text-primary-foreground/80 text-[20px] font-bold leading-[1.15] whitespace-nowrap">
-            אור-צת שירותי רכב
-          </span>
-        )}
+        <span
+          className={`font-bold leading-[1.3] whitespace-nowrap ${
+            isFooter
+              ? "text-[19px] text-primary-foreground/70 mt-0.5"
+              : "text-[16px] bg-white/10 text-primary-foreground/90 rounded px-2.5 py-1"
+          }`}
+        >
+          אור-צת שירותי רכב
+        </span>
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
