@@ -15,31 +15,34 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   return (
     <>
       {/* ── Desktop: horizontal lockup ── */}
-      <div className="hidden md:flex items-center gap-3">
-        <img
-          src={logoMark}
-          alt=""
-          aria-hidden="true"
-          className={`${iconClass} object-contain shrink-0`}
-          width={1200}
-          height={273}
-        />
-        <span
-          className={`font-black text-brand-red shrink-0 leading-none whitespace-nowrap ${
-            isFooter ? "text-[26px]" : "text-[22px]"
-          }`}
-        >
-          המוסך של צביקה
-        </span>
-        <span
-          className={`shrink-0 leading-none whitespace-nowrap rounded-sm font-bold text-surface-darker ${
-            isFooter
-              ? "bg-white/95 px-2.5 py-1.5 text-[15px]"
-              : "bg-white/90 px-2 py-1 text-[13px]"
-          }`}
-        >
-          אור-צת שירותי רכב
-        </span>
+      <div className={`hidden md:flex ${isFooter ? "flex-col items-start gap-2" : "items-center gap-3"}`}>
+        <div className="flex items-center gap-3">
+          <img
+            src={logoMark}
+            alt=""
+            aria-hidden="true"
+            className={`${iconClass} object-contain shrink-0`}
+            width={1200}
+            height={273}
+          />
+          <span
+            className={`font-black text-brand-red shrink-0 leading-none whitespace-nowrap ${
+              isFooter ? "text-[26px]" : "text-[22px]"
+            }`}
+          >
+            המוסך של צביקה
+          </span>
+          {!isFooter && (
+            <span className="shrink-0 leading-none whitespace-nowrap rounded-sm font-bold text-surface-darker bg-white/90 px-2 py-1 text-[13px]">
+              אור-צת שירותי רכב
+            </span>
+          )}
+        </div>
+        {isFooter && (
+          <span className="text-primary-foreground/50 text-[15px] font-bold leading-none">
+            אור-צת שירותי רכב
+          </span>
+        )}
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
