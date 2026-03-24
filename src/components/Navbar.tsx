@@ -32,11 +32,11 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
           ? "bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
-          : "bg-transparent"
+          : "bg-surface-darker/82 backdrop-blur-sm border-b border-primary-foreground/[0.04]"
       }`}
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-14 md:h-16">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 flex items-center justify-between h-[64px] md:h-[72px]">
         <button
           onClick={() => setPage("home")}
           className="bg-transparent border-none cursor-pointer flex items-center p-0"
@@ -44,9 +44,9 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           <img
             src={logoPrimary}
             alt="המוסך של צביקה"
-            width={140}
-            height={40}
-            className="h-[48px] md:h-[56px] w-auto object-contain flex-shrink-0"
+            width={170}
+            height={50}
+            className="h-[56px] md:h-[64px] w-auto object-contain flex-shrink-0"
             loading="eager"
           />
         </button>
