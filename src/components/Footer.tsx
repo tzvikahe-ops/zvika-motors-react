@@ -1,3 +1,5 @@
+import logoMark from "@/assets/logo-mark.png";
+
 type Page = "home" | "services" | "gallery" | "contact" | "about" | "privacy" | "accessibility";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
