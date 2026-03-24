@@ -33,7 +33,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             המוסך של צביקה
           </span>
           {!isFooter && (
-            <span className="shrink-0 leading-none whitespace-nowrap rounded-sm font-bold text-surface-darker bg-white/90 px-2.5 py-1.5 text-[14px]">
+            <span className="shrink-0 leading-none whitespace-nowrap font-bold text-primary-foreground/80 text-[15px]">
               אור-צת שירותי רכב
             </span>
           )}
