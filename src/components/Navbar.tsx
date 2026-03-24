@@ -15,9 +15,14 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setScrolled(window.scrollY > 20);
+  }, [currentPage]);
 
   const links: { label: string; page: Page }[] = [
     { label: "בית", page: "home" },
