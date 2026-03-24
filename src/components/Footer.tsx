@@ -17,7 +17,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
                 alt="המוסך של צביקה"
                 width={180}
                 height={50}
-                className="h-14 md:h-16 w-auto object-contain"
+                className="h-[72px] md:h-[82px] w-auto object-contain"
                 loading="lazy"
               />
             </div>

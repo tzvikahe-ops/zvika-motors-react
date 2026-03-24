@@ -46,7 +46,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             alt="המוסך של צביקה"
             width={140}
             height={40}
-            className="h-[38px] md:h-[44px] w-auto object-contain flex-shrink-0"
+            className="h-[48px] md:h-[56px] w-auto object-contain flex-shrink-0"
             loading="eager"
           />
         </button>
