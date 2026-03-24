@@ -17,11 +17,11 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
                 alt="המוסך של צביקה"
                 width={180}
                 height={50}
-                className="h-[72px] md:h-[82px] w-auto object-contain"
+                className="h-[72px] md:h-[82px] w-auto object-contain rounded-md"
                 loading="lazy"
               />
             </div>
-            <p className="text-primary-foreground/25 text-[12px] leading-[1.85] max-w-[280px] mb-5">
+            <p className="text-primary-foreground/40 text-[13px] leading-[1.85] max-w-[300px] mb-5">
               אמינות ומקצועיות בשירות הרכב שלך בירושלים.
             </p>
             <div className="flex items-center gap-5">
@@ -92,7 +92,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           <p className="text-primary-foreground/15 text-[13px] sm:text-[14px]">
             © {new Date().getFullYear()} המוסך של צביקה (אור-צת שירותי רכב)
           </p>
-          <p className="text-primary-foreground/10 text-[12px] sm:text-[13px]">
+          <p className="text-primary-foreground/20 text-[12px] sm:text-[13px]">
             מאז 1993
           </p>
         </div>
