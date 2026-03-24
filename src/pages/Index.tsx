@@ -57,6 +57,7 @@ const Index = () => {
       {currentPage === "about" && <AboutPage />}
       {currentPage === "privacy" && <PrivacyPolicy />}
       {currentPage === "accessibility" && <AccessibilityStatement />}
+      {currentPage === "image-generator" && <ImageGeneratorPage />}
       {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       <Footer setPage={setPage} />
 
