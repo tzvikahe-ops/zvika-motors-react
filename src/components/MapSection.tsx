@@ -54,13 +54,13 @@ export default function MapSection() {
                 href="https://waze.com/ul?q=האופה%204%2C%20ירושלים&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-center no-underline flex items-center justify-center gap-2.5"
+                className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px]"
               >
-                <svg viewBox="0 0 32 32" className="w-6 h-6 shrink-0" aria-hidden="true">
+                <svg viewBox="0 0 32 32" className="w-[22px] h-[22px] shrink-0 -mt-px" aria-hidden="true">
                   <path d="M16 2C8.8 2 3 7.8 3 15c0 3.5 1.4 6.7 3.6 9.1-.4 2.3-1.5 4.4-3.1 6a.8.8 0 0 0 .6 1.4c3.6 0 6.8-1.4 9.2-3.6 1.1.3 2.3.5 3.5.5 7.5 0 13.6-5.6 13.6-12.4S23.5 2 16 2z" fill="white"/>
-                  <circle cx="12" cy="13.5" r="2" fill="#333"/>
-                  <circle cx="20" cy="13.5" r="2" fill="#333"/>
-                  <path d="M11 19.5a6.5 6.5 0 0 0 10 0" fill="none" stroke="#333" strokeWidth="1.5" strokeLinecap="round"/>
+                  <circle cx="12" cy="13.5" r="2" fill="#1a1a2e"/>
+                  <circle cx="20" cy="13.5" r="2" fill="#1a1a2e"/>
+                  <path d="M11 19.5a6.5 6.5 0 0 0 10 0" fill="none" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
                 נווטו עם Waze
               </a>
@@ -68,9 +68,9 @@ export default function MapSection() {
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-dark text-center no-underline flex items-center justify-center gap-2.5"
+                className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px]"
               >
-                <svg viewBox="0 0 32 32" className="w-6 h-6 shrink-0" aria-hidden="true">
+                <svg viewBox="0 0 32 32" className="w-[22px] h-[22px] shrink-0 -mt-px" aria-hidden="true">
                   <path d="M16 2a9 9 0 0 0-9 9c0 6.75 9 19 9 19s9-12.25 9-19a9 9 0 0 0-9-9z" fill="#EA4335"/>
                   <circle cx="16" cy="11" r="3.5" fill="white"/>
                 </svg>
