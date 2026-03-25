@@ -1,4 +1,5 @@
 import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icons";
+import { getContactEmail } from "@/lib/obfuscate-email";
 
 export default function ContactPage() {
   return (
@@ -47,7 +48,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <div className="font-bold text-[13px] text-foreground">אימייל</div>
-                  <a href="mailto:ortzat1@gmail.com" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">ortzat1@gmail.com</a>
+                  <a href={`mailto:${getContactEmail()}`} className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">{getContactEmail()}</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">

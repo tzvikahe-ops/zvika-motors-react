@@ -1,3 +1,5 @@
+import { getContactEmail } from "@/lib/obfuscate-email";
+
 export default function AccessibilityStatement() {
   return (
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
@@ -34,7 +36,7 @@ export default function AccessibilityStatement() {
             <div className="bg-gray-bg rounded-lg p-5 flex flex-col gap-2">
               <p><strong className="text-foreground">המוסך של צביקה – אור-צת שירותי רכב</strong></p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
-              <p>אימייל: <a href="mailto:ortzat1@gmail.com" className="text-primary underline">ortzat1@gmail.com</a></p>
+              <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>
               <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
             </div>
           </section>
