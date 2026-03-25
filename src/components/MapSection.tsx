@@ -56,17 +56,7 @@ export default function MapSection() {
                 rel="noopener noreferrer"
                 className="btn-primary text-center no-underline flex items-center justify-center gap-2.5"
               >
-                <svg viewBox="0 0 200 200" className="w-6 h-6 shrink-0" aria-hidden="true">
-                  {/* Waze ghost shape */}
-                  <path d="M100 10C55.8 10 20 45.8 20 90c0 22 8.9 41.9 23.3 56.4-1.2 12.8-5.8 24.5-13.5 34.3a4 4 0 0 0 3.2 6.3c18.3 0 35-6.7 48-17.8 6.2 1.8 12.7 2.8 19.5 2.8 44.2 0 80-35.8 80-80S144.2 10 100 10z" fill="currentColor"/>
-                  {/* Eyes */}
-                  <circle cx="75" cy="82" r="10" fill="#1a1a2e"/>
-                  <circle cx="125" cy="82" r="10" fill="#1a1a2e"/>
-                  <circle cx="78" cy="79" r="4" fill="white"/>
-                  <circle cx="128" cy="79" r="4" fill="white"/>
-                  {/* Smile */}
-                  <path d="M72 110c0 0 10 20 28 20s28-20 28-20" fill="none" stroke="#1a1a2e" strokeWidth="6" strokeLinecap="round"/>
-                </svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Waze_logo.svg/512px-Waze_logo.svg.png" alt="Waze" width={24} height={24} className="shrink-0 object-contain" />
                 נווטו עם Waze
               </a>
               <a
