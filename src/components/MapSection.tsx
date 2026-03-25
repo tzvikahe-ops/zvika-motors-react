@@ -80,6 +80,7 @@ export default function MapSection() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin"
             />
           </div>
         </div>
