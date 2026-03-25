@@ -68,8 +68,12 @@ export default function MapSection() {
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-dark text-center no-underline"
+                className="btn-outline-dark text-center no-underline flex items-center justify-center gap-2.5"
               >
+                <svg viewBox="0 0 32 32" className="w-6 h-6 shrink-0" aria-hidden="true">
+                  <path d="M16 2a9 9 0 0 0-9 9c0 6.75 9 19 9 19s9-12.25 9-19a9 9 0 0 0-9-9z" fill="#EA4335"/>
+                  <circle cx="16" cy="11" r="3.5" fill="white"/>
+                </svg>
                 Google Maps
               </a>
             </div>
