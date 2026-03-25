@@ -54,8 +54,11 @@ export default function MapSection() {
                 href="https://waze.com/ul?q=האופה%204%2C%20ירושלים&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-center no-underline"
+                className="btn-primary text-center no-underline flex items-center justify-center gap-2"
               >
+                <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0" fill="currentColor" aria-hidden="true">
+                  <path d="M20.54 6.63c.69 2.24.5 4.65-.58 6.81-1.07 2.18-2.94 3.84-5.15 4.58-.6.2-1.22.34-1.85.41.17.5.44.97.81 1.37.53.57 1.24.96 2.02 1.12.26.05.42.31.37.57a.47.47 0 0 1-.46.38c-.04 0-.07 0-.11-.01a4.72 4.72 0 0 1-2.72-1.5 4.64 4.64 0 0 1-.87-1.56c-.28.01-.57 0-.85-.03a8.84 8.84 0 0 1-6.04-3.27 8.87 8.87 0 0 1-1.76-6.56A8.84 8.84 0 0 1 7.47 2.9a8.83 8.83 0 0 1 6.56-1.76c2.4.29 4.56 1.47 6.04 3.27a8.7 8.7 0 0 1 .47.6v1.62zM9.2 9.45a1.08 1.08 0 1 0 0 2.16 1.08 1.08 0 0 0 0-2.16zm5.23 0a1.08 1.08 0 1 0 0 2.16 1.08 1.08 0 0 0 0-2.16zm-5.83 4.08c-.04.17.03.34.16.45a4.49 4.49 0 0 0 2.91 1.05c1.14 0 2.17-.42 2.92-1.05a.46.46 0 0 0-.44-.78 3.58 3.58 0 0 1-2.48.92c-.96 0-1.82-.36-2.48-.92a.46.46 0 0 0-.59.33z"/>
+                </svg>
                 נווטו עם Waze
               </a>
               <a
