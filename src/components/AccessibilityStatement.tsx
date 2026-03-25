@@ -1,3 +1,5 @@
+import { getContactEmail } from "@/lib/obfuscate-email";
+
 export default function AccessibilityStatement() {
   return (
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">

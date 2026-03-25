@@ -1,3 +1,5 @@
+import { getContactEmail } from "@/lib/obfuscate-email";
+
 export default function PrivacyPolicy() {
   return (
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
