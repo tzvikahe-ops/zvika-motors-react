@@ -54,26 +54,32 @@ export default function MapSection() {
                 href="https://waze.com/ul?q=האופה%204%2C%20ירושלים&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px]"
+                className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
-                <svg viewBox="0 0 32 32" className="w-[22px] h-[22px] shrink-0 -mt-px" aria-hidden="true">
-                  <path d="M16 2C8.8 2 3 7.8 3 15c0 3.5 1.4 6.7 3.6 9.1-.4 2.3-1.5 4.4-3.1 6a.8.8 0 0 0 .6 1.4c3.6 0 6.8-1.4 9.2-3.6 1.1.3 2.3.5 3.5.5 7.5 0 13.6-5.6 13.6-12.4S23.5 2 16 2z" fill="white"/>
-                  <circle cx="12" cy="13.5" r="2" fill="#1a1a2e"/>
-                  <circle cx="20" cy="13.5" r="2" fill="#1a1a2e"/>
-                  <path d="M11 19.5a6.5 6.5 0 0 0 10 0" fill="none" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+                <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-label="Waze">
+                    <path d="M12 2.25c-4.97 0-9 3.92-9 8.75 0 2.17.81 4.16 2.16 5.69-.24 1.31-.88 2.52-1.82 3.49-.23.24-.06.65.28.65 2.08 0 3.98-.76 5.44-2.03.63.17 1.29.26 1.96.26 4.97 0 9-3.92 9-8.75s-4.03-8.06-9.02-8.06z" fill="hsl(var(--primary-foreground))"/>
+                    <circle cx="8.7" cy="10.5" r="1.2" fill="hsl(var(--background))"/>
+                    <circle cx="13.5" cy="10.5" r="1.2" fill="hsl(var(--background))"/>
+                    <path d="M8.3 13.9c.62.75 1.55 1.18 2.56 1.18s1.94-.43 2.56-1.18" fill="none" stroke="hsl(var(--background))" strokeWidth="1.2" strokeLinecap="round"/>
+                    <circle cx="7.4" cy="17.7" r="1.35" fill="hsl(var(--primary-foreground))"/>
+                    <circle cx="12.6" cy="17.7" r="1.35" fill="hsl(var(--primary-foreground))"/>
+                  </svg>
+                </span>
                 נווטו עם Waze
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px]"
+                className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
-                <svg viewBox="0 0 32 32" className="w-[22px] h-[22px] shrink-0 -mt-px" aria-hidden="true">
-                  <path d="M16 2a9 9 0 0 0-9 9c0 6.75 9 19 9 19s9-12.25 9-19a9 9 0 0 0-9-9z" fill="#EA4335"/>
-                  <circle cx="16" cy="11" r="3.5" fill="white"/>
-                </svg>
+                <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-label="Google Maps">
+                    <path d="M12 2.25c-3.23 0-5.85 2.6-5.85 5.8 0 4.35 5.85 11.78 5.85 11.78S17.85 12.4 17.85 8.05c0-3.2-2.62-5.8-5.85-5.8z" fill="hsl(var(--brand-red))"/>
+                    <circle cx="12" cy="8.1" r="2.35" fill="hsl(var(--primary-foreground))"/>
+                  </svg>
+                </span>
                 Google Maps
               </a>
             </div>
