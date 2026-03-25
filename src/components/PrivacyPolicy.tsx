@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
               <p><strong className="text-foreground">המוסך של צביקה – אור-צת שירותי רכב</strong></p>
               <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
-              <p>אימייל: <a href="mailto:ortzat1@gmail.com" className="text-primary underline">ortzat1@gmail.com</a></p>
+              <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>
             </div>
           </section>
 
