@@ -1,4 +1,6 @@
 import { MapPin, Phone, Clock } from "lucide-react";
+import wazeLogo from "@/assets/waze-logo.svg";
+import googleMapsLogo from "@/assets/google-maps-logo.svg";
 
 export default function MapSection() {
   return (
@@ -57,14 +59,7 @@ export default function MapSection() {
                 className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" aria-hidden="true">
-                    <path d="M12 2.5c-4.9 0-8.9 3.8-8.9 8.5 0 2.1.8 4 2.1 5.5-.2 1.2-.8 2.3-1.6 3.2-.2.2 0 .6.3.6 1.9 0 3.7-.7 5.1-1.9.6.2 1.2.3 1.9.3 4.9 0 8.9-3.8 8.9-8.5S16.9 2.5 12 2.5Z" fill="currentColor"/>
-                    <circle cx="8.7" cy="10.6" r="1.05" fill="hsl(var(--background))"/>
-                    <circle cx="13.4" cy="10.6" r="1.05" fill="hsl(var(--background))"/>
-                    <path d="M8.5 14c.6.7 1.4 1.1 2.3 1.1s1.7-.4 2.3-1.1" fill="none" stroke="hsl(var(--background))" strokeWidth="1.2" strokeLinecap="round"/>
-                    <circle cx="7.5" cy="17.6" r="1.25" fill="currentColor"/>
-                    <circle cx="12.5" cy="17.6" r="1.25" fill="currentColor"/>
-                  </svg>
+                  <img src={wazeLogo} alt="" className="w-[20px] h-[20px] object-contain" loading="lazy" decoding="async" />
                 </span>
                 נווטו עם Waze
               </a>
@@ -75,13 +70,7 @@ export default function MapSection() {
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" aria-hidden="true">
-                    <path d="M12 2.2c-3.3 0-5.9 2.7-5.9 6 0 1.3.3 2.7.9 4.1h9.8c.6-1.4.9-2.8.9-4.1 0-3.3-2.6-6-5.9-6Z" fill="hsl(4 90% 58%)"/>
-                    <path d="M7 12.3c1 2.4 2.7 4.8 3.9 6.4l1.1 1.4v-7.8H7Z" fill="hsl(145 63% 42%)"/>
-                    <path d="M12 12.3v7.8l1.1-1.4c1.2-1.6 2.9-4 3.9-6.4H12Z" fill="hsl(45 96% 52%)"/>
-                    <circle cx="12" cy="8.2" r="2.35" fill="hsl(217 100% 58%)"/>
-                    <circle cx="12" cy="8.2" r="1.05" fill="hsl(var(--primary-foreground))"/>
-                  </svg>
+                  <img src={googleMapsLogo} alt="" className="w-[20px] h-[20px] object-contain" loading="lazy" decoding="async" />
                 </span>
                 Google Maps
               </a>
