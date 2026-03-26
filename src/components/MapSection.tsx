@@ -1,4 +1,4 @@
-import { Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 export default function MapSection() {
   return (
