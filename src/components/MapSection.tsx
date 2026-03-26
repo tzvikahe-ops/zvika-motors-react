@@ -57,8 +57,13 @@ export default function MapSection() {
                 className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
-                    <path d="M12 2C7.03 2 3 5.92 3 10.75c0 2.17.81 4.16 2.16 5.69-.24 1.31-.88 2.52-1.82 3.49-.23.24-.06.65.28.65 2.08 0 3.98-.76 5.44-2.03.63.17 1.29.26 1.96.26 4.97 0 9-3.92 9-8.75S16.97 2 12 2zm-3.3 10.6c-.66 0-1.2-.54-1.2-1.2s.54-1.2 1.2-1.2 1.2.54 1.2 1.2-.54 1.2-1.2 1.2zm4.8-1.2c0 .66-.54 1.2-1.2 1.2s-1.2-.54-1.2-1.2.54-1.2 1.2-1.2 1.2.54 1.2 1.2zm-5.2 3.5c.62.75 1.55 1.18 2.56 1.18s1.94-.43 2.56-1.18" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" aria-hidden="true">
+                    <path d="M12 2.5c-4.9 0-8.9 3.8-8.9 8.5 0 2.1.8 4 2.1 5.5-.2 1.2-.8 2.3-1.6 3.2-.2.2 0 .6.3.6 1.9 0 3.7-.7 5.1-1.9.6.2 1.2.3 1.9.3 4.9 0 8.9-3.8 8.9-8.5S16.9 2.5 12 2.5Z" fill="currentColor"/>
+                    <circle cx="8.7" cy="10.6" r="1.05" fill="hsl(var(--background))"/>
+                    <circle cx="13.4" cy="10.6" r="1.05" fill="hsl(var(--background))"/>
+                    <path d="M8.5 14c.6.7 1.4 1.1 2.3 1.1s1.7-.4 2.3-1.1" fill="none" stroke="hsl(var(--background))" strokeWidth="1.2" strokeLinecap="round"/>
+                    <circle cx="7.5" cy="17.6" r="1.25" fill="currentColor"/>
+                    <circle cx="12.5" cy="17.6" r="1.25" fill="currentColor"/>
                   </svg>
                 </span>
                 נווטו עם Waze
@@ -70,8 +75,12 @@ export default function MapSection() {
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" aria-hidden="true">
+                    <path d="M12 2.2c-3.3 0-5.9 2.7-5.9 6 0 1.3.3 2.7.9 4.1h9.8c.6-1.4.9-2.8.9-4.1 0-3.3-2.6-6-5.9-6Z" fill="hsl(4 90% 58%)"/>
+                    <path d="M7 12.3c1 2.4 2.7 4.8 3.9 6.4l1.1 1.4v-7.8H7Z" fill="hsl(145 63% 42%)"/>
+                    <path d="M12 12.3v7.8l1.1-1.4c1.2-1.6 2.9-4 3.9-6.4H12Z" fill="hsl(45 96% 52%)"/>
+                    <circle cx="12" cy="8.2" r="2.35" fill="hsl(217 100% 58%)"/>
+                    <circle cx="12" cy="8.2" r="1.05" fill="hsl(var(--primary-foreground))"/>
                   </svg>
                 </span>
                 Google Maps
