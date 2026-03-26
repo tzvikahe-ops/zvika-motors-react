@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Navigation, Phone, Clock } from "lucide-react";
 
 export default function MapSection() {
   return (
@@ -57,14 +57,7 @@ export default function MapSection() {
                 className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-label="Waze">
-                    <path d="M12 2.25c-4.97 0-9 3.92-9 8.75 0 2.17.81 4.16 2.16 5.69-.24 1.31-.88 2.52-1.82 3.49-.23.24-.06.65.28.65 2.08 0 3.98-.76 5.44-2.03.63.17 1.29.26 1.96.26 4.97 0 9-3.92 9-8.75s-4.03-8.06-9.02-8.06z" fill="hsl(var(--primary-foreground))"/>
-                    <circle cx="8.7" cy="10.5" r="1.2" fill="hsl(var(--background))"/>
-                    <circle cx="13.5" cy="10.5" r="1.2" fill="hsl(var(--background))"/>
-                    <path d="M8.3 13.9c.62.75 1.55 1.18 2.56 1.18s1.94-.43 2.56-1.18" fill="none" stroke="hsl(var(--background))" strokeWidth="1.2" strokeLinecap="round"/>
-                    <circle cx="7.4" cy="17.7" r="1.35" fill="hsl(var(--primary-foreground))"/>
-                    <circle cx="12.6" cy="17.7" r="1.35" fill="hsl(var(--primary-foreground))"/>
-                  </svg>
+                  <Navigation className="w-5 h-5 -mt-px" aria-hidden="true" />
                 </span>
                 נווטו עם Waze
               </a>
@@ -75,10 +68,7 @@ export default function MapSection() {
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-label="Google Maps">
-                    <path d="M12 2.25c-3.23 0-5.85 2.6-5.85 5.8 0 4.35 5.85 11.78 5.85 11.78S17.85 12.4 17.85 8.05c0-3.2-2.62-5.8-5.85-5.8z" fill="hsl(var(--brand-red))"/>
-                    <circle cx="12" cy="8.1" r="2.35" fill="hsl(var(--primary-foreground))"/>
-                  </svg>
+                  <MapPin className="w-5 h-5 -mt-px" aria-hidden="true" />
                 </span>
                 Google Maps
               </a>
