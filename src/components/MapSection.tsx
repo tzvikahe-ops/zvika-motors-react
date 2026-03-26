@@ -1,4 +1,4 @@
-import { MapPin, Navigation, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 export default function MapSection() {
   return (
@@ -57,7 +57,9 @@ export default function MapSection() {
                 className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <Navigation className="w-5 h-5 -mt-px" aria-hidden="true" />
+                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
+                    <path d="M12 2C7.03 2 3 5.92 3 10.75c0 2.17.81 4.16 2.16 5.69-.24 1.31-.88 2.52-1.82 3.49-.23.24-.06.65.28.65 2.08 0 3.98-.76 5.44-2.03.63.17 1.29.26 1.96.26 4.97 0 9-3.92 9-8.75S16.97 2 12 2zm-3.3 10.6c-.66 0-1.2-.54-1.2-1.2s.54-1.2 1.2-1.2 1.2.54 1.2 1.2-.54 1.2-1.2 1.2zm4.8-1.2c0 .66-.54 1.2-1.2 1.2s-1.2-.54-1.2-1.2.54-1.2 1.2-1.2 1.2.54 1.2 1.2zm-5.2 3.5c.62.75 1.55 1.18 2.56 1.18s1.94-.43 2.56-1.18" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
                 </span>
                 נווטו עם Waze
               </a>
@@ -68,7 +70,9 @@ export default function MapSection() {
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <MapPin className="w-5 h-5 -mt-px" aria-hidden="true" />
+                  <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                  </svg>
                 </span>
                 Google Maps
               </a>
