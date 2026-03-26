@@ -1,6 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
-import wazeLogo from "@/assets/waze-logo.svg";
-import googleMapsLogo from "@/assets/google-maps-logo.svg";
+import { SiGooglemaps, SiWaze } from "react-icons/si";
 
 export default function MapSection() {
   return (
@@ -59,7 +58,7 @@ export default function MapSection() {
                 className="btn-primary text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <img src={wazeLogo} alt="" className="w-[20px] h-[20px] object-contain" loading="lazy" decoding="async" />
+                  <SiWaze className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 נווטו עם Waze
               </a>
@@ -70,7 +69,7 @@ export default function MapSection() {
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-3 h-[46px] leading-none"
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 shrink-0" aria-hidden="true">
-                  <img src={googleMapsLogo} alt="" className="w-[20px] h-[20px] object-contain" loading="lazy" decoding="async" />
+                  <SiGooglemaps className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 Google Maps
               </a>
