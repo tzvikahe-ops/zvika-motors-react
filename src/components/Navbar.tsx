@@ -60,7 +60,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1 z-20 shrink-0"
+          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1 z-20 shrink-0 order-first md:order-none"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
