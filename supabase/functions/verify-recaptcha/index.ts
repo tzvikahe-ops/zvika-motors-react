@@ -85,25 +85,54 @@ Deno.serve(async (req) => {
     if (LOVABLE_API_KEY && TWILIO_API_KEY) {
       try {
         const GATEWAY_URL = "https://connector-gateway.lovable.dev/twilio";
+        const adminPhone = "+972526514446";
         const msgBody = `📋 פנייה חדשה מהאתר!\n👤 שם: ${name.trim()}\n📱 טלפון: ${phone.trim()}${message ? `\n💬 הודעה: ${message.trim().slice(0, 200)}` : ""}`;
 
-        const smsRes = await fetch(`${GATEWAY_URL}/Messages.json`, {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${LOVABLE_API_KEY}`,
-            "X-Connection-Api-Key": TWILIO_API_KEY,
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({
-            To: "+972526514446",
-            From: "+972526514446",
-            Body: msgBody,
-          }),
-        });
+        let fromNumber = Deno.env.get("TWILIO_FROM_NUMBER")?.trim();
 
-        if (!smsRes.ok) {
-          const errData = await smsRes.text();
-          console.error("Twilio SMS error:", smsRes.status, errData);
+        if (!fromNumber) {
+          const numbersRes = await fetch(`${GATEWAY_URL}/IncomingPhoneNumbers.json?PageSize=20`, {
+            method: "GET",
+            headers: {
+              "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+              "X-Connection-Api-Key": TWILIO_API_KEY,
+            },
+          });
+
+          if (numbersRes.ok) {
+            const numbersData = await numbersRes.json();
+            const numbers = Array.isArray(numbersData?.incoming_phone_numbers)
+              ? numbersData.incoming_phone_numbers
+              : [];
+            fromNumber = numbers.find((n: any) => n?.phone_number && n.phone_number !== adminPhone)?.phone_number
+              ?? numbers[0]?.phone_number;
+          } else {
+            const numbersErr = await numbersRes.text();
+            console.error("Failed to fetch Twilio numbers:", numbersRes.status, numbersErr);
+          }
+        }
+
+        if (!fromNumber) {
+          console.error("No Twilio sender number available. Set TWILIO_FROM_NUMBER or add a Twilio number to the account.");
+        } else {
+          const smsRes = await fetch(`${GATEWAY_URL}/Messages.json`, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+              "X-Connection-Api-Key": TWILIO_API_KEY,
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({
+              To: adminPhone,
+              From: fromNumber,
+              Body: msgBody,
+            }),
+          });
+
+          if (!smsRes.ok) {
+            const errData = await smsRes.text();
+            console.error("Twilio SMS error:", smsRes.status, errData);
+          }
         }
       } catch (smsErr) {
         console.error("SMS notification error:", smsErr);
