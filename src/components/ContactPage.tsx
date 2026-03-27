@@ -1,5 +1,6 @@
 import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icons";
 import { getContactEmail } from "@/lib/obfuscate-email";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
   return (
@@ -14,6 +15,8 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Contact Form */}
+          <ContactForm />
           {/* Contact Info */}
           <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-sm)] border border-border">
             <h2 className="font-bold text-[16px] text-foreground mb-6">פרטי התקשרות</h2>
