@@ -42,7 +42,7 @@ Deno.serve(async (req) => {
       body: new URLSearchParams({
         To: toWhatsApp,
         From: fromWhatsApp,
-        Body: "✅ בדיקת חיבור אוטומטית — המערכת פעילה ומוכנה לקבל פניות.",
+        Body: "🔔 תזכורת חיבור: כדי לשמור על קבלת התראות, השב 1 לשמירה על חיבור פעיל.",
       }),
     });
 
