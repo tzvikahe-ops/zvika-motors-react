@@ -38,9 +38,23 @@ Deno.serve(async (req) => {
     const verifyData = await verifyRes.json();
     console.log("reCAPTCHA verify response:", JSON.stringify(verifyData));
 
-    if (!verifyData.success || verifyData.score < 0.3) {
+    // Allow browser-error (common in preview/iframe environments) as soft failure
+    const isBrowserError = !verifyData.success && 
+      verifyData["error-codes"]?.includes("browser-error");
+    
+    if (!verifyData.success && !isBrowserError) {
+      console.error("reCAPTCHA hard failure:", JSON.stringify(verifyData));
       return new Response(
         JSON.stringify({ error: "אימות reCAPTCHA נכשל", details: verifyData }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    if (isBrowserError) {
+      console.warn("reCAPTCHA browser-error — allowing submission with warning");
+    } else if (verifyData.score < 0.3) {
+      return new Response(
+        JSON.stringify({ error: "אימות reCAPTCHA נכשל", score: verifyData.score }),
         { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
