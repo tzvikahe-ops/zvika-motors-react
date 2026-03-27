@@ -64,20 +64,37 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Send WhatsApp notification via CallMeBot
-    const whatsappApiKey = Deno.env.get("CALLMEBOT_API_KEY");
-    if (whatsappApiKey) {
+    // Send SMS notification via Twilio
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    const TWILIO_API_KEY = Deno.env.get("TWILIO_API_KEY");
+    if (LOVABLE_API_KEY && TWILIO_API_KEY) {
       try {
-        const notifyPhone = "972526514446";
-        const msgText = `📋 פנייה חדשה מהאתר!\n\n👤 שם: ${name.trim()}\n📱 טלפון: ${phone.trim()}${message ? `\n💬 הודעה: ${message.trim().slice(0, 200)}` : ""}`;
-        const encoded = encodeURIComponent(msgText);
-        await fetch(
-          `https://api.callmebot.com/whatsapp.php?phone=${notifyPhone}&text=${encoded}&apikey=${whatsappApiKey}`
-        );
-      } catch (whatsappErr) {
-        console.error("WhatsApp notification error:", whatsappErr);
-        // Don't fail the submission if WhatsApp notification fails
+        const GATEWAY_URL = "https://connector-gateway.lovable.dev/twilio";
+        const msgBody = `📋 פנייה חדשה מהאתר!\n👤 שם: ${name.trim()}\n📱 טלפון: ${phone.trim()}${message ? `\n💬 הודעה: ${message.trim().slice(0, 200)}` : ""}`;
+
+        const smsRes = await fetch(`${GATEWAY_URL}/Messages.json`, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+            "X-Connection-Api-Key": TWILIO_API_KEY,
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            To: "+972526514446",
+            From: "+972526514446",
+            Body: msgBody,
+          }),
+        });
+
+        if (!smsRes.ok) {
+          const errData = await smsRes.text();
+          console.error("Twilio SMS error:", smsRes.status, errData);
+        }
+      } catch (smsErr) {
+        console.error("SMS notification error:", smsErr);
       }
+    } else {
+      console.warn("Twilio keys not configured, skipping SMS notification");
     }
 
     return new Response(
