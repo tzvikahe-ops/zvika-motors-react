@@ -79,41 +79,29 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Send SMS notification via Twilio
+    // Send WhatsApp notification via Twilio
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const TWILIO_API_KEY = Deno.env.get("TWILIO_API_KEY");
     if (LOVABLE_API_KEY && TWILIO_API_KEY) {
       try {
         const GATEWAY_URL = "https://connector-gateway.lovable.dev/twilio";
-        const adminPhone = "+972526514446";
+        const normalizeWhatsAppAddress = (value: string) => {
+          const trimmed = value.trim();
+          return trimmed.startsWith("whatsapp:") ? trimmed : `whatsapp:${trimmed}`;
+        };
+
+        const adminPhone = Deno.env.get("ADMIN_WHATSAPP_TO")?.trim() || "+972526514446";
+        const toWhatsApp = normalizeWhatsAppAddress(adminPhone);
+        const configuredFrom =
+          Deno.env.get("TWILIO_WHATSAPP_FROM")?.trim() ||
+          Deno.env.get("TWILIO_FROM_NUMBER")?.trim() ||
+          "whatsapp:+14155238886";
+        const fromWhatsApp = normalizeWhatsAppAddress(configuredFrom);
+
         const msgBody = `📋 פנייה חדשה מהאתר!\n👤 שם: ${name.trim()}\n📱 טלפון: ${phone.trim()}${message ? `\n💬 הודעה: ${message.trim().slice(0, 200)}` : ""}`;
 
-        let fromNumber = Deno.env.get("TWILIO_FROM_NUMBER")?.trim();
-
-        if (!fromNumber) {
-          const numbersRes = await fetch(`${GATEWAY_URL}/IncomingPhoneNumbers.json?PageSize=20`, {
-            method: "GET",
-            headers: {
-              "Authorization": `Bearer ${LOVABLE_API_KEY}`,
-              "X-Connection-Api-Key": TWILIO_API_KEY,
-            },
-          });
-
-          if (numbersRes.ok) {
-            const numbersData = await numbersRes.json();
-            const numbers = Array.isArray(numbersData?.incoming_phone_numbers)
-              ? numbersData.incoming_phone_numbers
-              : [];
-            fromNumber = numbers.find((n: any) => n?.phone_number && n.phone_number !== adminPhone)?.phone_number
-              ?? numbers[0]?.phone_number;
-          } else {
-            const numbersErr = await numbersRes.text();
-            console.error("Failed to fetch Twilio numbers:", numbersRes.status, numbersErr);
-          }
-        }
-
-        if (!fromNumber) {
-          console.error("No Twilio sender number available. Set TWILIO_FROM_NUMBER or add a Twilio number to the account.");
+        if (fromWhatsApp === toWhatsApp) {
+          console.error("Twilio WhatsApp sender and recipient cannot be the same number.");
         } else {
           const smsRes = await fetch(`${GATEWAY_URL}/Messages.json`, {
             method: "POST",
@@ -123,22 +111,22 @@ Deno.serve(async (req) => {
               "Content-Type": "application/x-www-form-urlencoded",
             },
             body: new URLSearchParams({
-              To: adminPhone,
-              From: fromNumber,
+              To: toWhatsApp,
+              From: fromWhatsApp,
               Body: msgBody,
             }),
           });
 
           if (!smsRes.ok) {
             const errData = await smsRes.text();
-            console.error("Twilio SMS error:", smsRes.status, errData);
+            console.error("Twilio WhatsApp error:", smsRes.status, errData);
           }
         }
       } catch (smsErr) {
-        console.error("SMS notification error:", smsErr);
+        console.error("WhatsApp notification error:", smsErr);
       }
     } else {
-      console.warn("Twilio keys not configured, skipping SMS notification");
+      console.warn("Twilio keys not configured, skipping WhatsApp notification");
     }
 
     return new Response(
