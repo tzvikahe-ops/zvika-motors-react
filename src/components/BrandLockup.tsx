@@ -57,7 +57,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             <span className="font-black text-brand-red text-[17px] leading-tight whitespace-nowrap">
               המוסך של צביקה
             </span>
-            <p className="font-bold text-[11px] text-primary-foreground/90 leading-tight whitespace-nowrap m-0">
+            <p className="font-bold text-[12px] text-primary-foreground/90 leading-tight whitespace-nowrap m-0">
               אור-צת שירותי רכב
             </p>
           </div>
