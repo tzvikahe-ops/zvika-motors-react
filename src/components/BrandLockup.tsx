@@ -48,7 +48,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         <img
           src={logoText}
           alt="המוסך של צביקה - אור-צת שירותי רכב"
-          className="h-[40px] w-auto object-contain"
+          className="h-[64px] w-auto object-contain"
           width={920}
           height={95}
         />
