@@ -48,8 +48,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
-      <div className="flex md:hidden flex-col items-center gap-2">
-        <div className="flex items-center gap-2">
+      <div className="flex md:hidden items-center gap-2">
           <img
             src={logoMark}
             alt=""
@@ -65,15 +64,6 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             width={1920}
             height={395}
           />
-        </div>
-
-        <span
-          className={`text-center font-bold text-primary-foreground/80 leading-[1.3] ${
-            isFooter ? "text-[18px]" : "text-[15px]"
-          }`}
-        >
-          אור-צת שירותי רכב
-        </span>
       </div>
     </>
   );
