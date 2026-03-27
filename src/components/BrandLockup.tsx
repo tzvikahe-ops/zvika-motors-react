@@ -46,19 +46,19 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       {/* ── Mobile: stacked lockup ── */}
       <div className="flex md:hidden items-center gap-2 min-w-0">
         <img
+          src={logoText}
+          alt="המוסך של צביקה - אור-צת שירותי רכב"
+          className="h-[52px] w-auto object-contain min-w-0"
+          width={920}
+          height={95}
+        />
+        <img
           src={logoMark}
           alt=""
           aria-hidden="true"
           className="h-[52px] w-auto object-contain shrink-0"
           width={1200}
           height={273}
-        />
-        <img
-          src={logoText}
-          alt="המוסך של צביקה - אור-צת שירותי רכב"
-          className="h-[52px] w-auto object-contain min-w-0"
-          width={920}
-          height={95}
         />
       </div>
     </>
