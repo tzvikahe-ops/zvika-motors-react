@@ -34,15 +34,11 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             >
               המוסך של צביקה
             </span>
-            <p
-              className={`font-bold leading-[1.3] whitespace-nowrap m-0 ${
-                isFooter
-                  ? "text-[19px] text-primary-foreground"
-                  : "text-[15px] text-primary-foreground/90"
-              }`}
-            >
-              אור-צת שירותי רכב
-            </p>
+            {isFooter && (
+              <p className="font-bold leading-[1.3] whitespace-nowrap m-0 text-[19px] text-primary-foreground">
+                אור-צת שירותי רכב
+              </p>
+            )}
           </div>
         </div>
       </div>
