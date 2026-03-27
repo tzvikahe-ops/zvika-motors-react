@@ -28,7 +28,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       <div className="max-w-[1100px] mx-auto px-3 sm:px-6 relative flex items-center justify-center md:justify-between h-[80px] md:h-[72px] overflow-hidden">
         <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center p-0 min-w-0 max-w-[calc(100%-3rem)]"
+          className="bg-transparent border-none cursor-pointer flex items-center p-0 flex-1 min-w-0"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
