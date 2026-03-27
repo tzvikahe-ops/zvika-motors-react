@@ -53,14 +53,14 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             src={logoMark}
             alt=""
             aria-hidden="true"
-            className="h-[32px] w-auto object-contain shrink-0"
+            className="h-[52px] w-auto object-contain shrink-0"
             width={1200}
             height={273}
           />
           <img
             src={logoText}
             alt="המוסך של צביקה"
-            className="h-[28px] w-auto object-contain shrink-0"
+            className="h-[42px] w-auto object-contain shrink-0"
             width={1920}
             height={395}
           />
