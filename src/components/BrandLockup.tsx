@@ -44,7 +44,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
-      <div className="flex md:hidden items-center gap-2 min-w-0 overflow-hidden">
+      <div className="flex md:hidden items-center gap-2 min-w-0">
         <img
           src={logoMark}
           alt=""
