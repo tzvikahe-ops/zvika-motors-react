@@ -64,6 +64,22 @@ Deno.serve(async (req) => {
       );
     }
 
+    // Send WhatsApp notification via CallMeBot
+    const whatsappApiKey = Deno.env.get("CALLMEBOT_API_KEY");
+    if (whatsappApiKey) {
+      try {
+        const notifyPhone = "972526514446";
+        const msgText = `📋 פנייה חדשה מהאתר!\n\n👤 שם: ${name.trim()}\n📱 טלפון: ${phone.trim()}${message ? `\n💬 הודעה: ${message.trim().slice(0, 200)}` : ""}`;
+        const encoded = encodeURIComponent(msgText);
+        await fetch(
+          `https://api.callmebot.com/whatsapp.php?phone=${notifyPhone}&text=${encoded}&apikey=${whatsappApiKey}`
+        );
+      } catch (whatsappErr) {
+        console.error("WhatsApp notification error:", whatsappErr);
+        // Don't fail the submission if WhatsApp notification fails
+      }
+    }
+
     return new Response(
       JSON.stringify({ success: true, score: verifyData.score }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
