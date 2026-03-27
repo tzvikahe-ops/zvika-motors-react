@@ -54,10 +54,10 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             height={273}
           />
           <div className="flex flex-col items-start justify-center gap-0 min-w-0 overflow-hidden">
-            <span className="font-black text-brand-red text-[17px] leading-tight whitespace-nowrap">
+            <span className="font-black text-brand-red text-[17px] leading-tight truncate w-full">
               המוסך של צביקה
             </span>
-            <p className="font-bold text-[12px] text-primary-foreground/90 leading-tight whitespace-nowrap m-0">
+            <p className="font-bold text-[12px] text-primary-foreground/90 leading-tight truncate w-full m-0">
               אור-צת שירותי רכב
             </p>
           </div>
