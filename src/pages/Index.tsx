@@ -78,10 +78,11 @@ const Index = () => {
         {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
         {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       </Suspense>
-      <Footer setPage={setPage} />
-
-      <CookieConsent setPage={setPage} />
-      <AccessibilityWidget setPage={setPage} />
+      <Suspense fallback={null}>
+        <Footer setPage={setPage} />
+        <CookieConsent setPage={setPage} />
+        <AccessibilityWidget setPage={setPage} />
+      </Suspense>
 
       {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
       <a
