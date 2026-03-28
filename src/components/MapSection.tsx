@@ -15,7 +15,7 @@ export default function MapSection() {
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.12] mb-3">
             בואו לבקר
           </h2>
-          <p className="text-primary-foreground/35 text-[13px] md:text-[14px] leading-[1.75] max-w-[400px]">
+          <p className="text-primary-foreground/60 text-[13px] md:text-[14px] leading-[1.75] max-w-[400px]">
             גבעת שאול, ירושלים. חניה נוחה וגישה קלה מכל חלקי העיר.
           </p>
         </div>
@@ -29,14 +29,14 @@ export default function MapSection() {
 
             <div>
               <h3 className="font-black text-[15px] md:text-[16px] text-primary-foreground mb-1">אור-צת שירותי רכב</h3>
-              <p className="text-primary-foreground/25 text-[11px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
+              <p className="text-primary-foreground/55 text-[11px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
 
               <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start gap-3">
                   <MapPin size={15} className="text-brand-red/50 mt-0.5 shrink-0" />
                   <div>
                     <p className="font-bold text-[13px] text-primary-foreground">האופה 4, ירושלים</p>
-                    <p className="text-primary-foreground/30 text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
+                    <p className="text-primary-foreground/55 text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -45,7 +45,7 @@ export default function MapSection() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock size={15} className="text-brand-red/50 shrink-0" />
-                  <p className="text-primary-foreground/40 text-[12px]">א׳–ה׳ 08:00–16:30</p>
+                  <p className="text-primary-foreground/60 text-[12px]">א׳–ה׳ 08:00–16:30</p>
                 </div>
               </div>
             </div>
