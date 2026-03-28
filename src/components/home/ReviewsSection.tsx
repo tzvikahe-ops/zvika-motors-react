@@ -1,4 +1,4 @@
-import FeaturableWidget from "@/components/FeaturableWidget";
+import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
 
 export default function ReviewsSection() {
   return (
@@ -6,7 +6,6 @@ export default function ReviewsSection() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-[1100px] mx-auto">
-        {/* Header */}
         <div className="mb-10 md:mb-14 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-px bg-brand-red/50" />
@@ -21,8 +20,7 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        {/* Featurable Google Reviews Widget */}
-        <FeaturableWidget />
+        <GoogleReviewsCarousel />
       </div>
     </section>
   );
