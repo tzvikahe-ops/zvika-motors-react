@@ -22,7 +22,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
+      className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden"
       dir="rtl"
     >
         <div className="max-w-[1100px] mx-auto px-3 sm:px-6 flex items-center justify-between h-[72px] md:h-[72px] overflow-hidden">
