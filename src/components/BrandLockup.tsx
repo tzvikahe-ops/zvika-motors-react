@@ -15,32 +15,22 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   return (
     <>
       {/* ── Desktop lockup ── */}
-      <div className="hidden md:flex">
-        <div className="flex items-center gap-3">
-          <img
-            src={logoMark}
-            alt=""
-            aria-hidden="true"
-            className={`${iconClass} object-contain shrink-0`}
-            width={1200}
-            height={273}
-          />
-
-          <div className="flex flex-col items-start justify-center gap-1">
-            <span
-              className={`font-black text-brand-red shrink-0 leading-none whitespace-nowrap ${
-                isFooter ? "text-[26px]" : "text-[22px]"
-              }`}
-            >
-              המוסך של צביקה
-            </span>
-            {isFooter && (
-              <p className="font-bold leading-[1.3] whitespace-nowrap m-0 text-[19px] text-primary-foreground">
-                אור-צת שירותי רכב
-              </p>
-            )}
-          </div>
-        </div>
+      <div className="hidden md:flex items-center gap-3">
+        <img
+          src={logoText}
+          alt="המוסך של צביקה - אור-צת שירותי רכב"
+          className="h-[60px] w-auto max-w-[260px] object-contain object-right shrink"
+          width={920}
+          height={95}
+        />
+        <img
+          src={logoMark}
+          alt=""
+          aria-hidden="true"
+          className="h-[56px] w-auto object-contain shrink-0"
+          width={1200}
+          height={273}
+        />
       </div>
 
       {/* ── Mobile: stacked lockup ── */}
