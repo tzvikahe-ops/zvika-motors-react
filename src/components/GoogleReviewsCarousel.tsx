@@ -108,7 +108,7 @@ export default function GoogleReviewsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [avgRating, setAvgRating] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
-  const [profileUrl, setProfileUrl] = useState("");
+  const [writeReviewUrl, setWriteReviewUrl] = useState("");
 
   const getVisible = useCallback(() => {
     if (typeof window === "undefined") return 3;
@@ -134,9 +134,10 @@ export default function GoogleReviewsCarousel() {
             (r) => (r.originalText || r.text).trim().length > 0 && r.rating.value >= 4
           );
           setReviews(filtered);
-          setAvgRating(data.averageRating ?? 0);
-          setTotalCount(data.totalReviewCount ?? filtered.length);
-          setProfileUrl(data.profileUrl ?? "");
+          const summary = data.widget.gbpLocationSummary;
+          setAvgRating(summary?.rating ?? 0);
+          setTotalCount(summary?.reviewsCount ?? filtered.length);
+          setWriteReviewUrl(summary?.writeAReviewUri ?? "");
         } else {
           setError(true);
         }
