@@ -131,30 +131,6 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
     </section>
   );
 }
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2" />
-    <line x1="7" y1="12" x2="17" y2="12" /><line x1="12" y1="7" x2="12" y2="17" />
-  </svg>
-);
-const ACSvg = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M12 2v20M2 12h20" /><circle cx="12" cy="12" r="3" />
-    <path d="M6.34 6.34l2.83 2.83M14.83 14.83l2.83 2.83M17.66 6.34l-2.83 2.83M9.17 14.83l-2.83 2.83" />
-  </svg>
-);
-const ClipboardSVG = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
-    <rect x="8" y="2" width="8" height="4" rx="1" /><path d="M9 14l2 2 4-4" />
-  </svg>
-);
-const OilSVG = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M12 2v6M6 8h12l-2 14H8L6 8z" /><circle cx="12" cy="5" r="1" fill="currentColor" />
-  </svg>
-);
-const BrakeSVG = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" />
     <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
   </svg>
