@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const RECAPTCHA_SITE_KEY = "6LddXZosAAAAAMqBHbxXsPEvVgcCZPiL9y5E2LZw";
 
@@ -80,6 +81,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
+      trackFormSubmit(); /* GA4: form_submit */
       setForm({ name: "", phone: "", message: "" });
     } catch (err: any) {
       setStatus("error");
