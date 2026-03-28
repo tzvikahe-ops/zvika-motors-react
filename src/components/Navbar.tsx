@@ -36,7 +36,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 relative z-20 shrink-0"
+          className="md:hidden p-2 relative z-20 shrink-0 text-brand-red"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
