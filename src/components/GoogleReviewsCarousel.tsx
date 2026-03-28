@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Star, ChevronRight, ChevronLeft, Quote } from "lucide-react";
 
 const WIDGET_ID = "02d896b2-2c43-46ae-bbe6-9783d9fc0c61";
