@@ -268,7 +268,7 @@ export default function GoogleReviewsCarousel() {
 
       {writeReviewUrl && (
         <div className="text-center pt-2">
-          <a href={writeReviewUrl} target="_blank" rel="noopener noreferrer" className="text-brand-red text-[13px] font-semibold hover:underline inline-flex items-center gap-1">
+          <a href={writeReviewUrl.replace("!12e1", "!12e0")} target="_blank" rel="noopener noreferrer" className="text-brand-red text-[13px] font-semibold hover:underline inline-flex items-center gap-1">
             צפו בכל הביקורות בגוגל
             <ChevronLeft className="w-3.5 h-3.5" />
           </a>
