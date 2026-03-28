@@ -64,17 +64,19 @@ const Index = () => {
       <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
         <HomePage setPage={setPage} />
       </div>
-      {currentPage === "services" && <ServicesPage />}
-      {currentPage === "gallery" && <GalleryPage />}
-      {currentPage === "contact" && <ContactPage />}
-      {currentPage === "about" && <AboutPage />}
-      {currentPage === "privacy" && <PrivacyPolicy />}
-      {currentPage === "accessibility" && <AccessibilityStatement />}
-      {currentPage === "image-generator" && <ImageGeneratorPage />}
-      {currentPage === "faq" && <FAQPage setPage={setPage} />}
-      {currentPage === "blog" && <BlogPage setPage={setPage} />}
-      {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
-      {(currentPage === "home" || currentPage === "contact") && <MapSection />}
+      <Suspense fallback={null}>
+        {currentPage === "services" && <ServicesPage />}
+        {currentPage === "gallery" && <GalleryPage />}
+        {currentPage === "contact" && <ContactPage />}
+        {currentPage === "about" && <AboutPage />}
+        {currentPage === "privacy" && <PrivacyPolicy />}
+        {currentPage === "accessibility" && <AccessibilityStatement />}
+        {currentPage === "image-generator" && <ImageGeneratorPage />}
+        {currentPage === "faq" && <FAQPage setPage={setPage} />}
+        {currentPage === "blog" && <BlogPage setPage={setPage} />}
+        {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
+        {(currentPage === "home" || currentPage === "contact") && <MapSection />}
+      </Suspense>
       <Footer setPage={setPage} />
 
       <CookieConsent setPage={setPage} />
