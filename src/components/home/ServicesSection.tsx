@@ -108,10 +108,12 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
               <div className="text-brand-red group-hover:text-brand-red mb-4 transition-colors duration-200">{icon}</div>
               <h3 className="font-bold text-[14px] md:text-[15px] text-white tracking-[-0.01em] mb-2">{title}</h3>
               <p className="text-white/70 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
+              {/* GA4: whatsapp_click / services */}
               <a
                 href="https://wa.me/972526514446"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("services")}
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-[11px] font-bold px-4 py-2 rounded transition-colors duration-200 no-underline w-fit"
               >
                 <WhatsAppSVG />
