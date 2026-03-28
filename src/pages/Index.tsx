@@ -77,7 +77,11 @@ const Index = () => {
         {currentPage === "faq" && <FAQPage setPage={setPage} />}
         {currentPage === "blog" && <BlogPage setPage={setPage} />}
         {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
-        {(currentPage === "home" || currentPage === "contact") && <MapSection />}
+        {(currentPage === "home" || currentPage === "contact") && (
+          <LazySection rootMargin="300px" minHeight="300px">
+            <MapSection />
+          </LazySection>
+        )}
       </Suspense>
       <Suspense fallback={null}>
         <Footer setPage={setPage} />
