@@ -22,7 +22,7 @@ export default function StorySection() {
               היום, בנו <strong className="text-foreground">צביקה</strong> ממשיך את המסורת. עם צוות מכונאים מקצועי, ציוד מתקדם, ואותם ערכים שליוו את המוסך מהיום הראשון שקיפות, הגינות ומקצועיות ללא פשרות.
             </p>
             <p className="text-foreground/60 text-[14px] md:text-[15px] leading-[2]">
-              לאורך <strong className="text-foreground">יותר מ-30 שנה</strong> טיפלנו באלפי רכבים ובנינו קשרים ארוכי טווח עם לקוחות שהפכו למשפחה. אצלנו, כל לקוח מקבל תשומת לב מלאה — כי ככה צריך לעבוד.
+              לאורך <strong className="text-foreground">יותר מ-30 שנה</strong> טיפלנו באלפי רכבים ובנינו קשרים ארוכי טווח עם לקוחות שהפכו למשפחה. אצלנו, כל לקוח מקבל תשומת לב מלאה כי ככה צריך לעבוד.
             </p>
           </div>
 
