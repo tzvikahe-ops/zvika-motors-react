@@ -52,7 +52,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
-                  : "text-primary-foreground/40 font-medium hover:text-primary-foreground/70"
+                  : "text-primary-foreground/60 font-medium hover:text-primary-foreground/90"
               }`}
             >
               {label}
@@ -78,7 +78,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               className={`bg-transparent border-none cursor-pointer text-[15px] text-right py-3 transition-colors duration-200 ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
-                  : "text-primary-foreground/50 font-medium"
+                  : "text-primary-foreground/70 font-medium"
               }`}
             >
               {label}
