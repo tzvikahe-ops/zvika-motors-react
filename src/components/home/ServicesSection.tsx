@@ -130,5 +130,4 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
       </div>
     </section>
   );
-
-
+}
