@@ -106,6 +106,11 @@ export function useSeo() {
       let ogMeta = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`);
       if (ogMeta) {
         ogMeta.content = content;
+      } else {
+        ogMeta = document.createElement("meta");
+        ogMeta.setAttribute("property", property);
+        ogMeta.content = content;
+        document.head.appendChild(ogMeta);
       }
     }
 
