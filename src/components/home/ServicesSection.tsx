@@ -104,14 +104,14 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
             <div key={title} className="bg-surface-darker p-6 sm:p-7 md:p-8 group relative flex flex-col">
               {/* Top accent line */}
               <div className="absolute top-0 right-0 w-0 group-hover:w-full h-[2px] bg-brand-red/30 transition-all duration-500" />
-              <div className="text-brand-red/60 group-hover:text-brand-red mb-4 transition-colors duration-200">{icon}</div>
-              <h3 className="font-bold text-[14px] md:text-[15px] text-primary-foreground tracking-[-0.01em] mb-2">{title}</h3>
-              <p className="text-primary-foreground/60 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
+              <div className="text-brand-red group-hover:text-brand-red mb-4 transition-colors duration-200">{icon}</div>
+              <h3 className="font-bold text-[14px] md:text-[15px] text-white tracking-[-0.01em] mb-2">{title}</h3>
+              <p className="text-white/70 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
               <a
                 href="https://wa.me/972526514446"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-brand-red/80 hover:text-brand-red text-[11px] font-bold transition-colors duration-200 no-underline w-fit"
+                className="inline-flex items-center gap-1.5 text-brand-red hover:text-brand-red text-[11px] font-bold transition-colors duration-200 no-underline w-fit"
               >
                 <WhatsAppSVG />
                 <span>תאמו טיפול</span>
