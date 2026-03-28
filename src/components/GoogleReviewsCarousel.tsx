@@ -214,13 +214,24 @@ export default function GoogleReviewsCarousel() {
   return (
     <div ref={containerRef} className="space-y-6">
       {avgRating > 0 && (
-        <div className="flex items-center justify-center gap-3 mb-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-2">
           <div className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-sm">
             <GoogleIcon />
             <span className="text-foreground font-bold text-lg">{avgRating.toFixed(1)}</span>
             <Stars rating={Math.round(avgRating)} />
             <span className="text-muted-foreground text-[12px]">({totalCount} ביקורות)</span>
           </div>
+          {writeReviewUrl && (
+            <a
+              href={writeReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-brand-red text-accent-foreground text-[13px] font-semibold rounded-full px-4 py-2 hover:bg-brand-red-hover transition-colors shadow-sm"
+            >
+              <Star className="w-3.5 h-3.5 fill-current" />
+              כתוב ביקורת
+            </a>
+          )}
         </div>
       )}
 
@@ -255,9 +266,9 @@ export default function GoogleReviewsCarousel() {
         )}
       </div>
 
-      {profileUrl && (
+      {writeReviewUrl && (
         <div className="text-center pt-2">
-          <a href={profileUrl} target="_blank" rel="noopener noreferrer" className="text-brand-red text-[13px] font-semibold hover:underline inline-flex items-center gap-1">
+          <a href={writeReviewUrl} target="_blank" rel="noopener noreferrer" className="text-brand-red text-[13px] font-semibold hover:underline inline-flex items-center gap-1">
             צפו בכל הביקורות בגוגל
             <ChevronLeft className="w-3.5 h-3.5" />
           </a>
