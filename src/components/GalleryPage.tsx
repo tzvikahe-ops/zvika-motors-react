@@ -1,5 +1,5 @@
 import { useState } from "react";
-import garagePhoto from "@/assets/gallery-garage.jpg";
+import garagePhoto from "@/assets/gallery-garage.webp";
 
 const galleryImages = [
   { src: garagePhoto, alt: "חזית המוסך של צביקה בגבעת שאול" },

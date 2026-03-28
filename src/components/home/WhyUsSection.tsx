@@ -1,4 +1,4 @@
-import mechanicImage from "@/assets/mechanic-work.jpg";
+import mechanicImage from "@/assets/mechanic-work.webp";
 
 const points = [
   { num: "01", title: "ניסיון של מעל 30 שנה", desc: "התחלנו ב-1993 ומאז טיפלנו באלפי רכבים. אנחנו יודעים לזהות בעיות במהירות ולחסוך לכם זמן וכסף." },
