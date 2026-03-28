@@ -1,5 +1,5 @@
-import logoMark from "@/assets/logo-mark-pdf.png";
-import logoText from "@/assets/logo-text-clean.png";
+import logoMark from "@/assets/logo-mark-pdf.webp";
+import logoText from "@/assets/logo-text-clean.webp";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
