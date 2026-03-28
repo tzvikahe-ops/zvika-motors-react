@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
-import { useCanonical } from "@/hooks/use-canonical";
+import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
@@ -21,7 +21,7 @@ import { WhatsAppIcon } from "@/components/Icons";
 
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
-  useCanonical();
+  useSeo();
 
   useLayoutEffect(() => {
     let timeoutId: number | undefined;
