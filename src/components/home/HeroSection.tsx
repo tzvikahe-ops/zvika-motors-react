@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-garage.jpg";
+import heroImage from "@/assets/hero-garage.webp";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 
 import type { Page } from "@/types/page";
