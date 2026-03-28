@@ -25,10 +25,10 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden"
       dir="rtl"
     >
-        <div dir="ltr" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[78px] md:h-[72px]">
+        <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[78px] md:h-[72px]">
         <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 mr-auto md:mr-0 md:ml-auto md:order-last"
+          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
@@ -42,7 +42,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6 flex-row-reverse">
+        <div className="hidden md:flex items-center gap-6">
           {links.map(({ label, page }) => (
             <button
               key={label}
