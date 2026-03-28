@@ -14,7 +14,7 @@ const localBusinessSchema = {
   name: "המוסך של צביקה – אור-צת שירותי רכב",
   image: "https://www.ortzat.co.il/og-image.jpg",
   url: "https://www.ortzat.co.il",
-  telephone: "+972-2-651-4446",
+  telephone: "02-6514446",
   email: "ortzat1@gmail.com",
   address: {
     "@type": "PostalAddress",
