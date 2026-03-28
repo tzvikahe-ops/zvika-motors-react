@@ -131,13 +131,6 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
     </section>
   );
 }
-
-const WrenchSVG = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="hsl(2 58% 42% / 0.5)" strokeWidth="1.5">
-    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-  </svg>
-);
-const ScanSVG = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2" />
     <line x1="7" y1="12" x2="17" y2="12" /><line x1="12" y1="7" x2="12" y2="17" />
