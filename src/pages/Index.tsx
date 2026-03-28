@@ -63,26 +63,28 @@ const Index = () => {
     <div className="min-h-screen bg-background font-sans">
       <Navbar currentPage={currentPage} setPage={setPage} />
 
-      <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
-        <HomePage setPage={setPage} />
-      </div>
-      <Suspense fallback={null}>
-        {currentPage === "services" && <ServicesPage />}
-        {currentPage === "gallery" && <GalleryPage />}
-        {currentPage === "contact" && <ContactPage />}
-        {currentPage === "about" && <AboutPage />}
-        {currentPage === "privacy" && <PrivacyPolicy />}
-        {currentPage === "accessibility" && <AccessibilityStatement />}
-        {currentPage === "image-generator" && <ImageGeneratorPage />}
-        {currentPage === "faq" && <FAQPage setPage={setPage} />}
-        {currentPage === "blog" && <BlogPage setPage={setPage} />}
-        {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
-        {(currentPage === "home" || currentPage === "contact") && (
-          <LazySection rootMargin="300px" minHeight="300px">
-            <MapSection />
-          </LazySection>
-        )}
-      </Suspense>
+      <main id="main-content">
+        <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
+          <HomePage setPage={setPage} />
+        </div>
+        <Suspense fallback={null}>
+          {currentPage === "services" && <ServicesPage />}
+          {currentPage === "gallery" && <GalleryPage />}
+          {currentPage === "contact" && <ContactPage />}
+          {currentPage === "about" && <AboutPage />}
+          {currentPage === "privacy" && <PrivacyPolicy />}
+          {currentPage === "accessibility" && <AccessibilityStatement />}
+          {currentPage === "image-generator" && <ImageGeneratorPage />}
+          {currentPage === "faq" && <FAQPage setPage={setPage} />}
+          {currentPage === "blog" && <BlogPage setPage={setPage} />}
+          {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
+          {(currentPage === "home" || currentPage === "contact") && (
+            <LazySection rootMargin="300px" minHeight="300px">
+              <MapSection />
+            </LazySection>
+          )}
+        </Suspense>
+      </main>
       <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
         <Footer setPage={setPage} />
         <CookieConsent setPage={setPage} />
