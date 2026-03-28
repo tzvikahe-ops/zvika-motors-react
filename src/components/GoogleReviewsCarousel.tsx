@@ -246,7 +246,7 @@ export default function GoogleReviewsCarousel() {
         {reviews.length > visible && (
           <div className="flex justify-center gap-1.5 mt-6">
             {Array.from({ length: maxIdx + 1 }, (_, i) => (
-              <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-brand-red w-5" : "bg-border hover:bg-muted-foreground/40"}`} aria-label={`עמוד ${i + 1}`} />
+              <button key={i} onClick={() => { setCurrentIndex(i); resetAutoplay(); }} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-brand-red w-5" : "bg-border hover:bg-muted-foreground/40"}`} aria-label={`עמוד ${i + 1}`} />
             ))}
           </div>
         )}
