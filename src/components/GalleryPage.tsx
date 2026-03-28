@@ -1,13 +1,17 @@
 import { useState } from "react";
 import garagePhoto from "@/assets/gallery-garage.webp";
 
+function unsplashSrcSet(id: string) {
+  return `https://images.unsplash.com/${id}?w=400&q=75 400w, https://images.unsplash.com/${id}?w=600&q=80 600w, https://images.unsplash.com/${id}?w=800&q=80 800w`;
+}
+
 const galleryImages = [
-  { src: garagePhoto, alt: "חזית המוסך של צביקה בגבעת שאול" },
-  { src: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80", alt: "בדיקת רכב מקצועית" },
-  { src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80", alt: "מוסך מקצועי בירושלים" },
-  { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80", alt: "רכב מטופל" },
-  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "כלי עבודה מקצועיים" },
-  { src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80", alt: "עבודת מכונאות" },
+  { src: garagePhoto, alt: "חזית המוסך של צביקה בגבעת שאול", srcSet: undefined as string | undefined },
+  { src: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80", alt: "בדיקת רכב מקצועית", srcSet: unsplashSrcSet("photo-1530046339160-ce3e530c7d2f") },
+  { src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80", alt: "מוסך מקצועי בירושלים", srcSet: unsplashSrcSet("photo-1619642751034-765dfdf7c58e") },
+  { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80", alt: "רכב מטופל", srcSet: unsplashSrcSet("photo-1492144534655-ae79c964c9d7") },
+  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "כלי עבודה מקצועיים", srcSet: unsplashSrcSet("photo-1558618666-fcd25c85cd64") },
+  { src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80", alt: "עבודת מכונאות", srcSet: unsplashSrcSet("photo-1486262715619-67b85e0b08d3") },
 ];
 
 export default function GalleryPage() {
@@ -31,7 +35,11 @@ export default function GalleryPage() {
             >
               <img
                 src={img.src}
+                srcSet={img.srcSet}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 alt={img.alt}
+                width={600}
+                height={450}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 loading="lazy"
               />
