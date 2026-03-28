@@ -28,7 +28,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1 z-20 shrink-0"
+          className="md:hidden p-2 relative z-20 shrink-0"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
