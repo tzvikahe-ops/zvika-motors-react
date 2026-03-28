@@ -41,7 +41,7 @@ const localBusinessSchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.8",
-    reviewCount: "120",
+    reviewCount: "108",
   },
   sameAs: ["https://wa.me/972526514446"],
   description:
