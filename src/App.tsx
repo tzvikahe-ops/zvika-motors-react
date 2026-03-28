@@ -1,20 +1,26 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import ImageStudioPage from "./components/ImageStudioPage.tsx";
-import AdminPage from "./components/AdminPage.tsx";
+
+const ImageStudioPage = lazy(() => import("./components/ImageStudioPage.tsx"));
+const AdminPage = lazy(() => import("./components/AdminPage.tsx"));
+
+// Lazy load toast components — not needed at initial render
+const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
+const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
+      <Suspense fallback={null}>
+        <Toaster />
+        <Sonner />
+      </Suspense>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -28,8 +34,8 @@ const App = () => (
           <Route path="/privacy" element={<Index />} />
           <Route path="/accessibility" element={<Index />} />
           <Route path="/image-generator" element={<Index />} />
-          <Route path="/image-studio" element={<ImageStudioPage />} />
-          <Route path="/admin-panel" element={<AdminPage />} />
+          <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
+          <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

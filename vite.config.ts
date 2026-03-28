@@ -18,4 +18,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-router": ["react-router-dom"],
+          "vendor-query": ["@tanstack/react-query"],
+        },
+      },
+    },
+    // Target modern browsers to avoid legacy polyfills
+    target: "es2020",
+    // Reduce CSS size
+    cssMinify: true,
+  },
 }));

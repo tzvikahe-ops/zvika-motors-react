@@ -19,6 +19,11 @@ export function loadDeferredScripts(): void {
   if (loaded) return;
   loaded = true;
 
+  // Google Analytics (gtag.js) — deferred to avoid render-blocking
+  loadScript(
+    "https://www.googletagmanager.com/gtag/js?id=G-FWD2H06Y7K"
+  );
+
   // Accessibility widget (enable.co.il)
   loadScript(
     "https://cdn.enable.co.il/licenses/enable-L54645vosqvgvfir-0326-81012/init.js"

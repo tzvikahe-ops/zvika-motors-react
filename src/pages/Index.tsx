@@ -3,12 +3,13 @@ import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
-import CookieConsent from "@/components/CookieConsent";
-import AccessibilityWidget from "@/components/AccessibilityWidget";
 import { WhatsAppIcon } from "@/components/Icons";
 
+// Lazy load non-critical components
+const Footer = lazy(() => import("@/components/Footer"));
+const CookieConsent = lazy(() => import("@/components/CookieConsent"));
+const AccessibilityWidget = lazy(() => import("@/components/AccessibilityWidget"));
 const ServicesPage = lazy(() => import("@/components/ServicesPage"));
 const GalleryPage = lazy(() => import("@/components/GalleryPage"));
 const ContactPage = lazy(() => import("@/components/ContactPage"));
@@ -77,10 +78,11 @@ const Index = () => {
         {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
         {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       </Suspense>
-      <Footer setPage={setPage} />
-
-      <CookieConsent setPage={setPage} />
-      <AccessibilityWidget setPage={setPage} />
+      <Suspense fallback={null}>
+        <Footer setPage={setPage} />
+        <CookieConsent setPage={setPage} />
+        <AccessibilityWidget setPage={setPage} />
+      </Suspense>
 
       {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
       <a
