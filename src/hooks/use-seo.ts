@@ -6,36 +6,46 @@ const BASE_URL = "https://www.ortzat.co.il";
 interface PageSeo {
   title: string;
   description: string;
+  ogImage?: string;
 }
+
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const pageSeoMap: Record<string, PageSeo> = {
   "/": {
     title: "המוסך של צביקה | מוסך מקצועי בירושלים – אור-צת שירותי רכב",
     description: "המוסך של צביקה – מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט. שקיפות מלאה, מחיר הוגן ושירות אישי. 02-6514446.",
+    ogImage: `${BASE_URL}/og-home.jpg`,
   },
   "/services": {
     title: "שירותי מוסך מקצועיים בירושלים | המוסך של צביקה",
     description: "שירותי מכונאות רכב מקיפים בירושלים: טיפולים שוטפים, דיאגנוסטיקה ממוחשבת, מיזוג אוויר לרכב, הכנה לטסט שנתי, בדיקת רכב לפני קנייה ועוד. מעל 30 שנות ניסיון. 02-6514446.",
+    ogImage: `${BASE_URL}/og-services.jpg`,
   },
   "/about": {
     title: "אודות המוסך של צביקה | מוסך משפחתי בירושלים מאז 1993",
     description: "הכירו את המוסך של צביקה – מוסך משפחתי בגבעת שאול, ירושלים. מעל 30 שנות ניסיון, שירות אישי ושקיפות מלאה. הסיפור שלנו, הערכים שמנחים אותנו והצוות.",
+    ogImage: `${BASE_URL}/og-about.jpg`,
   },
   "/gallery": {
     title: "גלריית תמונות | המוסך של צביקה – ירושלים",
     description: "צפו בתמונות מהמוסך של צביקה בגבעת שאול, ירושלים. מוסך מקצועי, מצויד ומסודר עם ציוד מתקדם לטיפול ברכב.",
+    ogImage: `${BASE_URL}/og-gallery.jpg`,
   },
   "/contact": {
     title: "צור קשר | המוסך של צביקה – ירושלים",
     description: "צרו קשר עם המוסך של צביקה בגבעת שאול, ירושלים. טלפון: 02-6514446, וואטסאפ: 052-651-4446. רחוב האופה 4. שעות פעילות: א׳–ה׳ 08:00–16:30.",
+    ogImage: `${BASE_URL}/og-contact.jpg`,
   },
   "/faq": {
     title: "שאלות נפוצות | המוסך של צביקה – ירושלים",
     description: "תשובות לשאלות נפוצות על שירותי המוסך של צביקה: עלויות טיפול, הכנה לטסט, זמני טיפול, סוגי רכבים ועוד. מוסך מקצועי בירושלים מאז 1993.",
+    ogImage: `${BASE_URL}/og-faq.jpg`,
   },
   "/blog": {
     title: "בלוג | טיפים ומדריכים לטיפול ברכב – המוסך של צביקה",
     description: "מאמרים מקצועיים על טיפול ברכב: איך לבחור מוסך, הכנה לטסט, החלפת שמן, מיזוג אוויר, סימני אזהרה ועוד. טיפים מהמוסך של צביקה בירושלים.",
+    ogImage: `${BASE_URL}/og-blog.jpg`,
   },
   "/privacy": {
     title: "מדיניות פרטיות | המוסך של צביקה – אור-צת שירותי רכב",
@@ -92,7 +102,7 @@ export function useSeo() {
     }
 
     // OG tags
-    const ogImage = `${BASE_URL}/og-image.jpg`;
+    const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
     const ogUpdates: Record<string, string> = {
       "og:title": seo.title,
       "og:description": seo.description,
