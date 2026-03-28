@@ -4,6 +4,8 @@ const points = [
   { num: "01", title: "ניסיון של מעל 30 שנה", desc: "התחלנו ב-1993 ומאז טיפלנו באלפי רכבים. אנחנו יודעים לזהות בעיות במהירות ולחסוך לכם זמן וכסף." },
   { num: "02", title: "מדברים בגובה העיניים", desc: "לפני כל תיקון, מסבירים מה הבעיה ומה העלות. בלי הפתעות בחשבונית, בלי עבודות מיותרות." },
   { num: "03", title: "צביקה עומד מאחורי כל עבודה", desc: "לא מנהל מרחוק. צביקה נמצא במוסך, מכיר את הלקוחות בשם, ולוקח אחריות אישית על כל טיפול." },
+  { num: "04", title: "מחירים הוגנים ושקופים", desc: "תמיד תדעו מראש כמה עולה הטיפול. אנחנו לא מוסיפים עבודות שלא צריך ולא מנפחים חשבוניות." },
+  { num: "05", title: "ציוד מתקדם ומקצועי", desc: "דיאגנוסטיקה ממוחשבת, כלים מקצועיים ועדכונים שוטפים. כך אנחנו מזהים תקלות שאחרים מפספסים." },
 ];
 
 export default function WhyUsSection() {
@@ -11,10 +13,9 @@ export default function WhyUsSection() {
     <section className="bg-background relative overflow-hidden" dir="rtl" aria-label="למה לבחור בנו">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* Full-width split: image left, content right (RTL) */}
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Image — edge to edge */}
-        <div className="relative min-h-[300px] md:min-h-[580px]">
+        <div className="relative min-h-[300px] md:min-h-[620px]">
           <img
             src={mechanicImage}
             alt="עבודת מכונאות מקצועית במוסך של צביקה"
@@ -23,9 +24,7 @@ export default function WhyUsSection() {
             width={1024}
             height={1024}
           />
-          {/* Gradient blend on desktop */}
           <div className="hidden md:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent" />
-          {/* Year badge overlay */}
           <div className="absolute bottom-6 right-6 bg-surface-darker/90 backdrop-blur-sm px-4 py-2.5">
             <span className="text-brand-red text-[20px] font-black leading-none">1993</span>
             <span className="text-primary-foreground/40 text-[10px] font-bold block mt-0.5">שנת הקמה</span>
