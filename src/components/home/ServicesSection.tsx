@@ -104,9 +104,9 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
             <div key={title} className="bg-surface-darker p-6 sm:p-7 md:p-8 group relative flex flex-col">
               {/* Top accent line */}
               <div className="absolute top-0 right-0 w-0 group-hover:w-full h-[2px] bg-brand-red/30 transition-all duration-500" />
-              <div className="text-brand-red/40 group-hover:text-brand-red/70 mb-4 transition-colors duration-200">{icon}</div>
+              <div className="text-brand-red/60 group-hover:text-brand-red mb-4 transition-colors duration-200">{icon}</div>
               <h3 className="font-bold text-[14px] md:text-[15px] text-primary-foreground tracking-[-0.01em] mb-2">{title}</h3>
-              <p className="text-primary-foreground/30 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
+              <p className="text-primary-foreground/60 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
               <a
                 href="https://wa.me/972526514446"
                 target="_blank"
