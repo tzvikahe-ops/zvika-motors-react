@@ -4,6 +4,7 @@ import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/l
 import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage";
+import LazySection from "@/components/LazySection";
 import { WhatsAppIcon } from "@/components/Icons";
 
 // Lazy load non-critical components
