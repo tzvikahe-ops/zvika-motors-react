@@ -1,10 +1,12 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "./home/HeroSection";
 import ServiceStrip from "./home/ServiceStrip";
-import WhyUsSection from "./home/WhyUsSection";
-import ServicesSection from "./home/ServicesSection";
-import ReviewsSection from "./home/ReviewsSection";
-import StorySection from "./home/StorySection";
-import CTASection from "./home/CTASection";
+
+const WhyUsSection = lazy(() => import("./home/WhyUsSection"));
+const ServicesSection = lazy(() => import("./home/ServicesSection"));
+const ReviewsSection = lazy(() => import("./home/ReviewsSection"));
+const StorySection = lazy(() => import("./home/StorySection"));
+const CTASection = lazy(() => import("./home/CTASection"));
 
 import type { Page } from "@/types/page";
 
