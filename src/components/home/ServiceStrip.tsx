@@ -73,8 +73,8 @@ export default function ServiceStrip({ setPage }: { setPage: (p: Page) => void }
             >
               {/* Hover accent */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-8 h-[2px] bg-brand-red/50 transition-all duration-300" />
-              <div className="text-primary-foreground/25 group-hover:text-brand-red/60 transition-colors duration-200">{icon}</div>
-              <span className="text-primary-foreground/40 group-hover:text-primary-foreground/70 text-[11px] md:text-[12px] font-bold transition-colors duration-200">{label}</span>
+              <div className="text-primary-foreground/55 group-hover:text-brand-red/70 transition-colors duration-200">{icon}</div>
+              <span className="text-primary-foreground/60 group-hover:text-primary-foreground/80 text-[11px] md:text-[12px] font-bold transition-colors duration-200">{label}</span>
             </button>
           ))}
         </div>
