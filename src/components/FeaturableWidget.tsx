@@ -1,25 +1,19 @@
-import { useEffect, useRef } from "react";
+import { ReactGoogleReviews } from "react-google-reviews";
+import "react-google-reviews/dist/index.css";
 
-const WIDGET_ID = "featurable-02d896b2-2c43-46ae-bbe6-9783d9fc0c61";
-const SCRIPT_SRC = "https://featurable.com/assets/v2/carousel_default.min.js";
+const FEATURABLE_WIDGET_ID = "02d896b2-2c43-46ae-bbe6-9783d9fc0c61";
 
 export default function FeaturableWidget() {
-  const loaded = useRef(false);
-
-  useEffect(() => {
-    if (loaded.current) return;
-    loaded.current = true;
-
-    const script = document.createElement("script");
-    script.src = SCRIPT_SRC;
-    script.defer = true;
-    script.charset = "UTF-8";
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
-  return <div id={WIDGET_ID} data-featurable-async />;
+  return (
+    <ReactGoogleReviews
+      layout="carousel"
+      featurableId={FEATURABLE_WIDGET_ID}
+      disableTranslation={true}
+      theme="dark"
+      maxCharacters={250}
+      dateDisplay="relative"
+      reviewVariant="card"
+      nameDisplay="firstAndLastInitials"
+    />
+  );
 }
