@@ -1,24 +1,25 @@
-import { useLayoutEffect, useEffect } from "react";
+import { useLayoutEffect, useEffect, lazy, Suspense } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
-import ServicesPage from "@/components/ServicesPage";
-import GalleryPage from "@/components/GalleryPage";
-import ContactPage from "@/components/ContactPage";
-import AboutPage from "@/components/AboutPage";
-import PrivacyPolicy from "@/components/PrivacyPolicy";
-import AccessibilityStatement from "@/components/AccessibilityStatement";
 import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
-import MapSection from "@/components/MapSection";
-import ImageGeneratorPage from "@/components/ImageGeneratorPage";
-import FAQPage from "@/components/FAQPage";
-import BlogPage from "@/components/BlogPage";
-import BlogArticlePage from "@/components/BlogArticlePage";
 import { WhatsAppIcon } from "@/components/Icons";
+
+const ServicesPage = lazy(() => import("@/components/ServicesPage"));
+const GalleryPage = lazy(() => import("@/components/GalleryPage"));
+const ContactPage = lazy(() => import("@/components/ContactPage"));
+const AboutPage = lazy(() => import("@/components/AboutPage"));
+const PrivacyPolicy = lazy(() => import("@/components/PrivacyPolicy"));
+const AccessibilityStatement = lazy(() => import("@/components/AccessibilityStatement"));
+const MapSection = lazy(() => import("@/components/MapSection"));
+const ImageGeneratorPage = lazy(() => import("@/components/ImageGeneratorPage"));
+const FAQPage = lazy(() => import("@/components/FAQPage"));
+const BlogPage = lazy(() => import("@/components/BlogPage"));
+const BlogArticlePage = lazy(() => import("@/components/BlogArticlePage"));
 
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();

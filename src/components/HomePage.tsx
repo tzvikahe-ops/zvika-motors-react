@@ -64,11 +64,13 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       />
       <HeroSection setPage={setPage} />
       <ServiceStrip setPage={setPage} />
-      <WhyUsSection />
-      <ServicesSection setPage={setPage} />
-      <ReviewsSection />
-      <StorySection />
-      <CTASection />
+      <Suspense fallback={null}>
+        <WhyUsSection />
+        <ServicesSection setPage={setPage} />
+        <ReviewsSection />
+        <StorySection />
+        <CTASection />
+      </Suspense>
     </div>
   );
 }
