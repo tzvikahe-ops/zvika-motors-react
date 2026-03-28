@@ -12,11 +12,15 @@ import CookieConsent from "@/components/CookieConsent";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import MapSection from "@/components/MapSection";
 import ImageGeneratorPage from "@/components/ImageGeneratorPage";
+import FAQPage from "@/components/FAQPage";
+import BlogPage from "@/components/BlogPage";
+import BlogArticlePage from "@/components/BlogArticlePage";
 import { WhatsAppIcon } from "@/components/Icons";
 import type { Page } from "@/types/page";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [articleSlug, setArticleSlug] = useState<string>("");
 
   useLayoutEffect(() => {
     let timeoutId: number | undefined;
@@ -36,7 +40,6 @@ const Index = () => {
         }
       });
     } else {
-      // Hard reset for intermittent deep-scroll landings
       resetScroll();
       requestAnimationFrame(resetScroll);
       timeoutId = window.setTimeout(resetScroll, 60);
@@ -45,10 +48,10 @@ const Index = () => {
     return () => {
       if (timeoutId) window.clearTimeout(timeoutId);
     };
-  }, [currentPage]);
+  }, [currentPage, articleSlug]);
 
   const setPage = (page: Page) => {
-    if (page === currentPage) return;
+    if (page === currentPage && page !== "blog-article") return;
 
     if (page !== "services") {
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -73,6 +76,9 @@ const Index = () => {
       {currentPage === "privacy" && <PrivacyPolicy />}
       {currentPage === "accessibility" && <AccessibilityStatement />}
       {currentPage === "image-generator" && <ImageGeneratorPage />}
+      {currentPage === "faq" && <FAQPage setPage={setPage} />}
+      {currentPage === "blog" && <BlogPage setPage={setPage} setArticleSlug={setArticleSlug} />}
+      {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
       {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       <Footer setPage={setPage} />
 
