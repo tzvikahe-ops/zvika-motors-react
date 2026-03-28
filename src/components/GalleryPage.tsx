@@ -35,7 +35,11 @@ export default function GalleryPage() {
             >
               <img
                 src={img.src}
+                srcSet={img.srcSet}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 alt={img.alt}
+                width={600}
+                height={450}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 loading="lazy"
               />
