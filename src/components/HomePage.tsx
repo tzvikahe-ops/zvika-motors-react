@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import HeroSection from "./home/HeroSection";
 import ServiceStrip from "./home/ServiceStrip";
+import LazySection from "./LazySection";
 
 const WhyUsSection = lazy(() => import("./home/WhyUsSection"));
 const ServicesSection = lazy(() => import("./home/ServicesSection"));
@@ -64,13 +65,32 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       />
       <HeroSection setPage={setPage} />
       <ServiceStrip setPage={setPage} />
-      <Suspense fallback={null}>
-        <WhyUsSection />
-        <ServicesSection setPage={setPage} />
-        <ReviewsSection />
-        <StorySection />
-        <CTASection />
-      </Suspense>
+
+      {/* Below-fold sections deferred via IntersectionObserver to reduce TBT */}
+      <LazySection rootMargin="300px" minHeight="400px">
+        <Suspense fallback={null}>
+          <WhyUsSection />
+        </Suspense>
+      </LazySection>
+
+      <LazySection rootMargin="200px" minHeight="300px">
+        <Suspense fallback={null}>
+          <ServicesSection setPage={setPage} />
+        </Suspense>
+      </LazySection>
+
+      <LazySection rootMargin="200px" minHeight="300px">
+        <Suspense fallback={null}>
+          <ReviewsSection />
+        </Suspense>
+      </LazySection>
+
+      <LazySection rootMargin="200px" minHeight="200px">
+        <Suspense fallback={null}>
+          <StorySection />
+          <CTASection />
+        </Suspense>
+      </LazySection>
     </div>
   );
 }
