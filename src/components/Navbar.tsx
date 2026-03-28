@@ -39,7 +39,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 relative z-20 shrink-0 text-brand-red"
+          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
           aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -51,7 +51,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             <button
               key={label}
               onClick={() => setPage(page)}
-              className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 ${
+              className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 py-2 px-1 min-h-[44px] flex items-center ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/60 font-medium hover:text-primary-foreground/90"
@@ -65,7 +65,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           <a
             href="tel:02-6514446"
             onClick={() => trackPhoneClick("navbar")}
-            className="text-brand-red text-[13px] font-bold no-underline hover:text-brand-red-hover transition-colors duration-200 inline-flex items-center gap-1.5"
+            className="text-brand-red text-[13px] font-bold no-underline hover:text-brand-red-hover transition-colors duration-200 inline-flex items-center gap-1.5 min-h-[44px] py-2"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
             02-6514446
