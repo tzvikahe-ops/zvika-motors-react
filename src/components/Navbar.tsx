@@ -27,8 +27,15 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
     >
         <div className="max-w-[1100px] mx-auto px-3 sm:px-6 flex items-center justify-between h-[72px] md:h-[72px] overflow-hidden">
         <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1 z-20 shrink-0"
+        >
+          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
+
+        <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center p-0 flex-1 min-w-0 overflow-hidden"
+          className="bg-transparent border-none cursor-pointer flex items-center p-0 flex-1 min-w-0 overflow-hidden md:order-first"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
@@ -57,13 +64,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             02-6514446
           </a>
         </div>
-
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-primary-foreground p-1 z-20 shrink-0 order-first md:order-none"
-        >
-          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
       </div>
 
       {mobileOpen && (
