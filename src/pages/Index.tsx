@@ -1,5 +1,6 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useEffect } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
+import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -22,6 +23,10 @@ import { WhatsAppIcon } from "@/components/Icons";
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
   useSeo();
+
+  /* GA4: scroll depth tracking – init once, reset on page change */
+  useEffect(() => { initScrollTracking(); }, []);
+  useEffect(() => { resetScrollTracking(); }, [currentPage, articleSlug]);
 
   useLayoutEffect(() => {
     let timeoutId: number | undefined;
@@ -74,11 +79,12 @@ const Index = () => {
       <CookieConsent setPage={setPage} />
       <AccessibilityWidget setPage={setPage} />
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
       <a
         href="https://wa.me/972526514446"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick("floating")}
         className="fixed bottom-24 md:bottom-6 left-5 z-50 w-11 h-11 bg-[#25D366] rounded-md flex items-center justify-center shadow-[var(--shadow-lg)] hover:scale-105 transition-all duration-200"
         aria-label="שלח הודעה בוואטסאפ"
       >

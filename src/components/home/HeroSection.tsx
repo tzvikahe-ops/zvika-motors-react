@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-garage.jpg";
+import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 
 import type { Page } from "@/types/page";
 
@@ -57,17 +58,21 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              {/* GA4: whatsapp_click / hero */}
               <a
                 href="https://wa.me/972526514446"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("hero")}
                 className="btn-primary group no-underline"
               >
                 <WhatsAppSVG />
                 <span>שלחו וואטסאפ</span>
               </a>
+              {/* GA4: phone_click / hero */}
               <a
                 href="tel:02-6514446"
+                onClick={() => trackPhoneClick("hero")}
                 className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-2"
               >
                 <PhoneSVG />
