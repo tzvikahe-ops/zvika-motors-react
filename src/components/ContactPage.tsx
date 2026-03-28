@@ -45,7 +45,7 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <div className="font-bold text-[13px] text-foreground">וואטסאפ</div>
-                    <a href="https://wa.me/972526514446" target="_blank" rel="noopener noreferrer" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">שלחו הודעה בוואטסאפ</a>
+                    <a href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" target="_blank" rel="noopener noreferrer" className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block">שלחו הודעה בוואטסאפ</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

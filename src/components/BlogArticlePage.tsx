@@ -33,7 +33,7 @@ function renderSection(section: ArticleSection, index: number, setPage: (p: Page
         <div key={index} className="mt-10 mb-4 p-6 md:p-8 bg-surface-warm border border-border text-center">
           <p className="text-foreground font-bold text-[16px] md:text-[18px] mb-4">{section.ctaText}</p>
           <a
-            href={section.ctaHref || "https://wa.me/972526514446"}
+            href={section.ctaHref || "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary no-underline inline-flex items-center justify-center gap-2 text-[14px]"

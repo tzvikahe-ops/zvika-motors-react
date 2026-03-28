@@ -25,7 +25,7 @@ export default function CTASection() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-2">
               {/* GA4: whatsapp_click / cta */}
               <a
-                href="https://wa.me/972526514446"
+                href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("cta")}
