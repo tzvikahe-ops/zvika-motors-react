@@ -29,6 +29,30 @@
     <link rel="preload" as="image" type="image/webp" href="/src/assets/hero-garage.webp" />
     <link rel="preload" as="image" type="image/webp" href="/logo-full-transparent.webp" />
 
+    <!-- Critical CSS: above-the-fold styles inlined to avoid render-blocking -->
+    <style>
+      *,::after,::before{box-sizing:border-box;border:0 solid}
+      html{-webkit-text-size-adjust:100%;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
+      body{margin:0;line-height:inherit;background-color:hsl(220 6% 97%);color:hsl(222 22% 12%)}
+      #root{min-height:100vh}
+      .min-h-screen{min-height:100vh}
+      .bg-background{background-color:hsl(220 6% 97%)}
+      /* Navbar critical */
+      nav.fixed{position:fixed;top:0;left:0;right:0;z-index:50}
+      .bg-surface-darker\/95{background-color:hsla(222,28%,9%,0.95)}
+      .bg-surface-darker{background-color:hsl(222,28%,9%)}
+      .backdrop-blur-md{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+      /* Hero layout critical */
+      .grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+      @media(min-width:768px){.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      .relative{position:relative}.overflow-hidden{overflow:hidden}
+      .flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
+      .hidden{display:none}@media(min-width:768px){.md\\:flex{display:flex}.md\\:hidden{display:none}}
+      /* Text colors */
+      .text-primary-foreground{color:hsl(42,18%,94%)}
+      .text-brand-red{color:hsl(2,58%,42%)}
+    </style>
+
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
     
