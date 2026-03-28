@@ -14,7 +14,7 @@ declare global {
 
 function sendEvent(eventName: string, params?: Record<string, string>) {
   if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, { ...params, transport_type: "beacon" });
+    window.gtag("event", eventName, { ...params, send_to: "G-2NH1WJZCFG", transport_type: "beacon" });
   }
 }
 
