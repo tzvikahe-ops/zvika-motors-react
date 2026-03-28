@@ -83,10 +83,9 @@ const Index = () => {
           </LazySection>
         )}
       </Suspense>
-      <Suspense fallback={null}>
+      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
         <Footer setPage={setPage} />
         <CookieConsent setPage={setPage} />
-        
       </Suspense>
 
       {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
