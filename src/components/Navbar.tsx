@@ -35,7 +35,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
         <button
           onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center p-0 flex-1 min-w-0 overflow-hidden md:order-first"
+          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 flex-1 justify-start"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
