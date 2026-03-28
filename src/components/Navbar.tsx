@@ -40,6 +40,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 relative z-20 shrink-0 text-brand-red"
+          aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
