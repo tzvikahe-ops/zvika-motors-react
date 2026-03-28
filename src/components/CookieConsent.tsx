@@ -21,7 +21,7 @@ export default function CookieConsent({ setPage }: { setPage: (p: Page) => void 
     <div className="fixed bottom-0 left-0 right-0 z-[60] p-4 pb-[calc(1rem+4.5rem)] md:pb-4 flex justify-center" dir="rtl">
       <div className="bg-card border border-border rounded-lg shadow-[var(--shadow-lg)] max-w-[640px] w-full p-6 flex flex-col gap-3">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-bold text-foreground text-sm">שימוש בעוגיות (Cookies)</h3>
+          <p className="font-bold text-foreground text-sm">שימוש בעוגיות (Cookies)</p>
           <button onClick={accept} className="text-muted-foreground hover:text-foreground text-lg leading-none bg-transparent border-none cursor-pointer" aria-label="סגור">×</button>
         </div>
         <p className="text-[13px] text-muted-foreground leading-6">
