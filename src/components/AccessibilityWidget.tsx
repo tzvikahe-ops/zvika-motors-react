@@ -22,7 +22,7 @@ export default function AccessibilityWidget({ setPage }: { setPage: (p: Page) =>
 
       {open && (
         <div className="fixed bottom-40 md:bottom-20 right-6 z-50 bg-card border border-border rounded-lg shadow-[var(--shadow-lg)] w-[260px] p-5 flex flex-col gap-2" dir="rtl">
-          <h3 className="font-bold text-foreground text-sm mb-1">אפשרויות נגישות</h3>
+          <p className="font-bold text-foreground text-sm mb-1">אפשרויות נגישות</p>
           {[
             { label: "הגדל טקסט", action: () => { document.documentElement.style.fontSize = "120%"; } },
             { label: "איפוס גודל טקסט", action: () => { document.documentElement.style.fontSize = ""; } },
