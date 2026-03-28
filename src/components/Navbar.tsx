@@ -51,7 +51,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             <button
               key={label}
               onClick={() => setPage(page)}
-              className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 py-2 px-1 min-h-[44px] flex items-center ${
+              className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 py-2 px-2 min-h-[44px] flex items-center ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/60 font-medium hover:text-primary-foreground/90"
