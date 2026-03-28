@@ -92,15 +92,25 @@ export function useSeo() {
     }
 
     // OG tags
+    const ogImage = `${BASE_URL}/og-image.jpg`;
     const ogUpdates: Record<string, string> = {
       "og:title": seo.title,
       "og:description": seo.description,
       "og:url": canonicalUrl,
+      "og:image": ogImage,
+      "og:type": "website",
+      "og:locale": "he_IL",
+      "og:site_name": "המוסך של צביקה",
     };
     for (const [property, content] of Object.entries(ogUpdates)) {
       let ogMeta = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`);
       if (ogMeta) {
         ogMeta.content = content;
+      } else {
+        ogMeta = document.createElement("meta");
+        ogMeta.setAttribute("property", property);
+        ogMeta.content = content;
+        document.head.appendChild(ogMeta);
       }
     }
 
