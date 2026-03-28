@@ -21,9 +21,8 @@ export default function ReviewsSection() {
 
         {/* Featurable Google Reviews Widget */}
         <div
-          className="featurable-google-reviews"
+          id="featurable-02d896b2-2c43-46ae-bbe6-9783d9fc0c61"
           data-featurable-async
-          data-featurable-google-review-id="ChIJ8xA9IU3WAhURYfh4J93YwA4"
         />
       </div>
     </section>
