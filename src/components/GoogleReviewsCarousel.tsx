@@ -144,8 +144,40 @@ export default function GoogleReviewsCarousel() {
   }, []);
 
   const maxIdx = Math.max(0, reviews.length - visible);
-  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
-  const next = () => setCurrentIndex((i) => Math.min(maxIdx, i + 1));
+  const prev = () => { setCurrentIndex((i) => Math.max(0, i - 1)); resetAutoplay(); };
+  const next = () => { setCurrentIndex((i) => Math.min(maxIdx, i + 1)); resetAutoplay(); };
+
+  // Autoplay every 5 seconds, pause on hover
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => {
+      setCurrentIndex((i) => (i >= maxIdx ? 0 : i + 1));
+    }, 5000);
+  }, [maxIdx]);
+
+  const resetAutoplay = useCallback(() => {
+    startAutoplay();
+  }, [startAutoplay]);
+
+  useEffect(() => {
+    if (reviews.length <= visible) return;
+    startAutoplay();
+    return () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+  }, [reviews.length, visible, startAutoplay]);
+
+  // Pause on hover
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const pause = () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+    const resume = () => startAutoplay();
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    return () => { el.removeEventListener("mouseenter", pause); el.removeEventListener("mouseleave", resume); };
+  }, [startAutoplay]);
 
   if (loading) {
     return (
