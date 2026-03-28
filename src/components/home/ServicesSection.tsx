@@ -130,8 +130,5 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
       </div>
     </section>
   );
-}
-    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" />
-    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-  </svg>
-);
+
+
