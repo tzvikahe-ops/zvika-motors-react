@@ -1,11 +1,92 @@
 import { SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, ShieldIcon, StarIcon, ClockIcon, EyeIcon } from "./Icons";
 
 const ServicesPage = () => {
-  const services = [
-    { icon: <WrenchIcon />, title: "מכונאות רכב כללית", description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה." },
-    { icon: <DiagIcon />, title: "דיאגנוסטיקה ממוחשבת לרכב", description: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים." },
-    { icon: <SnowflakeIcon />, title: "מיזוג אוויר לרכב", description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים בירושלים." },
-    { icon: <ChecklistIcon />, title: "הכנה לטסט שנתי", description: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות." },
+  const mainServices = [
+    {
+      icon: <WrenchIcon />,
+      title: "מכונאות רכב כללית",
+      subtitle: "טיפולים שוטפים ותיקונים מקצועיים",
+      description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.",
+      details: [
+        "החלפת שמן מנוע ופילטרים – שמנים מקוריים ותחליפיים באיכות גבוהה",
+        "בדיקת ותיקון מערכת בלמים – רפידות, דיסקיות ונוזל בלמים",
+        "טיפולי קילומטראז׳ לפי יצרן – שמירה על תוקף האחריות",
+        "החלפת רצועות תזמון ומשאבת מים",
+        "תיקון ואיתור דליפות שמן ונוזלי קירור",
+        "בדיקת מערכת השעיה ותיקון בעיות הגה",
+        "החלפת מצברים ובדיקת מערכת חשמל",
+      ],
+    },
+    {
+      icon: <DiagIcon />,
+      title: "דיאגנוסטיקה ממוחשבת",
+      subtitle: "אבחון תקלות מדויק שחוסך לכם כסף",
+      description: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.",
+      details: [
+        "סריקת מחשב רכב מלאה – קריאת קודי תקלה ומחיקתם",
+        "אבחון מערכת ניהול מנוע וחיישנים",
+        "בדיקת מערכות בטיחות אלקטרוניות (ABS, ESP, כריות אוויר)",
+        "אבחון תקלות חשמל ומערכות תאורה",
+        "בדיקת פליטת מזהמים ויעילות קטליזטור",
+        "קריאת נתוני זמן אמת מחיישני הרכב",
+      ],
+    },
+    {
+      icon: <SnowflakeIcon />,
+      title: "מיזוג אוויר לרכב",
+      subtitle: "טיפול מלא במערכת הקירור והחימום",
+      description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים בירושלים.",
+      details: [
+        "מילוי גז מזגן (R134a / R1234yf) עם בדיקת לחצים",
+        "איתור ותיקון דליפות גז במערכת",
+        "החלפת מדחס (קומפרסור) מזגן",
+        "ניקוי וחיטוי מערכת המזגן למניעת ריחות",
+        "תיקון והחלפת מאייד (אוואפורטור) ומעבה (קונדנסר)",
+        "בדיקת מערכת חימום ותרמוסטט",
+      ],
+    },
+    {
+      icon: <ChecklistIcon />,
+      title: "הכנה לטסט שנתי",
+      subtitle: "בדיקה מקיפה שמבטיחה מעבר בפעם הראשונה",
+      description: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.",
+      details: [
+        "בדיקת מערכת בלמים – רפידות, דיסקיות, צנרת ונוזל",
+        "בדיקת מערכת תאורה מלאה – פנסים, איתותים, בלמים וחניה",
+        "בדיקת מערכת פליטה ורמת זיהום אוויר",
+        "בדיקת צמיגים, מתלים ובולמי זעזועים",
+        "בדיקת מערכת היגוי, הגה כוח ומוטות מייצבים",
+        "בדיקת שמשות, מגבים ומערכת מים",
+        "תיקון כל הממצאים במקום – חוסכים לכם נסיעה נוספת",
+      ],
+    },
+  ];
+
+  const additionalServices = [
+    {
+      title: "החלפת תזמון",
+      description: "החלפת רצועת או שרשרת תזמון במועד, כולל משאבת מים וגלגלת מותחן. מניעת נזק חמור למנוע.",
+    },
+    {
+      title: "מערכת קירור מנוע",
+      description: "בדיקה ותיקון רדיאטור, משאבת מים, תרמוסטט וצנרת. מניעת התחממות יתר שעלולה לגרום לנזק בלתי הפיך.",
+    },
+    {
+      title: "תיבת הילוכים",
+      description: "החלפת שמן גיר אוטומטי וידני, אבחון ותיקון תקלות בתיבת ההילוכים ומצמד.",
+    },
+    {
+      title: "מערכת חשמל לרכב",
+      description: "איתור ותיקון תקלות חשמל, החלפת מצבר, דינמו (אלטרנטור), מתנע ותיקון מערכות חשמל מורכבות.",
+    },
+    {
+      title: "בדיקת רכב לפני קנייה",
+      description: "בדיקה מקיפה של מצב הרכב: מנוע, שלדה, חשמל, פח וצבע. חוות דעת מקצועית שעוזרת לכם לקבל החלטה מושכלת.",
+    },
+    {
+      title: "טיפול במערכת פליטה",
+      description: "תיקון והחלפת קטליזטור, צנרת פליטה, חיישני חמצן ומשתיק קול. עמידה בתקני זיהום אוויר.",
+    },
   ];
 
   const trustPoints = [
@@ -21,18 +102,41 @@ const ServicesPage = () => {
     { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון.", author: "דוד מזרחי", location: "ירושלים" },
   ];
 
+  const faqItems = [
+    {
+      q: "כמה זמן לוקח טיפול שוטף?",
+      a: "טיפול שוטף כמו החלפת שמן ופילטרים אורך בדרך כלל כשעה. טיפולי קילומטראז׳ מורחבים יכולים לקחת 2-3 שעות, תלוי בסוג הרכב והטיפול הנדרש.",
+    },
+    {
+      q: "אפשר לחכות בזמן הטיפול?",
+      a: "בהחלט. יש לנו אזור המתנה נוח. לטיפולים ארוכים יותר, אפשר להשאיר את הרכב ולאסוף אותו מאוחר יותר באותו יום.",
+    },
+    {
+      q: "אתם מטפלים בכל סוגי הרכבים?",
+      a: "כן. אנחנו מטפלים בכל סוגי כלי הרכב הפרטיים – יפניים, קוריאניים, אירופיים ואמריקאיים. אנחנו מכירים מקרוב את כל הדגמים הנפוצים בישראל.",
+    },
+    {
+      q: "האם אתם משתמשים בחלפים מקוריים?",
+      a: "אנחנו מציעים חלפים מקוריים וחלפים תחליפיים באיכות גבוהה (OEM). תמיד נסביר את ההבדלים ונתאים את הפתרון לתקציב ולצרכים שלכם.",
+    },
+    {
+      q: "כמה עולה הכנה לטסט?",
+      a: "עלות הבדיקה המקדימה משתנה לפי סוג הרכב. הבדיקה עצמה במחיר סביר, ואם נמצאים ממצאים לתיקון – נציג הצעת מחיר מפורטת לפני שמתחילים.",
+    },
+  ];
+
   return (
     <main dir="rtl" className="bg-background">
       {/* HERO */}
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
-        <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">שירותים מקצועיים</div>
-          <h1 className="text-3xl md:text-[42px] font-black text-primary-foreground mb-5 leading-tight">
+          <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
             שירותי מוסך מקצועיים בירושלים
           </h1>
-          <p className="text-sm md:text-base text-primary-foreground/50 mb-9 max-w-2xl mx-auto leading-relaxed">
-            מעל 30 שנות ניסיון במכונאות רכב בירושלים. שקיפות מלאה, מחיר הוגן ויחס אישי לכל לקוח.
+          <p className="text-[14px] md:text-[15px] text-primary-foreground/50 mb-9 max-w-2xl mx-auto leading-[1.8]">
+            מעל 30 שנות ניסיון במכונאות רכב בירושלים. מכונאות כללית, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט – הכל תחת קורת גג אחת בגבעת שאול. שקיפות מלאה, מחיר הוגן ויחס אישי לכל לקוח.
           </p>
           <a
             href="tel:02-6514446"
@@ -44,21 +148,68 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section id="services-content" className="py-16 md:py-24 bg-background" aria-label="רשימת שירותי המוסך">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-3xl md:text-[38px] font-black text-foreground text-center mb-4">שירותי מכונאות רכב בירושלים</h2>
-          <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto leading-relaxed text-sm">
+      {/* MAIN SERVICES - Detailed */}
+      <section id="services-content" className="py-16 md:py-24 bg-background" aria-label="שירותי המוסך המרכזיים">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מה אנחנו עושים</p>
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+          </div>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[38px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">שירותי מכונאות רכב בירושלים</h2>
+          <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
             טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים – הכל תחת קורת גג אחת בגבעת שאול
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {services.map((service) => (
-              <article key={service.title} className="bg-card rounded-lg p-7 border border-border hover:border-brand-red/20 transition-all duration-300 group hover:shadow-[var(--shadow-md)] flex gap-5">
-                <div className="shrink-0 mt-1 text-brand-red/60 group-hover:text-brand-red transition-colors">{service.icon}</div>
-                <div>
-                  <h3 className="text-[16px] font-bold text-foreground mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed">{service.description}</p>
+
+          <div className="space-y-6">
+            {mainServices.map((service, idx) => (
+              <article key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="bg-brand-red/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 text-brand-red">
+                      {service.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-[18px] md:text-[20px] font-bold text-foreground tracking-[-0.02em]">{service.title}</h3>
+                      <p className="text-brand-red text-[12px] font-medium mt-0.5">{service.subtitle}</p>
+                    </div>
+                  </div>
+                  <p className="text-foreground/60 text-[13px] md:text-[14px] leading-[1.85] mb-5">{service.description}</p>
+                  <div className="border-t border-border pt-5">
+                    <p className="text-foreground/40 text-[10px] font-bold tracking-[0.15em] uppercase mb-3">מה כולל השירות</p>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {service.details.map((detail, i) => (
+                        <li key={i} className="flex items-start gap-2 text-foreground/65 text-[12px] md:text-[13px] leading-[1.7]">
+                          <span className="text-brand-red mt-1 shrink-0">✓</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ADDITIONAL SERVICES */}
+      <section className="py-16 md:py-24 bg-surface-warm" aria-label="שירותים נוספים">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">שירותים נוספים</p>
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+          </div>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">עוד שירותים שאנחנו מציעים</h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
+            כל מה שהרכב שלכם צריך – במקום אחד, עם אחריות מלאה
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {additionalServices.map((service) => (
+              <article key={service.title} className="bg-card border border-border rounded-lg p-6 hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-sm)]">
+                <h3 className="text-[15px] font-bold text-foreground mb-2">{service.title}</h3>
+                <p className="text-muted-foreground text-[12px] md:text-[13px] leading-[1.8]">{service.description}</p>
               </article>
             ))}
           </div>
@@ -67,9 +218,9 @@ const ServicesPage = () => {
 
       {/* TRUST SECTION */}
       <section className="py-16 md:py-24 bg-surface-steel" aria-label="למה לבחור בנו">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-3xl md:text-[38px] font-black text-foreground text-center mb-3">למה לקוחות בירושלים בוחרים בנו?</h2>
-          <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto text-sm leading-relaxed">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[38px] font-black text-foreground text-center mb-3 tracking-[-0.03em]">למה לקוחות בירושלים בוחרים בנו?</h2>
+          <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto text-[13px] md:text-[14px] leading-[1.8]">
             כי אצלנו הרכב שלכם בידיים בטוחות – עם יחס אישי ושקיפות מלאה
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -86,10 +237,33 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 md:py-24 bg-background" aria-label="שאלות נפוצות על שירותי המוסך">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-6">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">שאלות נפוצות</h2>
+          <p className="text-muted-foreground text-center mb-12 text-[13px] md:text-[14px]">
+            תשובות לשאלות שלקוחות שואלים אותנו הכי הרבה
+          </p>
+          <div className="space-y-3">
+            {faqItems.map((item, i) => (
+              <details key={i} className="bg-card border border-border rounded-lg group">
+                <summary className="p-5 cursor-pointer text-[14px] md:text-[15px] font-bold text-foreground hover:text-brand-red transition-colors list-none flex items-center justify-between gap-4">
+                  {item.q}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-muted-foreground group-open:rotate-180 transition-transform duration-200"><path d="M6 9l6 6 6-6" /></svg>
+                </summary>
+                <div className="px-5 pb-5 text-foreground/60 text-[13px] leading-[1.85] border-t border-border pt-4">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
-      <section className="py-16 md:py-24 bg-background" aria-label="המלצות לקוחות">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-3xl md:text-[36px] font-black text-foreground text-center mb-14">לקוחות המוסך ממליצים</h2>
+      <section className="py-16 md:py-24 bg-surface-dark" aria-label="המלצות לקוחות">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-black text-primary-foreground text-center mb-14 tracking-[-0.03em]">לקוחות המוסך ממליצים</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {testimonials.map(({ text, author, location }) => (
               <div key={author} className="bg-card rounded-lg p-7 border border-border flex flex-col gap-4 hover:shadow-[var(--shadow-md)] transition-all duration-300 relative">
@@ -108,18 +282,39 @@ const ServicesPage = () => {
 
       {/* URGENCY */}
       <section className="py-8 bg-brand-red">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center">
           <p className="text-accent-foreground text-[15px] md:text-lg font-bold tracking-wide">
             אל תחכו שהבעיה תחמיר. קבעו טיפול עוד היום
           </p>
         </div>
       </section>
 
+      {/* SEO CONTENT BLOCK */}
+      <section className="py-16 md:py-20 bg-background" aria-label="מידע על שירותי המוסך">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-6">
+          <h2 className="text-[20px] md:text-[24px] font-bold text-foreground mb-6 tracking-[-0.02em]">מוסך מקצועי בירושלים – המוסך של צביקה</h2>
+          <div className="text-foreground/55 text-[13px] md:text-[14px] leading-[2] space-y-4">
+            <p>
+              המוסך של צביקה (אור-צת שירותי רכב) הוא מוסך מורשה בירושלים, הממוקם ברחוב האופה 4 בגבעת שאול. המוסך מספק שירותי מכונאות רכב מקיפים כבר מעל שלושה עשורים, ומתמחה בטיפולים שוטפים, דיאגנוסטיקה ממוחשבת, טיפול במערכת מיזוג אוויר לרכב והכנת רכבים לטסט השנתי.
+            </p>
+            <p>
+              אנו מטפלים בכל סוגי כלי הרכב הפרטיים – רכבים יפניים (טויוטה, הונדה, מאזדה, סובארו), קוריאניים (יונדאי, קיה), אירופיים (פולקסוואגן, שקודה, סיאט, פיז׳ו, רנו, אופל) ואמריקאיים (שברולט, פורד). הצוות המקצועי שלנו מכיר מקרוב את כל הדגמים הנפוצים בכבישי ישראל.
+            </p>
+            <p>
+              הגישה שלנו מבוססת על שקיפות מלאה: לפני כל תיקון נסביר מה נמצא, מה צריך לתקן ומה יכול לחכות. לא נתקן דברים שלא צריך ולא נחליף חלקים בלי אישור. כך אנחנו שומרים על אמון הלקוחות שלנו לאורך שנים – עם שיעור לקוחות חוזרים של 98%.
+            </p>
+            <p>
+              המוסך פתוח בימים א׳ עד ה׳, בין השעות 08:00 ל-16:30. ניתן לתאם טיפול בטלפון 02-6514446 או בהודעת וואטסאפ למספר 052-651-4446. אנחנו ממליצים לקבוע תור מראש, אך מקבלים גם לקוחות שמגיעים ללא תיאום מוקדם בכפוף לזמינות.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="py-16 md:py-20 bg-surface-dark" aria-label="יצירת קשר עם המוסך">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-[32px] font-black text-primary-foreground mb-3">מחפשים מוסך מקצועי בירושלים?</h2>
-          <p className="text-primary-foreground/45 mb-9 text-sm leading-relaxed max-w-md mx-auto">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center">
+          <h2 className="text-[22px] md:text-[32px] font-black text-primary-foreground mb-3 tracking-[-0.03em]">מחפשים מוסך מקצועי בירושלים?</h2>
+          <p className="text-primary-foreground/45 mb-9 text-[13px] md:text-[14px] leading-[1.8] max-w-md mx-auto">
             התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי.
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
@@ -134,6 +329,40 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Service Schema JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "המוסך של צביקה – אור-צת שירותי רכב",
+        "url": "https://www.ortzat.co.il/services",
+        "telephone": "+972-2-6514446",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "רחוב האופה 4",
+          "addressLocality": "ירושלים",
+          "addressRegion": "גבעת שאול",
+          "addressCountry": "IL"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "שירותי מוסך",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מכונאות רכב כללית", "description": "טיפולים שוטפים, החלפת שמנים ופילטרים, תיקוני מנוע ומערכת בלמים" }},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "דיאגנוסטיקה ממוחשבת", "description": "סריקת מחשב רכב, איתור תקלות מדויק וקריאת קודי שגיאה" }},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מיזוג אוויר לרכב", "description": "מילוי גז מזגן, איתור דליפות, תיקון מדחס ומערכת קירור" }},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "הכנה לטסט שנתי", "description": "בדיקה מקיפה לפני מבחן רישוי שנתי כולל תיקון ממצאים" }},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "בדיקת רכב לפני קנייה", "description": "בדיקה מקצועית של מצב הרכב לפני רכישה" }},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "החלפת תזמון", "description": "החלפת רצועת או שרשרת תזמון כולל משאבת מים" }},
+          ]
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
+          "opens": "08:00",
+          "closes": "16:30"
+        }
+      })}} />
     </main>
   );
 };
