@@ -18,10 +18,12 @@ interface ApiResponse {
   widget?: {
     reviews: Review[];
     config: Record<string, unknown>;
+    gbpLocationSummary?: {
+      reviewsCount: number;
+      rating: number;
+      writeAReviewUri: string;
+    };
   };
-  totalReviewCount?: number;
-  averageRating?: number;
-  profileUrl?: string;
 }
 
 function getInitials(name: string): string {
