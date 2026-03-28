@@ -111,7 +111,7 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
                 href="https://wa.me/972526514446"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-brand-red hover:text-brand-red text-[11px] font-bold transition-colors duration-200 no-underline w-fit"
+                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-[11px] font-bold px-4 py-2 rounded transition-colors duration-200 no-underline w-fit"
               >
                 <WhatsAppSVG />
                 <span>תאמו טיפול</span>
