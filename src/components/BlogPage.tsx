@@ -6,14 +6,12 @@ const WhatsAppSVG = () => (
 );
 
 interface BlogPageProps {
-  setPage: (p: Page) => void;
-  setArticleSlug: (slug: string) => void;
+  setPage: (p: Page, slug?: string) => void;
 }
 
-export default function BlogPage({ setPage, setArticleSlug }: BlogPageProps) {
+export default function BlogPage({ setPage }: BlogPageProps) {
   const handleArticleClick = (slug: string) => {
-    setArticleSlug(slug);
-    setPage("blog-article");
+    setPage("blog-article", slug);
   };
 
   return (
