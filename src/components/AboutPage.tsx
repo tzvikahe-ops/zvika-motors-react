@@ -61,7 +61,7 @@ const AboutPage = () => {
             <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">הסיפור שלנו</p>
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground mb-8 tracking-[-0.03em] leading-[1.15]">
-            מעל שלושה עשורים של מכונאות בירושלים
+            מעל שלושה עשורים של נסיון בירושלים
           </h2>
           <div className="text-foreground/60 text-[13px] md:text-[14px] leading-[2.1] space-y-5">
             <p>
