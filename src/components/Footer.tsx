@@ -18,7 +18,8 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
               אמינות ומקצועיות בשירות הרכב שלך בירושלים.
             </p>
             <div className="flex items-center gap-5">
-              <a href="tel:02-6514446" className="text-primary-foreground/40 text-[12px] font-bold hover:text-primary-foreground transition-colors no-underline">
+              <a href="tel:02-6514446" className="text-primary-foreground/40 text-[12px] font-bold hover:text-primary-foreground transition-colors no-underline inline-flex items-center gap-1.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                 02-6514446
               </a>
               <a
