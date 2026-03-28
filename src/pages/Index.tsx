@@ -4,6 +4,7 @@ import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/l
 import { useSeo } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage";
+import LazySection from "@/components/LazySection";
 import { WhatsAppIcon } from "@/components/Icons";
 
 // Lazy load non-critical components
@@ -76,7 +77,11 @@ const Index = () => {
         {currentPage === "faq" && <FAQPage setPage={setPage} />}
         {currentPage === "blog" && <BlogPage setPage={setPage} />}
         {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
-        {(currentPage === "home" || currentPage === "contact") && <MapSection />}
+        {(currentPage === "home" || currentPage === "contact") && (
+          <LazySection rootMargin="300px" minHeight="300px">
+            <MapSection />
+          </LazySection>
+        )}
       </Suspense>
       <Suspense fallback={null}>
         <Footer setPage={setPage} />
