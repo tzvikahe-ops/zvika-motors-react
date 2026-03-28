@@ -209,7 +209,7 @@ export default function GoogleReviewsCarousel() {
   }
 
   return (
-    <div className="space-y-6">
+    <div ref={containerRef} className="space-y-6">
       {avgRating > 0 && (
         <div className="flex items-center justify-center gap-3 mb-2">
           <div className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-sm">
