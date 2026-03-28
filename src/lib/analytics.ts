@@ -1,6 +1,6 @@
 /**
  * Google Analytics 4 – Custom event tracking utility
- * GA4 measurement ID: G-2NH1WJZCFG (loaded in index.html)
+ * GA4 measurement ID: G-FWD2H06Y7K (loaded in index.html)
  *
  * All helper functions gracefully no-op when gtag is unavailable
  * (e.g. ad-blockers, localhost without the script).
@@ -14,7 +14,7 @@ declare global {
 
 function sendEvent(eventName: string, params?: Record<string, string>) {
   if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, { ...params, send_to: "G-2NH1WJZCFG", transport_type: "beacon" });
+    window.gtag("event", eventName, { ...params, send_to: "G-FWD2H06Y7K", transport_type: "beacon" });
   }
 }
 
