@@ -1,4 +1,5 @@
-import { useState, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
+import { usePageNavigation } from "@/hooks/use-page-navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HomePage from "@/components/HomePage";
@@ -16,11 +17,9 @@ import FAQPage from "@/components/FAQPage";
 import BlogPage from "@/components/BlogPage";
 import BlogArticlePage from "@/components/BlogArticlePage";
 import { WhatsAppIcon } from "@/components/Icons";
-import type { Page } from "@/types/page";
 
 const Index = () => {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
-  const [articleSlug, setArticleSlug] = useState<string>("");
+  const { currentPage, articleSlug, setPage } = usePageNavigation();
 
   useLayoutEffect(() => {
     let timeoutId: number | undefined;
@@ -50,18 +49,6 @@ const Index = () => {
     };
   }, [currentPage, articleSlug]);
 
-  const setPage = (page: Page) => {
-    if (page === currentPage && page !== "blog-article") return;
-
-    if (page !== "services") {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
-
-    setCurrentPage(page);
-  };
-
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar currentPage={currentPage} setPage={setPage} />
@@ -77,7 +64,7 @@ const Index = () => {
       {currentPage === "accessibility" && <AccessibilityStatement />}
       {currentPage === "image-generator" && <ImageGeneratorPage />}
       {currentPage === "faq" && <FAQPage setPage={setPage} />}
-      {currentPage === "blog" && <BlogPage setPage={setPage} setArticleSlug={setArticleSlug} />}
+      {currentPage === "blog" && <BlogPage setPage={setPage} />}
       {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
       {(currentPage === "home" || currentPage === "contact") && <MapSection />}
       <Footer setPage={setPage} />
