@@ -10,7 +10,7 @@ export default function StorySection() {
         </div>
 
         <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-6">
-          שלושה דורות של מכונאות
+          מעל שלושה עשורים של נסיון
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-14 items-start">
