@@ -10,7 +10,7 @@ import type { Page } from "@/types/page";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": ["LocalBusiness", "AutoRepair"],
   name: "המוסך של צביקה – אור-צת שירותי רכב",
   image: "https://www.ortzat.co.il/og-image.jpg",
   url: "https://www.ortzat.co.il",
