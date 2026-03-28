@@ -44,7 +44,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4 whitespace-nowrap">
           {links.map(({ label, page }) => (
             <button
               key={label}

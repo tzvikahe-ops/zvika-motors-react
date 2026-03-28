@@ -15,11 +15,11 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   return (
     <>
       {/* ── Desktop lockup ── */}
-      <div className="hidden md:flex items-center gap-3">
+      <div className="hidden md:flex items-center gap-2.5">
         <img
           src={logoText}
           alt="המוסך של צביקה - אור-צת שירותי רכב"
-          className="h-[60px] w-auto max-w-[260px] object-contain object-right shrink"
+          className="h-[50px] w-auto max-w-[220px] object-contain object-right shrink"
           width={920}
           height={95}
         />
@@ -27,7 +27,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
           src={logoMark}
           alt=""
           aria-hidden="true"
-          className="h-[56px] w-auto object-contain shrink-0"
+          className="h-[44px] w-auto object-contain shrink-0"
           width={1200}
           height={273}
         />
