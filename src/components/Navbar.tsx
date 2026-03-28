@@ -27,18 +27,18 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
     >
         <div dir="ltr" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row items-center justify-between h-[72px]">
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 relative z-20 shrink-0"
-        >
-          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
-
-        <button
           onClick={() => setPage("home")}
           className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 flex-1 justify-end"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
+        </button>
+
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-2 relative z-20 shrink-0"
+        >
+          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
 
         {/* Desktop nav */}
