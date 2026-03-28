@@ -34,8 +34,8 @@ const App = () => (
           <Route path="/privacy" element={<Index />} />
           <Route path="/accessibility" element={<Index />} />
           <Route path="/image-generator" element={<Index />} />
-          <Route path="/image-studio" element={<ImageStudioPage />} />
-          <Route path="/admin-panel" element={<AdminPage />} />
+          <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
+          <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
