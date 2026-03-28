@@ -27,7 +27,7 @@ export default function WhyUsSection() {
           <div className="hidden md:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent" />
           <div className="absolute bottom-6 right-6 bg-surface-darker/90 backdrop-blur-sm px-4 py-2.5">
             <span className="text-brand-red text-[20px] font-black leading-none">1993</span>
-            <span className="text-primary-foreground/40 text-[10px] font-bold block mt-0.5">שנת הקמה</span>
+            <span className="text-primary-foreground/55 text-[10px] font-bold block mt-0.5">שנת הקמה</span>
           </div>
         </div>
 
@@ -51,7 +51,7 @@ export default function WhyUsSection() {
                 className={`relative py-5 md:py-6 pr-7 ${i > 0 ? "border-t border-border" : ""}`}
               >
                 <span className="absolute right-0 top-5 md:top-6 text-[11px] font-black text-brand-red/30">{num}</span>
-                <h4 className="font-bold text-[14px] md:text-[15px] text-foreground tracking-[-0.01em] mb-1.5">{title}</h4>
+                <h3 className="font-bold text-[14px] md:text-[15px] text-foreground tracking-[-0.01em] mb-1.5">{title}</h3>
                 <p className="text-muted-foreground text-[12.5px] md:text-[13px] leading-[1.85] max-w-[380px]">{desc}</p>
               </div>
             ))}
