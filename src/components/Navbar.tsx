@@ -17,6 +17,8 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
     { label: "שירותים", page: "services" },
     { label: "אודות", page: "about" },
     { label: "גלריה", page: "gallery" },
+    { label: "שאלות נפוצות", page: "faq" },
+    { label: "בלוג", page: "blog" },
     { label: "צור קשר", page: "contact" },
   ];
 

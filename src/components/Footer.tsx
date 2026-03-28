@@ -43,6 +43,8 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
                 { label: "שירותים", page: "services" as Page },
                 { label: "אודות", page: "about" as Page },
                 { label: "גלריה", page: "gallery" as Page },
+                { label: "שאלות נפוצות", page: "faq" as Page },
+                { label: "בלוג", page: "blog" as Page },
                 { label: "צור קשר", page: "contact" as Page },
               ].map(({ label, page }) => (
                 <button
