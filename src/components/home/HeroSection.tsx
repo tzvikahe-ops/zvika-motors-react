@@ -28,7 +28,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-brand-red/50" />
-              <p className="text-primary-foreground/35 text-[11px] font-bold tracking-[0.15em] uppercase">
+              <p className="text-primary-foreground/60 text-[11px] font-bold tracking-[0.15em] uppercase">
                 מאז 1993 · גבעת שאול, ירושלים
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               </span>
             </h1>
 
-            <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.9] mb-6 md:mb-8 max-w-[400px]">
+            <p className="text-primary-foreground/70 text-[14px] md:text-[15px] leading-[1.9] mb-6 md:mb-8 max-w-[400px]">
               טיפול מקצועי, מחירים שקופים, ובעל מקצוע שמדבר איתכם ישירות. בלי הפתעות, בלי עבודות מיותרות.
             </p>
 
@@ -51,7 +51,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               {trustItems.map(({ icon, text }) => (
                 <div key={text} className="flex items-center gap-2">
                   <span className="text-[16px]">{icon}</span>
-                  <span className="text-primary-foreground/45 text-[12px] font-bold">{text}</span>
+                  <span className="text-primary-foreground/70 text-[12px] font-bold">{text}</span>
                 </div>
               ))}
             </div>
@@ -84,17 +84,17 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
             <div className="flex items-center gap-6 mt-10 md:mt-12 pt-8 border-t border-primary-foreground/[0.06]">
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">30+</div>
-                <p className="text-primary-foreground/20 text-[10px] font-medium mt-1">שנות ניסיון</p>
+                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">שנות ניסיון</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">4.8</div>
-                <p className="text-primary-foreground/20 text-[10px] font-medium mt-1">דירוג בגוגל</p>
+                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">דירוג בגוגל</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">98%</div>
-                <p className="text-primary-foreground/20 text-[10px] font-medium mt-1">לקוחות חוזרים</p>
+                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">לקוחות חוזרים</p>
               </div>
             </div>
           </div>

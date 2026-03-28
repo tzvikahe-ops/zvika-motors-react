@@ -45,7 +45,7 @@ export default function StorySection() {
 
         {/* Team image placeholder */}
         <div className="mt-10 md:mt-14 bg-muted border border-border h-[200px] md:h-[280px] flex items-center justify-center">
-          <p className="text-muted-foreground/40 text-[13px] font-medium">מקום לתמונת הצוות</p>
+          <p className="text-muted-foreground/70 text-[13px] font-medium">מקום לתמונת הצוות</p>
         </div>
       </div>
     </section>
