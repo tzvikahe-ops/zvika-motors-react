@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Star, ChevronRight, ChevronLeft, Quote } from "lucide-react";
 
 const WIDGET_ID = "02d896b2-2c43-46ae-bbe6-9783d9fc0c61";
@@ -144,8 +144,40 @@ export default function GoogleReviewsCarousel() {
   }, []);
 
   const maxIdx = Math.max(0, reviews.length - visible);
-  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
-  const next = () => setCurrentIndex((i) => Math.min(maxIdx, i + 1));
+  const prev = () => { setCurrentIndex((i) => Math.max(0, i - 1)); resetAutoplay(); };
+  const next = () => { setCurrentIndex((i) => Math.min(maxIdx, i + 1)); resetAutoplay(); };
+
+  // Autoplay every 5 seconds, pause on hover
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => {
+      setCurrentIndex((i) => (i >= maxIdx ? 0 : i + 1));
+    }, 5000);
+  }, [maxIdx]);
+
+  const resetAutoplay = useCallback(() => {
+    startAutoplay();
+  }, [startAutoplay]);
+
+  useEffect(() => {
+    if (reviews.length <= visible) return;
+    startAutoplay();
+    return () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+  }, [reviews.length, visible, startAutoplay]);
+
+  // Pause on hover
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const pause = () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+    const resume = () => startAutoplay();
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    return () => { el.removeEventListener("mouseenter", pause); el.removeEventListener("mouseleave", resume); };
+  }, [startAutoplay]);
 
   if (loading) {
     return (
@@ -177,7 +209,7 @@ export default function GoogleReviewsCarousel() {
   }
 
   return (
-    <div className="space-y-6">
+    <div ref={containerRef} className="space-y-6">
       {avgRating > 0 && (
         <div className="flex items-center justify-center gap-3 mb-2">
           <div className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-sm">
@@ -214,7 +246,7 @@ export default function GoogleReviewsCarousel() {
         {reviews.length > visible && (
           <div className="flex justify-center gap-1.5 mt-6">
             {Array.from({ length: maxIdx + 1 }, (_, i) => (
-              <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-brand-red w-5" : "bg-border hover:bg-muted-foreground/40"}`} aria-label={`עמוד ${i + 1}`} />
+              <button key={i} onClick={() => { setCurrentIndex(i); resetAutoplay(); }} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "bg-brand-red w-5" : "bg-border hover:bg-muted-foreground/40"}`} aria-label={`עמוד ${i + 1}`} />
             ))}
           </div>
         )}
