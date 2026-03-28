@@ -50,7 +50,7 @@ export default function WhyUsSection() {
                 key={i}
                 className={`relative py-5 md:py-6 pr-7 ${i > 0 ? "border-t border-border" : ""}`}
               >
-                <span className="absolute right-0 top-5 md:top-6 text-[11px] font-black text-brand-red/30">{num}</span>
+                <span className="absolute right-0 top-5 md:top-6 text-[11px] font-black <span className="absolute right-0 top-5 md:top-6 text-[11px] font-black text-brand-red/60">{num}</span></span>
                 <h3 className="font-bold text-[14px] md:text-[15px] text-foreground tracking-[-0.01em] mb-1.5">{title}</h3>
                 <p className="text-muted-foreground text-[12.5px] md:text-[13px] leading-[1.85] max-w-[380px]">{desc}</p>
               </div>
