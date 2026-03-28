@@ -9,7 +9,7 @@ import { WhatsAppIcon } from "@/components/Icons";
 // Lazy load non-critical components
 const Footer = lazy(() => import("@/components/Footer"));
 const CookieConsent = lazy(() => import("@/components/CookieConsent"));
-const AccessibilityWidget = lazy(() => import("@/components/AccessibilityWidget"));
+
 const ServicesPage = lazy(() => import("@/components/ServicesPage"));
 const GalleryPage = lazy(() => import("@/components/GalleryPage"));
 const ContactPage = lazy(() => import("@/components/ContactPage"));
@@ -81,7 +81,7 @@ const Index = () => {
       <Suspense fallback={null}>
         <Footer setPage={setPage} />
         <CookieConsent setPage={setPage} />
-        <AccessibilityWidget setPage={setPage} />
+        
       </Suspense>
 
       {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
