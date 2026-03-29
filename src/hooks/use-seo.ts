@@ -55,11 +55,18 @@ const pageSeoMap: Record<string, PageSeo> = {
     title: "מדיניות פרטיות | המוסך של צביקה – אור-צת שירותי רכב",
     description: "מדיניות הפרטיות של המוסך של צביקה – אור-צת שירותי רכב. מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
     breadcrumbName: "מדיניות פרטיות",
+    robots: "noindex, follow",
   },
   "/accessibility": {
     title: "הצהרת נגישות | המוסך של צביקה – אור-צת שירותי רכב",
     description: "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
     breadcrumbName: "הצהרת נגישות",
+    robots: "noindex, follow",
+  },
+  "/image-generator": {
+    title: "מחולל תמונות | המוסך של צביקה",
+    description: "מחולל תמונות פנימי.",
+    robots: "noindex, nofollow",
   },
 };
 
