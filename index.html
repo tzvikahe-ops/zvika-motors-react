@@ -69,16 +69,22 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AutoRepair",
+      "@type": ["AutoRepair", "LocalBusiness"],
+      "@id": "https://www.ortzat.co.il/#business",
       "name": "המוסך של צביקה – אור-צת שירותי רכב",
       "alternateName": "המוסך של צביקה",
+      "legalName": "אור-צת שירותי רכב",
       "url": "https://www.ortzat.co.il",
-      "telephone": "+972-2-6514446",
+      "telephone": "02-6514446",
+      "email": "ortzat1@gmail.com",
+      "image": "https://www.ortzat.co.il/og-home.jpg",
+      "logo": "https://www.ortzat.co.il/favicon.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "רחוב האופה 4 (בית הדפוס 24)",
         "addressLocality": "ירושלים",
         "addressRegion": "גבעת שאול",
+        "postalCode": "",
         "addressCountry": "IL"
       },
       "geo": {
@@ -92,6 +98,10 @@
         "opens": "08:00",
         "closes": "16:30"
       },
+      "founder": {
+        "@type": "Person",
+        "name": "יהושע הרשקוביץ"
+      },
       "foundingDate": "1993",
       "description": "מוסך מקצועי בירושלים עם ניסיון של מעל 30 שנה. מכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר לרכב והכנה לטסט שנתי. שירות אישי, שקיפות מלאה ואחריות על כל עבודה.",
       "areaServed": {
@@ -99,6 +109,21 @@
         "name": "ירושלים"
       },
       "priceRange": "$$",
+      "currenciesAccepted": "ILS",
+      "paymentAccepted": "Cash, Credit Card",
+      "sameAs": [
+        "https://wa.me/972526514446"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "שירותי מוסך",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "מכונאות רכב כללית", "description": "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "דיאגנוסטיקה ממוחשבת", "description": "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך זמן וכסף על ידי אבחון ממוקד."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "מיזוג אוויר לרכב", "description": "מילוי גז, איתור דליפות ותיקון מערכות קירור."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "הכנה לטסט שנתי", "description": "בדיקה מקיפה שמוודאת שהרכב מוכן למבחן הרישוי השנתי."}}
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
