@@ -69,7 +69,7 @@ function ReviewCard({ review }: { review: Review }) {
     <div className="bg-card border border-border rounded-xl p-5 md:p-6 flex flex-col gap-4 h-full shadow-sm hover:shadow-md transition-shadow duration-300">
       <div className="flex items-center gap-3">
         {review.author.avatarUrl ? (
-          <img src={review.author.avatarUrl} alt={review.author.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-border" loading="lazy" />
+          <img src={review.author.avatarUrl} alt={review.author.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-border" loading="lazy" decoding="async" width={40} height={40} />
         ) : (
           <div className="w-10 h-10 rounded-full bg-brand-red/10 text-brand-red font-bold flex items-center justify-center text-xs ring-2 ring-brand-red/20">
             {getInitials(review.author.name)}
