@@ -1,7 +1,7 @@
 import { useLayoutEffect, useEffect, lazy, Suspense } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
-import { useSeo } from "@/hooks/use-seo";
+import SeoHead from "@/components/SeoHead";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage";
 import LazySection from "@/components/LazySection";
@@ -25,7 +25,7 @@ const BlogArticlePage = lazy(() => import("@/components/BlogArticlePage"));
 
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
-  useSeo();
+  
 
   /* GA4: scroll depth tracking – init once, reset on page change */
   useEffect(() => { initScrollTracking(); }, []);
@@ -61,6 +61,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-sans">
+      <SeoHead />
       <Navbar currentPage={currentPage} setPage={setPage} />
 
       <main id="main-content">
