@@ -51,6 +51,8 @@ export default function GalleryPage() {
 
       {selected !== null && (
         <div
+          role="dialog"
+          aria-label="תמונה מוגדלת — לחצו לסגירה"
           onClick={() => setSelected(null)}
           className="fixed inset-0 z-50 bg-surface-darker/90 backdrop-blur-sm flex items-center justify-center p-6 cursor-pointer"
         >
