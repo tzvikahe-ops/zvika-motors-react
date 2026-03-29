@@ -70,21 +70,30 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
     );
   }
 
+  const articleUrl = `https://www.ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.date,
+    dateModified: article.date,
     author: {
       "@type": "Organization",
-      name: "המוסך של צביקה (אור-צת שירותי רכב)",
-      url: "https://ortzat.co.il",
+      name: "המוסך של צביקה – אור-צת שירותי רכב",
+      url: "https://www.ortzat.co.il",
     },
     publisher: {
       "@type": "Organization",
       name: "המוסך של צביקה",
+      url: "https://www.ortzat.co.il",
     },
+    inLanguage: "he",
   };
 
   return (
