@@ -10,6 +10,16 @@ interface NavbarProps {
   setPage: (p: Page) => void;
 }
 
+const pageToPath: Record<string, string> = {
+  home: "/",
+  services: "/services",
+  about: "/about",
+  gallery: "/gallery",
+  faq: "/faq",
+  blog: "/blog",
+  contact: "/contact",
+};
+
 export default function Navbar({ currentPage, setPage }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -29,13 +39,14 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       dir="rtl"
     >
         <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row-reverse md:flex-row items-center justify-between h-[78px] md:h-[72px]">
-        <button
-          onClick={() => setPage("home")}
-          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 mr-auto md:mr-0 md:ml-0"
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); setPage("home"); }}
+          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 mr-auto md:mr-0 md:ml-0 no-underline"
           aria-label="דף הבית — המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
-        </button>
+        </a>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -48,17 +59,18 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1 whitespace-nowrap">
           {links.map(({ label, page }) => (
-            <button
+            <a
               key={label}
-              onClick={() => setPage(page)}
-              className={`bg-transparent border-none cursor-pointer text-[13px] transition-colors duration-200 py-2 px-3 min-h-[44px] min-w-[44px] inline-flex items-center justify-center ${
+              href={pageToPath[page]}
+              onClick={(e) => { e.preventDefault(); setPage(page); }}
+              className={`text-[13px] transition-colors duration-200 py-2 px-3 min-h-[44px] min-w-[44px] inline-flex items-center justify-center no-underline ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/60 font-medium hover:text-primary-foreground/90"
               }`}
             >
               {label}
-            </button>
+            </a>
           ))}
           <div className="w-px h-4 bg-primary-foreground/10" />
           {/* GA4: phone_click / navbar */}
@@ -76,17 +88,18 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       {mobileOpen && (
         <div className="md:hidden bg-surface-darker px-5 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
           {links.map(({ label, page }) => (
-            <button
+            <a
               key={label}
-              onClick={() => { setPage(page); setMobileOpen(false); }}
-              className={`bg-transparent border-none cursor-pointer text-[15px] text-right py-3 transition-colors duration-200 ${
+              href={pageToPath[page]}
+              onClick={(e) => { e.preventDefault(); setPage(page); setMobileOpen(false); }}
+              className={`text-[15px] text-right py-3 transition-colors duration-200 no-underline block ${
                 currentPage === page
                   ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/70 font-medium"
               }`}
             >
               {label}
-            </button>
+            </a>
           ))}
           <div className="mt-3 pt-3 border-t border-primary-foreground/[0.06] flex gap-3">
             {/* GA4: phone_click / navbar-mobile */}
