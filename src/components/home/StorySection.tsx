@@ -16,7 +16,7 @@ export default function StorySection() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-14 items-start">
           <div className="space-y-5">
             <p className="text-foreground/60 text-[14px] md:text-[15px] leading-[2]">
-              המוסך נוסד בשנת <strong className="text-foreground">1993</strong> על ידי <strong className="text-foreground">יהושע הרשקוביץ</strong>, בעל נסיון ישיר בהנדסת מכונות עם חזון פשוט: לתת שירות מקצועי, ישר ואנושי. לא שיטות של רשתות גדולות אלא יחס אישי ועבודה שאפשר לסמוך עליה.
+              המוסך נוסד בשנת <strong className="text-foreground">1993</strong> על ידי <strong className="text-foreground">יהושע הרשקוביץ</strong>, בעל נסיון עשיר בהנדסת מכונות עם חזון פשוט: לתת שירות מקצועי, ישר ואנושי. לא שיטות של רשתות גדולות אלא יחס אישי ועבודה שאפשר לסמוך עליה.
             </p>
             <p className="text-foreground/60 text-[14px] md:text-[15px] leading-[2]">
               היום, בנו <strong className="text-foreground">צביקה</strong> ממשיך את המסורת. עם צוות מכונאים מקצועי, ציוד מתקדם, ואותם ערכים שליוו את המוסך מהיום הראשון שקיפות, הגינות ומקצועיות ללא פשרות.
