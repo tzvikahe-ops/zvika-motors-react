@@ -123,11 +123,17 @@ export function useSeo() {
     const twitterUpdates: Record<string, string> = {
       "twitter:title": seo.title,
       "twitter:description": seo.description,
+      "twitter:image": ogImage,
     };
     for (const [name, content] of Object.entries(twitterUpdates)) {
       let twMeta = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
       if (twMeta) {
         twMeta.content = content;
+      } else {
+        twMeta = document.createElement("meta");
+        twMeta.name = name;
+        twMeta.content = content;
+        document.head.appendChild(twMeta);
       }
     }
   }, [pathname]);
