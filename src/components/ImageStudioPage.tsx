@@ -261,7 +261,7 @@ export default function ImageStudioPage() {
               <Field label="Reference Image" optional hint="For image-to-image">
                 {referenceImage ? (
                   <div className="relative rounded-lg overflow-hidden border border-border">
-                    <img src={referenceImage} alt="Reference" className="w-full h-28 object-cover" />
+                    <img src={referenceImage} alt="תמונת ייחוס שנבחרה" className="w-full h-28 object-cover" />
                     <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                       <Button variant="destructive" size="sm" onClick={() => { setReferenceImage(null); setReferenceFileName(null); }}>
                         <Trash2 className="w-3 h-3 mr-1" /> Remove
@@ -368,7 +368,7 @@ export default function ImageStudioPage() {
               <Field label="Source Image">
                 {editSourceImage ? (
                   <div className="relative rounded-lg overflow-hidden border border-border">
-                    <img src={editSourceImage} alt="Source" className="w-full h-36 object-cover" />
+                    <img src={editSourceImage} alt="תמונת מקור לעריכה" className="w-full h-36 object-cover" />
                     <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                       <Button variant="destructive" size="sm" onClick={() => setEditSourceImage(null)}>
                         <Trash2 className="w-3 h-3 mr-1" /> Remove
