@@ -42,6 +42,7 @@ export default function GalleryPage() {
                 height={450}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
