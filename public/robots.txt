@@ -30,5 +30,8 @@ Disallow: /
 
 User-agent: *
 Allow: /
+Disallow: /image-generator
+Disallow: /image-studio
+Disallow: /admin-panel
 
 Sitemap: https://www.ortzat.co.il/sitemap.xml
