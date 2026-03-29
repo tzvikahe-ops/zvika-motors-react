@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { blogArticles } from "@/data/blog-articles";
 
 const BASE_URL = "https://www.ortzat.co.il";
 
@@ -63,10 +64,19 @@ const pageSeoMap: Record<string, PageSeo> = {
 
 function getBlogArticleSeo(pathname: string): PageSeo {
   const slug = decodeURIComponent(pathname.replace("/blog/", ""));
+  const article = blogArticles.find((a) => a.slug === slug);
+  if (article) {
+    return {
+      title: `${article.title} | בלוג המוסך של צביקה`,
+      description: article.metaDescription,
+      breadcrumbName: article.title,
+    };
+  }
   const titleFromSlug = slug.replace(/-/g, " ");
   return {
     title: `${titleFromSlug} | בלוג המוסך של צביקה`,
     description: `קראו על ${titleFromSlug}. מאמר מקצועי מהבלוג של המוסך של צביקה – מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון.`,
+    breadcrumbName: titleFromSlug,
   };
 }
 
@@ -144,6 +154,39 @@ export function useSeo() {
         twMeta.content = content;
         document.head.appendChild(twMeta);
       }
+
+    // BreadcrumbList structured data (skip for homepage)
+    const BREADCRUMB_SCRIPT_ID = "seo-breadcrumb";
+    const existingBreadcrumb = document.getElementById(BREADCRUMB_SCRIPT_ID);
+    if (pathname !== "/") {
+      const breadcrumbItems: Array<{ "@type": string; position: number; name: string; item?: string }> = [
+        { "@type": "ListItem", position: 1, name: "דף הבית", item: `${BASE_URL}/` },
+      ];
+
+      if (pathname.startsWith("/blog/")) {
+        breadcrumbItems.push({ "@type": "ListItem", position: 2, name: "בלוג", item: `${BASE_URL}/blog` });
+        breadcrumbItems.push({ "@type": "ListItem", position: 3, name: seo.breadcrumbName || seo.title });
+      } else {
+        breadcrumbItems.push({ "@type": "ListItem", position: 2, name: seo.breadcrumbName || seo.title });
+      }
+
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbItems,
+      };
+
+      if (existingBreadcrumb) {
+        existingBreadcrumb.textContent = JSON.stringify(breadcrumbSchema);
+      } else {
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.id = BREADCRUMB_SCRIPT_ID;
+        script.textContent = JSON.stringify(breadcrumbSchema);
+        document.head.appendChild(script);
+      }
+    } else if (existingBreadcrumb) {
+      existingBreadcrumb.remove();
     }
   }, [pathname]);
 }
