@@ -112,6 +112,18 @@ export function useSeo() {
     // Title
     document.title = seo.title;
 
+    // Robots
+    const robotsContent = seo.robots || "index, follow";
+    let robotsMeta = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (robotsMeta) {
+      robotsMeta.content = robotsContent;
+    } else {
+      robotsMeta = document.createElement("meta");
+      robotsMeta.name = "robots";
+      robotsMeta.content = robotsContent;
+      document.head.appendChild(robotsMeta);
+    }
+
     // Meta description
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (meta) {
