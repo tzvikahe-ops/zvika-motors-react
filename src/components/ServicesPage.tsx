@@ -125,8 +125,34 @@ const ServicesPage = () => {
     },
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    name: "המוסך של צביקה – אור-צת שירותי רכב",
+    url: "https://www.ortzat.co.il/services",
+    telephone: "+972-2-6514446",
+    areaServed: { "@type": "City", name: "ירושלים" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "שירותי מוסך",
+      itemListElement: mainServices.map((s, i) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+        },
+        position: i + 1,
+      })),
+    },
+  };
+
   return (
     <main dir="rtl" className="bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* HERO */}
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
