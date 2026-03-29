@@ -7,6 +7,7 @@ interface PageSeo {
   title: string;
   description: string;
   ogImage?: string;
+  breadcrumbName?: string;
 }
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
