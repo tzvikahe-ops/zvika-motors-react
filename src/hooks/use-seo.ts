@@ -154,6 +154,7 @@ export function useSeo() {
         twMeta.content = content;
         document.head.appendChild(twMeta);
       }
+    }
 
     // BreadcrumbList structured data (skip for homepage)
     const BREADCRUMB_SCRIPT_ID = "seo-breadcrumb";
