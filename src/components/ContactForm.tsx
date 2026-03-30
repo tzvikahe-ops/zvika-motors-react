@@ -114,7 +114,7 @@ export default function ContactForm() {
       noValidate
     >
       <h2 className="font-bold text-[16px] text-foreground mb-1">מעדיפים שנחזור אליכם?</h2>
-      <p className="text-[12px] text-muted-foreground mb-5">השאירו פרטים ונחזור בהקדם</p>
+      <p className="text-[12px] text-muted-foreground mb-5 leading-relaxed">השאירו שם וטלפון — ניצור קשר בהקדם, בלי התחייבות.</p>
 
       <div className="flex flex-col gap-4">
         <div>
