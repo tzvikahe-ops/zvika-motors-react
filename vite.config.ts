@@ -295,7 +295,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     cssPreloadPlugin(),
-    prerenderPlugin(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
