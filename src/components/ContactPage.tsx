@@ -1,58 +1,7 @@
-import { LocationIcon, PhoneIcon, HoursIcon, MapPinIcon, WazeIcon } from "./Icons";
+import { LocationIcon, PhoneIcon, HoursIcon, WazeIcon } from "./Icons";
 import { getContactEmail } from "@/lib/obfuscate-email";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import ContactForm from "./ContactForm";
-
-const QuickAction = ({
-  icon,
-  title,
-  subtitle,
-  href,
-  onClick,
-  accent = false,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
-  href: string;
-  onClick?: () => void;
-  accent?: boolean;
-}) => (
-  <a
-    href={href}
-    target={href.startsWith("http") ? "_blank" : undefined}
-    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-    onClick={onClick}
-    className={`flex items-center gap-4 rounded-lg border p-4 transition-all duration-200 no-underline group ${
-      accent
-        ? "bg-[#25D366]/[0.07] border-[#25D366]/30 hover:bg-[#25D366]/[0.12] hover:border-[#25D366]/50"
-        : "bg-card border-border hover:border-brand-red/30 hover:shadow-[var(--shadow-sm)]"
-    }`}
-  >
-    <div
-      className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 ${
-        accent ? "bg-[#25D366]/15" : "bg-brand-red/[0.08]"
-      }`}
-    >
-      {icon}
-    </div>
-    <div className="min-w-0">
-      <div className="font-bold text-[14px] text-foreground leading-tight">{title}</div>
-      <div className="text-[12px] text-muted-foreground mt-0.5">{subtitle}</div>
-    </div>
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className="text-muted-foreground/40 group-hover:text-brand-red shrink-0 mr-auto transition-colors rotate-180"
-    >
-      <path d="M9 18l6-6-6-6" />
-    </svg>
-  </a>
-);
 
 export default function ContactPage() {
   return (
