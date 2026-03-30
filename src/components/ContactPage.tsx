@@ -153,78 +153,37 @@ export default function ContactPage() {
           <ContactForm />
 
           <div className="flex flex-col gap-4">
-            {/* Contact details */}
-            <div className="bg-card rounded-lg p-7 shadow-[var(--shadow-sm)] border border-border">
-              <h2 className="font-bold text-[15px] text-foreground mb-5">פרטי המוסך</h2>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-3">
-                  <LocationIcon />
-                  <div>
-                    <div className="font-bold text-[13px] text-foreground">כתובת</div>
-                    <div className="text-[13px] text-muted-foreground mt-0.5">
-                      רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <HoursIcon />
-                  <div>
-                    <div className="font-bold text-[13px] text-foreground">שעות פעילות</div>
-                    <div className="text-[13px] text-muted-foreground mt-0.5">א׳-ה׳: 08:00–16:30</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brand-red mt-0.5 shrink-0">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <polyline points="22,4 12,13 2,4" />
-                  </svg>
-                  <div>
-                    <div className="font-bold text-[13px] text-foreground">אימייל</div>
-                    <a
-                      href={`mailto:${getContactEmail()}`}
-                      className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block"
-                    >
-                      {getContactEmail()}
-                    </a>
-                  </div>
+            {/* Email + trust */}
+            <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-sm)] border border-border">
+              <div className="flex items-start gap-3 mb-5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brand-red mt-0.5 shrink-0">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <polyline points="22,4 12,13 2,4" />
+                </svg>
+                <div>
+                  <div className="font-bold text-[13px] text-foreground">אימייל</div>
+                  <a
+                    href={`mailto:${getContactEmail()}`}
+                    className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block"
+                  >
+                    {getContactEmail()}
+                  </a>
                 </div>
               </div>
-            </div>
-
-            {/* Navigation / Waze */}
-            <div className="bg-card rounded-lg p-5 shadow-[var(--shadow-sm)] border border-border flex flex-col items-center justify-center text-center gap-2">
-              <MapPinIcon />
-              <h2 className="font-bold text-foreground text-[15px]">גבעת שאול, ירושלים</h2>
-              <p className="text-[12px] text-muted-foreground leading-relaxed">
-                נגישים בקלות מכל חלק בעיר · חנייה חינם
-              </p>
-              <a
-                href="https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%94%D7%90%D7%95%D7%A4%D7%94%204%20%D7%92%D7%91%D7%A2%D7%AA%20%D7%A9%D7%90%D7%95%D7%9C%20%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-1 bg-brand-red text-accent-foreground rounded-md px-5 py-2.5 text-sm font-bold hover:bg-brand-red-hover transition-all duration-200 no-underline"
-              >
-                <WazeIcon />
-                נווט אלינו ב-Waze
-              </a>
-            </div>
-
-            {/* Trust micro-signals */}
-            <div className="flex items-center gap-3 justify-center text-[11px] text-muted-foreground px-2">
-              <span className="flex items-center gap-1">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
-                מוסך מורשה
-              </span>
-              <span className="text-border">·</span>
-              <span className="flex items-center gap-1">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
-                פעילים מאז 1993
-              </span>
-              <span className="text-border">·</span>
-              <span className="flex items-center gap-1">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
-                אחריות על כל טיפול
-              </span>
+              <div className="border-t border-border pt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
+                  מוסך מורשה
+                </span>
+                <span className="flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
+                  פעילים מאז 1993
+                </span>
+                <span className="flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
+                  אחריות על כל טיפול
+                </span>
+              </div>
             </div>
           </div>
         </div>
