@@ -118,10 +118,11 @@ export default function BlogPage({ setPage }: BlogPageProps) {
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredArticles.map((article) => (
-              <button
+              <InternalLink
                 key={article.slug}
-                onClick={() => handleArticleClick(article.slug)}
-                className="bg-card border border-border p-6 md:p-7 text-right cursor-pointer hover:border-brand-red/20 transition-colors duration-200 group flex flex-col"
+                page="blog-article"
+                slug={article.slug}
+                className="bg-card border border-border p-6 md:p-7 text-right hover:border-brand-red/20 transition-colors duration-200 group flex flex-col no-underline"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[10px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
@@ -141,7 +142,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
                   קראו עוד
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-1"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
                 </span>
-              </button>
+              </InternalLink>
             ))}
           </div>
 

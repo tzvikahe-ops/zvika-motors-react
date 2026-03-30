@@ -10,7 +10,7 @@ const points = [
   { num: "05", title: "ציוד מתקדם ומקצועי", desc: "דיאגנוסטיקה ממוחשבת, כלים מקצועיים ועדכונים שוטפים. כך אנחנו מזהים תקלות שאחרים מפספסים." },
 ];
 
-export default function WhyUsSection({ setPage }: { setPage: (p: Page) => void }) {
+export default function WhyUsSection() {
   return (
     <section className="bg-background relative overflow-hidden" dir="rtl" aria-label="למה לבחור בנו">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

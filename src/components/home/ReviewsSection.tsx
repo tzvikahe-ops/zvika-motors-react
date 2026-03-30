@@ -2,7 +2,7 @@ import type { Page } from "@/types/page";
 import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
 import InternalLink from "../InternalLink";
 
-export default function ReviewsSection({ setPage }: { setPage: (p: Page) => void }) {
+export default function ReviewsSection() {
   return (
     <section className="bg-background py-16 md:py-28 px-5 sm:px-6 relative" dir="rtl" aria-label="ביקורות גוגל">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
