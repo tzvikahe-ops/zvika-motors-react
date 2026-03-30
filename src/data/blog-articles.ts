@@ -24,6 +24,7 @@ export interface ArticleSection {
   ctaHref?: string;
   linkText?: string; // for internal-link type
   linkPage?: Page;   // target page for internal link
+  linkSlug?: string; // slug for blog-article links
 }
 
 export const blogArticles: BlogArticle[] = [
@@ -265,7 +266,7 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "הטיפ הכי חשוב" },
       { type: "p", text: "אם שומעים רעש חדש, אל תעלו את הרדיו. הרעש הוא הדרך של הרכב לספר לכם שמשהו קורה. ברוב המקרים אפשר לאבחן את הבעיה ולתת תשובה ברורה עם הערכת עלות." },
-      { type: "internal-link", text: "רוצים להבין מה עוד כדאי לשים לב אליו?", linkText: "8 סימנים שהרכב צריך טיפול", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים להבין מה עוד כדאי לשים לב אליו?", linkText: "8 סימנים שהרכב צריך טיפול", linkPage: "blog-article", linkSlug: "סימנים-שהרכב-צריך-טיפול" },
 
       { type: "internal-link", text: "רוצים שנאבחן את הרעש?", linkText: "השאירו פרטים ונתאם בדיקה", linkPage: "contact" },
       { type: "cta", ctaText: "שומעים רעש חדש מהרכב?", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
@@ -327,7 +328,7 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "הטעות הנפוצה ביותר" },
       { type: "p", text: "הטעות הכי גדולה שאנשים עושים היא להתעלם מהנורה. \"היא דולקת כבר חודש ולא קרה כלום\" - שמענו את זה מאות פעמים. אבל מה שקורה בפועל הוא שתקלה קטנה (שעולה 200 ש\"ח לתקן) הופכת לתקלה גדולה (שעולה 3,000 ש\"ח). טיפול מוקדם חוסך כסף." },
-      { type: "internal-link", text: "רוצים להבין כמה עולים טיפולים נפוצים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים להבין כמה עולים טיפולים נפוצים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
 
       { type: "internal-link", text: "רוצים לתאם בדיקה ממוחשבת?", linkText: "השאירו פרטים ונחזור אליכם", linkPage: "contact" },
       { type: "cta", ctaText: "הנורה דולקת? שלחו הודעה ונכוון אתכם", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
@@ -412,7 +413,7 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "טיפ מהמוסך" },
       { type: "p", text: "שמרו על מדבקה עם הקילומטראז' של ההחלפה האחרונה (בדרך כלל שמים אותה על מסגרת הדלת או על השמשה). ככה יודעים מתי ההחלפה הבאה." },
-      { type: "internal-link", text: "רוצים לדעת כמה עולים טיפולים שוטפים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולים טיפולים שוטפים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
 
       { type: "cta", ctaText: "הגיע הזמן להחליף שמן?", ctaPage: "contact", linkText: "שלחו פנייה ונתאם מועד" },
     ],
@@ -482,7 +483,7 @@ export const blogArticles: BlogArticle[] = [
         "תיקון אטם ראש מנוע: 2,500-5,000 ש\"ח",
       ]},
       { type: "p", text: "ההבדל בין תרמוסטט ב-300 ש\"ח לאטם ראש ב-4,000 ש\"ח הוא פשוט - תשומת לב בזמן. במוסך בגבעת שאול, ירושלים, אנחנו בודקים את מערכת הקירור בכל טיפול שוטף ומתריעים כשמשהו מתחיל להיראות בעייתי." },
-      { type: "internal-link", text: "מנוע שמתחמם יכול גם להדליק נורת צ'ק אנג'ין.", linkText: "קראו את המדריך על נורת הצ'ק אנג'ין", linkPage: "blog-article" },
+      { type: "internal-link", text: "מנוע שמתחמם יכול גם להדליק נורת צ'ק אנג'ין.", linkText: "קראו את המדריך על נורת הצ'ק אנג'ין", linkPage: "blog-article", linkSlug: "נורת-צק-אנגין-מה-לעשות" },
 
       { type: "internal-link", text: "רוצים לתאם בדיקת מערכת קירור?", linkText: "השאירו פרטים ונחזור אליכם", linkPage: "contact" },
       { type: "cta", ctaText: "מחוג החום עלה? שלחו הודעה ונכוון אתכם", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
@@ -539,7 +540,7 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "מתי להגיע למוסך?" },
       { type: "p", text: "אם בדקתם לחץ צמיגים ושיניתם הרגלי נסיעה ועדיין הצריכה גבוהה, כנראה שיש תקלה טכנית. בדיקה ממוחשבת במוסך יכולה לאתר בדיוק את הבעיה. ברוב המקרים, התיקון מחזיר את ההשקעה תוך כמה חודשים של חיסכון בתדלוק." },
-      { type: "internal-link", text: "צריכת דלק גבוהה יכולה גם להדליק נורת צ'ק אנג'ין.", linkText: "קראו מה לעשות כשהנורה נדלקת", linkPage: "blog-article" },
+      { type: "internal-link", text: "צריכת דלק גבוהה יכולה גם להדליק נורת צ'ק אנג'ין.", linkText: "קראו מה לעשות כשהנורה נדלקת", linkPage: "blog-article", linkSlug: "נורת-צק-אנגין-מה-לעשות" },
 
       { type: "cta", ctaText: "הרכב צורך יותר מדי?", ctaPage: "contact", linkText: "שלחו פנייה ונבדוק" },
     ],
@@ -592,7 +593,8 @@ export const blogArticles: BlogArticle[] = [
         "אל תשאירו מערכות חשמל דלוקות כשהמנוע כבוי",
         "בדקו את המצבר בטיפול השוטף, במיוחד לפני החורף",
       ]},
-      { type: "internal-link", text: "בעיות מצבר קשורות לפעמים לדינמו תקול.", linkText: "קראו עוד על סימנים שהרכב צריך טיפול", linkPage: "blog-article" },
+      { type: "internal-link", text: "בעיות מצבר קשורות לפעמים לדינמו תקול.", linkText: "קראו עוד על סימנים שהרכב צריך טיפול", linkPage: "blog-article", linkSlug: "סימנים-שהרכב-צריך-טיפול" },
+      { type: "internal-link", text: "רוצים לתאם בדיקת מצבר?", linkText: "צרו קשר ונקבע מועד", linkPage: "contact" },
 
       { type: "cta", ctaText: "הרכב לא מתניע?", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
     ],
@@ -640,7 +642,8 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "נוזל בלמים" },
       { type: "p", text: "נוזל הבלמים סופג לחות מהאוויר עם הזמן, מה שמפחית את יעילות הבלימה ויכול לגרום לחלודה פנימית. ההמלצה היא להחליף נוזל בלמים כל שנתיים. זה טיפול פשוט שהרבה אנשים שוכחים ממנו." },
-      { type: "internal-link", text: "שומעים רעשים נוספים מהרכב?", linkText: "מדריך לזיהוי רעשים חריגים ברכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "שומעים רעשים נוספים מהרכב?", linkText: "מדריך לזיהוי רעשים חריגים ברכב", linkPage: "blog-article", linkSlug: "רעשים-חריגים-ברכב-מה-הם-אומרים" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול בלמים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
 
       { type: "cta", ctaText: "שומעים חריקה בבלימה?", ctaPage: "contact", linkText: "שלחו פנייה ונתאם בדיקה" },
     ],
@@ -688,7 +691,7 @@ export const blogArticles: BlogArticle[] = [
       { type: "h2", text: "מה לעשות עם התוצאות?" },
       { type: "p", text: "אחרי הבדיקה תקבלו דוח מפורט. אם יש ממצאים, זה לא בהכרח אומר שלא כדאי לקנות. אבל זה נותן לכם כלי למשא ומתן. בעיה של 2,000 שקלים שמצאנו לפני הקנייה הופכת להנחה במחיר, לא להפתעה אחרי." },
 
-      { type: "internal-link", text: "אחרי הקנייה, חשוב לדעת מתי הרכב צריך טיפול.", linkText: "סימנים שהרכב צריך מוסך", linkPage: "blog-article" },
+      { type: "internal-link", text: "אחרי הקנייה, חשוב לדעת מתי הרכב צריך טיפול.", linkText: "סימנים שהרכב צריך מוסך", linkPage: "blog-article", linkSlug: "סימנים-שהרכב-צריך-טיפול" },
 
       { type: "internal-link", text: "רוצים לתאם בדיקת רכב לפני קנייה?", linkText: "צרו קשר ונקבע מועד", linkPage: "contact" },
       { type: "cta", ctaText: "קונים רכב? הביאו לבדיקה לפני שסוגרים", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
@@ -747,6 +750,7 @@ export const blogArticles: BlogArticle[] = [
       ]},
 
       { type: "internal-link", text: "לא בטוחים מה הטיפול כולל?", linkText: "לפירוט השירותים שלנו", linkPage: "services" },
+      { type: "internal-link", text: "גרים בירושלים? הרכב שלכם עובד קשה יותר.", linkText: "טיפים לתחזוקת רכב בירושלים", linkPage: "blog-article", linkSlug: "תחזוקת-רכב-בירושלים" },
 
       { type: "cta", ctaText: "רוצים לתאם ביקור במוסך?", ctaPage: "contact", linkText: "שלחו פנייה דרך טופס יצירת קשר" },
     ],
@@ -799,7 +803,8 @@ export const blogArticles: BlogArticle[] = [
         "שמרו על טיפולים שוטפים כמו בכל רכב, המנוע הבנזיני עדיין צריך תחזוקה",
       ]},
 
-      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול שוטף?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול שוטף?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
+      { type: "internal-link", text: "רוצים לתאם ביקור במוסך?", linkText: "צרו קשר", linkPage: "contact" },
 
       { type: "cta", ctaText: "יש לכם היברידי?", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
     ],
@@ -841,6 +846,7 @@ export const blogArticles: BlogArticle[] = [
       { type: "p", text: "כבישי ירושלים לא תמיד במצב הכי טוב. מהמורות, פסי האטה, ומדרכות פוגעים במתלים, בגלגלים ובחישוקים. אם מרגישים רטט בהגה, שומעים נקישות ממערכת המתלים, או רואים שחיקה לא אחידה בצמיגים, כדאי להגיע לבדיקה." },
 
       { type: "internal-link", text: "רוצים לראות מה כולל טיפול שוטף אצלנו?", linkText: "לעמוד השירותים", linkPage: "services" },
+      { type: "internal-link", text: "חשוב לדעת מתי להחליף שמן מנוע.", linkText: "מדריך החלפת שמן", linkPage: "blog-article", linkSlug: "החלפת-שמן-מנוע-למה-חשוב-ומתי" },
 
       { type: "cta", ctaText: "גרים בירושלים ומחפשים מוסך קרוב?", ctaPage: "contact", linkText: "שלחו פנייה ונתאם מועד" },
     ],
