@@ -38,8 +38,8 @@ export default function GalleryPage() {
             <div className="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center mx-auto mb-4">
               <Camera className="w-5 h-5 text-brand-red" />
             </div>
-            <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[420px] mx-auto">
-              הגלריה שלנו תתעדכן בקרוב עם תמונות אמיתיות מהמוסך ומהעבודה שלנו. בינתיים, נשמח לעזור לכם בטלפון או בוואטסאפ.
+            <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[400px] mx-auto">
+              בקרוב נוסיף לכאן תמונות אמיתיות מהמוסך. בינתיים, אנחנו כאן בטלפון או בוואטסאפ.
             </p>
           </div>
         </div>
