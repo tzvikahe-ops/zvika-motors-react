@@ -47,6 +47,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "ac",
       icon: <SnowflakeIcon />,
       title: "מיזוג אוויר לרכב",
       subtitle: "טיפול מלא במערכת הקירור והחימום",
