@@ -41,7 +41,7 @@ export default function GalleryPage() {
               <Camera className="w-5 h-5 text-brand-red" />
             </div>
             <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[400px] mx-auto mb-5">
-              בקרוב נוסיף לכאן תמונות אמיתיות מהמוסך. בינתיים, אנחנו כאן בטלפון או בוואטסאפ.
+              כרגע העמוד מציג תמונה אחת של חזית המוסך. בהמשך נוסיף לכאן תמונות אמיתיות נוספות מתוך המוסך ומהעבודה השוטפת.
             </p>
             <div className="flex items-center justify-center gap-3">
               <a
