@@ -28,6 +28,12 @@ export default function GalleryPage() {
           </p>
         </div>
 
+        <div className="bg-muted/60 border border-border rounded-lg px-5 py-4 mb-6 text-center max-w-[540px] mx-auto">
+          <p className="text-muted-foreground text-[13px] leading-relaxed">
+            📸 העמוד בעדכון - בקרוב נעלה לכאן תמונות אמיתיות מהמוסך, מהצוות ומהעבודה היומיומית. בינתיים, הנה הצצה קטנה.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {galleryImages.map((img, i) => (
             <div
