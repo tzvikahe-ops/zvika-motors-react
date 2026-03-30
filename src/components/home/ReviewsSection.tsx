@@ -1,5 +1,6 @@
 import type { Page } from "@/types/page";
 import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
+import InternalLink from "../InternalLink";
 
 export default function ReviewsSection({ setPage }: { setPage: (p: Page) => void }) {
   return (

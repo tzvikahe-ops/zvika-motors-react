@@ -1,5 +1,6 @@
 import type { Page } from "@/types/page";
 import mechanicImage from "@/assets/mechanic-work.webp";
+import InternalLink from "../InternalLink";
 
 const points = [
   { num: "01", title: "ניסיון של מעל 30 שנה", desc: "התחלנו ב-1993 ומאז טיפלנו באלפי רכבים. אנחנו יודעים לזהות בעיות במהירות ולחסוך לכם זמן וכסף." },
