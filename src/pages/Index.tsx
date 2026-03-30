@@ -77,7 +77,7 @@ const Index = () => {
           {currentPage === "accessibility" && <AccessibilityStatement />}
           {currentPage === "image-generator" && <ImageGeneratorPage />}
           {currentPage === "faq" && <FAQPage />}
-          {currentPage === "blog" && <BlogPage setPage={setPage} />}
+          {currentPage === "blog" && <BlogPage />}
           {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
           {(currentPage === "home" || currentPage === "contact") && (
             <LazySection rootMargin="300px" minHeight="300px">

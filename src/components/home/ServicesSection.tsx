@@ -74,7 +74,7 @@ const services = [
   },
 ];
 
-export default function ServicesSection({ setPage }: { setPage: (p: Page) => void }) {
+export default function ServicesSection() {
   return (
     <section id="services" className="py-20 md:py-28 px-5 sm:px-6 bg-surface-darker relative" dir="rtl" aria-label="שירותי המוסך">
       <div className="absolute inset-0 pattern-dots opacity-30" />
