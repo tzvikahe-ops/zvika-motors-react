@@ -11,6 +11,8 @@ interface PageSeo {
   ogImage?: string;
   breadcrumbName?: string;
   robots?: string;
+  ogType?: string;
+  datePublished?: string;
 }
 
 function normalizePathname(pathname: string): string {
