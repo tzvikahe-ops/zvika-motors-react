@@ -750,6 +750,7 @@ export const blogArticles: BlogArticle[] = [
       ]},
 
       { type: "internal-link", text: "לא בטוחים מה הטיפול כולל?", linkText: "לפירוט השירותים שלנו", linkPage: "services" },
+      { type: "internal-link", text: "גרים בירושלים? הרכב שלכם עובד קשה יותר.", linkText: "טיפים לתחזוקת רכב בירושלים", linkPage: "blog-article", linkSlug: "תחזוקת-רכב-בירושלים" },
 
       { type: "cta", ctaText: "רוצים לתאם ביקור במוסך?", ctaPage: "contact", linkText: "שלחו פנייה דרך טופס יצירת קשר" },
     ],
