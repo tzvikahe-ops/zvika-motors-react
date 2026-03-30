@@ -187,6 +187,35 @@ export default function SeoHead() {
       {breadcrumb && (
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
       )}
+
+      {/* Article structured data for blog posts */}
+      {seo.ogType === "article" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: seo.title.split(" | ")[0],
+            description: seo.description,
+            datePublished: seo.datePublished,
+            dateModified: seo.datePublished,
+            url: canonicalUrl,
+            inLanguage: "he",
+            author: {
+              "@type": "Organization",
+              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              url: BASE_URL,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              url: BASE_URL,
+              logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.png` },
+            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+            image: `${BASE_URL}/og-home.jpg`,
+          })}
+        </script>
+      )}
     </Helmet>
   );
 }
