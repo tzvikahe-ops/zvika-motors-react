@@ -75,7 +75,7 @@ function renderSection(section: ArticleSection, index: number, setPage: (p: Page
 
 interface BlogArticlePageProps {
   slug: string;
-  setPage: (p: Page, slug?: string) => void;
+  setPage: (p: Page, slug?: string, hash?: string) => void;
 }
 
 export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps) {
