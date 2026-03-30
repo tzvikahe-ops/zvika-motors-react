@@ -76,7 +76,7 @@ const Index = () => {
           {currentPage === "privacy" && <PrivacyPolicy />}
           {currentPage === "accessibility" && <AccessibilityStatement />}
           {currentPage === "image-generator" && <ImageGeneratorPage />}
-          {currentPage === "faq" && <FAQPage setPage={setPage} />}
+          {currentPage === "faq" && <FAQPage />}
           {currentPage === "blog" && <BlogPage setPage={setPage} />}
           {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} setPage={setPage} />}
           {(currentPage === "home" || currentPage === "contact") && (
