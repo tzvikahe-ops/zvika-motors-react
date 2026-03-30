@@ -78,27 +78,22 @@ function renderSection(section: ArticleSection, index: number) {
 
 interface BlogArticlePageProps {
   slug: string;
-  setPage: (p: Page, slug?: string, hash?: string) => void;
 }
 
-export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps) {
+export default function BlogArticlePage({ slug }: BlogArticlePageProps) {
   const article = getArticleBySlug(slug);
 
   if (!article) {
     return (
       <div className="bg-background pt-32 pb-20 px-5 text-center" dir="rtl">
         <h1 className="text-[24px] font-bold text-foreground mb-4">המאמר לא נמצא</h1>
-        <button
-          onClick={() => setPage("blog")}
-          className="text-brand-red font-bold text-[14px] bg-transparent border-none cursor-pointer"
-        >
+        <InternalLink page="blog" className="text-brand-red font-bold text-[14px] no-underline">
           חזרו לבלוג
-        </button>
+        </InternalLink>
       </div>
     );
   }
 
-  // Get related articles (same topic, excluding current)
   const relatedArticles = blogArticles
     .filter((a) => a.topic === article.topic && a.slug !== article.slug)
     .slice(0, 2);
@@ -108,45 +103,31 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": articleUrl,
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.date,
     dateModified: article.date,
-    author: {
-      "@type": "Organization",
-      name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://www.ortzat.co.il",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "המוסך של צביקה",
-      url: "https://www.ortzat.co.il",
-    },
+    author: { "@type": "Organization", name: "המוסך של צביקה - אור-צת שירותי רכב", url: "https://www.ortzat.co.il" },
+    publisher: { "@type": "Organization", name: "המוסך של צביקה", url: "https://www.ortzat.co.il" },
     inLanguage: "he",
   };
 
   return (
     <div className="bg-background" dir="rtl">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Header */}
       <section className="pt-28 pb-8 md:pt-32 md:pb-12 px-5 sm:px-6 bg-surface-darker relative">
         <div className="absolute inset-0 pattern-dots opacity-30" />
         <div className="max-w-[750px] mx-auto relative z-10">
-          <button
-            onClick={() => setPage("blog")}
-            className="inline-flex items-center gap-1.5 text-primary-foreground/40 text-[12px] font-bold mb-5 bg-transparent border-none cursor-pointer hover:text-primary-foreground/70 transition-colors"
+          <InternalLink
+            page="blog"
+            className="inline-flex items-center gap-1.5 text-primary-foreground/40 text-[12px] font-bold mb-5 hover:text-primary-foreground/70 transition-colors no-underline"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             חזרה לבלוג
-          </button>
+          </InternalLink>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[10px] font-bold text-brand-red/80 bg-brand-red/10 px-2 py-0.5 border border-brand-red/15">
               {article.topic}
@@ -164,32 +145,33 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
       {/* Article Body */}
       <article className="py-10 md:py-16 px-5 sm:px-6">
         <div className="max-w-[750px] mx-auto">
-          {article.content.map((section, i) => renderSection(section, i, setPage))}
+          {article.content.map((section, i) => renderSection(section, i))}
 
           {/* Contextual next steps */}
           <div className="mt-12 pt-8 border-t border-border">
             <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-4">הצעד הבא</p>
             <div className="flex flex-wrap gap-3">
               {article.relatedService && (
-                <button
-                  onClick={() => setPage("services", undefined, article.relatedServiceAnchor)}
-                  className="bg-transparent border border-brand-red/20 text-brand-red text-[12px] font-bold px-4 py-2 cursor-pointer hover:bg-brand-red/5 transition-colors duration-200"
+                <InternalLink
+                  page="services"
+                  hash={article.relatedServiceAnchor}
+                  className="border border-brand-red/20 text-brand-red text-[12px] font-bold px-4 py-2 hover:bg-brand-red/5 transition-colors duration-200 no-underline"
                 >
                   {article.relatedService} →
-                </button>
+                </InternalLink>
               )}
-              <button
-                onClick={() => setPage("contact")}
-                className="bg-transparent border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 cursor-pointer hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200"
+              <InternalLink
+                page="contact"
+                className="border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200 no-underline"
               >
                 צור קשר
-              </button>
-              <button
-                onClick={() => setPage("faq")}
-                className="bg-transparent border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 cursor-pointer hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200"
+              </InternalLink>
+              <InternalLink
+                page="faq"
+                className="border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200 no-underline"
               >
                 שאלות נפוצות
-              </button>
+              </InternalLink>
             </div>
           </div>
 
@@ -199,10 +181,11 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
               <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-4">מאמרים נוספים בנושא {article.topic}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedArticles.map((related) => (
-                  <button
+                  <InternalLink
                     key={related.slug}
-                    onClick={() => setPage("blog-article", related.slug)}
-                    className="bg-card border border-border p-5 text-right cursor-pointer hover:border-brand-red/20 transition-colors duration-200 group"
+                    page="blog-article"
+                    slug={related.slug}
+                    className="bg-card border border-border p-5 text-right hover:border-brand-red/20 transition-colors duration-200 group no-underline block"
                   >
                     <h3 className="text-[14px] font-bold text-foreground leading-[1.4] mb-2 group-hover:text-brand-red transition-colors">
                       {related.title}
@@ -210,7 +193,7 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
                     <p className="text-foreground/40 text-[12px] leading-[1.6]">
                       {related.excerpt}
                     </p>
-                  </button>
+                  </InternalLink>
                 ))}
               </div>
             </div>
