@@ -27,15 +27,25 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Index />} />
+          <Route path="/services/index.html" element={<Index />} />
           <Route path="/about" element={<Index />} />
+          <Route path="/about/index.html" element={<Index />} />
           <Route path="/gallery" element={<Index />} />
+          <Route path="/gallery/index.html" element={<Index />} />
           <Route path="/contact" element={<Index />} />
+          <Route path="/contact/index.html" element={<Index />} />
           <Route path="/faq" element={<Index />} />
+          <Route path="/faq/index.html" element={<Index />} />
           <Route path="/blog" element={<Index />} />
+          <Route path="/blog/index.html" element={<Index />} />
           <Route path="/blog/:slug" element={<Index />} />
+          <Route path="/blog/:slug/index.html" element={<Index />} />
           <Route path="/privacy" element={<Index />} />
+          <Route path="/privacy/index.html" element={<Index />} />
           <Route path="/accessibility" element={<Index />} />
+          <Route path="/accessibility/index.html" element={<Index />} />
           <Route path="/image-generator" element={<Index />} />
+          <Route path="/image-generator/index.html" element={<Index />} />
           <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
           <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
