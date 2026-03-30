@@ -1,5 +1,5 @@
 import type { Page } from "@/types/page";
-import { getArticleBySlug } from "@/data/blog-articles";
+import { getArticleBySlug, blogArticles } from "@/data/blog-articles";
 import type { ArticleSection } from "@/data/blog-articles";
 
 const WhatsAppSVG = () => (
@@ -50,7 +50,7 @@ function renderSection(section: ArticleSection, index: number, setPage: (p: Page
 
 interface BlogArticlePageProps {
   slug: string;
-  setPage: (p: Page) => void;
+  setPage: (p: Page, slug?: string) => void;
 }
 
 export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps) {
@@ -69,6 +69,11 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
       </div>
     );
   }
+
+  // Get related articles (same topic, excluding current)
+  const relatedArticles = blogArticles
+    .filter((a) => a.topic === article.topic && a.slug !== article.slug)
+    .slice(0, 2);
 
   const articleUrl = `https://www.ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
 
@@ -114,9 +119,14 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             חזרה לבלוג
           </button>
-          <p className="text-primary-foreground/30 text-[12px] font-medium mb-3">
-            {article.readTime} · {new Date(article.date).toLocaleDateString("he-IL")}
-          </p>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[10px] font-bold text-brand-red/80 bg-brand-red/10 px-2 py-0.5 border border-brand-red/15">
+              {article.topic}
+            </span>
+            <span className="text-primary-foreground/30 text-[12px] font-medium">
+              {article.readTime} · {new Date(article.date).toLocaleDateString("he-IL")}
+            </span>
+          </div>
           <h1 className="text-[26px] sm:text-[32px] md:text-[40px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.15]">
             {article.title}
           </h1>
@@ -128,15 +138,18 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
         <div className="max-w-[750px] mx-auto">
           {article.content.map((section, i) => renderSection(section, i, setPage))}
 
-          {/* Related links */}
+          {/* Contextual next steps */}
           <div className="mt-12 pt-8 border-t border-border">
+            <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-4">הצעד הבא</p>
             <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => setPage("services")}
-                className="bg-transparent border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 cursor-pointer hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200"
-              >
-                השירותים שלנו
-              </button>
+              {article.relatedService && (
+                <button
+                  onClick={() => setPage("services")}
+                  className="bg-transparent border border-brand-red/20 text-brand-red text-[12px] font-bold px-4 py-2 cursor-pointer hover:bg-brand-red/5 transition-colors duration-200"
+                >
+                  {article.relatedService} →
+                </button>
+              )}
               <button
                 onClick={() => setPage("contact")}
                 className="bg-transparent border border-border text-foreground/60 text-[12px] font-medium px-4 py-2 cursor-pointer hover:border-brand-red/30 hover:text-brand-red transition-colors duration-200"
@@ -151,6 +164,29 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
               </button>
             </div>
           </div>
+
+          {/* Related articles from same topic */}
+          {relatedArticles.length > 0 && (
+            <div className="mt-10 pt-8 border-t border-border">
+              <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-4">מאמרים נוספים בנושא {article.topic}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {relatedArticles.map((related) => (
+                  <button
+                    key={related.slug}
+                    onClick={() => setPage("blog-article", related.slug)}
+                    className="bg-card border border-border p-5 text-right cursor-pointer hover:border-brand-red/20 transition-colors duration-200 group"
+                  >
+                    <h3 className="text-[14px] font-bold text-foreground leading-[1.4] mb-2 group-hover:text-brand-red transition-colors">
+                      {related.title}
+                    </h3>
+                    <p className="text-foreground/40 text-[12px] leading-[1.6]">
+                      {related.excerpt}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </article>
     </div>

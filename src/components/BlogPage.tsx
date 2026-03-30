@@ -1,8 +1,14 @@
+import { useState } from "react";
 import type { Page } from "@/types/page";
-import { blogArticles } from "@/data/blog-articles";
+import { blogArticles, getAllTopics } from "@/data/blog-articles";
+import type { BlogTopic } from "@/data/blog-articles";
 
 const WhatsAppSVG = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+);
+
+const PhoneSVG = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
 );
 
 interface BlogPageProps {
@@ -10,6 +16,13 @@ interface BlogPageProps {
 }
 
 export default function BlogPage({ setPage }: BlogPageProps) {
+  const [activeTopic, setActiveTopic] = useState<BlogTopic | "הכל">("הכל");
+  const topics = getAllTopics();
+
+  const filteredArticles = activeTopic === "הכל"
+    ? blogArticles
+    : blogArticles.filter((a) => a.topic === activeTopic);
+
   const handleArticleClick = (slug: string) => {
     setPage("blog-article", slug);
   };
@@ -22,14 +35,45 @@ export default function BlogPage({ setPage }: BlogPageProps) {
         <div className="max-w-[900px] mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">הבלוג שלנו</p>
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">שאלות ותשובות מהמוסך</p>
           </div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1] mb-4">
-            טיפים ומדריכים לטיפול ברכב
+            התשובות לשאלות שבעלי רכב שואלים
           </h1>
           <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.8] max-w-[600px]">
-            מאמרים מקצועיים שיעזרו לכם לטפל ברכב, לחסוך כסף ולהימנע מתקלות מיותרות.
+            לפני שמתקשרים למוסך, כדאי להבין מה קורה עם הרכב. כאן תמצאו מדריכים מעשיים שעונים על השאלות שאנחנו שומעים כל יום מלקוחות.
           </p>
+        </div>
+      </section>
+
+      {/* Topic filters */}
+      <section className="py-6 px-5 sm:px-6 border-b border-border bg-background sticky top-[60px] z-20">
+        <div className="max-w-[900px] mx-auto">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setActiveTopic("הכל")}
+              className={`text-[12px] font-bold px-4 py-2 border transition-colors duration-200 cursor-pointer ${
+                activeTopic === "הכל"
+                  ? "bg-brand-red text-white border-brand-red"
+                  : "bg-transparent text-foreground/60 border-border hover:border-brand-red/30 hover:text-brand-red"
+              }`}
+            >
+              הכל
+            </button>
+            {topics.map((topic) => (
+              <button
+                key={topic}
+                onClick={() => setActiveTopic(topic)}
+                className={`text-[12px] font-bold px-4 py-2 border transition-colors duration-200 cursor-pointer ${
+                  activeTopic === topic
+                    ? "bg-brand-red text-white border-brand-red"
+                    : "bg-transparent text-foreground/60 border-border hover:border-brand-red/30 hover:text-brand-red"
+                }`}
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -37,15 +81,20 @@ export default function BlogPage({ setPage }: BlogPageProps) {
       <section className="py-12 md:py-20 px-5 sm:px-6">
         <div className="max-w-[900px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogArticles.map((article) => (
+            {filteredArticles.map((article) => (
               <button
                 key={article.slug}
                 onClick={() => handleArticleClick(article.slug)}
                 className="bg-card border border-border p-6 md:p-7 text-right cursor-pointer hover:border-brand-red/20 transition-colors duration-200 group flex flex-col"
               >
-                <p className="text-muted-foreground text-[11px] font-medium mb-3">
-                  {article.readTime} · {new Date(article.date).toLocaleDateString("he-IL")}
-                </p>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[10px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
+                    {article.topic}
+                  </span>
+                  <span className="text-muted-foreground text-[11px] font-medium">
+                    {article.readTime}
+                  </span>
+                </div>
                 <h2 className="text-[16px] md:text-[18px] font-bold text-foreground tracking-[-0.02em] leading-[1.35] mb-3 group-hover:text-brand-red transition-colors duration-200">
                   {article.title}
                 </h2>
@@ -59,27 +108,42 @@ export default function BlogPage({ setPage }: BlogPageProps) {
               </button>
             ))}
           </div>
+
+          {filteredArticles.length === 0 && (
+            <p className="text-center text-muted-foreground text-[14px] py-12">
+              אין מאמרים בנושא הזה עדיין.
+            </p>
+          )}
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA - clear next step */}
       <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
-            צריכים עזרה עם הרכב?
+            לא מצאתם תשובה? דברו איתנו
           </h2>
           <p className="text-foreground/50 text-[13px] md:text-[14px] leading-[1.8] mb-6">
-            מעל 30 שנות ניסיון בשירותכם. דברו איתנו ונשמח לעזור.
+            אם קראתם ועדיין לא בטוחים מה קורה עם הרכב, שלחו לנו הודעה. נשמח לעזור ולכוון אתכם.
           </p>
-          <a
-            href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary no-underline inline-flex items-center justify-center gap-2 text-[14px]"
-          >
-            <WhatsAppSVG />
-            שלחו הודעה בוואטסאפ
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)]"
+            >
+              <WhatsAppSVG />
+              שלחו הודעה בוואטסאפ
+            </a>
+            <a
+              href="tel:02-6514446"
+              className="btn-primary text-center no-underline inline-flex items-center justify-center gap-2"
+            >
+              <PhoneSVG />
+              02-6514446
+            </a>
+          </div>
         </div>
       </section>
     </div>
