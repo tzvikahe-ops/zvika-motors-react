@@ -122,24 +122,9 @@ export default function ContactPage() {
           <ContactForm />
 
           <div className="flex flex-col gap-4">
-            {/* Email + trust */}
+            {/* Trust signals */}
             <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-sm)] border border-border">
-              <div className="flex items-start gap-3 mb-5">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brand-red mt-0.5 shrink-0">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <polyline points="22,4 12,13 2,4" />
-                </svg>
-                <div>
-                  <div className="font-bold text-[13px] text-foreground">אימייל</div>
-                  <a
-                    href={`mailto:${getContactEmail()}`}
-                    className="text-[13px] text-muted-foreground hover:text-brand-red transition-colors duration-200 mt-0.5 block"
-                  >
-                    {getContactEmail()}
-                  </a>
-                </div>
-              </div>
-              <div className="border-t border-border pt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-brand-red"><path d="M20 6L9 17l-5-5" /></svg>
                   מוסך מורשה
