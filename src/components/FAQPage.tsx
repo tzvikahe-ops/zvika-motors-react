@@ -107,7 +107,7 @@ const faqs: FAQItem[] = [
   },
 ];
 
-export default function FAQPage({ setPage }: { setPage: (p: Page) => void }) {
+export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqSchema = {
