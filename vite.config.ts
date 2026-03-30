@@ -184,6 +184,15 @@ function prerenderPlugin(): Plugin {
       patched = patched.replace(/(<meta\s+name="robots"\s+content=")[^"]*(")/, `$1${escapeAttr(route.robots)}$2`);
     }
 
+    // og:type article for blog posts
+    if (route.path.startsWith("/blog/") && route.date) {
+      patched = patched.replace(/(<meta\s+property="og:type"\s+content=")[^"]*(")/, `$1article$2`);
+    }
+
+    // hreflang
+    patched = patched.replace(/(<link\s+rel="alternate"\s+hreflang="he-IL"\s+href=")[^"]*(")/, `$1${u}$2`);
+    patched = patched.replace(/(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")[^"]*(")/, `$1${u}$2`);
+
     if (extraSchemas) {
       patched = patched.replace("</head>", `    ${extraSchemas}\n  </head>`);
     }
