@@ -413,7 +413,7 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "טיפ מהמוסך" },
       { type: "p", text: "שמרו על מדבקה עם הקילומטראז' של ההחלפה האחרונה (בדרך כלל שמים אותה על מסגרת הדלת או על השמשה). ככה יודעים מתי ההחלפה הבאה." },
-      { type: "internal-link", text: "רוצים לדעת כמה עולים טיפולים שוטפים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולים טיפולים שוטפים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
 
       { type: "cta", ctaText: "הגיע הזמן להחליף שמן?", ctaPage: "contact", linkText: "שלחו פנייה ונתאם מועד" },
     ],
