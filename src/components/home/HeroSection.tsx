@@ -33,14 +33,14 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               </p>
             </div>
 
-            <h1 className="mb-5 md:mb-6">
+            <div className="mb-5 md:mb-6" role="presentation">
               <span className="block text-[30px] sm:text-[36px] md:text-[42px] lg:text-[50px] font-black text-primary-foreground leading-[1.05] tracking-[-0.035em]">
                 המוסך שאפשר
               </span>
               <span className="block text-[30px] sm:text-[36px] md:text-[42px] lg:text-[50px] font-black leading-[1.05] tracking-[-0.035em] text-brand-red mt-1">
                 לסמוך עליו.
               </span>
-            </h1>
+            </div>
 
             <p className="text-primary-foreground/70 text-[14px] md:text-[15px] leading-[1.9] mb-6 md:mb-8 max-w-[400px]">
               טיפול מקצועי, מחירים שקופים, ובעל מקצוע שמדבר איתכם ישירות. בלי הפתעות, בלי עבודות מיותרות.

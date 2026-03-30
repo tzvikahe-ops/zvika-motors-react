@@ -187,7 +187,7 @@ function prerenderPlugin(): Plugin {
 
   function getH1(path: string, title: string): string {
     if (path.startsWith("/blog/")) return title.split(" | ")[0] || "בלוג";
-    return h1Map[path] || "המוסך שאפשר";
+    return h1Map[path] || "המוסך של צביקה – מוסך מקצועי בירושלים";
   }
 
   function buildStaticSchemas(route: RouteMeta, canonicalUrl: string): string {
