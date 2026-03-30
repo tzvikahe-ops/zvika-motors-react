@@ -8,10 +8,10 @@ export default function GalleryPage() {
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[1200px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
         <div className="text-center mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">תמונות נוספות בדרך</div>
-          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2">הגלריה שלנו</h1>
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">כרגע מוצגת תמונה אחת</div>
+          <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2">הצצה למוסך</h1>
           <p className="text-muted-foreground text-sm max-w-[500px] mx-auto">
-            הצצה ראשונה למוסך שלנו ברחוב האופה 4, גבעת שאול - תמונות נוספות יתווספו בקרוב
+            כרגע מוצגת כאן תמונה אמיתית אחת של חזית המוסך ברחוב האופה 4, גבעת שאול. תמונות נוספות של פנים המוסך והעבודה יתווספו בהמשך.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function GalleryPage() {
               <Camera className="w-5 h-5 text-brand-red" />
             </div>
             <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[400px] mx-auto mb-5">
-              בקרוב נוסיף לכאן תמונות אמיתיות מהמוסך. בינתיים, אנחנו כאן בטלפון או בוואטסאפ.
+              כרגע העמוד מציג תמונה אחת של חזית המוסך. בהמשך נוסיף לכאן תמונות אמיתיות נוספות מתוך המוסך ומהעבודה השוטפת.
             </p>
             <div className="flex items-center justify-center gap-3">
               <a
