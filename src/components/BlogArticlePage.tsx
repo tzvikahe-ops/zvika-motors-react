@@ -29,6 +29,19 @@ function renderSection(section: ArticleSection, index: number, setPage: (p: Page
         </ul>
       );
     case "cta":
+      if (section.ctaPage) {
+        return (
+          <div key={index} className="mt-10 mb-4 p-6 md:p-8 bg-surface-warm border border-border text-center">
+            <p className="text-foreground font-bold text-[16px] md:text-[18px] mb-4">{section.ctaText}</p>
+            <button
+              onClick={() => setPage(section.ctaPage!)}
+              className="btn-primary inline-flex items-center justify-center gap-2 text-[14px] cursor-pointer"
+            >
+              {section.linkText || "לעמוד השירות"}
+            </button>
+          </div>
+        );
+      }
       return (
         <div key={index} className="mt-10 mb-4 p-6 md:p-8 bg-surface-warm border border-border text-center">
           <p className="text-foreground font-bold text-[16px] md:text-[18px] mb-4">{section.ctaText}</p>
@@ -42,6 +55,18 @@ function renderSection(section: ArticleSection, index: number, setPage: (p: Page
             דברו איתנו בוואטסאפ
           </a>
         </div>
+      );
+    case "internal-link":
+      return (
+        <p key={index} className="text-foreground/65 text-[14px] md:text-[15px] leading-[2] mb-4">
+          {section.text}{" "}
+          <button
+            onClick={() => section.linkPage && setPage(section.linkPage)}
+            className="text-brand-red font-bold bg-transparent border-none cursor-pointer hover:underline p-0 text-[14px] md:text-[15px]"
+          >
+            {section.linkText} →
+          </button>
+        </p>
       );
     default:
       return null;
