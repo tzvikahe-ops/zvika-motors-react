@@ -51,12 +51,19 @@ export function usePageNavigation() {
   const articleSlug = params.slug || "";
 
   const setPage = useCallback(
-    (page: Page, slug?: string) => {
+    (page: Page, slug?: string, hash?: string) => {
       if (page === "blog-article" && slug) {
         navigate(`/blog/${slug}/index.html`);
       } else {
         const path = pageToPath[page] || "/";
         navigate(path);
+      }
+      if (hash) {
+        // Wait for page render, then scroll to anchor
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
       }
     },
     [navigate]

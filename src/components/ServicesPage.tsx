@@ -14,6 +14,7 @@ const ServicesPage = () => {
   const { setPage } = usePageNavigation();
   const mainServices = [
     {
+      anchor: "mechanic",
       icon: <WrenchIcon />,
       title: "מכונאות רכב כללית",
       subtitle: "טיפולים שוטפים ותיקונים מקצועיים",
@@ -30,6 +31,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "diagnostics",
       icon: <DiagIcon />,
       title: "דיאגנוסטיקה ממוחשבת",
       subtitle: "אבחון תקלות מדויק שחוסך לכם כסף",
@@ -45,6 +47,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "ac",
       icon: <SnowflakeIcon />,
       title: "מיזוג אוויר לרכב",
       subtitle: "טיפול מלא במערכת הקירור והחימום",
@@ -60,6 +63,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "test-prep",
       icon: <ChecklistIcon />,
       title: "הכנה לטסט שנתי",
       subtitle: "בדיקה מקיפה שמבטיחה מעבר בפעם הראשונה",
@@ -172,7 +176,7 @@ const ServicesPage = () => {
 
           <div className="space-y-6">
             {mainServices.map((service) => (
-              <article key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
+              <article id={service.anchor} key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
                 <div className="p-6 md:p-8">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-brand-red/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 text-brand-red">
