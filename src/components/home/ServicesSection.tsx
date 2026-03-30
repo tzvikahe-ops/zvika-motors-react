@@ -103,6 +103,16 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
               <div className={`mb-3 transition-colors duration-200 ${i === 0 ? "text-brand-red/80 group-hover:text-brand-red" : "text-brand-red/50 group-hover:text-brand-red/80"}`}>{icon}</div>
               <h3 className="font-bold text-[14px] md:text-[15px] text-primary-foreground tracking-[-0.01em] mb-1.5">{title}</h3>
               <p className="text-primary-foreground/50 text-[12px] md:text-[13px] leading-[1.7] flex-1">{desc}</p>
+              <a
+                href="https://wa.me/972526514446?text=שלום%2C%20אשמח%20לשמוע%20פרטים%20על%20השירות%3A%20" 
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick(`service-card-${i}`)}
+                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[11px] md:text-[12px] text-[#25D366]/80 hover:text-[#25D366] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
+              >
+                <WhatsAppSVG />
+                <span>התייעצות בוואטסאפ</span>
+              </a>
             </div>
           ))}
         </div>
