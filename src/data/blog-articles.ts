@@ -11,6 +11,7 @@ export interface BlogArticle {
   excerpt: string;
   topic: BlogTopic;
   relatedService?: string; // text for service link
+  relatedServiceAnchor?: string; // anchor id on services page
   content: ArticleSection[];
 }
 

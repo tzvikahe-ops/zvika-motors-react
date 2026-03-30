@@ -172,7 +172,7 @@ const ServicesPage = () => {
 
           <div className="space-y-6">
             {mainServices.map((service) => (
-              <article key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
+              <article id={service.anchor} key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
                 <div className="p-6 md:p-8">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-brand-red/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 text-brand-red">
