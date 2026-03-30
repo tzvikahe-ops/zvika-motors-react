@@ -135,7 +135,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Social proof - real reviews */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ReviewsSection setPage={setPage} />
+          <ReviewsSection />
         </Suspense>
       </LazySection>
 
