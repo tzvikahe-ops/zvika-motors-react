@@ -115,6 +115,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <HeroSection setPage={setPage} />
+      <h1 className="sr-only">המוסך של צביקה – מוסך מקצועי בירושלים</h1>
       <ServiceStrip setPage={setPage} />
 
       {/* Below-fold sections deferred via IntersectionObserver to reduce TBT */}
