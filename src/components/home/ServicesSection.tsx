@@ -115,13 +115,23 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-10 md:mt-12">
+        {/* Primary WhatsApp CTA */}
+        <div className="text-center mt-10 md:mt-14 flex flex-col items-center gap-3">
+          <a
+            href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("services-main")}
+            className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 no-underline"
+          >
+            <WhatsAppSVG />
+            <span>תאמו טיפול בוואטסאפ</span>
+          </a>
           <button
             onClick={() => setPage("services")}
-            className="btn-outline-dark"
+            className="btn-text text-primary-foreground/40 hover:text-primary-foreground/70 text-[12px]"
           >
-            כל השירותים שלנו
+            כל השירותים שלנו ←
           </button>
         </div>
       </div>
