@@ -139,7 +139,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
 
       <LazySection rootMargin="200px" minHeight="200px">
         <Suspense fallback={null}>
-          <StorySection />
+          <StorySection setPage={setPage} />
           <CTASection />
         </Suspense>
       </LazySection>
