@@ -1,3 +1,4 @@
+import type { Page } from "@/types/page";
 import mechanicImage from "@/assets/mechanic-work.webp";
 
 const points = [
