@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, lazy, Suspense } from "react";
+import { useLayoutEffect, useEffect, lazy, Suspense, Component, type ReactNode, type ErrorInfo } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import SeoHead from "@/components/SeoHead";
@@ -17,11 +17,22 @@ const ContactPage = lazy(() => import("@/components/ContactPage"));
 const AboutPage = lazy(() => import("@/components/AboutPage"));
 const PrivacyPolicy = lazy(() => import("@/components/PrivacyPolicy"));
 const AccessibilityStatement = lazy(() => import("@/components/AccessibilityStatement"));
-const MapSection = lazy(() => import("@/components/MapSection"));
+const MapSection = lazy(() => import("@/components/MapSection").catch(() => import("@/components/MapSection")));
 const ImageGeneratorPage = lazy(() => import("@/components/ImageGeneratorPage"));
 const FAQPage = lazy(() => import("@/components/FAQPage"));
 const BlogPage = lazy(() => import("@/components/BlogPage"));
 const BlogArticlePage = lazy(() => import("@/components/BlogArticlePage"));
+
+/** Prevents a single lazy-load failure from crashing the whole page */
+class LazyErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(err: Error, info: ErrorInfo) { console.error("LazyErrorBoundary:", err, info); }
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
 
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
@@ -69,21 +80,23 @@ const Index = () => {
           <HomePage setPage={setPage} />
         </div>
         <Suspense fallback={null}>
-          {currentPage === "services" && <ServicesPage />}
-          {currentPage === "gallery" && <GalleryPage />}
-          {currentPage === "contact" && <ContactPage />}
-          {currentPage === "about" && <AboutPage />}
-          {currentPage === "privacy" && <PrivacyPolicy />}
-          {currentPage === "accessibility" && <AccessibilityStatement />}
-          {currentPage === "image-generator" && <ImageGeneratorPage />}
-          {currentPage === "faq" && <FAQPage />}
-          {currentPage === "blog" && <BlogPage />}
-          {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} />}
-          {(currentPage === "home" || currentPage === "contact") && (
-            <LazySection rootMargin="300px" minHeight="300px">
-              <MapSection />
-            </LazySection>
-          )}
+          <LazyErrorBoundary>
+            {currentPage === "services" && <ServicesPage />}
+            {currentPage === "gallery" && <GalleryPage />}
+            {currentPage === "contact" && <ContactPage />}
+            {currentPage === "about" && <AboutPage />}
+            {currentPage === "privacy" && <PrivacyPolicy />}
+            {currentPage === "accessibility" && <AccessibilityStatement />}
+            {currentPage === "image-generator" && <ImageGeneratorPage />}
+            {currentPage === "faq" && <FAQPage />}
+            {currentPage === "blog" && <BlogPage />}
+            {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} />}
+            {(currentPage === "home" || currentPage === "contact") && (
+              <LazySection rootMargin="300px" minHeight="300px">
+                <MapSection />
+              </LazySection>
+            )}
+          </LazyErrorBoundary>
         </Suspense>
       </main>
       <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
