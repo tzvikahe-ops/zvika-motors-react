@@ -98,6 +98,8 @@ function getBlogArticleSeo(pathname: string): PageSeo {
       title: `${article.title} | בלוג המוסך של צביקה`,
       description: article.metaDescription,
       breadcrumbName: article.title,
+      ogType: "article",
+      datePublished: article.date,
     };
   }
   const titleFromSlug = slug.replace(/-/g, " ");
@@ -105,6 +107,7 @@ function getBlogArticleSeo(pathname: string): PageSeo {
     title: `${titleFromSlug} | בלוג המוסך של צביקה`,
     description: `קראו על ${titleFromSlug}. מאמר מקצועי מהבלוג של המוסך של צביקה - מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון.`,
     breadcrumbName: titleFromSlug,
+    ogType: "article",
   };
 }
 
