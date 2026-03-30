@@ -56,6 +56,10 @@ export default function WhyUsSection({ setPage }: { setPage: (p: Page) => void }
                 <p className="text-muted-foreground text-[12.5px] md:text-[13px] leading-[1.85] max-w-[380px]">{desc}</p>
               </div>
             ))}
+            <div className="flex flex-wrap gap-3 pt-5 mt-1">
+              <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">טיפים מקצועיים בבלוג ←</button>
+              <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ←</button>
+            </div>
           </div>
         </div>
       </div>
