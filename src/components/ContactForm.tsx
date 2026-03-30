@@ -113,7 +113,8 @@ export default function ContactForm() {
       className="bg-card rounded-lg p-8 shadow-[var(--shadow-sm)] border border-border"
       noValidate
     >
-      <h2 className="font-bold text-[16px] text-foreground mb-6">שלחו לנו פנייה</h2>
+      <h2 className="font-bold text-[16px] text-foreground mb-1">מעדיפים שנחזור אליכם?</h2>
+      <p className="text-[12px] text-muted-foreground mb-5">השאירו פרטים ונחזור בהקדם</p>
 
       <div className="flex flex-col gap-4">
         <div>
