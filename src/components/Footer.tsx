@@ -18,7 +18,8 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
             <p className="text-primary-foreground/60 text-[13px] leading-[1.85] max-w-[300px] mb-5">
               אמינות ומקצועיות בשירות הרכב שלך בירושלים.
             </p>
-            <div className="flex items-center gap-3 mt-1">
+            <p className="text-primary-foreground/45 text-[10px] font-medium tracking-wide mb-1">צריכים אותנו?</p>
+            <div className="flex items-center gap-3">
               {/* GA4: phone_click / footer */}
               <a
                 href="tel:02-6514446"
