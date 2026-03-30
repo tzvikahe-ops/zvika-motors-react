@@ -64,7 +64,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("hero")}
-                className="btn-primary group no-underline"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(37,211,102,0.45)] hover:-translate-y-px"
               >
                 <WhatsAppSVG />
                 <span>שלחו וואטסאפ</span>
@@ -73,7 +73,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               <a
                 href="tel:02-6514446"
                 onClick={() => trackPhoneClick("hero")}
-                className="btn-outline-dark text-center no-underline inline-flex items-center justify-center gap-2"
+                className="btn-primary text-center no-underline inline-flex items-center justify-center gap-2"
               >
                 <PhoneSVG />
                 02-6514446
