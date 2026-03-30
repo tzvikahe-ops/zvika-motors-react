@@ -107,7 +107,7 @@ function getStaticH1(path, title) {
     return title.split(" | ")[0];
   }
 
-  return h1Map[path] || "המוסך שאפשר";
+  return h1Map[path] || "המוסך של צביקה – מוסך מקצועי בירושלים";
 }
 
 function patchHtml(html, { path, title, description, robots }) {
