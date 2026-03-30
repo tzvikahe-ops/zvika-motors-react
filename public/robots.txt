@@ -23,7 +23,7 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /

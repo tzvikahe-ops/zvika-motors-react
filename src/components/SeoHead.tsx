@@ -199,6 +199,10 @@ export default function SeoHead() {
             dateModified: seo.datePublished,
             url: canonicalUrl,
             inLanguage: "he",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["article h1", "article h2", "article p"],
+            },
             author: {
               "@type": "Organization",
               name: "המוסך של צביקה - אור-צת שירותי רכב",
@@ -212,6 +216,22 @@ export default function SeoHead() {
             },
             mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
             image: `${BASE_URL}/og-home.jpg`,
+          })}
+        </script>
+      )}
+
+      {/* Speakable for FAQ page */}
+      {normalizedPathname === "/faq" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: seo.title,
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["[data-faq-question]", "[data-faq-answer]"],
+            },
+            url: canonicalUrl,
           })}
         </script>
       )}

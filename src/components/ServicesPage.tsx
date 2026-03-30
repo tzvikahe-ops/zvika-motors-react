@@ -121,8 +121,14 @@ const ServicesPage = () => {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
+          "@id": `https://www.ortzat.co.il/services#${s.anchor}`,
           name: s.title,
           description: s.description,
+          provider: {
+            "@type": "AutoRepair",
+            name: "המוסך של צביקה - אור-צת שירותי רכב",
+          },
+          areaServed: { "@type": "City", name: "ירושלים" },
         },
         position: i + 1,
       })),
