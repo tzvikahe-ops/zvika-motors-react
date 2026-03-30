@@ -39,6 +39,11 @@ export default function ContactPage() {
           </div>
         </div>
 
+        {/* Friction-reducer */}
+        <p className="text-center text-[12px] text-muted-foreground mb-5 leading-relaxed">
+          לא בטוחים מה הבעיה? שלחו תיאור קצר בוואטסאפ ונכוון אתכם.
+        </p>
+
         {/* ── At-a-glance contact block — 5 items, above the fold ── */}
         <div className="bg-card rounded-xl border border-border shadow-[var(--shadow-sm)] p-5 sm:p-6 mb-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
