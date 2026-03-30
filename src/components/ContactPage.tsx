@@ -6,13 +6,13 @@ export default function ContactPage() {
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[900px] mx-auto px-5 sm:px-6 pt-0 md:pt-1 pb-16 md:pb-20">
-        {/* Hero — tight */}
+        {/* Hero - tight */}
         <div className="text-center mb-5 md:mb-6">
           <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-2 tracking-wider">
             מוסך בגבעת שאול, ירושלים
           </div>
           <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2 leading-[1.15]">
-            דברו איתנו — נחזור אליכם מהר
+            דברו איתנו - נחזור אליכם מהר
           </h1>
           <p className="text-muted-foreground text-sm max-w-lg mx-auto leading-relaxed mb-5">
             רוצים לתאם טיפול, לשאול שאלה או לקבל הערכת מחיר? בחרו את הדרך הנוחה לכם.
@@ -44,7 +44,7 @@ export default function ContactPage() {
           לא בטוחים מה הבעיה? שלחו תיאור קצר בוואטסאפ ונכוון אתכם.
         </p>
 
-        {/* ── At-a-glance contact block — bold & unmissable ── */}
+        {/* ── At-a-glance contact block - bold & unmissable ── */}
         <div className="bg-card rounded-xl border-2 border-brand-red/20 shadow-[0_4px_24px_-8px_hsl(var(--brand-red)/0.12)] p-6 sm:p-8 mb-8">
           <h2 className="text-center font-bold text-[15px] text-foreground mb-6">כל הדרכים להגיע אלינו</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5 md:gap-4">
@@ -115,7 +115,7 @@ export default function ContactPage() {
                 <HoursIcon />
               </div>
               <div>
-                <div className="font-bold text-[14px] text-foreground leading-tight">א׳-ה׳ 08:00–16:30</div>
+                <div className="font-bold text-[14px] text-foreground leading-tight">א׳-ה׳ 08:00-16:30</div>
                 <div className="text-[11px] text-muted-foreground mt-1">נשתדל לחזור בהקדם</div>
               </div>
             </div>

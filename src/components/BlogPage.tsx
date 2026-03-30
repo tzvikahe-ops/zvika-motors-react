@@ -41,7 +41,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
 
   return (
     <div className="bg-background" dir="rtl">
-      {/* Hero — knowledge center positioning */}
+      {/* Hero - knowledge center positioning */}
       <section className="pt-28 pb-12 md:pt-32 md:pb-16 px-5 sm:px-6 bg-surface-darker relative">
         <div className="absolute inset-0 pattern-dots opacity-30" />
         <div className="max-w-[900px] mx-auto relative z-10">
@@ -56,7 +56,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
             רעש מוזר, נורית שנדלקה, או שאלה על עלויות טיפול? כאן תמצאו תשובות מקצועיות לשאלות שאנחנו שומעים כל יום. בשפה פשוטה וללא סיבוכים.
           </p>
 
-          {/* Quick topic jump — visual hint of depth */}
+          {/* Quick topic jump - visual hint of depth */}
           <div className="mt-6 flex flex-wrap gap-2">
             {topics.map((topic) => {
               const count = blogArticles.filter((a) => a.topic === topic).length;
@@ -152,7 +152,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
         </div>
       </section>
 
-      {/* Trust bridge — not salesy, just helpful */}
+      {/* Trust bridge - not salesy, just helpful */}
       <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
         <div className="max-w-[600px] mx-auto text-center">
           <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
