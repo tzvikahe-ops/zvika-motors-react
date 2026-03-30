@@ -75,61 +75,57 @@ const services = [
 
 export default function ServicesSection({ setPage }: { setPage: (p: Page) => void }) {
   return (
-    <section id="services" className="py-16 md:py-24 px-5 sm:px-6 bg-surface-darker relative" dir="rtl" aria-label="שירותי המוסך">
-      <div className="absolute inset-0 pattern-dots opacity-50" />
+    <section id="services" className="py-20 md:py-28 px-5 sm:px-6 bg-surface-darker relative" dir="rtl" aria-label="שירותי המוסך">
+      <div className="absolute inset-0 pattern-dots opacity-30" />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1100px] mx-auto relative z-10">
         {/* Header */}
-        <div className="flex items-end justify-between mb-10 md:mb-14">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-[2px] bg-brand-red/50" />
-              <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
-            </div>
-            <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1]">
-              טיפול מקצועי לכל סוגי הרכבים
-            </h2>
+        <div className="text-center mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-[2px] bg-brand-red/40" />
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
+            <div className="w-8 h-[2px] bg-brand-red/40" />
           </div>
-          <button
-            onClick={() => setPage("services")}
-            className="btn-text group hidden sm:flex"
-          >
-            <span>כל השירותים</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-1"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-          </button>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1]">
+            טיפול מקצועי לכל סוגי הרכבים
+          </h2>
         </div>
 
-        {/* 6-service grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-primary-foreground/[0.05]">
+        {/* 6-service grid - more spacious */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {services.map(({ icon, title, desc }) => (
-            <div key={title} className="bg-surface-darker p-6 sm:p-7 md:p-8 group relative flex flex-col">
+            <div key={title} className="bg-primary-foreground/[0.03] rounded-lg p-6 md:p-7 group relative flex flex-col border border-primary-foreground/[0.04] hover:border-brand-red/20 transition-all duration-300">
               {/* Top accent line */}
-              <div className="absolute top-0 right-0 w-0 group-hover:w-full h-[2px] bg-brand-red/30 transition-all duration-500" />
-              <div className="text-brand-red group-hover:text-brand-red mb-4 transition-colors duration-200">{icon}</div>
-              <h3 className="font-bold text-[14px] md:text-[15px] text-white tracking-[-0.01em] mb-2">{title}</h3>
-              <p className="text-white/70 text-[12px] md:text-[13px] leading-[1.75] max-w-[300px] mb-5 flex-1">{desc}</p>
+              <div className="absolute top-0 right-4 left-4 h-[2px] bg-brand-red/0 group-hover:bg-brand-red/25 rounded-full transition-all duration-500" />
+              <div className="text-brand-red/60 group-hover:text-brand-red mb-3 transition-colors duration-200">{icon}</div>
+              <h3 className="font-bold text-[14px] md:text-[15px] text-primary-foreground tracking-[-0.01em] mb-1.5">{title}</h3>
+              <p className="text-primary-foreground/50 text-[12px] md:text-[13px] leading-[1.7] mb-5 flex-1">{desc}</p>
               {/* GA4: whatsapp_click / services */}
               <a
                 href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("services")}
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-[11px] font-bold px-4 py-2 rounded transition-colors duration-200 no-underline w-fit"
+                className="inline-flex items-center gap-2 text-[#25D366] hover:text-white text-[11px] font-bold no-underline w-fit group/wa transition-colors duration-200"
               >
-                <WhatsAppSVG />
+                <span className="bg-[#25D366]/15 group-hover/wa:bg-[#25D366] p-1.5 rounded transition-colors duration-200">
+                  <WhatsAppSVG />
+                </span>
                 <span>תאמו טיפול</span>
               </a>
             </div>
           ))}
         </div>
 
-        {/* Mobile CTA */}
-        <button
-          onClick={() => setPage("services")}
-          className="btn-outline-dark w-full mt-4 sm:hidden"
-        >
-          כל השירותים שלנו
-        </button>
+        {/* Bottom CTA */}
+        <div className="text-center mt-10 md:mt-12">
+          <button
+            onClick={() => setPage("services")}
+            className="btn-outline-dark"
+          >
+            כל השירותים שלנו
+          </button>
+        </div>
       </div>
     </section>
   );
