@@ -165,9 +165,17 @@ export default function SeoHead() {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="he_IL" />
       <meta property="og:site_name" content="המוסך של צביקה" />
+
+      {/* Article-specific OG tags */}
+      {seo.datePublished && (
+        <meta property="article:published_time" content={seo.datePublished} />
+      )}
+      {seo.datePublished && (
+        <meta property="article:author" content="המוסך של צביקה - אור-צת שירותי רכב" />
+      )}
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
