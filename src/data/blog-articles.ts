@@ -802,7 +802,8 @@ export const blogArticles: BlogArticle[] = [
         "שמרו על טיפולים שוטפים כמו בכל רכב, המנוע הבנזיני עדיין צריך תחזוקה",
       ]},
 
-      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול שוטף?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול שוטף?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
+      { type: "internal-link", text: "רוצים לתאם ביקור במוסך?", linkText: "צרו קשר", linkPage: "contact" },
 
       { type: "cta", ctaText: "יש לכם היברידי?", ctaHref: "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" },
     ],
