@@ -139,6 +139,25 @@ function prerenderPlugin(): Plugin {
       })}</script>`);
     }
 
+    // Article JSON-LD for blog posts
+    if (route.path.startsWith("/blog/") && route.date) {
+      const articleName = route.title.split(" | ")[0];
+      scripts.push(`<script type="application/ld+json">${JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: articleName,
+        description: route.description,
+        datePublished: route.date,
+        dateModified: route.date,
+        url: canonicalUrl,
+        inLanguage: "he",
+        author: { "@type": "Organization", name: "המוסך של צביקה - אור-צת שירותי רכב", url: BASE_URL },
+        publisher: { "@type": "Organization", name: "המוסך של צביקה - אור-צת שירותי רכב", url: BASE_URL, logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.png` } },
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+        image: `${BASE_URL}/og-home.jpg`,
+      })}</script>`);
+    }
+
     return scripts.join("\n    ");
   }
 
