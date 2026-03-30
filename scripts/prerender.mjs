@@ -178,6 +178,46 @@ function patchHtml(html, { path, title, description, robots }) {
     );
   }
 
+  // Inject JSON-LD: BreadcrumbList for non-home routes
+  const breadcrumbNames = {
+    "/services": "שירותים", "/about": "אודות", "/gallery": "גלריה",
+    "/contact": "צור קשר", "/faq": "שאלות נפוצות", "/blog": "בלוג",
+    "/privacy": "מדיניות פרטיות", "/accessibility": "הצהרת נגישות",
+  };
+
+  if (path !== "/") {
+    const bcItems = [{ "@type": "ListItem", position: 1, name: "דף הבית", item: `${BASE_URL}/` }];
+    if (path.startsWith("/blog/")) {
+      bcItems.push({ "@type": "ListItem", position: 2, name: "בלוג", item: `${BASE_URL}/blog` });
+      bcItems.push({ "@type": "ListItem", position: 3, name: title.split(" | ")[0] });
+    } else {
+      bcItems.push({ "@type": "ListItem", position: 2, name: breadcrumbNames[path] || title.split(" | ")[0] });
+    }
+    const bcLD = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: bcItems });
+    patched = patched.replace("</head>", `<script type="application/ld+json">${bcLD}</script>\n</head>`);
+  }
+
+  // Inject FAQPage JSON-LD for /faq
+  if (path === "/faq") {
+    const faqLD = JSON.stringify({
+      "@context": "https://schema.org", "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "כמה עולה טיפול שוטף לרכב?", acceptedAnswer: { "@type": "Answer", text: "המחיר תלוי בסוג הרכב, בשנת הייצור ובסוג הטיפול הנדרש. טיפול שוטף בסיסי (החלפת שמן ופילטרים) עולה בדרך כלל בין 250 ל-500 ש\"ח. אצלנו במוסך בגבעת שאול, ירושלים, תמיד נציג מראש את המחיר המדויק לפני שמתחילים לעבוד." } },
+        { "@type": "Question", name: "כל כמה זמן צריך לעשות טיפול לרכב?", acceptedAnswer: { "@type": "Answer", text: "ההמלצה הכללית היא טיפול כל 10,000-15,000 ק\"מ או פעם בשנה, לפי המוקדם מביניהם. רכבים ישנים יותר או רכבים שנוסעים בעיקר בעיר (כמו בירושלים) ייתכן שיצטרכו טיפולים תכופים יותר." } },
+        { "@type": "Question", name: "איך אפשר לדעת שהרכב צריך טיפול?", acceptedAnswer: { "@type": "Answer", text: "סימנים שכדאי לשים לב אליהם: נורית אזהרה שנדלקת, רעשים חריגים מהמנוע, רטט בהגה, בלמים שמגיבים לאט, צריכת דלק גבוהה מהרגיל, או דליפות מתחת לרכב." } },
+        { "@type": "Question", name: "איך מתכוננים לטסט שנתי?", acceptedAnswer: { "@type": "Answer", text: "לפני הטסט כדאי לוודא שהפנסים תקינים, המגבים עובדים, הצמיגים לא שחוקים, הבלמים תקינים, ואין דליפות שמן. אצלנו במוסך עושים בדיקת פרה-טסט מקיפה." } },
+        { "@type": "Question", name: "מתי צריך לבדוק את המזגן ברכב?", acceptedAnswer: { "@type": "Answer", text: "אם המזגן לא מקרר כמו פעם, מוציא ריח לא נעים, או משמיע רעשים מוזרים, הגיע הזמן לבדיקה. מומלץ לבדוק את המזגן לפני הקיץ." } },
+        { "@type": "Question", name: "מה ההבדל בין מוסך מורשה למוסך עצמאי?", acceptedAnswer: { "@type": "Answer", text: "מוסך מורשה עובד עם יבואן ספציפי ומחויב למחירון שלו. מוסך עצמאי כמו שלנו יכול לטפל בכל סוגי הרכבים, להשתמש בחלקים איכותיים, ולהציע מחירים תחרותיים יותר." } },
+        { "@type": "Question", name: "אתם מטפלים בכל סוגי הרכבים?", acceptedAnswer: { "@type": "Answer", text: "כן. אנחנו מטפלים ברכבים פרטיים מכל היצרנים: יונדאי, טויוטה, מאזדה, קיה, סקודה, פולקסווגן, ועוד." } },
+        { "@type": "Question", name: "כמה זמן לוקח טיפול שוטף?", acceptedAnswer: { "@type": "Answer", text: "טיפול שוטף בסיסי (שמן ופילטרים) לוקח בדרך כלל כשעה עד שעתיים. טיפולים מורכבים יותר יכולים לקחת יום עבודה." } },
+        { "@type": "Question", name: "איפה אתם נמצאים?", acceptedAnswer: { "@type": "Answer", text: "המוסך נמצא ברחוב האופה 4, גבעת שאול, ירושלים. קל להגיע אלינו מכל חלקי העיר." } },
+        { "@type": "Question", name: "אפשר לתאם ביקור גם בוואטסאפ?", acceptedAnswer: { "@type": "Answer", text: "בהחלט. שלחו לנו הודעה עם פרטי הרכב ומה הבעיה, ונחזור אליכם עם זמן פנוי קרוב." } },
+        { "@type": "Question", name: "האם יש אחריות על העבודה?", acceptedAnswer: { "@type": "Answer", text: "כן. אנחנו נותנים אחריות על כל עבודה שאנחנו מבצעים, כולל חלקי חילוף." } },
+      ],
+    });
+    patched = patched.replace("</head>", `<script type="application/ld+json">${faqLD}</script>\n</head>`);
+  }
+
   return patched;
 }
 
