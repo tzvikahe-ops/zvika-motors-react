@@ -144,7 +144,7 @@ function prerenderPlugin(): Plugin {
       const articleName = route.title.split(" | ")[0];
       scripts.push(`<script type="application/ld+json">${JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: articleName,
         description: route.description,
         datePublished: route.date,

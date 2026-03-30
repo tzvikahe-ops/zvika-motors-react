@@ -192,7 +192,7 @@ export default function SeoHead() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
             headline: seo.title.split(" | ")[0],
             description: seo.description,
             datePublished: seo.datePublished,
