@@ -1,6 +1,5 @@
 import garagePhoto from "@/assets/gallery-garage.webp";
 import { Camera, Phone } from "lucide-react";
-import { WhatsAppIcon } from "@/components/Icons";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function GalleryPage() {
