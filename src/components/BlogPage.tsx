@@ -53,7 +53,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
             מדריכים מעשיים לבעלי רכב
           </h1>
           <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.8] max-w-[600px]">
-            רעש מוזר, נורית שנדלקה, או שאלה על עלויות טיפול? כאן תמצאו תשובות מקצועיות לשאלות שאנחנו שומעים כל יום — בשפה פשוטה וללא סיבוכים.
+            רעש מוזר, נורית שנדלקה, או שאלה על עלויות טיפול? כאן תמצאו תשובות מקצועיות לשאלות שאנחנו שומעים כל יום. בשפה פשוטה וללא סיבוכים.
           </p>
 
           {/* Quick topic jump — visual hint of depth */}
@@ -157,7 +157,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
         <div className="max-w-[600px] mx-auto text-center">
           <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
           <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
-            שלחו לנו שאלה — נחזור אליכם עם תשובה
+            שלחו לנו שאלה, נחזור אליכם עם תשובה
           </h2>
           <p className="text-foreground/50 text-[13px] md:text-[14px] leading-[1.8] mb-6">
             אם קראתם ועדיין לא בטוחים מה קורה עם הרכב, אפשר לשלוח הודעה קצרה ולקבל כיוון ראשוני. בלי התחייבות.
