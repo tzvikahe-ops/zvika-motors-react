@@ -4,9 +4,9 @@ import ServiceStrip from "./home/ServiceStrip";
 import LazySection from "./LazySection";
 
 const WhyUsSection = lazy(() => import("./home/WhyUsSection"));
+const ProcessSection = lazy(() => import("./home/ProcessSection"));
 const ServicesSection = lazy(() => import("./home/ServicesSection"));
 const ReviewsSection = lazy(() => import("./home/ReviewsSection"));
-const StorySection = lazy(() => import("./home/StorySection"));
 const CTASection = lazy(() => import("./home/CTASection"));
 
 import type { Page } from "@/types/page";
@@ -65,7 +65,7 @@ const homeFaqSchema = {
       name: "כמה עולה טיפול שוטף לרכב?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "המחיר תלוי בסוג הרכב, בשנת הייצור ובסוג הטיפול הנדרש. טיפול שוטף בסיסי (החלפת שמן ופילטרים) עולה בדרך כלל בין 250 ל-500 ש\"ח. אצלנו במוסך בגבעת שאול, ירושלים, תמיד נציג מראש את המחיר המדויק לפני שמתחילים לעבוד.",
+        text: "המחיר תלוי בסוג הרכב, בשנת הייצור ובסוג הטיפול הנדרש. טיפול שוטף בסיסי (החלפת שמן ופילטרים) עולה בדרך כלל סביב 700 ש\"ח. אצלנו במוסך בגבעת שאול, ירושלים, תמיד נציג מראש את המחיר המדויק לפני שמתחילים לעבוד.",
       },
     },
     {
@@ -118,28 +118,37 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       <h1 className="sr-only">המוסך של צביקה - מוסך מקצועי בירושלים</h1>
       <ServiceStrip setPage={setPage} />
 
-      {/* Below-fold sections deferred via IntersectionObserver to reduce TBT */}
+      {/* Trust building - why choose us */}
       <LazySection rootMargin="300px" minHeight="400px">
         <Suspense fallback={null}>
           <WhyUsSection />
         </Suspense>
       </LazySection>
 
+      {/* How it works - reduce friction */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ServicesSection setPage={setPage} />
+          <ProcessSection />
         </Suspense>
       </LazySection>
 
+      {/* Social proof - real reviews */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
           <ReviewsSection />
         </Suspense>
       </LazySection>
 
+      {/* Detailed services */}
+      <LazySection rootMargin="200px" minHeight="300px">
+        <Suspense fallback={null}>
+          <ServicesSection setPage={setPage} />
+        </Suspense>
+      </LazySection>
+
+      {/* Final CTA push */}
       <LazySection rootMargin="200px" minHeight="200px">
         <Suspense fallback={null}>
-          <StorySection setPage={setPage} />
           <CTASection />
         </Suspense>
       </LazySection>
