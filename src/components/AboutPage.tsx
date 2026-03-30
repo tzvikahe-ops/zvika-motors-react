@@ -247,6 +247,7 @@ const AboutPage = () => {
             <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור</button>
           </div>
         </div>
+      </section>
 
       {/* FINAL CTA */}
       <section className="py-16 md:py-20 bg-surface-dark" aria-label="יצירת קשר">
