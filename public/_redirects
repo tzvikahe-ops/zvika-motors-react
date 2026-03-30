@@ -1,4 +1,4 @@
-# 301 redirects: /index.html → clean URL (prevents duplicate content)
+# 301 redirects: /index.html → clean URL (prevents duplicate content if old links exist)
 /services/index.html /services 301
 /about/index.html /about 301
 /gallery/index.html /gallery 301
@@ -7,55 +7,6 @@
 /blog/index.html /blog 301
 /privacy/index.html /privacy 301
 /accessibility/index.html /accessibility 301
-/blog/איך-לבחור-מוסך-אמין-בירושלים/index.html /blog/איך-לבחור-מוסך-אמין-בירושלים 301
-/blog/סימנים-שהרכב-צריך-טיפול/index.html /blog/סימנים-שהרכב-צריך-טיפול 301
-/blog/כמה-עולה-טיפול-לרכב/index.html /blog/כמה-עולה-טיפול-לרכב 301
-/blog/מתי-לבדוק-מזגן-ברכב/index.html /blog/מתי-לבדוק-מזגן-ברכב 301
-/blog/איך-לעבור-טסט-בקלות/index.html /blog/איך-לעבור-טסט-בקלות 301
-/blog/רעשים-חריגים-ברכב-מה-הם-אומרים/index.html /blog/רעשים-חריגים-ברכב-מה-הם-אומרים 301
-/blog/נורת-צק-אנגין-מה-לעשות/index.html /blog/נורת-צק-אנגין-מה-לעשות 301
-/blog/החלפת-שמן-מנוע-למה-חשוב-ומתי/index.html /blog/החלפת-שמן-מנוע-למה-חשוב-ומתי 301
-/blog/רכב-מתחמם-סיבות-ופתרונות/index.html /blog/רכב-מתחמם-סיבות-ופתרונות 301
-/blog/למה-הרכב-צורך-יותר-דלק/index.html /blog/למה-הרכב-צורך-יותר-דלק 301
-/blog/מתי-להחליף-מצבר-לרכב/index.html /blog/מתי-להחליף-מצבר-לרכב 301
-/blog/מתי-להחליף-בלמים-ברכב/index.html /blog/מתי-להחליף-בלמים-ברכב 301
-/blog/בדיקת-רכב-לפני-קנייה/index.html /blog/בדיקת-רכב-לפני-קנייה 301
-/blog/כמה-זמן-לוקח-טיפול-במוסך/index.html /blog/כמה-זמן-לוקח-טיפול-במוסך 301
-/blog/טיפול-ברכב-היברידי/index.html /blog/טיפול-ברכב-היברידי 301
-/blog/תחזוקת-רכב-בירושלים/index.html /blog/תחזוקת-רכב-בירושלים 301
 
-# Rewrites: clean URL → static pre-rendered file (200 = transparent rewrite)
-/services /services/index.html 200
-/services/ /services/index.html 200
-/about /about/index.html 200
-/about/ /about/index.html 200
-/gallery /gallery/index.html 200
-/gallery/ /gallery/index.html 200
-/contact /contact/index.html 200
-/contact/ /contact/index.html 200
-/faq /faq/index.html 200
-/faq/ /faq/index.html 200
-/blog /blog/index.html 200
-/blog/ /blog/index.html 200
-/privacy /privacy/index.html 200
-/privacy/ /privacy/index.html 200
-/accessibility /accessibility/index.html 200
-/accessibility/ /accessibility/index.html 200
-/blog/איך-לבחור-מוסך-אמין-בירושלים /blog/איך-לבחור-מוסך-אמין-בירושלים/index.html 200
-/blog/סימנים-שהרכב-צריך-טיפול /blog/סימנים-שהרכב-צריך-טיפול/index.html 200
-/blog/כמה-עולה-טיפול-לרכב /blog/כמה-עולה-טיפול-לרכב/index.html 200
-/blog/מתי-לבדוק-מזגן-ברכב /blog/מתי-לבדוק-מזגן-ברכב/index.html 200
-/blog/איך-לעבור-טסט-בקלות /blog/איך-לעבור-טסט-בקלות/index.html 200
-/blog/רעשים-חריגים-ברכב-מה-הם-אומרים /blog/רעשים-חריגים-ברכב-מה-הם-אומרים/index.html 200
-/blog/נורת-צק-אנגין-מה-לעשות /blog/נורת-צק-אנגין-מה-לעשות/index.html 200
-/blog/החלפת-שמן-מנוע-למה-חשוב-ומתי /blog/החלפת-שמן-מנוע-למה-חשוב-ומתי/index.html 200
-/blog/רכב-מתחמם-סיבות-ופתרונות /blog/רכב-מתחמם-סיבות-ופתרונות/index.html 200
-/blog/למה-הרכב-צורך-יותר-דלק /blog/למה-הרכב-צורך-יותר-דלק/index.html 200
-/blog/מתי-להחליף-מצבר-לרכב /blog/מתי-להחליף-מצבר-לרכב/index.html 200
-/blog/מתי-להחליף-בלמים-ברכב /blog/מתי-להחליף-בלמים-ברכב/index.html 200
-/blog/בדיקת-רכב-לפני-קנייה /blog/בדיקת-רכב-לפני-קנייה/index.html 200
-/blog/כמה-זמן-לוקח-טיפול-במוסך /blog/כמה-זמן-לוקח-טיפול-במוסך/index.html 200
-/blog/טיפול-ברכב-היברידי /blog/טיפול-ברכב-היברידי/index.html 200
-/blog/תחזוקת-רכב-בירושלים /blog/תחזוקת-רכב-בירושלים/index.html 200
-
+# SPA fallback: all routes serve root index.html (inline SEO patcher handles meta)
 /* /index.html 200
