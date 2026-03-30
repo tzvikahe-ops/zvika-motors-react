@@ -22,6 +22,11 @@ export default function ReviewsSection({ setPage }: { setPage: (p: Page) => void
         </div>
 
         <GoogleReviewsCarousel />
+
+        <div className="flex flex-wrap justify-center gap-3 mt-10">
+          <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">גם אתם רוצים שירות כזה? צרו קשר ←</button>
+          <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">ראו את כל השירותים שלנו ←</button>
+        </div>
       </div>
     </section>
   );

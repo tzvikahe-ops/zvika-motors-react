@@ -135,6 +135,10 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
           >
             כל השירותים שלנו ←
           </button>
+          <div className="flex flex-wrap justify-center gap-3 mt-3">
+            <button onClick={() => setPage("blog")} className="text-[12px] text-primary-foreground/35 hover:text-primary-foreground/70 bg-transparent border border-primary-foreground/10 hover:border-primary-foreground/20 px-4 py-2 cursor-pointer transition-colors duration-200">מדריכים וטיפים מקצועיים ←</button>
+            <button onClick={() => setPage("contact")} className="text-[12px] text-primary-foreground/35 hover:text-primary-foreground/70 bg-transparent border border-primary-foreground/10 hover:border-primary-foreground/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור ←</button>
+          </div>
         </div>
       </div>
     </section>
