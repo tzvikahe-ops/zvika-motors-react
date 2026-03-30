@@ -149,11 +149,11 @@ export default function ContactPage() {
 
             {/* Internal links */}
             <div className="flex flex-wrap gap-3 mt-4">
-              <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך</button>
-              <button onClick={() => setPage("faq")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שאלות נפוצות</button>
-              <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">הסיפור שלנו</button>
-              <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">טיפים לתחזוקת הרכב</button>
-              <button onClick={() => setPage("gallery")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">תמונות מהמוסך</button>
+              <InternalLink page="services" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">שירותי המוסך</InternalLink>
+              <InternalLink page="faq" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">שאלות נפוצות</InternalLink>
+              <InternalLink page="about" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">הסיפור שלנו</InternalLink>
+              <InternalLink page="blog" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">טיפים לתחזוקת הרכב</InternalLink>
+              <InternalLink page="gallery" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">תמונות מהמוסך</InternalLink>
             </div>
           </div>
         </div>

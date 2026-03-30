@@ -241,11 +241,11 @@ const AboutPage = () => {
           </div>
           {/* Internal links */}
           <div className="mt-8 flex flex-wrap gap-3">
-            <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך שלנו</button>
-            <button onClick={() => setPage("faq")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שאלות ותשובות נפוצות</button>
-            <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">מדריכים וטיפים מקצועיים</button>
-            <button onClick={() => setPage("gallery")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">תמונות מהמוסך</button>
-            <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור</button>
+            <InternalLink page="services" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">שירותי המוסך שלנו</InternalLink>
+            <InternalLink page="faq" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">שאלות ותשובות נפוצות</InternalLink>
+            <InternalLink page="blog" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">מדריכים וטיפים מקצועיים</InternalLink>
+            <InternalLink page="gallery" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">תמונות מהמוסך</InternalLink>
+            <InternalLink page="contact" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">צרו קשר ותאמו תור</InternalLink>
           </div>
         </div>
       </section>

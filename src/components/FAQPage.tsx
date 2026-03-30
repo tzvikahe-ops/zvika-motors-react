@@ -208,11 +208,11 @@ export default function FAQPage({ setPage }: { setPage: (p: Page) => void }) {
         <div className="max-w-[700px] mx-auto">
           <p className="text-foreground/30 text-[11px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
           <div className="flex flex-wrap gap-3">
-            <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך שלנו</button>
-            <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">מדריכים וטיפים מקצועיים</button>
-            <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">הסיפור שלנו</button>
-            <button onClick={() => setPage("gallery")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">תמונות מהמוסך</button>
-            <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור</button>
+            <InternalLink page="services" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">שירותי המוסך שלנו</InternalLink>
+            <InternalLink page="blog" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">מדריכים וטיפים מקצועיים</InternalLink>
+            <InternalLink page="about" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">הסיפור שלנו</InternalLink>
+            <InternalLink page="gallery" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">תמונות מהמוסך</InternalLink>
+            <InternalLink page="contact" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">צרו קשר ותאמו תור</InternalLink>
           </div>
         </div>
       </section>
