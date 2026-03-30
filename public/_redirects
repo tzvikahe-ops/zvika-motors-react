@@ -1,3 +1,24 @@
+# 301 redirects: /index.html → clean URL (prevents duplicate content)
+/services/index.html /services 301
+/about/index.html /about 301
+/gallery/index.html /gallery 301
+/contact/index.html /contact 301
+/faq/index.html /faq 301
+/blog/index.html /blog 301
+/privacy/index.html /privacy 301
+/accessibility/index.html /accessibility 301
+/blog/איך-לבחור-מוסך-אמין-בירושלים/index.html /blog/איך-לבחור-מוסך-אמין-בירושלים 301
+/blog/סימנים-שהרכב-צריך-טיפול/index.html /blog/סימנים-שהרכב-צריך-טיפול 301
+/blog/כמה-עולה-טיפול-לרכב/index.html /blog/כמה-עולה-טיפול-לרכב 301
+/blog/מתי-לבדוק-מזגן-ברכב/index.html /blog/מתי-לבדוק-מזגן-ברכב 301
+/blog/איך-לעבור-טסט-בקלות/index.html /blog/איך-לעבור-טסט-בקלות 301
+/blog/רעשים-חריגים-ברכב-מה-הם-אומרים/index.html /blog/רעשים-חריגים-ברכב-מה-הם-אומרים 301
+/blog/נורת-צק-אנגין-מה-לעשות/index.html /blog/נורת-צק-אנגין-מה-לעשות 301
+/blog/החלפת-שמן-מנוע-למה-חשוב-ומתי/index.html /blog/החלפת-שמן-מנוע-למה-חשוב-ומתי 301
+/blog/רכב-מתחמם-סיבות-ופתרונות/index.html /blog/רכב-מתחמם-סיבות-ופתרונות 301
+/blog/למה-הרכב-צורך-יותר-דלק/index.html /blog/למה-הרכב-צורך-יותר-דלק 301
+
+# Rewrites: clean URL → static pre-rendered file (200 = transparent rewrite)
 /services /services/index.html 200
 /services/ /services/index.html 200
 /about /about/index.html 200
