@@ -204,27 +204,29 @@ export default function FAQPage({ setPage }: { setPage: (p: Page) => void }) {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
+      <section className="py-14 md:py-20 px-5 sm:px-6 bg-surface-dark">
         <div className="max-w-[600px] mx-auto text-center">
-          <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
-            לא מצאתם תשובה?
+          <h2 className="text-[22px] md:text-[28px] font-black text-primary-foreground tracking-[-0.02em] mb-3">
+            עדיין יש שאלה? דברו איתנו
           </h2>
-          <p className="text-foreground/50 text-[13px] md:text-[14px] leading-[1.8] mb-6">
-            דברו איתנו ונשמח לעזור. אפשר להתקשר או לשלוח הודעה בוואטסאפ.
+          <p className="text-primary-foreground/50 text-[13px] md:text-[14px] leading-[1.8] mb-8">
+            אנחנו כאן לענות על כל שאלה, לתת הערכת מחיר או לתאם ביקור. בלי התחייבות.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
+              href="https://wa.me/972526514446?text=שלום%2C%20יש%20לי%20שאלה%20לפני%20שאני%20מגיע%20למוסך%3A%20"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary no-underline inline-flex items-center justify-center gap-2 text-[14px]"
+              onClick={() => trackWhatsAppClick("faq-cta")}
+              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 rounded-md font-bold text-[14px] no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)]"
             >
               <WhatsAppSVG />
-              שלחו הודעה בוואטסאפ
+              שאלו אותנו בוואטסאפ
             </a>
             <a
               href="tel:02-6514446"
-              className="btn-outline no-underline inline-flex items-center justify-center gap-2 text-[14px]"
+              onClick={() => trackPhoneClick("faq-cta")}
+              className="inline-flex items-center justify-center gap-2 bg-primary-foreground/[0.06] text-primary-foreground border border-primary-foreground/10 px-8 py-3.5 rounded-md font-medium text-[14px] no-underline hover:bg-primary-foreground/[0.1] transition-all duration-200"
             >
               <PhoneSVG />
               02-6514446
