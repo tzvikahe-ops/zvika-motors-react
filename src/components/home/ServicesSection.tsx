@@ -106,7 +106,7 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("services")}
-                className="inline-flex items-center gap-1.5 text-primary-foreground/30 hover:text-[#25D366] text-[11px] font-medium no-underline w-fit transition-colors duration-200"
+                className="inline-flex items-center gap-1.5 text-[#25D366]/30 hover:text-[#25D366]/70 text-[10px] font-normal no-underline w-fit transition-colors duration-200"
               >
                 <WhatsAppSVG />
                 <span>תאמו טיפול</span>
