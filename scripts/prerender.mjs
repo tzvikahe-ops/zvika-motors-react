@@ -195,6 +195,41 @@ function patchHtml(html, { path, title, description, robots, date }) {
     }
     const bcLD = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: bcItems });
     patched = patched.replace("</head>", `<script type="application/ld+json">${bcLD}</script>\n</head>`);
+
+    // Article JSON-LD + og:type for blog articles
+    if (path.startsWith("/blog/") && date) {
+      const articleName = title.split(" | ")[0];
+      const articleLD = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: articleName,
+        description: description,
+        datePublished: date,
+        dateModified: date,
+        url: canonicalUrl,
+        inLanguage: "he",
+        author: {
+          "@type": "Organization",
+          name: "המוסך של צביקה - אור-צת שירותי רכב",
+          url: BASE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "המוסך של צביקה - אור-צת שירותי רכב",
+          url: BASE_URL,
+          logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.png` },
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+        image: `${BASE_URL}/og-home.jpg`,
+      });
+      patched = patched.replace("</head>", `<script type="application/ld+json">${articleLD}</script>\n</head>`);
+
+      // Change og:type from "website" to "article"
+      patched = patched.replace(
+        /(<meta\s+property="og:type"\s+content=")[^"]*(")/,
+        `$1article$2`
+      );
+    }
   }
 
   // Inject FAQPage JSON-LD for /faq
