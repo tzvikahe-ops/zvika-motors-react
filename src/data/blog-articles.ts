@@ -15,12 +15,14 @@ export interface BlogArticle {
 }
 
 export interface ArticleSection {
-  type: "h2" | "p" | "ul" | "cta";
+  type: "h2" | "p" | "ul" | "cta" | "internal-link";
   text?: string;
   items?: string[];
   ctaText?: string;
   ctaPage?: Page;
   ctaHref?: string;
+  linkText?: string; // for internal-link type
+  linkPage?: Page;   // target page for internal link
 }
 
 export const blogArticles: BlogArticle[] = [
