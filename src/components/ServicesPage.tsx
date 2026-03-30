@@ -63,6 +63,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "test-prep",
       icon: <ChecklistIcon />,
       title: "הכנה לטסט שנתי",
       subtitle: "בדיקה מקיפה שמבטיחה מעבר בפעם הראשונה",
