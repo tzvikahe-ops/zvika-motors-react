@@ -29,7 +29,7 @@ export default function CTASection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("cta")}
-                className="inline-flex items-center justify-center gap-2 bg-accent-foreground text-foreground px-8 py-3.5 text-[13px] font-bold no-underline hover:bg-accent-foreground/90 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(37,211,102,0.45)] hover:-translate-y-px"
               >
                 <WhatsAppSVG />
                 שלחו וואטסאפ
@@ -38,10 +38,10 @@ export default function CTASection() {
               <a
                 href="tel:02-6514446"
                 onClick={() => trackPhoneClick("cta")}
-                className="inline-flex items-center justify-center gap-2 border border-accent-foreground/30 text-accent-foreground/90 px-8 py-3.5 text-[13px] font-bold no-underline hover:bg-accent-foreground/10 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-white text-brand-red px-8 py-3.5 text-[13px] font-bold no-underline hover:bg-white/90 transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(255,255,255,0.3)] hover:-translate-y-px"
               >
                 <PhoneSVG />
-                התקשרו: 02-6514446
+                02-6514446
               </a>
             </div>
           </div>
