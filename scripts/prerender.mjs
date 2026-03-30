@@ -16,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "..", "dist");
 const BASE_URL = "https://www.ortzat.co.il";
 
-/** Mirrors the pageSeoMap in src/hooks/use-seo.ts */
+/** Mirrors the seoConfig in src/components/SeoHead.tsx */
 const routes = [
   {
     path: "/",
