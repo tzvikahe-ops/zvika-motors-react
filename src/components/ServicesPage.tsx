@@ -31,6 +31,7 @@ const ServicesPage = () => {
       ],
     },
     {
+      anchor: "diagnostics",
       icon: <DiagIcon />,
       title: "דיאגנוסטיקה ממוחשבת",
       subtitle: "אבחון תקלות מדויק שחוסך לכם כסף",
