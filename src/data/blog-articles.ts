@@ -642,7 +642,8 @@ export const blogArticles: BlogArticle[] = [
 
       { type: "h2", text: "נוזל בלמים" },
       { type: "p", text: "נוזל הבלמים סופג לחות מהאוויר עם הזמן, מה שמפחית את יעילות הבלימה ויכול לגרום לחלודה פנימית. ההמלצה היא להחליף נוזל בלמים כל שנתיים. זה טיפול פשוט שהרבה אנשים שוכחים ממנו." },
-      { type: "internal-link", text: "שומעים רעשים נוספים מהרכב?", linkText: "מדריך לזיהוי רעשים חריגים ברכב", linkPage: "blog-article" },
+      { type: "internal-link", text: "שומעים רעשים נוספים מהרכב?", linkText: "מדריך לזיהוי רעשים חריגים ברכב", linkPage: "blog-article", linkSlug: "רעשים-חריגים-ברכב-מה-הם-אומרים" },
+      { type: "internal-link", text: "רוצים לדעת כמה עולה טיפול בלמים?", linkText: "מדריך עלויות טיפול לרכב", linkPage: "blog-article", linkSlug: "כמה-עולה-טיפול-לרכב" },
 
       { type: "cta", ctaText: "שומעים חריקה בבלימה?", ctaPage: "contact", linkText: "שלחו פנייה ונתאם בדיקה" },
     ],
