@@ -35,7 +35,48 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FWD2H06Y7K');</script>
-    
+    <!-- Inline SEO patcher: updates meta tags synchronously before React loads.
+         Lovable hosting serves root index.html for all routes (SPA fallback),
+         so without this, crawlers see homepage meta tags on every page. -->
+    <script>
+    (function(){
+      var B="https://www.ortzat.co.il",p=location.pathname.replace(/\/$/,"");
+      if(p==="")p="/";
+      var R={
+        "/services":{t:"שירותי מוסך מקצועיים בירושלים | המוסך של צביקה",d:"שירותי מכונאות רכב מקיפים בירושלים: טיפולים שוטפים, דיאגנוסטיקה ממוחשבת, מיזוג אוויר לרכב, הכנה לטסט שנתי, בדיקת רכב לפני קנייה ועוד. מעל 30 שנות ניסיון. 02-6514446."},
+        "/about":{t:"אודות המוסך של צביקה | מוסך משפחתי בירושלים מאז 1993",d:"הכירו את המוסך של צביקה – מוסך משפחתי בגבעת שאול, ירושלים. מעל 30 שנות ניסיון, שירות אישי ושקיפות מלאה. הסיפור שלנו, הערכים שמנחים אותנו והצוות."},
+        "/gallery":{t:"גלריית תמונות | המוסך של צביקה – ירושלים",d:"צפו בתמונות מהמוסך של צביקה בגבעת שאול, ירושלים. מוסך מקצועי, מצויד ומסודר עם ציוד מתקדם לטיפול ברכב."},
+        "/contact":{t:"צור קשר | המוסך של צביקה – ירושלים",d:"צרו קשר עם המוסך של צביקה בגבעת שאול, ירושלים. טלפון: 02-6514446, וואטסאפ: 052-651-4446. רחוב האופה 4. שעות פעילות: א׳–ה׳ 08:00–16:30."},
+        "/faq":{t:"שאלות נפוצות | המוסך של צביקה – ירושלים",d:"תשובות לשאלות נפוצות על שירותי המוסך של צביקה: עלויות טיפול, הכנה לטסט, זמני טיפול, סוגי רכבים ועוד. מוסך מקצועי בירושלים מאז 1993."},
+        "/blog":{t:"בלוג | טיפים ומדריכים לטיפול ברכב – המוסך של צביקה",d:"מאמרים מקצועיים על טיפול ברכב: איך לבחור מוסך, הכנה לטסט, החלפת שמן, מיזוג אוויר, סימני אזהרה ועוד. טיפים מהמוסך של צביקה בירושלים."},
+        "/privacy":{t:"מדיניות פרטיות | המוסך של צביקה – אור-צת שירותי רכב",d:"מדיניות הפרטיות של המוסך של צביקה – אור-צת שירותי רכב. מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",r:"noindex, follow"},
+        "/accessibility":{t:"הצהרת נגישות | המוסך של צביקה – אור-צת שירותי רכב",d:"הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",r:"noindex, follow"}
+      };
+      var s=R[p];
+      // Blog article: /blog/<slug>
+      if(!s&&p.indexOf("/blog/")===0){
+        var slug=decodeURIComponent(p.replace("/blog/","")).replace(/-/g," ");
+        s={t:slug+" | בלוג המוסך של צביקה",d:"קראו על "+slug+". מאמר מקצועי מהבלוג של המוסך של צביקה – מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון."};
+      }
+      if(!s)return; // homepage – already correct in HTML
+      var c=p==="/"?B+"/":B+p;
+      document.title=s.t;
+      function setM(sel,val){var e=document.querySelector(sel);if(e)e.setAttribute("content",val);}
+      function setP(prop,val){var e=document.querySelector('meta[property="'+prop+'"]');if(e)e.setAttribute("content",val);}
+      function setL(sel,val){var e=document.querySelector(sel);if(e)e.setAttribute("href",val);}
+      setM('meta[name="description"]',s.d);
+      if(s.r)setM('meta[name="robots"]',s.r);
+      setL('link[rel="canonical"]',c);
+      setL('link[hreflang="he-IL"]',c);
+      setL('link[hreflang="x-default"]',c);
+      setP("og:title",s.t);
+      setP("og:description",s.d);
+      setP("og:url",c);
+      setM('meta[name="twitter:title"]',s.t);
+      setM('meta[name="twitter:description"]',s.d);
+    })();
+    </script>
+
 
     <!-- Critical CSS: above-the-fold styles inlined to avoid render-blocking -->
     <style>
