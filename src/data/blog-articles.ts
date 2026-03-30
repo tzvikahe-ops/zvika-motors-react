@@ -1,6 +1,6 @@
 import type { Page } from "@/types/page";
 
-export type BlogTopic = "בלמים ובטיחות" | "מנוע ושמן" | "מזגן וקירור" | "טסט" | "דלק וצריכה" | "כללי";
+export type BlogTopic = "טיפול שוטף" | "תקלות ואבחון" | "הכנה לטסט" | "מזגן וקירור" | "בלמים ובטיחות" | "עלויות ומחירים" | "חשמל ומצבר" | "רכב בירושלים" | "בדיקה לפני קנייה";
 
 export interface BlogArticle {
   slug: string;
