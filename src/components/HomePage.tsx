@@ -121,7 +121,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Trust building - why choose us */}
       <LazySection rootMargin="300px" minHeight="400px">
         <Suspense fallback={null}>
-          <WhyUsSection />
+          <WhyUsSection setPage={setPage} />
         </Suspense>
       </LazySection>
 
@@ -135,7 +135,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Social proof - real reviews */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ReviewsSection />
+          <ReviewsSection setPage={setPage} />
         </Suspense>
       </LazySection>
 

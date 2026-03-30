@@ -1,6 +1,7 @@
+import type { Page } from "@/types/page";
 import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
 
-export default function ReviewsSection() {
+export default function ReviewsSection({ setPage }: { setPage: (p: Page) => void }) {
   return (
     <section className="bg-background py-16 md:py-28 px-5 sm:px-6 relative" dir="rtl" aria-label="ביקורות גוגל">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -21,6 +22,11 @@ export default function ReviewsSection() {
         </div>
 
         <GoogleReviewsCarousel />
+
+        <div className="flex flex-wrap justify-center gap-3 mt-10">
+          <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">גם אתם רוצים שירות כזה? צרו קשר ←</button>
+          <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">ראו את כל השירותים שלנו ←</button>
+        </div>
       </div>
     </section>
   );
