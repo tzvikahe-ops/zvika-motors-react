@@ -273,10 +273,12 @@ for (const route of routes) {
     console.log(`✓ Patched  /  (root index.html)`);
   } else {
     // Create dist/<route>/index.html
-    const dir = join(distDir, route.path.slice(1));
+    // URL-encode path segments so hosting platforms can serve Hebrew-named dirs
+    const segments = route.path.slice(1).split("/").map(seg => encodeURIComponent(seg));
+    const dir = join(distDir, ...segments);
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "index.html"), patched, "utf-8");
-    console.log(`✓ Pre-rendered  ${route.path}`);
+    console.log(`✓ Pre-rendered  ${route.path}  →  ${segments.join("/")}/index.html`);
   }
 }
 
