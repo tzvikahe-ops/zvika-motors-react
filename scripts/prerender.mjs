@@ -272,13 +272,21 @@ for (const route of routes) {
     writeFileSync(join(distDir, "index.html"), patched, "utf-8");
     console.log(`✓ Patched  /  (root index.html)`);
   } else {
-    // Create dist/<route>/index.html
-    // URL-encode path segments so hosting platforms can serve Hebrew-named dirs
-    const segments = route.path.slice(1).split("/").map(seg => encodeURIComponent(seg));
-    const dir = join(distDir, ...segments);
-    mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "index.html"), patched, "utf-8");
-    console.log(`✓ Pre-rendered  ${route.path}  →  ${segments.join("/")}/index.html`);
+    const segments = route.path.slice(1).split("/");
+    const isBlogArticle = segments[0] === "blog" && segments.length === 2;
+
+    if (isBlogArticle) {
+      const encodedSlug = encodeURIComponent(segments[1]);
+      const blogDir = join(distDir, "blog");
+      mkdirSync(blogDir, { recursive: true });
+      writeFileSync(join(blogDir, `${encodedSlug}.html`), patched, "utf-8");
+      console.log(`✓ Pre-rendered  ${route.path}  →  blog/${encodedSlug}.html`);
+    } else {
+      const dir = join(distDir, ...segments);
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(join(dir, "index.html"), patched, "utf-8");
+      console.log(`✓ Pre-rendered  ${route.path}`);
+    }
   }
 }
 
