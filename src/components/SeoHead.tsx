@@ -11,6 +11,8 @@ interface PageSeo {
   ogImage?: string;
   breadcrumbName?: string;
   robots?: string;
+  ogType?: string;
+  datePublished?: string;
 }
 
 function normalizePathname(pathname: string): string {
@@ -96,6 +98,8 @@ function getBlogArticleSeo(pathname: string): PageSeo {
       title: `${article.title} | בלוג המוסך של צביקה`,
       description: article.metaDescription,
       breadcrumbName: article.title,
+      ogType: "article",
+      datePublished: article.date,
     };
   }
   const titleFromSlug = slug.replace(/-/g, " ");
@@ -103,6 +107,7 @@ function getBlogArticleSeo(pathname: string): PageSeo {
     title: `${titleFromSlug} | בלוג המוסך של צביקה`,
     description: `קראו על ${titleFromSlug}. מאמר מקצועי מהבלוג של המוסך של צביקה - מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון.`,
     breadcrumbName: titleFromSlug,
+    ogType: "article",
   };
 }
 
@@ -138,6 +143,7 @@ export default function SeoHead() {
   const canonicalPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
   const canonicalUrl = canonicalPath === "/" ? `${BASE_URL}/` : `${BASE_URL}${canonicalPath}`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
+  const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
   const breadcrumb = buildBreadcrumbSchema(normalizedPathname, seo);
 
@@ -159,9 +165,17 @@ export default function SeoHead() {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="he_IL" />
       <meta property="og:site_name" content="המוסך של צביקה" />
+
+      {/* Article-specific OG tags */}
+      {seo.datePublished && (
+        <meta property="article:published_time" content={seo.datePublished} />
+      )}
+      {seo.datePublished && (
+        <meta property="article:author" content="המוסך של צביקה - אור-צת שירותי רכב" />
+      )}
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -172,6 +186,35 @@ export default function SeoHead() {
       {/* BreadcrumbList structured data */}
       {breadcrumb && (
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+      )}
+
+      {/* Article structured data for blog posts */}
+      {seo.ogType === "article" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: seo.title.split(" | ")[0],
+            description: seo.description,
+            datePublished: seo.datePublished,
+            dateModified: seo.datePublished,
+            url: canonicalUrl,
+            inLanguage: "he",
+            author: {
+              "@type": "Organization",
+              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              url: BASE_URL,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              url: BASE_URL,
+              logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.png` },
+            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+            image: `${BASE_URL}/og-home.jpg`,
+          })}
+        </script>
       )}
     </Helmet>
   );
