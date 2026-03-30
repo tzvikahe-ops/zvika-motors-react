@@ -110,7 +110,7 @@ function getStaticH1(path, title) {
   return h1Map[path] || "המוסך של צביקה - מוסך מקצועי בירושלים";
 }
 
-function patchHtml(html, { path, title, description, robots }) {
+function patchHtml(html, { path, title, description, robots, date }) {
   const canonicalUrl = path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
   const safeTitle = escapeForAttr(title);
   const safeDesc = escapeForAttr(description);
