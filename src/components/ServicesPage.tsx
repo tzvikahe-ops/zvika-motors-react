@@ -1,4 +1,5 @@
-import { SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, ShieldIcon, StarIcon, ClockIcon, EyeIcon } from "./Icons";
+import { SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, ShieldIcon, ClockIcon, EyeIcon } from "./Icons";
+import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
 
 const ServicesPage = () => {
   const mainServices = [
@@ -96,11 +97,6 @@ const ServicesPage = () => {
     { icon: <ShieldIcon />, title: "שירות אישי ואחריות מלאה", description: "כל לקוח מקבל יחס צמוד ואחריות מלאה על כל עבודה." },
   ];
 
-  const testimonials = [
-    { text: "הגעתי עם תקלה שמוסכים אחרים לא הצליחו לפתור. צביקה אבחן תוך דקות ותיקן במחיר הוגן.", author: "יוסי כהן", location: "ירושלים" },
-    { text: "מוסך נקי, מסודר ואמין. תמיד מסבירים מה הבעיה לפני שמתחילים. לקוח קבוע כבר שנים.", author: "רונית לוי", location: "מבשרת ציון" },
-    { text: "הכנה לטסט מהירה ומקצועית. הרגשתי בידיים טובות מהרגע הראשון.", author: "דוד מזרחי", location: "ירושלים" },
-  ];
 
   const faqItems = [
     {
@@ -286,23 +282,19 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-16 md:py-24 bg-surface-dark" aria-label="המלצות לקוחות">
+      {/* GOOGLE REVIEWS */}
+      <section className="py-16 md:py-24 bg-surface-dark" dir="rtl" aria-label="ביקורות גוגל">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
-          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-black text-primary-foreground text-center mb-14 tracking-[-0.03em]">לקוחות המוסך ממליצים</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {testimonials.map(({ text, author, location }) => (
-              <div key={author} className="bg-card rounded-lg p-7 border border-border flex flex-col gap-4 hover:shadow-[var(--shadow-md)] transition-all duration-300 relative">
-                <div className="absolute top-0 right-0 left-0 h-[3px] bg-brand-red rounded-t-lg" />
-                <div className="flex gap-0.5 justify-end">{[1,2,3,4,5].map((i) => <StarIcon key={i} />)}</div>
-                <p className="text-foreground/75 leading-7 text-[13px] text-right flex-1">&ldquo;{text}&rdquo;</p>
-                <div className="text-right mt-auto pt-3 border-t border-border">
-                  <p className="font-bold text-foreground text-[13px]">{author}</p>
-                  <p className="text-muted-foreground text-[11px] mt-0.5">{location}</p>
-                </div>
-              </div>
-            ))}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-px bg-brand-red/50" />
+            <p className="text-brand-red text-[11px] font-bold tracking-wider">המלצות</p>
+            <div className="w-8 h-px bg-brand-red/50" />
           </div>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-black text-primary-foreground text-center mb-3 tracking-[-0.03em]">לקוחות המוסך ממליצים</h2>
+          <p className="text-primary-foreground/50 text-[13px] md:text-[14px] max-w-[400px] mx-auto text-center mb-10">
+            ביקורות אמיתיות מגוגל מלקוחות המוסך שלנו.
+          </p>
+          <GoogleReviewsCarousel />
         </div>
       </section>
 
