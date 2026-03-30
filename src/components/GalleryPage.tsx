@@ -40,9 +40,28 @@ export default function GalleryPage() {
             <div className="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center mx-auto mb-4">
               <Camera className="w-5 h-5 text-brand-red" />
             </div>
-            <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[400px] mx-auto">
+            <p className="text-muted-foreground text-[13px] leading-relaxed max-w-[400px] mx-auto mb-5">
               בקרוב נוסיף לכאן תמונות אמיתיות מהמוסך. בינתיים, אנחנו כאן בטלפון או בוואטסאפ.
             </p>
+            <div className="flex items-center justify-center gap-3">
+              <a
+                href="tel:02-6514446"
+                className="inline-flex items-center gap-1.5 text-[12px] font-medium text-brand-red border border-brand-red/30 rounded-full px-4 min-h-[36px] hover:bg-brand-red/5 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                02-6514446
+              </a>
+              <a
+                href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20האתר%20ואשמח%20לקבל%20פרטים%20%F0%9F%94%A7"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("gallery")}
+                className="inline-flex items-center gap-1.5 text-[12px] font-medium text-white bg-[#25D366] rounded-full px-4 min-h-[36px] hover:bg-[#20bd5a] transition-colors"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5" />
+                וואטסאפ
+              </a>
+            </div>
           </div>
         </div>
       </div>
