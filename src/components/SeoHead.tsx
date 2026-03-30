@@ -13,6 +13,15 @@ interface PageSeo {
   robots?: string;
 }
 
+function normalizePathname(pathname: string): string {
+  let normalized = pathname.replace(/\/index\.html$/, "");
+  if (normalized === "") normalized = "/";
+  if (normalized.length > 1 && normalized.endsWith("/")) {
+    normalized = normalized.slice(0, -1);
+  }
+  return normalized;
+}
+
 /** Central SEO config – one entry per route, Jerusalem-focused keywords */
 const seoConfig: Record<string, PageSeo> = {
   "/": {
@@ -120,15 +129,17 @@ function buildBreadcrumbSchema(pathname: string, seo: PageSeo) {
 
 export default function SeoHead() {
   const { pathname } = useLocation();
+  const normalizedPathname = normalizePathname(pathname);
 
-  const seo = pathname.startsWith("/blog/")
-    ? getBlogArticleSeo(pathname)
-    : seoConfig[pathname] || seoConfig["/"];
+  const seo = normalizedPathname.startsWith("/blog/")
+    ? getBlogArticleSeo(normalizedPathname)
+    : seoConfig[normalizedPathname] || seoConfig["/"];
 
-  const canonicalUrl = pathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${pathname}`;
+  const canonicalPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+  const canonicalUrl = canonicalPath === "/" ? `${BASE_URL}/` : `${BASE_URL}${canonicalPath}`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const robotsContent = seo.robots || "index, follow";
-  const breadcrumb = buildBreadcrumbSchema(pathname, seo);
+  const breadcrumb = buildBreadcrumbSchema(normalizedPathname, seo);
 
   return (
     <Helmet>
