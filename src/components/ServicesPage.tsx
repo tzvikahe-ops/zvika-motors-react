@@ -14,6 +14,7 @@ const ServicesPage = () => {
   const { setPage } = usePageNavigation();
   const mainServices = [
     {
+      anchor: "mechanic",
       icon: <WrenchIcon />,
       title: "מכונאות רכב כללית",
       subtitle: "טיפולים שוטפים ותיקונים מקצועיים",
