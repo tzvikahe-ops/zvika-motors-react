@@ -1,6 +1,6 @@
 import { LocationIcon, PhoneIcon, HoursIcon, WazeIcon } from "./Icons";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
-import { usePageNavigation } from "@/hooks/use-page-navigation";
+import InternalLink from "./InternalLink";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {

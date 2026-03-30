@@ -1,7 +1,7 @@
 import garagePhoto from "@/assets/gallery-garage.webp";
 import { Camera, Phone } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
-import { usePageNavigation } from "@/hooks/use-page-navigation";
+import InternalLink from "./InternalLink";
 
 export default function GalleryPage() {
   const { setPage } = usePageNavigation();

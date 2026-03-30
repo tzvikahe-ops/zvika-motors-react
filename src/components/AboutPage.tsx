@@ -1,5 +1,5 @@
 import { Shield, Users, Wrench, Clock, Star, CheckCircle, Heart, Eye, MapPin } from "lucide-react";
-import { usePageNavigation } from "@/hooks/use-page-navigation";
+import InternalLink from "./InternalLink";
 
 const AboutPage = () => {
   const { setPage } = usePageNavigation();
