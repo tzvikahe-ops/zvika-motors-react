@@ -17,7 +17,19 @@ interface BlogPageProps {
 
 export default function BlogPage({ setPage }: BlogPageProps) {
   const [activeTopic, setActiveTopic] = useState<BlogTopic | "הכל">("הכל");
-  const topics = getAllTopics();
+
+  // Fixed order for consistent UX
+  const topics: BlogTopic[] = [
+    "תקלות ואבחון",
+    "טיפול שוטף",
+    "בלמים ובטיחות",
+    "מזגן וקירור",
+    "הכנה לטסט",
+    "בדיקה לפני קנייה",
+    "חשמל ומצבר",
+    "עלויות ומחירים",
+    "רכב בירושלים",
+  ];
 
   const filteredArticles = activeTopic === "הכל"
     ? blogArticles
