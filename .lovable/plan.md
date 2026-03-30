@@ -1,46 +1,45 @@
 
 
-## תוכנית: הסרת כל המקפים הארוכים (– ו-—) מכל הטקסטים באתר
+## תוכנית: שיפור נראות דיגיטלית לעידן AI
 
-סרקתי את כל הקבצים ומצאתי מקפים ארוכים (en-dash `–` ו-em-dash `—`) ב-13 קבצים. חלקם בקוד/הערות (לא ייראו למשתמש) וחלקם בטקסט גלוי. אטפל בכולם.
+### מה קיים (סיכום)
+האתר כבר במצב טוב מאוד: robots.txt פתוח ל-AI bots, structured data עשיר (LocalBusiness, FAQPage, BlogPosting, BreadcrumbList), prerendered HTML, noscript fallback, inline SEO patcher, בלוג עם 16 מאמרים, OG/Twitter מלא.
 
-### קבצים שידרשו שינוי (טקסט גלוי למשתמש)
+### מה חסר — 7 שיפורים מומלצים
 
-| קובץ | דוגמאות לשינוי |
+**1. הוספת `public/llms.txt`**
+קובץ Markdown פשוט ב-root שמסכם את העסק, השירותים, המיקום, ושעות הפעילות. פרוטוקול מתפתח ש-LLMs מתחילים לקרוא.
+
+**2. הוספת Schema `WebSite` עם `potentialAction: SearchAction`**
+JSON-LD ב-`index.html` שמגדיר את האתר כישות WebSite עם חיפוש פנימי — מאפשר sitelinks search box בגוגל.
+
+**3. פתיחת `ChatGPT-User` ב-robots.txt**
+כרגע חסום (`Disallow: /`). שינוי ל-`Allow: /` יאפשר ל-ChatGPT לגשת לתוכן האתר כשמשתמשים שואלים שאלות עם Browse.
+
+**4. הרחבת `sameAs` ב-LocalBusiness Schema**
+הוספת קישור ל-Google Business Profile (אם קיים), Facebook, או כל פלטפורמה אחרת — מחזק אימות זהות העסק אצל AI bots.
+
+**5. הוספת `Speakable` Schema**
+JSON-LD מסוג Speakable על דף FAQ ומאמרי בלוג, שמצביע על CSS selectors של תשובות מתאימות להקראה קולית.
+
+**6. הוספת Schema `Service` בדף `/services`**
+JSON-LD נפרד עם פירוט מלא של כל שירות (שם, תיאור, areaServed, provider) — מעבר ל-OfferCatalog הקיים ב-LocalBusiness.
+
+**7. הוספת `public/llms-full.txt`**
+גרסה מורחבת של llms.txt עם כל תוכן מאמרי הבלוג ושאלות נפוצות — מאפשרת ל-LLMs למשוך תוכן עשיר בקריאה אחת.
+
+### קבצים שישתנו
+| קובץ | שינוי |
 |---|---|
-| **HomePage.tsx** | `המוסך של צביקה – אור-צת` → `המוסך של צביקה - אור-צת` (בסכמה + sr-only h1) |
-| **HeroSection.tsx** | alt text: `מוסך של צביקה –` → `-` |
-| **CTASection.tsx** | `וואטסאפ — ונתאם` → `וואטסאפ - ונתאם`, `א׳–ה׳ 08:00–16:30` → `א׳-ה׳ 08:00-16:30` |
-| **ServicesSection.tsx** | `ובלמים — היסודות` → `ובלמים - היסודות` |
-| **ServicesPage.tsx** | ~73 מופעים: `שמנים – שמנים`, `בלמים – רפידות`, `רכבים – יפניים`, `מגבים – מערכת` וכו' → מקף רגיל |
-| **AboutPage.tsx** | `צביקה – הסיפור`, `ואמין –`, `מהשטח –`, `ייעוץ –`, `מתקשרים –`, `מגיעים –`, `מקרי –`, `סיסמאות –`, `צביקה –` → מקף רגיל |
-| **ContactPage.tsx** | `א׳–ה׳: 08:00–16:30` → מקף רגיל, `צביקה – מוסך` → מקף רגיל |
-| **PrivacyPolicy.tsx** | `צביקה – אור-צת` → מקף רגיל, `זכות עיון — הזכות` (x4) → מקף רגיל |
-| **AccessibilityStatement.tsx** | `צביקה – אור-צת` → מקף רגיל |
-| **SeoHead.tsx** | כל title/description עם `–` → מקף רגיל (~10 מופעים) |
-| **BlogArticlePage.tsx** | `צביקה – אור-צת` בסכמה → מקף רגיל |
-| **blog-articles.ts** | ~124 מופעים של `–` בטקסטי מאמרים → מקף רגיל |
-| **Navbar.tsx** | aria-label: `דף הבית —` → מקף רגיל |
-| **FAQPage.tsx** (אם יש) | ללא מקפים ארוכים |
+| `public/llms.txt` | חדש — סיכום העסק ב-Markdown |
+| `public/llms-full.txt` | חדש — גרסה מורחבת עם כל התוכן |
+| `public/robots.txt` | ChatGPT-User → Allow, הוספת llms.txt |
+| `index.html` | הוספת WebSite Schema, הרחבת sameAs |
+| `src/components/HomePage.tsx` | הרחבת sameAs ב-localBusinessSchema |
+| `src/components/SeoHead.tsx` | הוספת Speakable Schema למאמרים ו-FAQ |
+| `src/components/ServicesPage.tsx` | הוספת Service JSON-LD |
+| `public/_headers` | cache rule ל-llms.txt |
 
-### קבצים עם מקפים רק בהערות/קוד (לא גלוי למשתמש, אבל אתקן גם)
-
-| קובץ | פירוט |
-|---|---|
-| **WhyUsSection.tsx** | הערה `/* Image — edge to edge */` |
-| **ServiceStrip.tsx** | הערה `/* Icons — 22×22 */` |
-| **GalleryPage.tsx** | aria-label `תמונה מוגדלת —` |
-| **ImageGeneratorPage.tsx** | labels: `1:1 — ריבועי` וכו' |
-| **ImageStudioPage.tsx** | `— {hint}` |
-
-### כלל ההחלפה
-
-- כל `–` (en-dash) וכל `—` (em-dash) → `-` (מקף רגיל)
-- בין אם זה בטקסט גלוי, aria-labels, alt text, סכמות JSON-LD, meta descriptions או הערות
-
-### פרטים טכניים
-
-- שינוי ב-~15 קבצים, ~250+ מופעים
-- החלפה ישירה של התו, ללא שינוי במבנה או בלוגיקה
-- לא נוגע בקבצים אוטומטיים (client.ts, types.ts, .env)
+### סדר עדיפות
+1-3 הם הכי משפיעים ומהירים ליישום. 4-7 הם שיפורים נוספים שמחזקים את הנוכחות.
 
