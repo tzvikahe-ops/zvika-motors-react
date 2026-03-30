@@ -41,26 +41,44 @@ export default function BlogPage({ setPage }: BlogPageProps) {
 
   return (
     <div className="bg-background" dir="rtl">
-      {/* Hero */}
+      {/* Hero — knowledge center positioning */}
       <section className="pt-28 pb-12 md:pt-32 md:pb-16 px-5 sm:px-6 bg-surface-darker relative">
         <div className="absolute inset-0 pattern-dots opacity-30" />
         <div className="max-w-[900px] mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">שאלות ותשובות מהמוסך</p>
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
           </div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1] mb-4">
-            התשובות לשאלות שבעלי רכב שואלים
+            מדריכים מעשיים לבעלי רכב
           </h1>
           <p className="text-primary-foreground/50 text-[14px] md:text-[15px] leading-[1.8] max-w-[600px]">
-            לפני שמתקשרים למוסך, כדאי להבין מה קורה עם הרכב. כאן תמצאו מדריכים מעשיים שעונים על השאלות שאנחנו שומעים כל יום מלקוחות.
+            רעש מוזר, נורית שנדלקה, או שאלה על עלויות טיפול? כאן תמצאו תשובות מקצועיות לשאלות שאנחנו שומעים כל יום — בשפה פשוטה וללא סיבוכים.
           </p>
+
+          {/* Quick topic jump — visual hint of depth */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {topics.map((topic) => {
+              const count = blogArticles.filter((a) => a.topic === topic).length;
+              return (
+                <button
+                  key={topic}
+                  onClick={() => setActiveTopic(topic)}
+                  className="text-[11px] text-primary-foreground/35 hover:text-primary-foreground/70 bg-primary-foreground/5 hover:bg-primary-foreground/10 border border-primary-foreground/10 px-3 py-1.5 transition-colors duration-200 cursor-pointer"
+                >
+                  {topic}
+                  <span className="mr-1 text-primary-foreground/20">({count})</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Topic filters */}
-      <section className="py-6 px-5 sm:px-6 border-b border-border bg-background sticky top-[60px] z-20">
-        <div className="max-w-[900px] mx-auto">
+      {/* Sticky filter bar */}
+      <section className="py-4 px-5 sm:px-6 border-b border-border bg-background sticky top-[60px] z-20">
+        <div className="max-w-[900px] mx-auto flex items-center gap-3">
+          <span className="text-[11px] text-muted-foreground font-medium shrink-0 hidden sm:block">סינון:</span>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveTopic("הכל")}
@@ -70,7 +88,7 @@ export default function BlogPage({ setPage }: BlogPageProps) {
                   : "bg-transparent text-foreground/60 border-border hover:border-brand-red/30 hover:text-brand-red"
               }`}
             >
-              הכל
+              הכל ({blogArticles.length})
             </button>
             {topics.map((topic) => (
               <button
@@ -92,6 +110,11 @@ export default function BlogPage({ setPage }: BlogPageProps) {
       {/* Articles Grid */}
       <section className="py-12 md:py-20 px-5 sm:px-6">
         <div className="max-w-[900px] mx-auto">
+          {activeTopic !== "הכל" && (
+            <p className="text-muted-foreground text-[13px] mb-6">
+              {filteredArticles.length} מאמרים בנושא <span className="font-bold text-foreground">{activeTopic}</span>
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredArticles.map((article) => (
               <button
@@ -129,24 +152,25 @@ export default function BlogPage({ setPage }: BlogPageProps) {
         </div>
       </section>
 
-      {/* CTA - clear next step */}
+      {/* Trust bridge — not salesy, just helpful */}
       <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
         <div className="max-w-[600px] mx-auto text-center">
+          <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
           <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
-            לא מצאתם תשובה? דברו איתנו
+            שלחו לנו שאלה — נחזור אליכם עם תשובה
           </h2>
           <p className="text-foreground/50 text-[13px] md:text-[14px] leading-[1.8] mb-6">
-            אם קראתם ועדיין לא בטוחים מה קורה עם הרכב, שלחו לנו הודעה. נשמח לעזור ולכוון אתכם.
+            אם קראתם ועדיין לא בטוחים מה קורה עם הרכב, אפשר לשלוח הודעה קצרה ולקבל כיוון ראשוני. בלי התחייבות.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
+              href="https://wa.me/972526514446?text=שלום%2C%20קראתי%20מאמר%20באתר%20ויש%20לי%20שאלה%20נוספת%20%F0%9F%94%A7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)]"
             >
               <WhatsAppSVG />
-              שלחו הודעה בוואטסאפ
+              שלחו שאלה בוואטסאפ
             </a>
             <a
               href="tel:02-6514446"
@@ -155,6 +179,27 @@ export default function BlogPage({ setPage }: BlogPageProps) {
               <PhoneSVG />
               02-6514446
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal links for SEO + navigation */}
+      <section className="py-10 px-5 sm:px-6 border-t border-border">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-foreground/30 text-[11px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
+          <div className="flex flex-wrap gap-3">
+            <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">
+              שירותי המוסך שלנו
+            </button>
+            <button onClick={() => setPage("faq")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">
+              שאלות ותשובות נפוצות
+            </button>
+            <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">
+              צור קשר ותיאום תור
+            </button>
+            <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">
+              הסיפור שלנו
+            </button>
           </div>
         </div>
       </section>
