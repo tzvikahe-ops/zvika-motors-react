@@ -4,7 +4,6 @@ import InternalLink from "./InternalLink";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
-  const { setPage } = usePageNavigation();
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[900px] mx-auto px-5 sm:px-6 pt-0 md:pt-1 pb-16 md:pb-20">

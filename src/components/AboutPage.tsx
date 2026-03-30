@@ -2,7 +2,6 @@ import { Shield, Users, Wrench, Clock, Star, CheckCircle, Heart, Eye, MapPin } f
 import InternalLink from "./InternalLink";
 
 const AboutPage = () => {
-  const { setPage } = usePageNavigation();
   const values = [
     { icon: <Eye className="w-5 h-5" />, title: "שקיפות מלאה", description: "לפני כל תיקון נסביר מה נמצא, מה צריך לתקן ומה יכול לחכות. לא נתקן דברים שלא צריך ולא נחליף חלקים בלי אישור מפורש שלכם." },
     { icon: <Heart className="w-5 h-5" />, title: "יחס אישי", description: "אצלנו מכירים את הלקוחות בשם. כשאתם מתקשרים, אתם מדברים ישירות עם הצוות המקצועי, לא עם מוקד שירות." },

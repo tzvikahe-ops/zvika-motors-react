@@ -4,7 +4,6 @@ import { trackWhatsAppClick } from "@/lib/analytics";
 import InternalLink from "./InternalLink";
 
 export default function GalleryPage() {
-  const { setPage } = usePageNavigation();
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[1200px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
