@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, lazy, Suspense } from "react";
+import { useLayoutEffect, useEffect, lazy, Suspense, Component, type ReactNode, type ErrorInfo } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import SeoHead from "@/components/SeoHead";
