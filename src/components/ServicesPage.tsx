@@ -11,7 +11,6 @@ const PhoneSVG = () => (
 );
 
 const ServicesPage = () => {
-  const { setPage } = usePageNavigation();
   const mainServices = [
     {
       anchor: "mechanic",
