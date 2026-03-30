@@ -1,6 +1,6 @@
 import type { Page } from "@/types/page";
 
-/* Icons — 22×22, consistent stroke weight */
+/* Icons - 22×22, consistent stroke weight */
 function WrenchSVG() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

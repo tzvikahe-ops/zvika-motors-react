@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 text-sm leading-8 text-muted-foreground flex flex-col gap-8">
           {/* Introduction */}
           <p className="text-[15px] leading-8">
-            המוסך של צביקה – אור-צת שירותי רכב ("העסק", "אנחנו") מכבד את פרטיות לקוחותיו ומחויב להגנה על המידע האישי שלהם. מדיניות פרטיות זו מפרטת כיצד אנו אוספים, משתמשים, מאחסנים ומגנים על מידע אישי, בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, לרבות תיקון מס' 13 לחוק, ותקנות הגנת הפרטיות (אבטחת מידע), התשע"ז-2017.
+            המוסך של צביקה - אור-צת שירותי רכב ("העסק", "אנחנו") מכבד את פרטיות לקוחותיו ומחויב להגנה על המידע האישי שלהם. מדיניות פרטיות זו מפרטת כיצד אנו אוספים, משתמשים, מאחסנים ומגנים על מידע אישי, בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, לרבות תיקון מס' 13 לחוק, ותקנות הגנת הפרטיות (אבטחת מידע), התשע"ז-2017.
           </p>
 
           {/* 1. Types of information collected */}
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
             </ul>
           </section>
 
-          {/* 5. User rights — Amendment 13 */}
+          {/* 5. User rights - Amendment 13 */}
           <section>
             <h2 className="text-lg font-bold text-primary mb-3">5. זכויות נושא המידע (תיקון 13 לחוק הגנת הפרטיות)</h2>
             <p className="mb-3">
@@ -76,16 +76,16 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4">
               <li>
-                <strong className="text-foreground">זכות עיון</strong> — הזכות לעיין במידע האישי המוחזק אצלנו אודותיך
+                <strong className="text-foreground">זכות עיון</strong> - הזכות לעיין במידע האישי המוחזק אצלנו אודותיך
               </li>
               <li>
-                <strong className="text-foreground">זכות תיקון</strong> — הזכות לבקש תיקון מידע שגוי, לא מדויק או לא מעודכן
+                <strong className="text-foreground">זכות תיקון</strong> - הזכות לבקש תיקון מידע שגוי, לא מדויק או לא מעודכן
               </li>
               <li>
-                <strong className="text-foreground">זכות מחיקה</strong> — הזכות לבקש מחיקת המידע האישי שלך ממאגרי המידע שלנו, בכפוף לדרישות חוקיות
+                <strong className="text-foreground">זכות מחיקה</strong> - הזכות לבקש מחיקת המידע האישי שלך ממאגרי המידע שלנו, בכפוף לדרישות חוקיות
               </li>
               <li>
-                <strong className="text-foreground">זכות חזרה מהסכמה</strong> — הזכות לחזור בך מהסכמה שנתת לעיבוד המידע, בכל עת
+                <strong className="text-foreground">זכות חזרה מהסכמה</strong> - הזכות לחזור בך מהסכמה שנתת לעיבוד המידע, בכל עת
               </li>
             </ul>
             <p className="mt-3">
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
               לכל שאלה, בקשה או תלונה הנוגעת למדיניות פרטיות זו או לטיפול במידע האישי שלך, ניתן לפנות אלינו:
             </p>
             <div className="bg-gray-bg rounded-lg p-5 flex flex-col gap-2">
-              <p><strong className="text-foreground">המוסך של צביקה – אור-צת שירותי רכב</strong></p>
+              <p><strong className="text-foreground">המוסך של צביקה - אור-צת שירותי רכב</strong></p>
               <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
               <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>

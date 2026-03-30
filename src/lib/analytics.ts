@@ -1,5 +1,5 @@
 /**
- * Google Analytics 4 – Custom event tracking utility
+ * Google Analytics 4 - Custom event tracking utility
  * GA4 measurement ID: G-FWD2H06Y7K (loaded in index.html)
  *
  * All helper functions gracefully no-op when gtag is unavailable

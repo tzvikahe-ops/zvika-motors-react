@@ -61,7 +61,7 @@ export default function ContactPage() {
                   <HoursIcon />
                   <div>
                     <div className="font-bold text-[13px] text-foreground">שעות פעילות</div>
-                    <div className="text-[13px] text-muted-foreground mt-0.5">א׳–ה׳: 08:00–16:30</div>
+                    <div className="text-[13px] text-muted-foreground mt-0.5">א׳-ה׳: 08:00-16:30</div>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function ContactPage() {
         </div>
 
         <p className="text-center text-muted-foreground text-[11px] mt-10 leading-relaxed">
-          המוסך של צביקה (אור-צת שירותי רכב) – מוסך מורשה בגבעת שאול, ירושלים. פועלים מאז 1993 עם אחריות מלאה על כל טיפול.
+          המוסך של צביקה (אור-צת שירותי רכב) - מוסך מורשה בגבעת שאול, ירושלים. פועלים מאז 1993 עם אחריות מלאה על כל טיפול.
         </p>
       </div>
     </div>

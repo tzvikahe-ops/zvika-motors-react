@@ -43,7 +43,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
           className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 mr-auto md:mr-0 md:ml-0 no-underline"
-          aria-label="דף הבית — המוסך של צביקה"
+          aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
         </a>

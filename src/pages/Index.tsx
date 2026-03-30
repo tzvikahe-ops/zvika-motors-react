@@ -27,7 +27,7 @@ const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
   
 
-  /* GA4: scroll depth tracking – init once, reset on page change */
+  /* GA4: scroll depth tracking - init once, reset on page change */
   useEffect(() => { initScrollTracking(); }, []);
   useEffect(() => { resetScrollTracking(); }, [currentPage, articleSlug]);
 
@@ -91,7 +91,7 @@ const Index = () => {
         <CookieConsent setPage={setPage} />
       </Suspense>
 
-      {/* WhatsApp Floating Button – GA4: whatsapp_click / floating */}
+      {/* WhatsApp Floating Button - GA4: whatsapp_click / floating */}
       <a
         href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
         target="_blank"

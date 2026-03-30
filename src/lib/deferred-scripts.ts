@@ -19,7 +19,7 @@ export function loadDeferredScripts(): void {
   if (loaded) return;
   loaded = true;
 
-  // Google Analytics (gtag.js) — deferred to avoid render-blocking
+  // Google Analytics (gtag.js) - deferred to avoid render-blocking
   loadScript(
     "https://www.googletagmanager.com/gtag/js?id=G-FWD2H06Y7K"
   );
@@ -29,7 +29,7 @@ export function loadDeferredScripts(): void {
     "https://cdn.enable.co.il/licenses/enable-L54645vosqvgvfir-0326-81012/init.js"
   );
 
-  // reCAPTCHA v3 — only needed when the contact form is used
+  // reCAPTCHA v3 - only needed when the contact form is used
   loadScript(
     "https://www.google.com/recaptcha/api.js?render=6LddXZosAAAAAMqBHbxXsPEvVgcCZPiL9y5E2LZw"
   );

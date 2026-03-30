@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
     }
 
     if (isBrowserError) {
-      console.warn("reCAPTCHA browser-error — allowing submission with warning");
+      console.warn("reCAPTCHA browser-error - allowing submission with warning");
     } else if (verifyData.score < 0.3) {
       return new Response(
         JSON.stringify({ error: "אימות reCAPTCHA נכשל", score: verifyData.score }),
