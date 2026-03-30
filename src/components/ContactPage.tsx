@@ -1,8 +1,10 @@
 import { LocationIcon, PhoneIcon, HoursIcon, WazeIcon } from "./Icons";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
+import { usePageNavigation } from "@/hooks/use-page-navigation";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
+  const { setPage } = usePageNavigation();
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[900px] mx-auto px-5 sm:px-6 pt-0 md:pt-1 pb-16 md:pb-20">
@@ -143,6 +145,13 @@ export default function ContactPage() {
                   אחריות על כל טיפול
                 </span>
               </div>
+            </div>
+
+            {/* Internal links */}
+            <div className="flex flex-wrap gap-3 mt-4">
+              <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך</button>
+              <button onClick={() => setPage("faq")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שאלות נפוצות</button>
+              <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">הסיפור שלנו</button>
             </div>
           </div>
         </div>
