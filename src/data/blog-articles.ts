@@ -519,3 +519,8 @@ export const blogArticles: BlogArticle[] = [
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   return blogArticles.find((a) => a.slug === slug);
 }
+
+export function getAllTopics(): BlogTopic[] {
+  const topics = new Set(blogArticles.map((a) => a.topic));
+  return Array.from(topics);
+}
