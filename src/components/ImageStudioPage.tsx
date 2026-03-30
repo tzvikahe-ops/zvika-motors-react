@@ -552,7 +552,7 @@ function Field({
       <label className="text-[11px] font-semibold text-foreground mb-1.5 block uppercase tracking-wider">
         {label}
         {optional && <span className="text-muted-foreground font-normal normal-case ml-1">(optional)</span>}
-        {hint && <span className="text-muted-foreground font-normal normal-case ml-1">— {hint}</span>}
+        {hint && <span className="text-muted-foreground font-normal normal-case ml-1">- {hint}</span>}
       </label>
       {children}
     </div>

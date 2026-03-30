@@ -25,11 +25,11 @@ const STYLE_OPTIONS = [
 ];
 
 const ASPECT_OPTIONS = [
-  { value: "1:1", label: "1:1 — ריבועי" },
-  { value: "16:9", label: "16:9 — רחב" },
-  { value: "9:16", label: "9:16 — גבוה" },
-  { value: "4:3", label: "4:3 — קלאסי" },
-  { value: "3:2", label: "3:2 — צילום" },
+  { value: "1:1", label: "1:1 - ריבועי" },
+  { value: "16:9", label: "16:9 - רחב" },
+  { value: "9:16", label: "9:16 - גבוה" },
+  { value: "4:3", label: "4:3 - קלאסי" },
+  { value: "3:2", label: "3:2 - צילום" },
 ];
 
 export default function ImageGeneratorPage() {

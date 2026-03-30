@@ -14,7 +14,7 @@ export default function WhyUsSection() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="grid grid-cols-1 md:grid-cols-2">
-        {/* Image — edge to edge */}
+        {/* Image - edge to edge */}
         <div className="relative min-h-[300px] md:min-h-[620px]">
           <img
             src={mechanicImage}

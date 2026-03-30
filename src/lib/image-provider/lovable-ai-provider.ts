@@ -13,14 +13,14 @@ import type {
  * 
  * Uses the Lovable AI Gateway (backed by Google Gemini image models)
  * via the generate-image edge function. All API keys are handled
- * server-side — no secrets in client code.
+ * server-side - no secrets in client code.
  */
 export class LovableAIProvider implements ImageProvider {
   readonly name = "Lovable AI (Gemini)";
 
   readonly capabilities: ImageProviderCapabilities = {
     supportsGeneration: true,
-    supportsEditing: false, // Scaffold — will be enabled when edit endpoint is ready
+    supportsEditing: false, // Scaffold - will be enabled when edit endpoint is ready
     supportsNegativePrompt: true,
     supportsReferenceImage: true,
     maxOutputs: 4,

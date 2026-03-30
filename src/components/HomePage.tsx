@@ -14,7 +14,7 @@ import type { Page } from "@/types/page";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "AutoRepair"],
-  name: "המוסך של צביקה – אור-צת שירותי רכב",
+  name: "המוסך של צביקה - אור-צת שירותי רכב",
   image: "https://www.ortzat.co.il/og-image.jpg",
   url: "https://www.ortzat.co.il",
   telephone: "02-6514446",
@@ -115,7 +115,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <HeroSection setPage={setPage} />
-      <h1 className="sr-only">המוסך של צביקה – מוסך מקצועי בירושלים</h1>
+      <h1 className="sr-only">המוסך של צביקה - מוסך מקצועי בירושלים</h1>
       <ServiceStrip setPage={setPage} />
 
       {/* Below-fold sections deferred via IntersectionObserver to reduce TBT */}

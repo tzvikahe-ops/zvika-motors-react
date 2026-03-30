@@ -20,7 +20,7 @@ export default function CTASection() {
               הרכב צריך טיפול? אנחנו כאן.
             </h2>
             <p className="text-accent-foreground/75 text-[14px] md:text-[15px] leading-[1.8] max-w-[480px]">
-              תתקשרו או תשלחו וואטסאפ — ונתאם ביקור מהיר. בלי תורים ארוכים, בלי הפתעות במחיר. אנחנו כאן א׳–ה׳ 08:00–16:30.
+              תתקשרו או תשלחו וואטסאפ - ונתאם ביקור מהיר. בלי תורים ארוכים, בלי הפתעות במחיר. אנחנו כאן א׳-ה׳ 08:00-16:30.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-2">
               {/* GA4: whatsapp_click / cta */}

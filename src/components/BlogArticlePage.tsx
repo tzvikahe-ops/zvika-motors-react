@@ -85,7 +85,7 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
     dateModified: article.date,
     author: {
       "@type": "Organization",
-      name: "המוסך של צביקה – אור-צת שירותי רכב",
+      name: "המוסך של צביקה - אור-צת שירותי רכב",
       url: "https://www.ortzat.co.il",
     },
     publisher: {

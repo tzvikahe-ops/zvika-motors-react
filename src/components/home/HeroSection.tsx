@@ -104,7 +104,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
         <div className="relative order-1 md:order-2 min-h-[280px] md:min-h-0">
           <img
             src={heroImage}
-            alt="מוסך של צביקה – מוסך מקצועי בגבעת שאול, ירושלים"
+            alt="מוסך של צביקה - מוסך מקצועי בגבעת שאול, ירושלים"
             width={1920}
             height={1080}
             loading="eager"

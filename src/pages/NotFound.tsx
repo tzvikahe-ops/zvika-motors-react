@@ -13,7 +13,7 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-muted" dir="rtl">
       <Helmet>
         <title>הדף לא נמצא | המוסך של צביקה</title>
-        <meta name="description" content="הדף המבוקש לא נמצא. חזרו לדף הבית של המוסך של צביקה – מוסך מקצועי בירושלים." />
+        <meta name="description" content="הדף המבוקש לא נמצא. חזרו לדף הבית של המוסך של צביקה - מוסך מקצועי בירושלים." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="text-center">
