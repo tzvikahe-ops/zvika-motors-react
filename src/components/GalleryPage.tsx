@@ -11,7 +11,7 @@ export default function GalleryPage() {
           <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">תמונות נוספות בדרך</div>
           <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2">הגלריה שלנו</h1>
           <p className="text-muted-foreground text-sm max-w-[500px] mx-auto">
-            תמונות אמיתיות מהמוסך - ככה נראית עבודה מקצועית, סביבה מסודרת וציוד שעובד
+            הצצה ראשונה למוסך שלנו ברחוב האופה 4, גבעת שאול - תמונות נוספות יתווספו בקרוב
           </p>
         </div>
 
