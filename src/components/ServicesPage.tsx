@@ -1,5 +1,13 @@
-import { SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon, ShieldIcon, ClockIcon, EyeIcon } from "./Icons";
-import GoogleReviewsCarousel from "@/components/GoogleReviewsCarousel";
+import { SnowflakeIcon, WrenchIcon, DiagIcon, ChecklistIcon } from "./Icons";
+import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
+
+const WhatsAppSVG = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+);
+
+const PhoneSVG = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+);
 
 const ServicesPage = () => {
   const mainServices = [
@@ -8,6 +16,7 @@ const ServicesPage = () => {
       title: "מכונאות רכב כללית",
       subtitle: "טיפולים שוטפים ותיקונים מקצועיים",
       description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.",
+      whenToVisit: "הרכב מוציא רעשים חריגים, נורית אזהרה נדלקה, או שעבר יותר מ-10,000 ק\"מ מהטיפול האחרון.",
       details: [
         "החלפת שמן מנוע ופילטרים - שמנים מקוריים ותחליפיים באיכות גבוהה",
         "בדיקת ותיקון מערכת בלמים - רפידות, דיסקיות ונוזל בלמים",
@@ -23,6 +32,7 @@ const ServicesPage = () => {
       title: "דיאגנוסטיקה ממוחשבת",
       subtitle: "אבחון תקלות מדויק שחוסך לכם כסף",
       description: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.",
+      whenToVisit: "נורית צ׳ק אנג׳ין דולקת, הרכב מתקשה להתניע, צריכת דלק עלתה, או שיש ירידה בביצועי המנוע.",
       details: [
         "סריקת מחשב רכב מלאה - קריאת קודי תקלה ומחיקתם",
         "אבחון מערכת ניהול מנוע וחיישנים",
@@ -37,8 +47,9 @@ const ServicesPage = () => {
       title: "מיזוג אוויר לרכב",
       subtitle: "טיפול מלא במערכת הקירור והחימום",
       description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים בירושלים.",
+      whenToVisit: "המזגן לא מקרר כמו פעם, יוצא ממנו ריח לא נעים, או שנשמעים רעשים מהמערכת.",
       details: [
-        "מילוי גז מזגן  עם בדיקת לחצים",
+        "מילוי גז מזגן עם בדיקת לחצים",
         "איתור ותיקון דליפות גז במערכת",
         "החלפת מדחס (קומפרסור) מזגן",
         "ניקוי וחיטוי מערכת המזגן למניעת ריחות",
@@ -51,6 +62,7 @@ const ServicesPage = () => {
       title: "הכנה לטסט שנתי",
       subtitle: "בדיקה מקיפה שמבטיחה מעבר בפעם הראשונה",
       description: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.",
+      whenToVisit: "הטסט השנתי מתקרב ואתם רוצים לעבור בפעם הראשונה בלי הפתעות.",
       details: [
         "בדיקת מערכת בלמים - רפידות, דיסקיות, צנרת ונוזל",
         "בדיקת מערכת תאורה מלאה - פנסים, איתותים, בלמים וחניה",
@@ -90,37 +102,6 @@ const ServicesPage = () => {
     },
   ];
 
-  const trustPoints = [
-    { icon: <ClockIcon />, title: "ניסיון של מעל 30 שנה", description: "מכירים כל דגם מקרוב ומטפלים בכל סוגי הרכבים." },
-    { icon: <DiagIcon />, title: "אבחון מדויק שחוסך כסף", description: "ציוד מתקדם ומקצועיות שמונעים תיקונים מיותרים." },
-    { icon: <EyeIcon />, title: "שקיפות מלאה ומחיר הוגן", description: "כל תיקון מוסבר, מתואם ומאושר על ידכם מראש." },
-    { icon: <ShieldIcon />, title: "שירות אישי ואחריות מלאה", description: "כל לקוח מקבל יחס צמוד ואחריות מלאה על כל עבודה." },
-  ];
-
-
-  const faqItems = [
-    {
-      q: "כמה זמן לוקח טיפול שוטף?",
-      a: "טיפול שוטף כמו החלפת שמן ופילטרים אורך בדרך כלל כשעה. טיפולי קילומטראז׳ מורחבים יכולים לקחת 2-3 שעות, תלוי בסוג הרכב והטיפול הנדרש.",
-    },
-    {
-      q: "אפשר לחכות בזמן הטיפול?",
-      a: "בהחלט. יש לנו אזור המתנה נוח. לטיפולים ארוכים יותר, אפשר להשאיר את הרכב ולאסוף אותו מאוחר יותר באותו יום.",
-    },
-    {
-      q: "אתם מטפלים בכל סוגי הרכבים?",
-      a: "כן. אנחנו מטפלים בכל סוגי כלי הרכב הפרטיים - יפניים, קוריאניים, אירופיים ואמריקאיים. אנחנו מכירים מקרוב את כל הדגמים הנפוצים בישראל.",
-    },
-    {
-      q: "האם אתם משתמשים בחלפים מקוריים?",
-      a: "אנחנו מציעים חלפים מקוריים וחלפים תחליפיים באיכות גבוהה (OEM). תמיד נסביר את ההבדלים ונתאים את הפתרון לתקציב ולצרכים שלכם.",
-    },
-    {
-      q: "כמה עולה הכנה לטסט?",
-      a: "עלות הבדיקה המקדימה משתנה לפי סוג הרכב. הבדיקה עצמה במחיר סביר, ואם נמצאים ממצאים לתיקון - נציג הצעת מחיר מפורטת לפני שמתחילים.",
-    },
-  ];
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -149,42 +130,46 @@ const ServicesPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      {/* HERO */}
+
+      {/* HERO - Problem-focused */}
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">שירותים מקצועיים</div>
+          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">פתרונות לכל בעיה ברכב</div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
-            שירותי מוסך מקצועיים בירושלים
+            משהו לא בסדר ברכב? אנחנו נמצא את הבעיה ונתקן
           </h1>
           <p className="text-[14px] md:text-[15px] text-primary-foreground/50 mb-9 max-w-2xl mx-auto leading-[1.8]">
-            מעל 30 שנות ניסיון במכונאות רכב בירושלים. מכונאות כללית, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט - הכל תחת קורת גג אחת בגבעת שאול. שקיפות מלאה, מחיר הוגן ויחס אישי לכל לקוח.
+            רעשים חריגים, נורית שנדלקה, מזגן שלא מקרר, טסט שמתקרב? בכל מצב יש לנו את הציוד, הניסיון והידע לטפל ברכב שלכם. תארו לנו את הבעיה ונחזור עם פתרון.
           </p>
           <a
-            href="tel:02-6514446"
-            className="inline-flex items-center gap-2 bg-brand-red text-accent-foreground px-8 py-3.5 rounded-md font-bold text-[15px] hover:bg-brand-red-hover transition-all duration-200 shadow-[0_4px_20px_-4px_hsl(var(--brand-red)/0.5)] no-underline"
+            href="https://wa.me/972526514446?text=שלום%2C%20יש%20לי%20בעיה%20ברכב%20ואשמח%20לייעוץ%3A%20"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("services-hero")}
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] no-underline"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-            התקשרו עכשיו לתיאום טיפול
+            <WhatsAppSVG />
+            תארו את הבעיה בוואטסאפ
           </a>
         </div>
       </section>
 
-      {/* MAIN SERVICES - Detailed */}
+      {/* MAIN SERVICES - Detailed with "when to visit" */}
       <section id="services-content" className="py-16 md:py-24 bg-background" aria-label="שירותי המוסך המרכזיים">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מה אנחנו עושים</p>
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מה אנחנו מטפלים</p>
             <div className="w-10 h-[2px] bg-brand-red/50" />
           </div>
-          <h2 className="text-[24px] sm:text-[28px] md:text-[38px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">שירותי מכונאות רכב בירושלים</h2>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[38px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">תחומי ההתמחות שלנו</h2>
           <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
-            טיפול מקצועי, אמין ושקוף לכל סוגי הרכבים - הכל תחת קורת גג אחת בגבעת שאול
+            כל סוג בעיה דורש גישה שונה. הנה מה שאנחנו יודעים לעשות הכי טוב
           </p>
 
           <div className="space-y-6">
-            {mainServices.map((service, idx) => (
+            {mainServices.map((service) => (
               <article key={service.title} className="bg-card border border-border rounded-lg overflow-hidden hover:border-brand-red/20 transition-all duration-300 hover:shadow-[var(--shadow-md)]">
                 <div className="p-6 md:p-8">
                   <div className="flex items-start gap-4 mb-4">
@@ -196,7 +181,16 @@ const ServicesPage = () => {
                       <p className="text-brand-red text-[12px] font-medium mt-0.5">{service.subtitle}</p>
                     </div>
                   </div>
-                  <p className="text-foreground/60 text-[13px] md:text-[14px] leading-[1.85] mb-5">{service.description}</p>
+                  <p className="text-foreground/60 text-[13px] md:text-[14px] leading-[1.85] mb-4">{service.description}</p>
+                  
+                  {/* When to visit - unique to services page */}
+                  <div className="bg-brand-red/[0.04] border border-brand-red/10 rounded-md px-4 py-3 mb-5">
+                    <p className="text-foreground/70 text-[12px] md:text-[13px] leading-[1.7]">
+                      <strong className="text-foreground/90">מתי להגיע?</strong>{" "}
+                      {service.whenToVisit}
+                    </p>
+                  </div>
+
                   <div className="border-t border-border pt-5">
                     <p className="text-foreground/40 text-[10px] font-bold tracking-[0.15em] uppercase mb-3">מה כולל השירות</p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -220,10 +214,10 @@ const ServicesPage = () => {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">שירותים נוספים</p>
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">עוד התמחויות</p>
             <div className="w-10 h-[2px] bg-brand-red/50" />
           </div>
-          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">עוד שירותים שאנחנו מציעים</h2>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">עוד תחומים שאנחנו מטפלים בהם</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
             כל מה שהרכב שלכם צריך - במקום אחד, עם אחריות מלאה
           </p>
@@ -235,66 +229,6 @@ const ServicesPage = () => {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* TRUST SECTION */}
-      <section className="py-16 md:py-24 bg-surface-steel" aria-label="למה לבחור בנו">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
-          <h2 className="text-[24px] sm:text-[28px] md:text-[38px] font-black text-foreground text-center mb-3 tracking-[-0.03em]">למה לקוחות בירושלים בוחרים בנו?</h2>
-          <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto text-[13px] md:text-[14px] leading-[1.8]">
-            כי אצלנו הרכב שלכם בידיים בטוחות - עם יחס אישי ושקיפות מלאה
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {trustPoints.map((point) => (
-              <div key={point.title} className="flex items-start gap-4 bg-card rounded-lg p-6 border border-border hover:shadow-[var(--shadow-sm)] transition-all duration-200">
-                <div className="bg-brand-red w-10 h-10 rounded-md flex items-center justify-center shrink-0 text-accent-foreground">{point.icon}</div>
-                <div>
-                  <h3 className="font-bold text-foreground text-[14px] mb-1">{point.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed">{point.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 md:py-24 bg-background" aria-label="שאלות נפוצות על שירותי המוסך">
-        <div className="max-w-[800px] mx-auto px-5 sm:px-6">
-          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">שאלות נפוצות</h2>
-          <p className="text-muted-foreground text-center mb-12 text-[13px] md:text-[14px]">
-            תשובות לשאלות שלקוחות שואלים אותנו הכי הרבה
-          </p>
-          <div className="space-y-3">
-            {faqItems.map((item, i) => (
-              <details key={i} className="bg-card border border-border rounded-lg group">
-                <summary className="p-5 cursor-pointer text-[14px] md:text-[15px] font-bold text-foreground hover:text-brand-red transition-colors list-none flex items-center justify-between gap-4">
-                  {item.q}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-muted-foreground group-open:rotate-180 transition-transform duration-200"><path d="M6 9l6 6 6-6" /></svg>
-                </summary>
-                <div className="px-5 pb-5 text-foreground/60 text-[13px] leading-[1.85] border-t border-border pt-4">
-                  {item.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GOOGLE REVIEWS */}
-      <section className="py-16 md:py-24 bg-surface-dark" dir="rtl" aria-label="ביקורות גוגל">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-px bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-wider">המלצות</p>
-            <div className="w-8 h-px bg-brand-red/50" />
-          </div>
-          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-black text-primary-foreground text-center mb-3 tracking-[-0.03em]">לקוחות המוסך ממליצים</h2>
-          <p className="text-primary-foreground/50 text-[13px] md:text-[14px] max-w-[400px] mx-auto text-center mb-10">
-            ביקורות אמיתיות מגוגל מלקוחות המוסך שלנו.
-          </p>
-          <GoogleReviewsCarousel />
         </div>
       </section>
 
@@ -316,28 +250,37 @@ const ServicesPage = () => {
               המוסך של צביקה (אור-צת שירותי רכב) הוא מוסך מורשה בירושלים, הממוקם ברחוב האופה 4 (בית הדפוס 24) בגבעת שאול. המוסך מספק שירותי מכונאות רכב מקיפים כבר מעל שלושה עשורים, ומתמחה בטיפולים שוטפים, דיאגנוסטיקה ממוחשבת, טיפול במערכת מיזוג אוויר לרכב והכנת רכבים לטסט השנתי.
             </p>
             <p>
-              המוסך פתוח בימים א׳ עד ה׳, בין השעות 08:00 ל-16:30. ניתן לתאם טיפול בטלפון 02-6514446 או בהודעת וואטסאפ
-למספר 052-651-4446. אנחנו ממליצים לקבוע תור מראש, אך מקבלים גם לקוחות שמגיעים ללא תיאום מוקדם בכפוף לזמינות.
+              המוסך פתוח בימים א׳ עד ה׳, בין השעות 08:00 ל-16:30. ניתן לתאם טיפול בטלפון 02-6514446 או בהודעת וואטסאפ למספר 052-651-4446. אנחנו ממליצים לקבוע תור מראש, אך מקבלים גם לקוחות שמגיעים ללא תיאום מוקדם בכפוף לזמינות.
             </p>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-16 md:py-20 bg-surface-dark" aria-label="יצירת קשר עם המוסך">
+      {/* FINAL CTA - Unique to services: describe your problem */}
+      <section className="py-16 md:py-20 bg-surface-dark" aria-label="שלחו תיאור הבעיה">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center">
-          <h2 className="text-[22px] md:text-[32px] font-black text-primary-foreground mb-3 tracking-[-0.03em]">מחפשים מוסך מקצועי בירושלים?</h2>
+          <h2 className="text-[22px] md:text-[32px] font-black text-primary-foreground mb-3 tracking-[-0.03em]">לא בטוחים מה הבעיה? ספרו לנו</h2>
           <p className="text-primary-foreground/45 mb-9 text-[13px] md:text-[14px] leading-[1.8] max-w-md mx-auto">
-            התקשרו, שלחו הודעה בוואטסאפ או פשוט בואו. נתאם טיפול מהיר, שקוף ומקצועי.
+            שלחו תיאור קצר של מה שקורה ברכב - רעש, ריח, נורית, תחושה. נחזור אליכם עם הערכה ראשונית בלי עלות.
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
-            <a href="tel:02-6514446" className="inline-flex items-center gap-2 bg-brand-red text-accent-foreground px-8 py-3.5 rounded-md font-bold text-[15px] hover:bg-brand-red-hover transition-all duration-200 shadow-[0_4px_20px_-4px_hsl(var(--brand-red)/0.5)] no-underline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-              התקשרו עכשיו - 02-6514446
+            <a
+              href="https://wa.me/972526514446?text=שלום%2C%20יש%20לי%20בעיה%20ברכב%20ואשמח%20לייעוץ%3A%20"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("services-cta")}
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] no-underline"
+            >
+              <WhatsAppSVG />
+              שלחו תיאור הבעיה בוואטסאפ
             </a>
-            <a href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary-foreground/[0.06] text-primary-foreground border border-primary-foreground/10 px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-primary-foreground/[0.1] transition-all duration-200 no-underline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              שלחו הודעה בוואטסאפ
+            <a
+              href="tel:02-6514446"
+              onClick={() => trackPhoneClick("services-cta")}
+              className="inline-flex items-center gap-2 bg-primary-foreground/[0.06] text-primary-foreground border border-primary-foreground/10 px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-primary-foreground/[0.1] transition-all duration-200 no-underline"
+            >
+              <PhoneSVG />
+              התקשרו - 02-6514446
             </a>
           </div>
         </div>
