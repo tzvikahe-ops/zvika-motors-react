@@ -57,8 +57,8 @@ export default function WhyUsSection({ setPage }: { setPage: (p: Page) => void }
               </div>
             ))}
             <div className="flex flex-wrap gap-3 pt-5 mt-1">
-              <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">טיפים מקצועיים בבלוג ←</button>
-              <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ←</button>
+              <InternalLink page="blog" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">טיפים מקצועיים בבלוג ←</InternalLink>
+              <InternalLink page="contact" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">צרו קשר ←</InternalLink>
             </div>
           </div>
         </div>
