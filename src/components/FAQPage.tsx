@@ -187,13 +187,13 @@ export default function FAQPage({ setPage }: { setPage: (p: Page) => void }) {
                   {faq.links && (
                     <div className="mt-3 flex flex-wrap gap-2">
                       {faq.links.map((link, j) => (
-                        <button
+                        <InternalLink
                           key={j}
-                          onClick={() => setPage(link.page)}
-                          className="bg-transparent border border-brand-red/20 text-brand-red text-[12px] font-bold px-3 py-1.5 cursor-pointer hover:bg-brand-red/5 transition-colors duration-200"
+                          page={link.page}
+                          className="border border-brand-red/20 text-brand-red text-[12px] font-bold px-3 py-1.5 hover:bg-brand-red/5 transition-colors duration-200 no-underline"
                         >
                           {link.text}
-                        </button>
+                        </InternalLink>
                       ))}
                     </div>
                   )}
