@@ -67,7 +67,7 @@ export default function GalleryPage() {
 
         {/* CTA - conversion */}
         <div className="max-w-[560px] mx-auto mt-12 text-center">
-          <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3">אהבתם את מה שראיתם?</p>
+          <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3">רוצים לראות את המוסך מקרוב?</p>
           <h2 className="text-[20px] md:text-[24px] font-black text-foreground mb-2 tracking-[-0.02em]">תאמו ביקור במוסך</h2>
           <p className="text-muted-foreground text-[13px] mb-6 leading-[1.8]">נשמח לראות אתכם ולטפל ברכב. פנו אלינו בוואטסאפ או השאירו פרטים ונחזור אליכם.</p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
