@@ -42,8 +42,8 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
               </span>
             </div>
 
-            <p className="text-primary-foreground/70 text-[14px] md:text-[15px] leading-[1.9] mb-6 md:mb-8 max-w-[400px]">
-              טיפול מקצועי, מחירים שקופים, ובעל מקצוע שמדבר איתכם ישירות. בלי הפתעות, בלי עבודות מיותרות.
+            <p className="text-primary-foreground/70 text-[14px] md:text-[15px] leading-[1.9] mb-6 md:mb-8 max-w-[420px]">
+              מוסך מקצועי בגבעת שאול, ירושלים. צביקה מטפל ברכב שלכם אישית, מסביר כל תיקון לפני שמתחיל, ונותן מחיר סופי מראש. בלי הפתעות, בלי עבודות מיותרות.
             </p>
 
             {/* Trust strip */}
