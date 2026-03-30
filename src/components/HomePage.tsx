@@ -142,7 +142,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Detailed services */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ServicesSection setPage={setPage} />
+          <ServicesSection />
         </Suspense>
       </LazySection>
 
