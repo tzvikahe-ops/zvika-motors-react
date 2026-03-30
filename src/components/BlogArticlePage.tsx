@@ -101,22 +101,8 @@ export default function BlogArticlePage({ slug }: BlogArticlePageProps) {
 
   const articleUrl = `https://www.ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
-    headline: article.title,
-    description: article.metaDescription,
-    datePublished: article.date,
-    dateModified: article.date,
-    author: { "@type": "Organization", name: "המוסך של צביקה - אור-צת שירותי רכב", url: "https://www.ortzat.co.il" },
-    publisher: { "@type": "Organization", name: "המוסך של צביקה", url: "https://www.ortzat.co.il" },
-    inLanguage: "he",
-  };
-
   return (
     <div className="bg-background" dir="rtl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* Header */}
       <section className="pt-28 pb-8 md:pt-32 md:pb-12 px-5 sm:px-6 bg-surface-darker relative">

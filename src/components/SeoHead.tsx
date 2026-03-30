@@ -140,8 +140,7 @@ export default function SeoHead() {
     ? getBlogArticleSeo(normalizedPathname)
     : seoConfig[normalizedPathname] || seoConfig["/"];
 
-  const canonicalPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
-  const canonicalUrl = canonicalPath === "/" ? `${BASE_URL}/` : `${BASE_URL}${canonicalPath}`;
+  const canonicalUrl = normalizedPathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${normalizedPathname}`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
@@ -193,7 +192,7 @@ export default function SeoHead() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
             headline: seo.title.split(" | ")[0],
             description: seo.description,
             datePublished: seo.datePublished,
