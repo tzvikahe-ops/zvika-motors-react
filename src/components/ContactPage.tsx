@@ -1,5 +1,4 @@
 import { LocationIcon, PhoneIcon, HoursIcon, WazeIcon } from "./Icons";
-import { getContactEmail } from "@/lib/obfuscate-email";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import ContactForm from "./ContactForm";
 
