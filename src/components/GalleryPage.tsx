@@ -7,7 +7,7 @@ export default function GalleryPage() {
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[1200px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
         <div className="text-center mb-8 md:mb-10">
-          
+          <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-1 tracking-wider">תמונות נוספות בדרך</div>
           <h1 className="text-3xl md:text-[40px] font-black text-foreground mb-2">הגלריה שלנו</h1>
           <p className="text-muted-foreground text-sm max-w-[500px] mx-auto">
             תמונות אמיתיות מהמוסך - ככה נראית עבודה מקצועית, סביבה מסודרת וציוד שעובד
