@@ -93,24 +93,16 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
 
         {/* 6-service grid - more spacious */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          {services.map(({ icon, title, desc }) => (
-            <div key={title} className="bg-primary-foreground/[0.03] rounded-lg p-6 md:p-7 group relative flex flex-col border border-primary-foreground/[0.04] hover:border-brand-red/20 transition-all duration-300">
-              {/* Top accent line */}
+          {services.map(({ icon, title, desc }, i) => (
+            <div key={title} className={`rounded-lg p-6 md:p-7 group relative flex flex-col border transition-all duration-300 ${
+              i === 0
+                ? "bg-brand-red/[0.04] border-brand-red/10 hover:border-brand-red/25 sm:col-span-2 lg:col-span-1"
+                : "bg-primary-foreground/[0.03] border-primary-foreground/[0.04] hover:border-brand-red/15"
+            }`}>
               <div className="absolute top-0 right-4 left-4 h-[2px] bg-brand-red/0 group-hover:bg-brand-red/25 rounded-full transition-all duration-500" />
-              <div className="text-brand-red/60 group-hover:text-brand-red mb-3 transition-colors duration-200">{icon}</div>
+              <div className={`mb-3 transition-colors duration-200 ${i === 0 ? "text-brand-red/80 group-hover:text-brand-red" : "text-brand-red/50 group-hover:text-brand-red/80"}`}>{icon}</div>
               <h3 className="font-bold text-[14px] md:text-[15px] text-primary-foreground tracking-[-0.01em] mb-1.5">{title}</h3>
-              <p className="text-primary-foreground/50 text-[12px] md:text-[13px] leading-[1.7] mb-5 flex-1">{desc}</p>
-              {/* GA4: whatsapp_click / services */}
-              <a
-                href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick("services")}
-                className="inline-flex items-center gap-1.5 text-[#25D366]/30 hover:text-[#25D366]/70 text-[10px] font-normal no-underline w-fit transition-colors duration-200"
-              >
-                <WhatsAppSVG />
-                <span>שאלו אותנו</span>
-              </a>
+              <p className="text-primary-foreground/50 text-[12px] md:text-[13px] leading-[1.7] flex-1">{desc}</p>
             </div>
           ))}
         </div>
