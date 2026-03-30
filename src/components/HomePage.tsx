@@ -121,7 +121,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Trust building - why choose us */}
       <LazySection rootMargin="300px" minHeight="400px">
         <Suspense fallback={null}>
-          <WhyUsSection setPage={setPage} />
+          <WhyUsSection />
         </Suspense>
       </LazySection>
 
@@ -135,14 +135,14 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Social proof - real reviews */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ReviewsSection setPage={setPage} />
+          <ReviewsSection />
         </Suspense>
       </LazySection>
 
       {/* Detailed services */}
       <LazySection rootMargin="200px" minHeight="300px">
         <Suspense fallback={null}>
-          <ServicesSection setPage={setPage} />
+          <ServicesSection />
         </Suspense>
       </LazySection>
 

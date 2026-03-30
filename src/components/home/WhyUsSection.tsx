@@ -1,5 +1,6 @@
 import type { Page } from "@/types/page";
 import mechanicImage from "@/assets/mechanic-work.webp";
+import InternalLink from "../InternalLink";
 
 const points = [
   { num: "01", title: "ניסיון של מעל 30 שנה", desc: "התחלנו ב-1993 ומאז טיפלנו באלפי רכבים. אנחנו יודעים לזהות בעיות במהירות ולחסוך לכם זמן וכסף." },
@@ -9,7 +10,7 @@ const points = [
   { num: "05", title: "ציוד מתקדם ומקצועי", desc: "דיאגנוסטיקה ממוחשבת, כלים מקצועיים ועדכונים שוטפים. כך אנחנו מזהים תקלות שאחרים מפספסים." },
 ];
 
-export default function WhyUsSection({ setPage }: { setPage: (p: Page) => void }) {
+export default function WhyUsSection() {
   return (
     <section className="bg-background relative overflow-hidden" dir="rtl" aria-label="למה לבחור בנו">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -57,8 +58,8 @@ export default function WhyUsSection({ setPage }: { setPage: (p: Page) => void }
               </div>
             ))}
             <div className="flex flex-wrap gap-3 pt-5 mt-1">
-              <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">טיפים מקצועיים בבלוג ←</button>
-              <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ←</button>
+              <InternalLink page="blog" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">טיפים מקצועיים בבלוג ←</InternalLink>
+              <InternalLink page="contact" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">צרו קשר ←</InternalLink>
             </div>
           </div>
         </div>
