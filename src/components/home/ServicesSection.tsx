@@ -109,7 +109,7 @@ export default function ServicesSection({ setPage }: { setPage: (p: Page) => voi
                 className="inline-flex items-center gap-1.5 text-[#25D366]/30 hover:text-[#25D366]/70 text-[10px] font-normal no-underline w-fit transition-colors duration-200"
               >
                 <WhatsAppSVG />
-                <span>תאמו טיפול</span>
+                <span>שאלו אותנו</span>
               </a>
             </div>
           ))}
