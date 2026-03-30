@@ -203,6 +203,20 @@ export default function FAQPage({ setPage }: { setPage: (p: Page) => void }) {
         </div>
       </section>
 
+      {/* Internal links */}
+      <section className="py-10 px-5 sm:px-6 border-t border-border bg-background">
+        <div className="max-w-[700px] mx-auto">
+          <p className="text-foreground/30 text-[11px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
+          <div className="flex flex-wrap gap-3">
+            <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך שלנו</button>
+            <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">מדריכים וטיפים מקצועיים</button>
+            <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">הסיפור שלנו</button>
+            <button onClick={() => setPage("gallery")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">תמונות מהמוסך</button>
+            <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור</button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-14 md:py-20 px-5 sm:px-6 bg-surface-dark">
         <div className="max-w-[600px] mx-auto text-center">
