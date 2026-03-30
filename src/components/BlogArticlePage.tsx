@@ -169,7 +169,7 @@ export default function BlogArticlePage({ slug, setPage }: BlogArticlePageProps)
             <div className="flex flex-wrap gap-3">
               {article.relatedService && (
                 <button
-                  onClick={() => setPage("services")}
+                  onClick={() => setPage("services", undefined, article.relatedServiceAnchor)}
                   className="bg-transparent border border-brand-red/20 text-brand-red text-[12px] font-bold px-4 py-2 cursor-pointer hover:bg-brand-red/5 transition-colors duration-200"
                 >
                   {article.relatedService} →
