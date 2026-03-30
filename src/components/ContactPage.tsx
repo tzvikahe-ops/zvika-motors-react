@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-bold text-[13px] text-foreground leading-tight">א׳-ה׳ 08:00–16:30</div>
-                <div className="text-[11px] text-muted-foreground mt-0.5">שעות פעילות</div>
+                <div className="text-[11px] text-muted-foreground mt-0.5">נשתדל לחזור בהקדם</div>
               </div>
             </div>
           </div>
