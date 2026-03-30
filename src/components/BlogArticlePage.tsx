@@ -64,6 +64,7 @@ function renderSection(section: ArticleSection, index: number) {
           {section.linkPage && (
             <InternalLink
               page={section.linkPage}
+              slug={section.linkSlug}
               className="text-brand-red font-bold hover:underline text-[14px] md:text-[15px] no-underline"
             >
               {section.linkText} →

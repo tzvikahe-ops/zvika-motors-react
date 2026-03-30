@@ -24,6 +24,7 @@ export interface ArticleSection {
   ctaHref?: string;
   linkText?: string; // for internal-link type
   linkPage?: Page;   // target page for internal link
+  linkSlug?: string; // slug for blog-article links
 }
 
 export const blogArticles: BlogArticle[] = [
