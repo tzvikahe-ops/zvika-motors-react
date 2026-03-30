@@ -74,6 +74,13 @@
       setP("og:url",c);
       setM('meta[name="twitter:title"]',s.t);
       setM('meta[name="twitter:description"]',s.d);
+      // Patch skeleton H1 to match route
+      var h1Map={"/services":"שירותי המוסך","/about":"אודות המוסך","/gallery":"הגלריה שלנו","/contact":"צרו קשר עם המוסך","/faq":"שאלות נפוצות","/blog":"הבלוג שלנו","/privacy":"מדיניות פרטיות","/accessibility":"הצהרת נגישות"};
+      var h1El=document.getElementById("seo-h1");
+      if(h1El){
+        if(p.indexOf("/blog/")===0){h1El.textContent=s.t.split(" | ")[0];}
+        else if(h1Map[p]){h1El.textContent=h1Map[p];}
+      }
       // Inject JSON-LD: BreadcrumbList for all non-home routes
       function addLD(obj){var sc=document.createElement("script");sc.type="application/ld+json";sc.textContent=JSON.stringify(obj);document.head.appendChild(sc);}
       var bn={"/":{n:"דף הבית"},"/services":{n:"שירותים"},"/about":{n:"אודות"},"/gallery":{n:"גלריה"},"/contact":{n:"צור קשר"},"/faq":{n:"שאלות נפוצות"},"/blog":{n:"בלוג"},"/privacy":{n:"מדיניות פרטיות"},"/accessibility":{n:"הצהרת נגישות"}};
@@ -260,7 +267,7 @@
       <div style="min-height:90svh;background:hsl(222,28%,9%);display:grid;grid-template-columns:1fr" dir="rtl">
         <div style="padding:5rem 1.5rem 3rem;display:flex;flex-direction:column;justify-content:center">
           <p style="color:rgba(255,255,255,0.2);font-size:11px;font-weight:700;letter-spacing:0.15em;margin:0 0 1.5rem">מאז 1993 · גבעת שאול, ירושלים</p>
-          <h1 style="margin:0;font-size:30px;font-weight:900;line-height:1.05;color:hsl(42,18%,94%)">המוסך שאפשר</h1>
+          <h1 id="seo-h1" style="margin:0;font-size:30px;font-weight:900;line-height:1.05;color:hsl(42,18%,94%)">המוסך שאפשר</h1>
           <p style="margin:0.25rem 0 0;font-size:30px;font-weight:900;line-height:1.05;color:hsl(2,58%,42%)">לסמוך עליו.</p>
           <p style="color:rgba(255,255,255,0.35);font-size:14px;line-height:1.9;margin:1.5rem 0;max-width:400px">טיפול מקצועי, מחירים שקופים, ובעל מקצוע שמדבר איתכם ישירות. בלי הפתעות, בלי עבודות מיותרות.</p>
         </div>
