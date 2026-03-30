@@ -121,7 +121,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
       {/* Trust building - why choose us */}
       <LazySection rootMargin="300px" minHeight="400px">
         <Suspense fallback={null}>
-          <WhyUsSection setPage={setPage} />
+          <WhyUsSection />
         </Suspense>
       </LazySection>
 
