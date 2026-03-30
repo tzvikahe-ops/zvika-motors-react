@@ -17,11 +17,22 @@ const ContactPage = lazy(() => import("@/components/ContactPage"));
 const AboutPage = lazy(() => import("@/components/AboutPage"));
 const PrivacyPolicy = lazy(() => import("@/components/PrivacyPolicy"));
 const AccessibilityStatement = lazy(() => import("@/components/AccessibilityStatement"));
-const MapSection = lazy(() => import("@/components/MapSection"));
+const MapSection = lazy(() => import("@/components/MapSection").catch(() => import("@/components/MapSection")));
 const ImageGeneratorPage = lazy(() => import("@/components/ImageGeneratorPage"));
 const FAQPage = lazy(() => import("@/components/FAQPage"));
 const BlogPage = lazy(() => import("@/components/BlogPage"));
 const BlogArticlePage = lazy(() => import("@/components/BlogArticlePage"));
+
+/** Prevents a single lazy-load failure from crashing the whole page */
+class LazyErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(err: Error, info: ErrorInfo) { console.error("LazyErrorBoundary:", err, info); }
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
 
 const Index = () => {
   const { currentPage, articleSlug, setPage } = usePageNavigation();
