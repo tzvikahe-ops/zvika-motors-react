@@ -1,8 +1,10 @@
 import garagePhoto from "@/assets/gallery-garage.webp";
 import { Camera, Phone } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
+import { usePageNavigation } from "@/hooks/use-page-navigation";
 
 export default function GalleryPage() {
+  const { setPage } = usePageNavigation();
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[1200px] mx-auto px-6 pt-0 md:pt-1 pb-16 md:pb-20">
@@ -62,6 +64,13 @@ export default function GalleryPage() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Internal links */}
+        <div className="max-w-[560px] mx-auto flex flex-wrap justify-center gap-3 mt-8">
+          <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך</button>
+          <button onClick={() => setPage("about")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">הסיפור שלנו</button>
+          <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר</button>
         </div>
       </div>
     </div>

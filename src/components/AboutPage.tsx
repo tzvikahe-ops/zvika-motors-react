@@ -1,6 +1,8 @@
 import { Shield, Users, Wrench, Clock, Star, CheckCircle, Heart, Eye, MapPin } from "lucide-react";
+import { usePageNavigation } from "@/hooks/use-page-navigation";
 
 const AboutPage = () => {
+  const { setPage } = usePageNavigation();
   const values = [
     { icon: <Eye className="w-5 h-5" />, title: "שקיפות מלאה", description: "לפני כל תיקון נסביר מה נמצא, מה צריך לתקן ומה יכול לחכות. לא נתקן דברים שלא צריך ולא נחליף חלקים בלי אישור מפורש שלכם." },
     { icon: <Heart className="w-5 h-5" />, title: "יחס אישי", description: "אצלנו מכירים את הלקוחות בשם. כשאתם מתקשרים, אתם מדברים ישירות עם הצוות המקצועי, לא עם מוקד שירות." },
@@ -236,6 +238,13 @@ const AboutPage = () => {
             <p>
               המוסך ממוקם ברחוב האופה 4 (בית הדפוס 24) בגבעת שאול, ירושלים, ומשרת לקוחות מכל רחבי העיר ומהסביבה - מבשרת ציון, מעלה אדומים ובית שמש. עם 98% לקוחות חוזרים ודירוג 4.8 בגוגל, זהו מוסך שהלקוחות ממליצים עליו בחום.
             </p>
+          </div>
+          {/* Internal links */}
+          <div className="mt-8 flex flex-wrap gap-3">
+            <button onClick={() => setPage("services")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שירותי המוסך שלנו</button>
+            <button onClick={() => setPage("faq")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">שאלות ותשובות נפוצות</button>
+            <button onClick={() => setPage("blog")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">מדריכים וטיפים מקצועיים</button>
+            <button onClick={() => setPage("contact")} className="text-[12px] text-foreground/50 hover:text-brand-red bg-transparent border border-border hover:border-brand-red/20 px-4 py-2 cursor-pointer transition-colors duration-200">צרו קשר ותאמו תור</button>
           </div>
         </div>
       </section>
