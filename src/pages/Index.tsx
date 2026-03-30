@@ -80,21 +80,23 @@ const Index = () => {
           <HomePage setPage={setPage} />
         </div>
         <Suspense fallback={null}>
-          {currentPage === "services" && <ServicesPage />}
-          {currentPage === "gallery" && <GalleryPage />}
-          {currentPage === "contact" && <ContactPage />}
-          {currentPage === "about" && <AboutPage />}
-          {currentPage === "privacy" && <PrivacyPolicy />}
-          {currentPage === "accessibility" && <AccessibilityStatement />}
-          {currentPage === "image-generator" && <ImageGeneratorPage />}
-          {currentPage === "faq" && <FAQPage />}
-          {currentPage === "blog" && <BlogPage />}
-          {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} />}
-          {(currentPage === "home" || currentPage === "contact") && (
-            <LazySection rootMargin="300px" minHeight="300px">
-              <MapSection />
-            </LazySection>
-          )}
+          <LazyErrorBoundary>
+            {currentPage === "services" && <ServicesPage />}
+            {currentPage === "gallery" && <GalleryPage />}
+            {currentPage === "contact" && <ContactPage />}
+            {currentPage === "about" && <AboutPage />}
+            {currentPage === "privacy" && <PrivacyPolicy />}
+            {currentPage === "accessibility" && <AccessibilityStatement />}
+            {currentPage === "image-generator" && <ImageGeneratorPage />}
+            {currentPage === "faq" && <FAQPage />}
+            {currentPage === "blog" && <BlogPage />}
+            {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} />}
+            {(currentPage === "home" || currentPage === "contact") && (
+              <LazySection rootMargin="300px" minHeight="300px">
+                <MapSection />
+              </LazySection>
+            )}
+          </LazyErrorBoundary>
         </Suspense>
       </main>
       <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
