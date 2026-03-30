@@ -111,6 +111,12 @@
         bcItems.push({"@type":"ListItem",position:2,name:bn[p].n});
       }
       addLD({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:bcItems});
+      // Article JSON-LD + og:type for blog articles
+      if(p.indexOf("/blog/")===0&&s.dt){
+        setP("og:type","article");
+        var artName=s.t.split(" | ")[0];
+        addLD({"@context":"https://schema.org","@type":"Article",headline:artName,description:s.d,datePublished:s.dt,dateModified:s.dt,url:c,inLanguage:"he",author:{"@type":"Organization",name:"המוסך של צביקה - אור-צת שירותי רכב",url:B},publisher:{"@type":"Organization",name:"המוסך של צביקה - אור-צת שירותי רכב",url:B,logo:{"@type":"ImageObject",url:B+"/favicon.png"}},mainEntityOfPage:{"@type":"WebPage","@id":c},image:B+"/og-home.jpg"});
+      }
       // FAQPage JSON-LD for /faq
       if(p==="/faq"){
         addLD({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
