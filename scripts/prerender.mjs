@@ -65,12 +65,14 @@ const routes = [
     title: "מדיניות פרטיות | המוסך של צביקה – אור-צת שירותי רכב",
     description:
       "מדיניות הפרטיות של המוסך של צביקה – אור-צת שירותי רכב. מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
+    robots: "noindex, follow",
   },
   {
     path: "/accessibility",
     title: "הצהרת נגישות | המוסך של צביקה – אור-צת שירותי רכב",
     description:
       "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
+    robots: "noindex, follow",
   },
   // Blog articles
   { path: "/blog/איך-לבחור-מוסך-אמין-בירושלים", title: "איך לבחור מוסך אמין בירושלים | בלוג המוסך של צביקה", description: "מחפשים מוסך אמין בירושלים? מדריך מקיף עם טיפים מעשיים לבחירת מוסך מקצועי, שקוף והוגן באזור ירושלים וגבעת שאול." },
@@ -89,13 +91,33 @@ function escapeForAttr(str) {
   return str.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
-function patchHtml(html, { path, title, description }) {
+function getStaticH1(path, title) {
+  const h1Map = {
+    "/services": "שירותי המוסך",
+    "/about": "אודות המוסך",
+    "/gallery": "הגלריה שלנו",
+    "/contact": "צרו קשר עם המוסך",
+    "/faq": "שאלות נפוצות",
+    "/blog": "הבלוג שלנו",
+    "/privacy": "מדיניות פרטיות",
+    "/accessibility": "הצהרת נגישות",
+  };
+
+  if (path.startsWith("/blog/")) {
+    return title.split(" | ")[0];
+  }
+
+  return h1Map[path] || "המוסך שאפשר";
+}
+
+function patchHtml(html, { path, title, description, robots }) {
   const canonicalUrl = path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
   const safeTitle = escapeForAttr(title);
   const safeDesc = escapeForAttr(description);
   const safeUrl = escapeForAttr(canonicalUrl);
+  const safeH1 = escapeForAttr(getStaticH1(path, title));
 
-  return html
+  let patched = html
     // <title>
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     // meta description
@@ -106,6 +128,16 @@ function patchHtml(html, { path, title, description }) {
     // canonical href
     .replace(
       /(<link\s+rel="canonical"\s+href=")[^"]*(")/,
+      `$1${safeUrl}$2`
+    )
+    // hreflang he-IL
+    .replace(
+      /(<link\s+rel="alternate"\s+hreflang="he-IL"\s+href=")[^"]*(")/,
+      `$1${safeUrl}$2`
+    )
+    // hreflang x-default
+    .replace(
+      /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")[^"]*(")/,
       `$1${safeUrl}$2`
     )
     // og:title
@@ -132,7 +164,21 @@ function patchHtml(html, { path, title, description }) {
     .replace(
       /(<meta\s+name="twitter:description"\s+content=")[^"]*(")/,
       `$1${safeDesc}$2`
+    )
+    // Static skeleton H1 for no-JS crawlers
+    .replace(
+      /(<h1[^>]*id="seo-h1"[^>]*>)[^<]*(<\/h1>)/,
+      `$1${safeH1}$2`
     );
+
+  if (robots) {
+    patched = patched.replace(
+      /(<meta\s+name="robots"\s+content=")[^"]*(")/,
+      `$1${escapeForAttr(robots)}$2`
+    );
+  }
+
+  return patched;
 }
 
 const baseHtml = readFileSync(join(distDir, "index.html"), "utf-8");
