@@ -18,7 +18,7 @@ export default function GalleryPage() {
         {/* Real photo */}
         <div className="max-w-[720px] mx-auto mb-10">
           <div className="rounded-lg overflow-hidden">
-            <div className="aspect-[4/3] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden">
               <img
                 src={garagePhoto}
                 alt="חזית המוסך של צביקה בגבעת שאול"
