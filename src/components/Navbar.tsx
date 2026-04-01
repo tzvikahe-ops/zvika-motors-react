@@ -8,6 +8,7 @@ import type { Page } from "@/types/page";
 interface NavbarProps {
   currentPage: Page;
   setPage: (p: Page) => void;
+  bannerVisible?: boolean;
 }
 
 const pageToPath: Record<string, string> = {

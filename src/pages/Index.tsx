@@ -74,18 +74,25 @@ const Index = () => {
     <div className="min-h-screen bg-background font-sans">
       <SeoHead />
       {/* Holiday banner - until April 9, 2026 */}
-      {new Date() < new Date("2026-04-10T00:00:00+03:00") && (
-        <>
-          <div
-            className="fixed top-0 left-0 right-0 z-[60] bg-[hsl(43,60%,85%)] text-[hsl(30,30%,18%)] text-center py-2.5 md:py-2 px-4 text-[13px] md:text-sm font-bold tracking-wide shadow-sm"
-            dir="rtl"
-          >
-            🍷 חג פסח כשר ושמח! המוסך סגור לחופשת חג עד ה-9.4 🍷
-          </div>
-          <div className="h-[40px] md:h-[36px]" />
-        </>
-      )}
-      <Navbar currentPage={currentPage} setPage={setPage} />
+      {(() => {
+        const showBanner = new Date() < new Date("2026-04-10T00:00:00+03:00");
+        return (
+          <>
+            {showBanner && (
+              <>
+                <div
+                  className="fixed top-0 left-0 right-0 z-[60] bg-[hsl(43,60%,85%)] text-[hsl(30,30%,18%)] text-center py-2.5 md:py-2 px-4 text-[13px] md:text-sm font-bold tracking-wide shadow-sm"
+                  dir="rtl"
+                >
+                  🍷 חג פסח כשר ושמח! המוסך סגור לחופשת חג עד ה-9.4 🍷
+                </div>
+                <div className="h-[40px] md:h-[36px]" />
+              </>
+            )}
+            <Navbar currentPage={currentPage} setPage={setPage} bannerVisible={showBanner} />
+          </>
+        );
+      })()}
 
       <main id="main-content">
         <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
