@@ -73,6 +73,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <SeoHead />
+      {/* Holiday banner */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-brand-red text-primary-foreground text-center py-2 px-4 text-sm font-medium" dir="rtl">
+        🍷 חג פסח כשר ושמח! המוסך סגור לחופשת חג עד ה-9.4 🍷
+      </div>
+      <div className="h-[36px]" /> {/* Spacer for fixed banner */}
       <Navbar currentPage={currentPage} setPage={setPage} />
 
       <main id="main-content">
