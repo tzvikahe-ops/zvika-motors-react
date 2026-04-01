@@ -2,6 +2,7 @@ import { useState } from "react";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 import { MenuIcon, CloseIcon } from "./Icons";
 import BrandLockup from "./BrandLockup";
+import { PASSOVER_BANNER_VISIBLE } from "./PassoverBanner";
 
 import type { Page } from "@/types/page";
 
