@@ -10,7 +10,7 @@ export default function PassoverBanner() {
       className="fixed bottom-24 md:bottom-6 right-5 z-50 bg-[hsl(43,60%,85%)] text-[hsl(30,30%,18%)] py-1.5 px-3 text-[11px] font-bold rounded-lg shadow-md"
       dir="rtl"
     >
-      🍷 חג פסח כשר ושמח!
+      🍷 חג פסח כשר ושמח! המוסך סגור לחופשת חג עד ה-9.4 🍷
     </div>
   );
 }
