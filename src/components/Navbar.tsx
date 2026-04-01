@@ -8,6 +8,7 @@ import type { Page } from "@/types/page";
 interface NavbarProps {
   currentPage: Page;
   setPage: (p: Page) => void;
+  bannerVisible?: boolean;
 }
 
 const pageToPath: Record<string, string> = {
@@ -20,8 +21,9 @@ const pageToPath: Record<string, string> = {
   contact: "/contact",
 };
 
-export default function Navbar({ currentPage, setPage }: NavbarProps) {
+export default function Navbar({ currentPage, setPage, bannerVisible }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const topOffset = bannerVisible ? "top-[40px] md:top-[36px]" : "top-0";
 
   const links: { label: string; page: Page }[] = [
     { label: "בית", page: "home" },
@@ -35,7 +37,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden"
+      className={`fixed ${topOffset} left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden`}
       dir="rtl"
     >
         <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row-reverse md:flex-row items-center justify-between h-[78px] md:h-[72px]">
