@@ -76,7 +76,7 @@ const Index = () => {
       {/* Holiday banner - show until April 9, 2026 */}
       {new Date() < new Date("2026-04-10T00:00:00+03:00") && (
         <>
-          <div className="fixed top-0 left-0 right-0 z-[60] bg-brand-red text-primary-foreground text-center py-2 px-4 text-sm font-medium" dir="rtl">
+          <div className="fixed top-0 left-0 right-0 z-[60] bg-[hsl(43,55%,88%)] text-[hsl(30,20%,25%)] text-center py-2 px-4 text-sm font-medium" dir="rtl">
             🍷 חג פסח כשר ושמח! המוסך סגור לחופשת חג עד ה-9.4 🍷
           </div>
           <div className="h-[36px]" />
