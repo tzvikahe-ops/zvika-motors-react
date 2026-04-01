@@ -3,7 +3,7 @@ import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
 import SeoHead from "@/components/SeoHead";
 import Navbar from "@/components/Navbar";
-import PassoverBanner, { PASSOVER_BANNER_VISIBLE } from "@/components/PassoverBanner";
+import PassoverBanner from "@/components/PassoverBanner";
 import HomePage from "@/components/HomePage";
 import LazySection from "@/components/LazySection";
 import { WhatsAppIcon } from "@/components/Icons";
