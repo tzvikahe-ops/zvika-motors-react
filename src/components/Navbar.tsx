@@ -21,8 +21,9 @@ const pageToPath: Record<string, string> = {
   contact: "/contact",
 };
 
-export default function Navbar({ currentPage, setPage }: NavbarProps) {
+export default function Navbar({ currentPage, setPage, bannerVisible }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const topOffset = bannerVisible ? "top-[40px] md:top-[36px]" : "top-0";
 
   const links: { label: string; page: Page }[] = [
     { label: "בית", page: "home" },
