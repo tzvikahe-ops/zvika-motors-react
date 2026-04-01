@@ -37,7 +37,7 @@ export default function Navbar({ currentPage, setPage, bannerVisible }: NavbarPr
 
   return (
     <nav
-      className="fixed top-[40px] md:top-[36px] left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden"
+      className={`fixed ${topOffset} left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden`}
       dir="rtl"
     >
         <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row-reverse md:flex-row items-center justify-between h-[78px] md:h-[72px]">
