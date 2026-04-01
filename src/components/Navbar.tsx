@@ -2,13 +2,13 @@ import { useState } from "react";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 import { MenuIcon, CloseIcon } from "./Icons";
 import BrandLockup from "./BrandLockup";
+import { PASSOVER_BANNER_VISIBLE } from "./PassoverBanner";
 
 import type { Page } from "@/types/page";
 
 interface NavbarProps {
   currentPage: Page;
   setPage: (p: Page) => void;
-  bannerVisible?: boolean;
 }
 
 const pageToPath: Record<string, string> = {
@@ -21,9 +21,8 @@ const pageToPath: Record<string, string> = {
   contact: "/contact",
 };
 
-export default function Navbar({ currentPage, setPage, bannerVisible }: NavbarProps) {
+export default function Navbar({ currentPage, setPage }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const topOffset = bannerVisible ? "top-[40px] md:top-[36px]" : "top-0";
 
   const links: { label: string; page: Page }[] = [
     { label: "בית", page: "home" },
@@ -37,7 +36,7 @@ export default function Navbar({ currentPage, setPage, bannerVisible }: NavbarPr
 
   return (
     <nav
-      className={`fixed ${topOffset} left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden`}
+      className={`fixed left-0 right-0 z-50 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden ${PASSOVER_BANNER_VISIBLE ? "top-[32px] md:top-[30px]" : "top-0"}`}
       dir="rtl"
     >
         <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row-reverse md:flex-row items-center justify-between h-[78px] md:h-[72px]">
