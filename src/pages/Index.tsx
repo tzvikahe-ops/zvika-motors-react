@@ -75,7 +75,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-sans">
       <SeoHead />
       <PassoverBanner />
-      <Navbar currentPage={currentPage} setPage={setPage} bannerVisible={PASSOVER_BANNER_VISIBLE} />
+      <Navbar currentPage={currentPage} setPage={setPage} />
 
       <main id="main-content">
         <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
