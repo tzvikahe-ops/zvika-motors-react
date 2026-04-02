@@ -117,7 +117,7 @@ function getStaticH1(path, title) {
 }
 
 function patchHtml(html, { path, title, description, robots, date }) {
-  const canonicalUrl = path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
+  const canonicalUrl = path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}/`;
   const safeTitle = escapeForAttr(title);
   const safeDesc = escapeForAttr(description);
   const safeUrl = escapeForAttr(canonicalUrl);
