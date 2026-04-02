@@ -53,7 +53,7 @@ export function usePageNavigation() {
   const setPage = useCallback(
     (page: Page, slug?: string, hash?: string) => {
       if (page === "blog-article" && slug) {
-        navigate(`/blog/${slug}/index.html`);
+        navigate(`/blog/${slug}/`);
       } else {
         const path = pageToPath[page] || "/";
         navigate(path);
