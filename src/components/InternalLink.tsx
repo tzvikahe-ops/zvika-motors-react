@@ -5,20 +5,20 @@ import type { MouseEvent, ReactNode } from "react";
 /** Maps a Page (and optional slug/hash) to a crawlable href */
 export function pageToHref(page: Page, slug?: string, hash?: string): string {
   if (page === "blog-article" && slug) {
-    return `/blog/${slug}${hash ? `#${hash}` : ""}`;
+    return `/blog/${slug}/${hash ? `#${hash}` : ""}`;
   }
   const paths: Record<Page, string> = {
     home: "/",
-    services: "/services",
-    about: "/about",
-    gallery: "/gallery",
-    contact: "/contact",
-    faq: "/faq",
-    blog: "/blog",
-    "blog-article": "/blog",
-    privacy: "/privacy",
-    accessibility: "/accessibility",
-    "image-generator": "/image-generator",
+    services: "/services/",
+    about: "/about/",
+    gallery: "/gallery/",
+    contact: "/contact/",
+    faq: "/faq/",
+    blog: "/blog/",
+    "blog-article": "/blog/",
+    privacy: "/privacy/",
+    accessibility: "/accessibility/",
+    "image-generator": "/image-generator/",
   };
   return `${paths[page] || "/"}${hash ? `#${hash}` : ""}`;
 }
