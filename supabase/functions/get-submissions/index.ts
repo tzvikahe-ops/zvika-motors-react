@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "https://esm.sh/zod@3.23.8";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -6,7 +7,9 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-const ADMIN_PASSWORD = "zvika2024!";
+const BodySchema = z.object({
+  password: z.string().min(1).max(255),
+});
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -14,7 +17,24 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { password } = await req.json();
+    const parsed = BodySchema.safeParse(await req.json());
+    if (!parsed.success) {
+      return new Response(
+        JSON.stringify({ error: "קלט לא תקין" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const { password } = parsed.data;
+
+    const ADMIN_PASSWORD = Deno.env.get("ADMIN_PASSWORD");
+    if (!ADMIN_PASSWORD) {
+      console.error("ADMIN_PASSWORD secret not configured");
+      return new Response(
+        JSON.stringify({ error: "שגיאת שרת" }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     if (password !== ADMIN_PASSWORD) {
       return new Response(
