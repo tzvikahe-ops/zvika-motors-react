@@ -1,24 +1,32 @@
 import { Navigate, useLocation } from "react-router-dom";
 
-function getCleanPath(pathname: string): string | null {
-  if (!pathname.includes("index.html")) return null;
-  // Strip /index.html (with optional trailing slash) → clean path with trailing slash
-  const cleaned = pathname.replace(/\/index\.html\/?$/, "/") || "/";
-  return cleaned === pathname ? null : cleaned;
-}
-
 /**
- * Synchronously redirects any /…/index.html or /…/index.html/ URL
- * to the clean trailing-slash version. Rendered outside <Routes>.
+ * Synchronously redirects:
+ * 1. Any /…/index.html or /…/index.html/ → clean trailing-slash URL
+ * 2. Any /blog/<slug> (no trailing slash) → /blog/<slug>/
  */
 export default function IndexHtmlRedirect() {
   const location = useLocation();
-  const cleanPath = getCleanPath(location.pathname);
+  const { pathname } = location;
 
-  if (cleanPath) {
+  // 1. Strip index.html (with optional trailing slash)
+  if (pathname.includes("index.html")) {
+    const cleaned = pathname.replace(/\/index\.html\/?$/, "/") || "/";
+    if (cleaned !== pathname) {
+      return (
+        <Navigate
+          to={{ pathname: cleaned, search: location.search, hash: location.hash }}
+          replace
+        />
+      );
+    }
+  }
+
+  // 2. Blog slug without trailing slash → add it
+  if (/^\/blog\/[^/]+$/.test(pathname)) {
     return (
       <Navigate
-        to={{ pathname: cleanPath, search: location.search, hash: location.hash }}
+        to={{ pathname: pathname + "/", search: location.search, hash: location.hash }}
         replace
       />
     );
