@@ -33,5 +33,6 @@ Allow: /
 Disallow: /image-generator
 Disallow: /image-studio
 Disallow: /admin-panel
+Disallow: /*/index.html
 
 Sitemap: https://www.ortzat.co.il/sitemap.xml
