@@ -140,7 +140,7 @@ export default function SeoHead() {
     ? getBlogArticleSeo(normalizedPathname)
     : seoConfig[normalizedPathname] || seoConfig["/"];
 
-  const canonicalUrl = normalizedPathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${normalizedPathname}`;
+  const canonicalUrl = normalizedPathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${normalizedPathname}/`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
