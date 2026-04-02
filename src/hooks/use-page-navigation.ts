@@ -13,16 +13,16 @@ function normalizePathname(pathname: string): string {
 
 const pageToPath: Record<Page, string> = {
   home: "/",
-  services: "/services/index.html",
-  about: "/about/index.html",
-  gallery: "/gallery/index.html",
-  contact: "/contact/index.html",
-  faq: "/faq/index.html",
-  blog: "/blog/index.html",
-  "blog-article": "/blog/index.html", // handled specially with slug
-  privacy: "/privacy/index.html",
-  accessibility: "/accessibility/index.html",
-  "image-generator": "/image-generator/index.html",
+  services: "/services/",
+  about: "/about/",
+  gallery: "/gallery/",
+  contact: "/contact/",
+  faq: "/faq/",
+  blog: "/blog/",
+  "blog-article": "/blog/", // handled specially with slug
+  privacy: "/privacy/",
+  accessibility: "/accessibility/",
+  "image-generator": "/image-generator/",
 };
 
 const pathToPage: Record<string, Page> = {
