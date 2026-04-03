@@ -85,7 +85,7 @@ export default function AuthPage() {
             </div>
 
             {error && <p className="text-destructive text-sm">{error}</p>}
-            {message && <p className="text-green-600 text-sm">{message}</p>}
+            {message && <p className="text-sm text-foreground">{message}</p>}
 
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "טוען..." : isLogin ? "התחבר" : "הירשם"}
