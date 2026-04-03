@@ -18,7 +18,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       <div className="hidden md:flex items-center gap-2.5">
         <img
           src={logoText}
-          alt="המוסך של צביקה - אור-צת שירותי רכב"
+          alt="המוסך של צביקה (אור-צת)"
           className="h-[50px] w-auto max-w-[220px] object-contain object-right shrink"
           width={920}
           height={95}
@@ -37,7 +37,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
       <div className="flex md:hidden items-center gap-1 overflow-hidden max-w-full">
         <img
           src={logoText}
-          alt="המוסך של צביקה - אור-צת שירותי רכב"
+          alt="המוסך של צביקה (אור-צת)"
           className="h-[52px] w-auto max-w-[200px] object-contain object-right shrink"
           width={920}
           height={95}

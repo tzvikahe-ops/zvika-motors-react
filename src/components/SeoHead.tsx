@@ -70,14 +70,14 @@ const seoConfig: Record<string, PageSeo> = {
     breadcrumbName: "בלוג",
   },
   "/privacy": {
-    title: "מדיניות פרטיות | המוסך של צביקה - אור-צת שירותי רכב",
+    title: "מדיניות פרטיות | המוסך של צביקה (אור-צת)",
     description:
-      "מדיניות הפרטיות של המוסך של צביקה - אור-צת שירותי רכב. מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
+      "מדיניות הפרטיות של המוסך של צביקה (אור-צת). מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
     breadcrumbName: "מדיניות פרטיות",
     robots: "noindex, follow",
   },
   "/accessibility": {
-    title: "הצהרת נגישות | המוסך של צביקה - אור-צת שירותי רכב",
+    title: "הצהרת נגישות | המוסך של צביקה (אור-צת)",
     description:
       "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
     breadcrumbName: "הצהרת נגישות",
@@ -173,7 +173,7 @@ export default function SeoHead() {
         <meta property="article:published_time" content={seo.datePublished} />
       )}
       {seo.datePublished && (
-        <meta property="article:author" content="המוסך של צביקה - אור-צת שירותי רכב" />
+        <meta property="article:author" content="המוסך של צביקה (אור-צת)" />
       )}
 
       {/* Twitter Card */}
@@ -205,12 +205,12 @@ export default function SeoHead() {
             },
             author: {
               "@type": "Organization",
-              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              name: "המוסך של צביקה (אור-צת)",
               url: BASE_URL,
             },
             publisher: {
               "@type": "Organization",
-              name: "המוסך של צביקה - אור-צת שירותי רכב",
+              name: "המוסך של צביקה (אור-צת)",
               url: BASE_URL,
               logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.png` },
             },
