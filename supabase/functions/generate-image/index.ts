@@ -38,13 +38,15 @@ serve(async (req) => {
       );
     }
 
-    // ── 2. ADMIN ROLE CHECK ───────────────────────────────────────────────────
-    // Role is set via Supabase Dashboard → Users → app_metadata: { "role": "admin" }
-    const isAdmin =
-      user.app_metadata?.role === "admin" ||
-      user.user_metadata?.role === "admin";
+    // ── 2. ADMIN ROLE CHECK (via user_roles table) ──────────────────────────
+    const { data: roleRow } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", user.id)
+      .eq("role", "admin")
+      .maybeSingle();
 
-    if (!isAdmin) {
+    if (!roleRow) {
       console.warn(`generate-image: non-admin attempt by user ${user.id}`);
       return new Response(
         JSON.stringify({ error: "Forbidden" }),
