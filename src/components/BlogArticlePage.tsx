@@ -61,7 +61,7 @@ function renderSection(section: ArticleSection, index: number) {
       return (
         <blockquote key={index} className="border-r-4 border-brand-red/50 pr-5 my-6 bg-surface-warm p-5">
           <p className="text-foreground/80 text-[14px] md:text-[15px] leading-[2] italic mb-3">{section.text}</p>
-          <cite className="text-foreground/40 text-[12px] font-bold not-italic">— צביקה, בעל המוסך של צביקה (אור-צת), ירושלים</cite>
+          <cite className="text-foreground/40 text-[12px] font-bold not-italic"><cite className="text-foreground/40 text-[12px] font-bold not-italic">צביקה, בעל המוסך של צביקה (אור-צת), ירושלים</cite> של צביקה (אור-צת), ירושלים</cite>
         </blockquote>
       );
     case "internal-link":
