@@ -35,7 +35,7 @@ const localBusinessSchema = {
     streetAddress: "האופה 4",
     addressLocality: "ירושלים",
     addressRegion: "גבעת שאול",
-    postalCode: "9546313",
+    postalCode: "9548004",
     addressCountry: "IL",
   },
   geo: {
