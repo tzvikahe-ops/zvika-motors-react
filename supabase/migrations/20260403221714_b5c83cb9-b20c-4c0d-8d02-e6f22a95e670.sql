@@ -1,0 +1,2 @@
+ALTER TABLE public.generated_images ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id);
+CREATE INDEX IF NOT EXISTS idx_generated_images_user_created ON public.generated_images (user_id, created_at);
