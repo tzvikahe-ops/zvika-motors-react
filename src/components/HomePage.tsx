@@ -14,7 +14,18 @@ import type { Page } from "@/types/page";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "AutoRepair"],
+  "@id": "https://www.ortzat.co.il/#business",
   name: "המוסך של צביקה - אור-צת שירותי רכב",
+  alternateName: [
+    "אור צת",
+    "אור-צת",
+    "מוסך אור צת",
+    "אור צת שירותי רכב",
+    "אור-צת שירותי רכב",
+    "המוסך של צביקה",
+    "zvika motors",
+    "Zvika Motors",
+  ],
   image: "https://www.ortzat.co.il/og-image.jpg",
   url: "https://www.ortzat.co.il",
   telephone: "02-6514446",

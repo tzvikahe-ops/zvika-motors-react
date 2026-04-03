@@ -273,7 +273,9 @@ const AboutPage = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "AutoRepair",
+        "@id": "https://www.ortzat.co.il/#business",
         "name": "המוסך של צביקה - אור-צת שירותי רכב",
+        "alternateName": ["אור צת", "אור-צת", "מוסך אור צת", "אור צת שירותי רכב", "אור-צת שירותי רכב", "המוסך של צביקה"],
         "url": "https://www.ortzat.co.il/about",
         "description": "מוסך משפחתי מקצועי בירושלים עם מעל 30 שנות ניסיון. שירות אישי, שקיפות מלאה ואחריות על כל עבודה.",
         "foundingDate": "1993",
