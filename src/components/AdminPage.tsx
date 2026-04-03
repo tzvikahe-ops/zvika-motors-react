@@ -34,6 +34,9 @@ export default function AdminPage() {
 
       setSubmissions(data.submissions);
       setAuthenticated(true);
+
+      // Auto-assign admin role if applicable
+      supabase.functions.invoke("assign-admin-role").catch(() => {});
     } catch {
       setError("שגיאה בהתחברות");
     } finally {
