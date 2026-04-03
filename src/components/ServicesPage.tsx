@@ -110,10 +110,15 @@ const ServicesPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
+    "@id": "https://www.ortzat.co.il/#business",
     name: "המוסך של צביקה - אור-צת שירותי רכב",
     url: "https://www.ortzat.co.il/services",
     telephone: "+972-2-6514446",
     areaServed: { "@type": "City", name: "ירושלים" },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "[data-speakable]"],
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "שירותי מוסך",
