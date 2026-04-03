@@ -19,7 +19,7 @@ const AboutPage = () => {
 
   const stats = [
     { value: "30+", label: "שנות ניסיון" },
-    { value: "98%", label: "לקוחות חוזרים" },
+    { value: "96.1%", label: "מרוצה מאוד" },
     { value: "4.8", label: "דירוג בגוגל" },
     { value: "1993", label: "שנת הקמה" },
   ];
@@ -117,8 +117,53 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* SATISFACTION SURVEY */}
+      <section className="py-16 md:py-24 bg-background" aria-label="סקר שביעות רצון לקוחות">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-6">
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מה הלקוחות אומרים</p>
+            <div className="w-10 h-[2px] bg-brand-red/50" />
+          </div>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">
+            שביעות רצון לקוחות — הנתונים האמיתיים
+          </h2>
+          <p className="text-muted-foreground text-center mb-10 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
+            אנחנו מקיימים מעקב פרטני אחר כל שירות וכל לקוח. הנה מה שהלקוחות מדווחים.
+          </p>
+
+          {/* Big number */}
+          <div className="text-center mb-10">
+            <p className="text-[64px] md:text-[80px] font-black text-brand-red leading-none tracking-[-0.04em]">96.1%</p>
+            <p className="text-foreground/60 text-[15px] md:text-[16px] font-bold mt-2">מרוצה מאוד מהשירות</p>
+            <p className="text-foreground/35 text-[12px] mt-1">מתוך 594 משובים שנאספו</p>
+          </div>
+
+          {/* Breakdown */}
+          <div className="border border-border divide-y divide-border">
+            {[
+              { label: "מרוצה מאוד", count: 571, pct: "96.1%", color: "bg-green-600" },
+              { label: "מרוצה", count: 9, pct: "1.5%", color: "bg-blue-500" },
+              { label: "אין מענה", count: 7, pct: "1.2%", color: "bg-yellow-400" },
+              { label: "לא להתקשר", count: 2, pct: "0.3%", color: "bg-gray-400" },
+              { label: "לא טופל", count: 4, pct: "0.7%", color: "bg-slate-600" },
+              { label: "לא מרוצה", count: 1, pct: "0.2%", color: "bg-red-500" },
+            ].map((row) => (
+              <div key={row.label} className="flex items-center gap-4 px-5 py-3">
+                <div className={`w-3 h-3 rounded-full shrink-0 ${row.color}`} />
+                <p className="text-foreground/70 text-[13px] md:text-[14px] flex-1">{row.label}</p>
+                <p className="text-foreground/50 text-[13px] tabular-nums">{row.count}</p>
+                <p className="text-foreground font-bold text-[13px] md:text-[14px] tabular-nums w-14 text-left">{row.pct}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-foreground/35 text-[11px] text-center mt-4">נתונים מסקר שביעות רצון פנימי, אור-צת שירותי רכב</p>
+        </div>
+      </section>
+
       {/* VALUES */}
-      <section className="py-16 md:py-24 bg-background" aria-label="הערכים שלנו">
+      <section className="py-16 md:py-24 bg-surface-warm" aria-label="הערכים שלנו">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <div className="w-10 h-[2px] bg-brand-red/50" />
