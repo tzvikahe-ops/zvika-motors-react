@@ -126,7 +126,7 @@ const AboutPage = () => {
             <div className="w-10 h-[2px] bg-brand-red/50" />
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground text-center mb-4 tracking-[-0.03em]">
-            שביעות רצון לקוחות — הנתונים האמיתיים
+            שביעות רצון לקוחות - הנתונים האמיתיים
           </h2>
           <p className="text-muted-foreground text-center mb-10 max-w-lg mx-auto leading-[1.8] text-[13px] md:text-[14px]">
             אנחנו מקיימים מעקב פרטני אחר כל שירות וכל לקוח. הנה מה שהלקוחות מדווחים.
