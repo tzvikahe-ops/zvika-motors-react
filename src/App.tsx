@@ -9,6 +9,7 @@ import IndexHtmlRedirect from "./components/IndexHtmlRedirect.tsx";
 
 const ImageStudioPage = lazy(() => import("./components/ImageStudioPage.tsx"));
 const AdminPage = lazy(() => import("./components/AdminPage.tsx"));
+const AuthPage = lazy(() => import("./components/AuthPage.tsx"));
 
 // Lazy load toast components - not needed at initial render
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
