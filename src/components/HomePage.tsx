@@ -28,7 +28,7 @@ const localBusinessSchema = {
   ],
   image: "https://www.ortzat.co.il/og-image.jpg",
   url: "https://www.ortzat.co.il",
-  telephone: "02-6514446",
+  telephone: "+972-2-6514446",
   email: "ortzat1@gmail.com",
   address: {
     "@type": "PostalAddress",
