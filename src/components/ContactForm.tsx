@@ -5,14 +5,21 @@ import { trackFormSubmit } from "@/lib/analytics";
 
 const RECAPTCHA_SITE_KEY = "6LddXZosAAAAAMqBHbxXsPEvVgcCZPiL9y5E2LZw";
 
+// סינון תווי בקרת RTL מסוכנים (U+202A–U+202E, U+2066–U+2069)
+function stripRTLChars(value: string): string {
+  return value.replace(/[\u202A-\u202E\u2066-\u2069]/g, "");
+}
+
 const contactSchema = z.object({
   name: z.string().trim().min(2, "שם חייב להכיל לפחות 2 תווים").max(100),
   phone: z
     .string()
     .trim()
-    .min(9, "מספר טלפון לא תקין")
     .max(20)
-    .regex(/^[\d\-\+\s\(\)]+$/, "מספר טלפון לא תקין"),
+    .refine((val) => {
+      const cleaned = val.replace(/[\s\-\(\)]/g, "");
+      return /^(\+972|0)(5[0-9]|7[2-9])\d{7}$/.test(cleaned);
+    }, "יש להזין מספר נייד ישראלי תקין (050-0000000)"),
   message: z.string().trim().max(1000).optional(),
 });
 
@@ -34,7 +41,7 @@ export default function ContactForm() {
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
-      setForm((p) => ({ ...p, [name]: value }));
+      setForm((p) => ({ ...p, [name]: stripRTLChars(value) }));
       setErrors((p) => ({ ...p, [name]: "" }));
     },
     []
