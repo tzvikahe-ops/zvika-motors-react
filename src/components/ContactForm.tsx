@@ -21,6 +21,7 @@ const contactSchema = z.object({
       return /^(\+972|0)(5[0-9]|7[2-9])\d{7}$/.test(cleaned);
     }, "יש להזין מספר נייד ישראלי תקין (050-0000000)"),
   message: z.string().trim().max(1000).optional(),
+  consent: z.literal(true, { errorMap: () => ({ message: "יש לאשר את תנאי השימוש כדי להמשיך" }) }),
 });
 
 declare global {
@@ -34,6 +35,7 @@ declare global {
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -52,7 +54,7 @@ export default function ContactForm() {
     setErrors({});
     setErrorMsg("");
 
-    const result = contactSchema.safeParse(form);
+    const result = contactSchema.safeParse({ ...form, consent });
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.issues.forEach((i) => {
@@ -80,7 +82,7 @@ export default function ContactForm() {
       });
 
       const { data, error } = await supabase.functions.invoke("verify-recaptcha", {
-        body: { token, ...result.data },
+        body: { token, ...result.data, consentAt: new Date().toISOString() },
       });
 
       if (error || !data?.success) {
@@ -90,6 +92,7 @@ export default function ContactForm() {
       setStatus("success");
       trackFormSubmit(); /* GA4: form_submit */
       setForm({ name: "", phone: "", message: "" });
+      setConsent(false);
     } catch (err: any) {
       setStatus("error");
       setErrorMsg(err.message || "שגיאה בשליחת הטופס, נסו שוב");
@@ -173,6 +176,27 @@ export default function ContactForm() {
             className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-[13px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-red/30 focus:border-brand-red transition-colors resize-none"
             placeholder="ספרו לנו על הרכב והבעיה (אופציונלי)"
           />
+        </div>
+
+        <div>
+          <label className="flex items-start gap-2.5 cursor-pointer group">
+            <input
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => {
+                setConsent(e.target.checked);
+                setErrors((p) => ({ ...p, consent: "" }));
+              }}
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-input accent-brand-red cursor-pointer"
+            />
+            <span className="text-[12px] text-muted-foreground leading-relaxed">
+              אני מסכים/ה שהמוסך של צביקה ישמור את פרטיי (שם וטלפון) ויצור איתי קשר בנוגע לפנייה זו.{" "}
+              <a href="/privacy" className="underline hover:text-foreground transition-colors">מדיניות פרטיות</a>
+            </span>
+          </label>
+          {errors.consent && (
+            <p className="text-destructive text-[11px] mt-1 mr-6">{errors.consent}</p>
+          )}
         </div>
 
         {status === "error" && (

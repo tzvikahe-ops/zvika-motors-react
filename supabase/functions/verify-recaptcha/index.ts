@@ -63,7 +63,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { token, name, phone, message } = await req.json();
+    const { token, name, phone, message, consentAt } = await req.json();
 
     if (!token || !name || !phone) {
       return new Response(
@@ -170,6 +170,7 @@ Deno.serve(async (req) => {
       phone: safePhone,
       message: safeMessage,
       recaptcha_score: verifyData.score,
+      consent_at: consentAt ?? new Date().toISOString(),
     });
 
     if (dbError) {
