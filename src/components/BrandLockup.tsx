@@ -6,13 +6,17 @@ interface BrandLockupProps {
 
 function LogoText({ className }: { className?: string }) {
   return (
-    <div className={`flex flex-col items-end leading-none select-none ${className ?? ""}`} dir="rtl">
-      <span className="text-brand-red font-black tracking-tight" style={{ fontSize: "1.35em" }}>
+    <div className={`flex flex-col items-center leading-none select-none ${className ?? ""}`} dir="rtl">
+      <span className="text-brand-red font-black tracking-tight" style={{ fontSize: "1.4em" }}>
         המוסך של צביקה
       </span>
-      <span className="text-brand-red font-bold tracking-tight" style={{ fontSize: "0.85em" }}>
-        אור-צת שירותי רכב
-      </span>
+      <div className="flex items-center gap-1.5 mt-0.5 w-full">
+        <span className="flex-1 h-[1.5px] bg-primary-foreground/80" />
+        <span className="text-brand-red font-bold tracking-tight whitespace-nowrap" style={{ fontSize: "0.7em" }}>
+          אור-צת שירותי רכב
+        </span>
+        <span className="flex-1 h-[1.5px] bg-primary-foreground/80" />
+      </div>
     </div>
   );
 }
