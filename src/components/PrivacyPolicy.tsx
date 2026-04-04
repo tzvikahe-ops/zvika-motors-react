@@ -66,6 +66,29 @@ export default function PrivacyPolicy() {
               <li>לצורך הגנה על זכויות העסק, בטיחות לקוחותיו או הציבור</li>
               <li>לספקי שירות הפועלים מטעמנו ובכפוף להתחייבויות סודיות (כגון ספקי חלפים הדורשים פרטי רכב)</li>
             </ul>
+            <p className="mt-4 font-semibold text-foreground">ספקי שירות ענן בשימוש האתר:</p>
+            <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4 mt-2">
+              <li>
+                <strong className="text-foreground">Supabase</strong> - אחסון פניות יצירת הקשר (שם וטלפון).
+                השרתים ממוקמים באיחוד האירופי.{" "}
+                <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">מדיניות פרטיות</a>
+              </li>
+              <li>
+                <strong className="text-foreground">Google Analytics</strong> - ניתוח תנועת גולשים אנונימית (אין שיוך למשתמש ספציפי).
+                Google LLC, ארה"ב.{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">מדיניות פרטיות</a>
+              </li>
+              <li>
+                <strong className="text-foreground">Twilio</strong> - שליחת התראות WhatsApp פנימיות בלבד (לבעל העסק).
+                Twilio Inc., ארה"ב.{" "}
+                <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank" rel="noopener noreferrer" className="underline">מדיניות פרטיות</a>
+              </li>
+              <li>
+                <strong className="text-foreground">Cloudflare</strong> - הגנה מפני התקפות ואספקת תוכן (CDN).
+                Cloudflare Inc., ארה"ב.{" "}
+                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="underline">מדיניות פרטיות</a>
+              </li>
+            </ul>
           </section>
 
           {/* 5. User rights - Amendment 13 */}
@@ -96,8 +119,21 @@ export default function PrivacyPolicy() {
           {/* 6. Cookies */}
           <section>
             <h2 className="text-lg font-bold text-primary mb-3">6. עוגיות (Cookies)</h2>
-            <p>
-              אתר זה אינו משתמש בעוגיות (Cookies) לאיסוף מידע אישי או למעקב אחר משתמשים.
+            <p className="mb-3">
+              אתר זה משתמש בעוגיות (Cookies) לצרכים טכניים ואנליטיים בלבד:
+            </p>
+            <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4">
+              <li>
+                <strong className="text-foreground">__cf_bm</strong> - עוגיית אבטחה של Cloudflare לזיהוי בוטים.
+                פוקעת תוך 30 דקות. אינה מכילה מידע אישי מזהה.
+              </li>
+              <li>
+                <strong className="text-foreground">Google Analytics</strong> - עוגיות אנליטיקה אנונימיות למדידת תנועת גולשים
+                (מספר ביקורים, עמודים נצפים). אינן מקושרות לזהות אישית.
+              </li>
+            </ul>
+            <p className="mt-3">
+              ניתן לחסום עוגיות דרך הגדרות הדפדפן, אך הדבר עשוי להשפיע על חוויית הגלישה באתר.
             </p>
           </section>
 
