@@ -29,6 +29,34 @@ function sanitize(input: string, maxLen: number): string {
   return stripRTLChars(input.trim()).slice(0, maxLen);
 }
 
+// ✅ Rate limiting: בדיקת מספר בקשות בחלון זמן נתון
+async function checkRateLimit(
+  supabase: ReturnType<typeof createClient>,
+  identifier: string,
+  idType: "phone" | "ip",
+  maxRequests: number,
+  windowMinutes: number
+): Promise<boolean> {
+  const since = new Date(Date.now() - windowMinutes * 60 * 1000).toISOString();
+  const { count } = await supabase
+    .from("rate_limits")
+    .select("*", { count: "exact", head: true })
+    .eq("identifier", identifier)
+    .eq("id_type", idType)
+    .gte("created_at", since);
+  return (count ?? 0) < maxRequests;
+}
+
+async function recordRequest(
+  supabase: ReturnType<typeof createClient>,
+  identifier: string,
+  idType: "phone" | "ip"
+): Promise<void> {
+  await supabase.from("rate_limits").insert({ identifier, id_type: idType });
+  // ניקוי רשומות ישנות (מעל שעתיים) למניעת נפיחות טבלה
+  await supabase.rpc("cleanup_rate_limits");
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -63,6 +91,40 @@ Deno.serve(async (req) => {
         JSON.stringify({ error: "מספר טלפון לא תקין. יש להזין מספר ישראלי (05x/07x)" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
+    }
+
+    // ✅ Rate limiting — נבדוק לפני reCAPTCHA כדי לחסוך קריאות Google
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const clientIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+
+    const normalizedPhone = safePhone.replace(/[\s\-\(\)]/g, "");
+
+    // 3 בקשות לכל מספר טלפון ב-15 דקות
+    const phoneAllowed = await checkRateLimit(supabase, normalizedPhone, "phone", 3, 15);
+    if (!phoneAllowed) {
+      console.warn("Rate limit: phone", normalizedPhone);
+      return new Response(
+        JSON.stringify({ error: "יותר מדי ניסיונות. נסו שוב בעוד 15 דקות." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // 10 בקשות לכל IP בשעה
+    if (clientIp !== "unknown") {
+      const ipAllowed = await checkRateLimit(supabase, clientIp, "ip", 10, 60);
+      if (!ipAllowed) {
+        console.warn("Rate limit: IP", clientIp);
+        return new Response(
+          JSON.stringify({ error: "יותר מדי ניסיונות. נסו שוב בעוד שעה." }),
+          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
     }
 
     // Verify reCAPTCHA token with Google
@@ -103,10 +165,6 @@ Deno.serve(async (req) => {
     }
 
     // Save to database — ✅ שומרים את השדות המסוננים
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
-
     const { error: dbError } = await supabase.from("contact_submissions").insert({
       name: safeName,
       phone: safePhone,
@@ -121,6 +179,10 @@ Deno.serve(async (req) => {
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+
+    // ✅ רשום את הבקשה במונה rate limiting
+    await recordRequest(supabase, normalizedPhone, "phone");
+    if (clientIp !== "unknown") await recordRequest(supabase, clientIp, "ip");
 
     // Send WhatsApp notification via Twilio — ✅ משתמשים בשדות המסוננים
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
