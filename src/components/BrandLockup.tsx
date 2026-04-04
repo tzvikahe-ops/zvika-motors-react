@@ -1,28 +1,28 @@
 import logoMark from "@/assets/logo-mark-pdf.webp";
-import logoText from "@/assets/logo-text-clean.webp";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
 }
 
+function LogoText({ className }: { className?: string }) {
+  return (
+    <div className={`flex flex-col items-end leading-none select-none ${className ?? ""}`} dir="rtl">
+      <span className="text-brand-red font-black tracking-tight" style={{ fontSize: "1.35em" }}>
+        המוסך של צביקה
+      </span>
+      <span className="text-brand-red font-bold tracking-tight" style={{ fontSize: "0.85em" }}>
+        אור-צת שירותי רכב
+      </span>
+    </div>
+  );
+}
+
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
-  const isFooter = size === "footer";
-
-  const iconClass = isFooter
-    ? "h-[42px] w-auto md:h-[62px]"
-    : "h-[35px] w-auto md:h-[48px]";
-
   return (
     <>
       {/* ── Desktop lockup ── */}
       <div className="hidden md:flex items-center gap-2.5">
-        <img
-          src={logoText}
-          alt="המוסך של צביקה (אור-צת)"
-          className="h-[50px] w-auto max-w-[220px] object-contain object-right shrink"
-          width={920}
-          height={95}
-        />
+        <LogoText className="text-[18px]" />
         <img
           src={logoMark}
           alt=""
@@ -35,13 +35,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
 
       {/* ── Mobile: stacked lockup ── */}
       <div className="flex md:hidden items-center gap-1 overflow-hidden max-w-full">
-        <img
-          src={logoText}
-          alt="המוסך של צביקה (אור-צת)"
-          className="h-[52px] w-auto max-w-[200px] object-contain object-right shrink"
-          width={920}
-          height={95}
-        />
+        <LogoText className="text-[16px]" />
         <img
           src={logoMark}
           alt=""
