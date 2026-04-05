@@ -1,4 +1,4 @@
-import logoNavbar from "@/assets/logo-navbar.png";
+import logoPrimary from "@/assets/logo-primary.png";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
@@ -8,13 +8,15 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
   return (
     <img
-      src={logoNavbar}
+      src={logoPrimary}
       alt="המוסך של צביקה - אור-צת שירותי רכב"
       className="object-contain shrink-0"
       style={{
         height: isFooter ? "56px" : undefined,
         maxHeight: isFooter ? undefined : "50px",
         width: "auto",
+        filter: isFooter ? undefined : "invert(1)",
+        mixBlendMode: isFooter ? undefined : "screen",
       }}
     />
   );
