@@ -10,7 +10,6 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
 
   return (
     <div className="flex items-center" style={{ gap: isFooter ? "10px" : "7px" }} dir="rtl">
-
       {/* Car mark — RIGHT */}
       <img
         src={logoMark}
@@ -28,13 +27,12 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         alt="המוסך של צביקה - אור-צת שירותי רכב"
         className="object-contain shrink"
         style={{
-          height: isFooter ? "64px" : "72px",
+          height: isFooter ? "64px" : "80px",
           width: "auto",
           maxWidth: isFooter ? "240px" : "220px",
           mixBlendMode: "lighten",
         }}
       />
-
     </div>
   );
 }
