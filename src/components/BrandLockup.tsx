@@ -10,11 +10,12 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
-  const displayH = isFooter ? 53 : 42;
-  const scale = displayH / 188;
+  // Source region y:178→330 (152px) — safely before "1993" row
+  const displayH = isFooter ? 48 : 38;
+  const scale = displayH / 152;
   const imgW = Math.round(945 * scale);
   const imgH = Math.round(540 * scale);
-  const marginTop = -Math.round(177 * scale);
+  const marginTop = -Math.round(178 * scale);
 
   return (
     <div className="flex items-center" style={{ gap: isFooter ? "10px" : "7px" }} dir="rtl">
