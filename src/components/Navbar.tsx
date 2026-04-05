@@ -38,11 +38,11 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start lg:justify-between gap-2 lg:gap-0 h-[60px] lg:h-[90px]">
+      <div className="max-w-[1100px] mx-auto px-3 sm:px-6 flex items-center justify-start lg:justify-between gap-1 lg:gap-0 h-[60px] lg:h-[90px]">
         {/* מובייל: המבורגר – בצד ימין */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
+          className="lg:hidden p-2 relative z-20 shrink-0 text-brand-red min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -52,7 +52,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
-          className="bg-transparent border-none cursor-pointer flex items-center no-underline min-w-0"
+          className="bg-transparent border-none cursor-pointer flex items-center no-underline min-w-0 flex-1 lg:flex-none"
           aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
