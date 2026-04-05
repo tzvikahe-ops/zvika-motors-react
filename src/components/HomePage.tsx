@@ -11,65 +11,6 @@ const CTASection = lazy(() => import("./home/CTASection"));
 
 import type { Page } from "@/types/page";
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "AutoRepair"],
-  "@id": "https://www.ortzat.co.il/#business",
-  name: "המוסך של צביקה - אור-צת שירותי רכב",
-  alternateName: [
-    "אור צת",
-    "אור-צת",
-    "מוסך אור צת",
-    "אור צת שירותי רכב",
-    "אור-צת שירותי רכב",
-    "המוסך של צביקה",
-    "zvika motors",
-    "Zvika Motors",
-  ],
-  image: "https://www.ortzat.co.il/og-image.jpg",
-  url: "https://www.ortzat.co.il",
-  telephone: "+972-2-6514446",
-  email: "ortzat1@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "האופה 4",
-    addressLocality: "ירושלים",
-    addressRegion: "גבעת שאול",
-    postalCode: "9548004",
-    addressCountry: "IL",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 31.7857,
-    longitude: 35.1924,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "08:00",
-      closes: "16:30",
-    },
-  ],
-  priceRange: "₪₪",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "108",
-  },
-  sameAs: [
-    "https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7",
-    "https://www.google.com/maps/place/אור-צת+שירותי+רכב+-+המוסך+של+צביקה/@31.7857,35.1924,17z",
-  ],
-  description:
-    "מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט.",
-  foundingDate: "1993",
-  founder: {
-    "@type": "Person",
-    name: "יהושע הרשקוביץ",
-  },
-};
-
 const homeFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
