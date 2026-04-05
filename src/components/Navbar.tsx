@@ -35,67 +35,59 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
-      className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md"
+      className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      {/* ── שורה 1: לוגו + פעולות ── */}
-      <div className="border-b border-primary-foreground/[0.06]">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
-          {/* לוגו */}
-          <a
-            href="/"
-            onClick={(e) => { e.preventDefault(); setPage("home"); }}
-            className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0"
-            aria-label="דף הבית - המוסך של צביקה"
-          >
-            <BrandLockup size="navbar" />
-          </a>
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
+        {/* לוגו */}
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); setPage("home"); }}
+          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0"
+          aria-label="דף הבית - המוסך של צביקה"
+        >
+          <BrandLockup size="navbar" />
+        </a>
 
-          {/* דסקטופ: טלפון */}
-          <div className="hidden md:flex items-center gap-3">
-            {/* GA4: phone_click / navbar */}
-            <a
-              href="tel:02-6514446"
-              onClick={() => trackPhoneClick("navbar")}
-              className="text-brand-red text-[14px] font-bold no-underline hover:text-brand-red-hover transition-colors duration-200 inline-flex items-center gap-2"
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-              02-6514446
-            </a>
-          </div>
-
-          {/* מובייל: כפתור המבורגר */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
-            aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
-          >
-            {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-          </button>
-        </div>
-      </div>
-
-      {/* ── שורה 2: קישורי ניווט (דסקטופ בלבד) ── */}
-      <div className="hidden md:block border-b border-primary-foreground/[0.06]">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center h-[44px]">
+        {/* דסקטופ: קישורים + טלפון */}
+        <div className="hidden md:flex items-center gap-1 whitespace-nowrap">
           {links.map(({ label, page }) => (
             <a
               key={label}
               href={pageToPath[page]}
               onClick={(e) => { e.preventDefault(); setPage(page); }}
-              className={`text-[13px] transition-colors duration-200 py-1 px-3 h-full inline-flex items-center no-underline whitespace-nowrap ${
+              className={`text-[13px] transition-colors duration-200 py-2 px-3 min-h-[44px] inline-flex items-center justify-center no-underline ${
                 currentPage === page
-                  ? "text-primary-foreground font-bold border-b-2 border-brand-red"
+                  ? "text-primary-foreground font-bold"
                   : "text-primary-foreground/60 font-medium hover:text-primary-foreground/90"
               }`}
             >
               {label}
             </a>
           ))}
+          <div className="w-px h-4 bg-primary-foreground/10 mx-1" />
+          {/* GA4: phone_click / navbar */}
+          <a
+            href="tel:02-6514446"
+            onClick={() => trackPhoneClick("navbar")}
+            className="text-brand-red text-[13px] font-bold no-underline hover:text-brand-red-hover transition-colors duration-200 inline-flex items-center gap-1.5 min-h-[44px] py-2 px-2"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            02-6514446
+          </a>
         </div>
+
+        {/* מובייל: כפתור המבורגר */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
+          aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
+        >
+          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
       </div>
 
-      {/* ── תפריט מובייל ── */}
+      {/* תפריט מובייל */}
       {mobileOpen && (
         <div className="md:hidden bg-surface-darker px-5 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
           {links.map(({ label, page }) => (

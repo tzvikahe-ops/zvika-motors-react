@@ -55,7 +55,7 @@ const Index = () => {
       requestAnimationFrame(() => {
         const el = document.getElementById("services-content");
         if (el) {
-          const navHeight = 116; // 72px logo row + 44px nav row
+          const navHeight = 72;
           const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
           window.scrollTo({ top, left: 0, behavior: "auto" });
         }
