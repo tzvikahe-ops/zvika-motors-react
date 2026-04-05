@@ -8,7 +8,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
   return (
     <img
-      src={logoClean}
+      src={logoNavbar}
       alt="המוסך של צביקה - אור-צת שירותי רכב"
       className="object-contain shrink-0"
       style={{
