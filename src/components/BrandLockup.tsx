@@ -29,7 +29,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         style={{
           height: isFooter ? "64px" : "54px",
           width: "auto",
-          maxWidth: isFooter ? "240px" : "220px",
+          maxWidth: isFooter ? "240px" : undefined,
           mixBlendMode: "lighten",
         }}
       />
