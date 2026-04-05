@@ -13,14 +13,16 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
 
   // Target display height for the text portion
-  const textH = isFooter ? 56 : 44;
-  // Original text region height in the source image (pixels)
-  const srcTextH = 173;
+  const textH = isFooter ? 52 : 40;
+  // Source image region: title "המוסך של צביקה" + subtitle box only.
+  // Starts at y≈165 and spans 165px → ends at y≈330, before "1993" row.
+  // Because srcTextStart === srcTextH, offsetTop === -textH (pixel-perfect).
+  const srcTextStart = 165;
+  const srcTextH = 165;
   const scale = textH / srcTextH;
   const imgW = Math.round(945 * scale);
   const imgH = Math.round(540 * scale);
-  // Top of text region in source = 189px
-  const offsetTop = -Math.round(189 * scale);
+  const offsetTop = -Math.round(srcTextStart * scale);
 
   return (
     /* RTL: first child = rightmost → car on right, text on left */
