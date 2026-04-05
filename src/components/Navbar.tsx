@@ -38,21 +38,21 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
-        {/* מובייל: המבורגר – בצד ימין (RTL start) */}
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start md:justify-between gap-3 md:gap-0 h-[78px] md:h-[72px]">
+        {/* מובייל: המבורגר – בצד ימין */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center order-first"
+          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
           aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
 
-        {/* לוגו – באמצע במובייל, בצד ימין בדסקטופ */}
+        {/* לוגו – בולט בצד ימין של ההדר */}
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
-          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0 md:order-first"
+          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0"
           aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
