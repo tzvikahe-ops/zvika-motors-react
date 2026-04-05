@@ -27,7 +27,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         src={logoCar}
         alt=""
         className="object-contain shrink-0"
-        style={{ height: "60px", width: "auto", mixBlendMode: "multiply" }}
+        style={{ height: "65px", width: "auto", mixBlendMode: "multiply" }}
       />
       {/* Text logo on the LEFT (RTL end) */}
       <img
