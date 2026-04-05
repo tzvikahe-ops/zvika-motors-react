@@ -28,7 +28,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         alt="המוסך של צביקה - אור-צת שירותי רכב"
         className="object-contain shrink"
         style={{
-          height: isFooter ? "52px" : "42px",
+          height: isFooter ? "64px" : "56px",
           width: "auto",
           maxWidth: isFooter ? "240px" : "220px",
           mixBlendMode: "screen",
