@@ -17,7 +17,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         alt=""
         aria-hidden="true"
         className="object-contain shrink-0"
-        style={{ height: isFooter ? "58px" : "46px", width: "auto" }}
+        style={{ height: isFooter ? "50px" : "38px", width: "auto" }}
         width={1200}
         height={273}
       />
