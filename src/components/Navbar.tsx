@@ -38,7 +38,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start lg:justify-between gap-3 lg:gap-0 h-[60px] lg:h-[90px]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start lg:justify-between gap-2 lg:gap-0 h-[60px] lg:h-[90px]">
         {/* מובייל: המבורגר – בצד ימין */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -52,7 +52,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
-          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0"
+          className="bg-transparent border-none cursor-pointer flex items-center no-underline min-w-0"
           aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
