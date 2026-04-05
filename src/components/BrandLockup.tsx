@@ -9,27 +9,27 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
 
   return (
-    <div className="flex items-center" style={{ gap: isFooter ? "10px" : "7px" }} dir="rtl">
-      {/* Car mark — RIGHT */}
+    <div className="flex items-center" style={{ gap: isFooter ? "10px" : "8px" }} dir="rtl">
+      {/* סמל הרכב - תמיד גלוי */}
       <img
         src={logoMark}
-        alt=""
-        aria-hidden="true"
+        alt={isFooter ? "המוסך של צביקה" : ""}
+        aria-hidden={!isFooter}
         className="object-contain shrink-0"
-        style={{ height: isFooter ? "50px" : "54px", width: "auto" }}
+        style={{ height: isFooter ? "52px" : "54px", width: "auto" }}
         width={1200}
         height={273}
       />
 
-      {/* Logo text — LEFT */}
+      {/* טקסט הלוגו - בפוטר תמיד, בנאב-בר רק דסקטופ (רחב מדי למובייל) */}
       <img
         src={logoText}
         alt="המוסך של צביקה - אור-צת שירותי רכב"
-        className="object-contain shrink"
+        className={isFooter ? "block" : "hidden md:block"}
         style={{
-          height: isFooter ? "64px" : "54px",
+          height: isFooter ? "52px" : "60px",
           width: "auto",
-          maxWidth: isFooter ? "240px" : undefined,
+          objectFit: "contain",
           mixBlendMode: "lighten",
         }}
       />
