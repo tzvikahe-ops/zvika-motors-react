@@ -5,7 +5,7 @@ import type { Page } from "@/types/page";
 
 export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
   return (
-    <footer className="bg-surface-darker relative" dir="rtl">
+    <footer role="contentinfo" aria-label="תחתית האתר" className="bg-surface-darker relative" dir="rtl">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/[0.06] to-transparent" />
 
       <div className="max-w-[1100px] mx-auto px-5 sm:px-6 py-12 md:py-16">
