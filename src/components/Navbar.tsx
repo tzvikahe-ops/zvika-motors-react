@@ -38,11 +38,11 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start md:justify-between gap-3 md:gap-0 h-[74px] md:h-[90px]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-start lg:justify-between gap-3 lg:gap-0 h-[74px] lg:h-[90px]">
         {/* מובייל: המבורגר – בצד ימין */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
+          className="lg:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
           aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -59,7 +59,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
         </a>
 
         {/* דסקטופ: קישורים + טלפון */}
-        <div className="hidden md:flex items-center gap-1 whitespace-nowrap">
+        <div className="hidden lg:flex items-center gap-1 whitespace-nowrap">
           {links.map(({ label, page }) => (
             <a
               key={label}
@@ -88,7 +88,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
       {/* תפריט מובייל */}
       {mobileOpen && (
-        <div className="md:hidden bg-surface-darker px-5 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
+        <div className="lg:hidden bg-surface-darker px-5 py-4 flex flex-col gap-1 border-t border-primary-foreground/[0.06]">
           {links.map(({ label, page }) => (
             <a
               key={label}
