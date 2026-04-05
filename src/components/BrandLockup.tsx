@@ -1,9 +1,5 @@
 import logoMark from "@/assets/logo-mark-pdf.webp";
-
-// logo-full-transparent.webp is 945×540px.
-// The text area (המוסך של צביקה + subtitle box) occupies roughly
-// 35%–67% of the image height (y: 189–362 of 540).
-// We clip it via overflow:hidden + negative margin-top.
+import logoText from "@/assets/logo-text-clean.webp";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
@@ -11,18 +7,6 @@ interface BrandLockupProps {
 
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
-
-  // Target display height for the text portion
-  const textH = isFooter ? 52 : 40;
-  // Source image region: title "המוסך של צביקה" + subtitle box only.
-  // Starts at y≈165 and spans 165px → ends at y≈330, before "1993" row.
-  // Because srcTextStart === srcTextH, offsetTop === -textH (pixel-perfect).
-  const srcTextStart = 165;
-  const srcTextH = 165;
-  const scale = textH / srcTextH;
-  const imgW = Math.round(945 * scale);
-  const imgH = Math.round(540 * scale);
-  const offsetTop = -Math.round(srcTextStart * scale);
 
   return (
     /* RTL: first child = rightmost → car on right, text on left */
@@ -42,29 +26,18 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         height={273}
       />
 
-      {/* ── Logo text area — LEFT, clipped to show only title + subtitle box ── */}
-      <div
-        aria-hidden="true"
+      {/* ── Logo text image — LEFT ── */}
+      <img
+        src={logoText}
+        alt="המוסך של צביקה - אור-צת שירותי רכב"
+        className="object-contain shrink-0"
         style={{
-          width: imgW,
-          height: textH,
-          overflow: "hidden",
-          flexShrink: 0,
+          height: isFooter ? "48px" : "38px",
+          width: "auto",
         }}
-      >
-        <img
-          src="/logo-full-transparent.webp"
-          alt="המוסך של צביקה - אור-צת שירותי רכב"
-          style={{
-            width: imgW,
-            height: imgH,
-            marginTop: offsetTop,
-            display: "block",
-          }}
-          width={945}
-          height={540}
-        />
-      </div>
+        width={1714}
+        height={328}
+      />
 
     </div>
   );
