@@ -27,14 +27,14 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         src={logoCar}
         alt=""
         className="object-contain shrink-0"
-        style={{ height: "65px", width: "auto", mixBlendMode: "multiply" }}
+        style={{ height: "80px", width: "auto", mixBlendMode: "screen" }}
       />
       {/* Text logo on the LEFT (RTL end) */}
       <img
         src={logoText}
         alt="המוסך של צביקה - אור-צת שירותי רכב"
         className="object-contain shrink-0"
-        style={{ height: "65px", width: "auto", mixBlendMode: "multiply" }}
+        style={{ height: "80px", width: "auto", mixBlendMode: "screen" }}
       />
     </div>
   );
