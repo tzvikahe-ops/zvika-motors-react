@@ -63,10 +63,6 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
     <div>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <HeroSection setPage={setPage} />
