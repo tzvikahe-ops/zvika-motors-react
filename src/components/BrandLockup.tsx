@@ -1,3 +1,6 @@
+import logoMark from "@/assets/logo-mark-pdf.webp";
+import logoText from "@/assets/logo-text-clean.webp";
+
 interface BrandLockupProps {
   size?: "navbar" | "footer";
 }
@@ -5,23 +8,37 @@ interface BrandLockupProps {
 export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   const isFooter = size === "footer";
 
-  // Logo natural size: 945x540px
-  // Top 68% = car + "המוסך של צביקה" + badge, without year/phone
-  // To show 68% of 540px in 60px: image height = 60 / 0.68 ≈ 88px
-  const clipH = isFooter ? 76 : 60;
-  const imgH = Math.round(clipH / 0.68);
-
   return (
-    <div
-      style={{ height: `${clipH}px`, overflow: "hidden", flexShrink: 0 }}
-    >
+    /* RTL: first child = rightmost → car on right, text on left */
+    <div className="flex items-center" style={{ gap: isFooter ? "10px" : "7px" }} dir="rtl">
+
+      {/* ── Car mark — RIGHT (first in RTL) ── */}
       <img
-        src="/logo-full-transparent.webp"
-        alt="המוסך של צביקה (אור-צת)"
-        style={{ height: `${imgH}px`, width: "auto", display: "block" }}
-        width={945}
-        height={540}
+        src={logoMark}
+        alt=""
+        aria-hidden="true"
+        className="object-contain shrink-0"
+        style={{
+          height: isFooter ? "58px" : "46px",
+          width: "auto",
+        }}
+        width={1200}
+        height={273}
       />
+
+      {/* ── Logo text image — LEFT ── */}
+      <img
+        src={logoText}
+        alt="המוסך של צביקה - אור-צת שירותי רכב"
+        className="object-contain shrink-0"
+        style={{
+          height: isFooter ? "52px" : "40px",
+          width: "auto",
+        }}
+        width={1100}
+        height={200}
+      />
+
     </div>
   );
 }
