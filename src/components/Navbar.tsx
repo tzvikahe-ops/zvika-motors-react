@@ -39,7 +39,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       dir="rtl"
     >
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
-        {/* לוגו */}
+        {/* לוגו – בצד ימין (RTL start) */}
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
@@ -66,7 +66,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             </a>
           ))}
           <div className="w-px h-4 bg-primary-foreground/10 mx-1" />
-          {/* GA4: phone_click / navbar */}
           <a
             href="tel:02-6514446"
             onClick={() => trackPhoneClick("navbar")}
@@ -77,7 +76,7 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
           </a>
         </div>
 
-        {/* מובייל: כפתור המבורגר */}
+        {/* מובייל: המבורגר – בצד שמאל (RTL end) */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
@@ -105,7 +104,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             </a>
           ))}
           <div className="mt-3 pt-3 border-t border-primary-foreground/[0.06] flex gap-3">
-            {/* GA4: phone_click / navbar-mobile */}
             <a
               href="tel:02-6514446"
               onClick={() => trackPhoneClick("navbar-mobile")}
@@ -114,7 +112,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
               התקשרו עכשיו
             </a>
-            {/* GA4: whatsapp_click / navbar-mobile */}
             <a
               href="https://wa.me/972526514446?text=שלום%2C%20ראיתי%20את%20המוסך%20של%20צביקה%20ואשמח%20לתאם%20תור%20ולקבל%20פרטים%20על%20השירותים%20שלכם%20%F0%9F%94%A7"
               target="_blank"
