@@ -1,4 +1,4 @@
-import logoPrimaryTransparent from "@/assets/logo-primary-transparent.png";
+import logoClean from "@/assets/logo-clean.png";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
