@@ -42,6 +42,8 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
+      role="navigation"
+      aria-label="ניווט ראשי"
       className={`fixed left-0 right-0 z-50 top-0 border-b transition-all duration-300 ${
         scrolled
           ? "bg-surface-darker/[0.97] backdrop-blur-xl border-primary-foreground/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"

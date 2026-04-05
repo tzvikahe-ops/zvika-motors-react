@@ -73,11 +73,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-sans">
+      {/* Skip navigation link - IS 5568 */}
+      <a
+        href="#main-content"
+        className="skip-link"
+      >
+        דלג לתוכן הראשי
+      </a>
       <SeoHead />
       <PassoverBanner />
       <Navbar currentPage={currentPage} setPage={setPage} />
 
-      <main id="main-content">
+      <main id="main-content" role="main" tabIndex={-1}>
         <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
           <HomePage setPage={setPage} />
         </div>

@@ -81,7 +81,6 @@ const seoConfig: Record<string, PageSeo> = {
     description:
       "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
     breadcrumbName: "הצהרת נגישות",
-    robots: "noindex, follow",
   },
   "/image-generator": {
     title: "מחולל תמונות | המוסך של צביקה",
