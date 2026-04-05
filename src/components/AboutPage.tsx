@@ -91,7 +91,7 @@ const AboutPage = () => {
               מחפשים מוסך אור צת?
             </h2>
             <p className="text-foreground/60 text-[13px] md:text-[14px] leading-[2]">
-              <strong className="text-foreground/80">מוסך אור צת</strong> ו-<strong className="text-foreground/80">אור צת שירותי רכב</strong> — זה אנחנו. המוסך נוסד ב-1993 בגבעת שאול על ידי יהושע הרשקוביץ תחת השם "אור-צת שירותי רכב", ומאז 2011 מנוהל על ידי בנו, <strong className="text-foreground/80">צביקה הרשקוביץ</strong>. הכתובת זהה: <strong className="text-foreground/80">רחוב האופה 4, גבעת שאול, ירושלים</strong>. אם הכרתם אותנו בשם הישן — ברוכים השבים. אם זו הפעם הראשונה שאתם שומעים עלינו — ברוכים הבאים.
+              <strong className="text-foreground/80">מוסך אור צת</strong> ו-<strong className="text-foreground/80">אור צת שירותי רכב</strong> - זה אנחנו. המוסך נוסד ב-1993 בגבעת שאול על ידי יהושע הרשקוביץ תחת השם "אור-צת שירותי רכב", ומאז 2011 מנוהל על ידי בנו, <strong className="text-foreground/80">צביקה הרשקוביץ</strong>. הכתובת זהה: <strong className="text-foreground/80">רחוב האופה 4, גבעת שאול, ירושלים</strong>. אם הכרתם אותנו בשם הישן - ברוכים השבים. אם זו הפעם הראשונה שאתם שומעים עלינו - ברוכים הבאים.
             </p>
           </div>
         </div>
