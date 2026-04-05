@@ -1,24 +1,41 @@
 
 
-## תיקון הלוגו במובייל — הצגת המכונית האדומה + טקסט תמיד
+## תוכנית לתיקון בעיות Schema בתוצאות העשירות של Google
 
 ### הבעיה
-שורה 29 ב-BrandLockup.tsx מכילה `hidden sm:block` על תמונת המכונית — מה שמסתיר אותה לחלוטין במובייל. זה לא מקובל כי המכונית היא חלק בלתי נפרד מהלוגו.
+האתר מכיל **שני בלוקי LocalBusiness Schema זהים** – אחד ב-`index.html` (סטטי, לסורקים) ואחד ב-`HomePage.tsx` (דינמי, React). Google רואה כפילות של `AggregateRating` ופוסל את התוצאה העשירה.
 
-### הפתרון
-להציג את שני החלקים תמיד, ולהקטין את שניהם במובייל כך שייכנסו ברוחב המסך ליד כפתור ההמבורגר.
+### מה צריך לתקן
 
-### שינויים
+**שלב 1 – הסרת הסכמה הכפולה מ-HomePage.tsx**
 
-**`src/components/BrandLockup.tsx`**
-- הסרת `hidden sm:block` מתמונת המכונית — היא תוצג תמיד
-- הקטנת שתי התמונות במובייל ל-`h-[32px]` (במקום 44px) כדי ששתיהן ייכנסו יחד ברוחב צר
-- שמירה על `h-[80px]` בדסקטופ (lg)
-- עטיפת שתי התמונות ב-container עם `overflow-hidden` למניעת גלישה
+הבלוק ב-`index.html` מלא ומפורט יותר (כולל `bestRating`, `logo`, `legalName`, `hasOfferCatalog`). לכן נשאיר אותו ונסיר את בלוק `localBusinessSchema` מ-`HomePage.tsx` כולל תג ה-`<script>` שמזריק אותו.
 
-**`src/components/Navbar.tsx`**
-- ללא שינוי (כבר מוגדר עם px-2 ו-gap-0 במובייל)
+> הבלוק של `homeFaqSchema` ב-`HomePage.tsx` יישאר – הוא לא כפול.
+
+**שלב 2 – תיקון הבלוק שנשאר ב-index.html**
+
+- `priceRange`: שינוי מ-`"$$"` ל-`"₪₪"` (סימון מקומי מתאים יותר).
+- `addressCountry`: שינוי מ-`"IL"` למבנה מלא:
+  ```json
+  "addressCountry": { "@type": "Country", "name": "IL" }
+  ```
+  (או שנשאיר `"IL"` כמחרוזת פשוטה – שניהם תקפים ב-Schema.org, אבל Google ממליץ שיהיה `name`).
+- `bestRating`: כבר קיים בבלוק של `index.html` – תקין.
+
+**שלב 3 – סנכרון prerender.mjs**
+
+בדיקה האם `scripts/prerender.mjs` מזריק בלוק LocalBusiness נוסף. אם כן – הסרה גם משם.
+
+### קבצים שיערכו
+| קובץ | שינוי |
+|---|---|
+| `src/components/HomePage.tsx` | הסרת `localBusinessSchema` ותג ה-script שלו |
+| `index.html` | תיקון `priceRange` ו-`addressCountry` |
+| `scripts/prerender.mjs` | בדיקה והסרה אם יש כפילות |
 
 ### תוצאה צפויה
-במובייל: מכונית אדומה + טקסט מותג, שניהם קטנים אבל שלמים וקריאים, ליד כפתור ההמבורגר. בדסקטופ: ללא שינוי.
+- בלוק `LocalBusiness` + `AggregateRating` אחד בלבד באתר
+- כל השדות הנדרשים קיימים (`bestRating`, `priceRange`, `addressCountry.name`)
+- Google יוכל להציג Review Snippet בתוצאות החיפוש
 
