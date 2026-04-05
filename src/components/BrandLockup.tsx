@@ -1,4 +1,4 @@
-import logoClean from "@/assets/logo-clean.png";
+import logoNavbar from "@/assets/logo-navbar.png";
 
 interface BrandLockupProps {
   size?: "navbar" | "footer";
