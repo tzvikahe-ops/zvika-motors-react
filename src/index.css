@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skip navigation link - IS 5568 accessibility */
+.skip-link {
+  position: absolute;
+  inset-inline-start: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  inset-inline-start: 0;
+}
+
 @layer base {
   :root {
     --background: 220 6% 97%;
