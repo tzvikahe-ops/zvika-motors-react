@@ -36,14 +36,14 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
 
   return (
     <nav
-      className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06] overflow-x-hidden"
+      className="fixed left-0 right-0 z-50 top-0 bg-surface-darker/95 backdrop-blur-md border-b border-primary-foreground/[0.06]"
       dir="rtl"
     >
         <div dir="rtl" className="max-w-[1100px] mx-auto px-4 sm:px-6 flex flex-row-reverse md:flex-row items-center justify-between h-[78px] md:h-[72px]">
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
-          className="bg-transparent border-none cursor-pointer flex items-center overflow-hidden min-w-0 mr-auto md:mr-0 md:ml-0 no-underline"
+          className="bg-transparent border-none cursor-pointer flex items-center min-w-0 mr-auto md:mr-0 md:ml-0 no-underline"
           aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
