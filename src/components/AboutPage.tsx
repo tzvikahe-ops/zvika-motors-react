@@ -84,6 +84,16 @@ const AboutPage = () => {
               לאורך 30+ שנות פעילות, הלקוחות שלנו החליפו דגמים ומותגים של רכב, אבל לא את המוסך. רובם עדיין אתנו, ומביאים גם את הילדים שלהם. זה לא מקרי. ובמילים של יהושע, מייסד המוסך: <em>"יהללך זר ולא פיך."</em>
             </p>
           </div>
+
+          {/* SEO bridge: old name → new name */}
+          <div className="mt-10 p-6 bg-surface-warm border border-border rounded-lg">
+            <h2 className="text-[17px] md:text-[19px] font-black text-foreground mb-3 tracking-[-0.02em]">
+              מחפשים מוסך אור צת?
+            </h2>
+            <p className="text-foreground/60 text-[13px] md:text-[14px] leading-[2]">
+              <strong className="text-foreground/80">מוסך אור צת</strong> ו-<strong className="text-foreground/80">אור צת שירותי רכב</strong> — זה אנחנו. המוסך נוסד ב-1993 בגבעת שאול על ידי יהושע הרשקוביץ תחת השם "אור-צת שירותי רכב", ומאז 2011 מנוהל על ידי בנו, <strong className="text-foreground/80">צביקה הרשקוביץ</strong>. הכתובת זהה: <strong className="text-foreground/80">רחוב האופה 4, גבעת שאול, ירושלים</strong>. אם הכרתם אותנו בשם הישן — ברוכים השבים. אם זו הפעם הראשונה שאתם שומעים עלינו — ברוכים הבאים.
+            </p>
+          </div>
         </div>
       </section>
 
