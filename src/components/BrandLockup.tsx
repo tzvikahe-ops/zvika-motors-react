@@ -21,20 +21,20 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   }
 
   return (
-    <div className="flex items-center gap-2 shrink-0" dir="rtl">
+    <div className="flex items-center gap-2 shrink-0" dir="rtl" style={{ height: "auto" }}>
       {/* Car icon on the RIGHT (RTL start) */}
       <img
         src={logoCar}
         alt=""
-        className="object-contain shrink-0"
-        style={{ height: "80px", width: "auto", mixBlendMode: "screen" }}
+        className="object-contain shrink-0 h-[60px] md:h-[80px]"
+        style={{ width: "auto", mixBlendMode: "screen" }}
       />
       {/* Text logo on the LEFT (RTL end) */}
       <img
         src={logoText}
         alt="המוסך של צביקה - אור-צת שירותי רכב"
-        className="object-contain shrink-0"
-        style={{ height: "80px", width: "auto", mixBlendMode: "screen" }}
+        className="object-contain shrink-0 h-[60px] md:h-[80px]"
+        style={{ width: "auto", mixBlendMode: "screen" }}
       />
     </div>
   );
