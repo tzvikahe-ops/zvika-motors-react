@@ -39,11 +39,20 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       dir="rtl"
     >
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
-        {/* לוגו – בצד ימין (RTL start) */}
+        {/* מובייל: המבורגר – בצד ימין (RTL start) */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center order-first"
+          aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
+        >
+          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+        </button>
+
+        {/* לוגו – באמצע במובייל, בצד ימין בדסקטופ */}
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); setPage("home"); }}
-          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0"
+          className="bg-transparent border-none cursor-pointer flex items-center no-underline shrink-0 md:order-first"
           aria-label="דף הבית - המוסך של צביקה"
         >
           <BrandLockup size="navbar" />
@@ -75,15 +84,6 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
             02-6514446
           </a>
         </div>
-
-        {/* מובייל: המבורגר – בצד שמאל (RTL end) */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-3 relative z-20 shrink-0 text-brand-red min-w-[48px] min-h-[48px] flex items-center justify-center"
-          aria-label={mobileOpen ? "סגור תפריט" : "פתח תפריט"}
-        >
-          {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
       </div>
 
       {/* תפריט מובייל */}
