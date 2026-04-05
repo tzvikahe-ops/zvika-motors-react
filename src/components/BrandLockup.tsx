@@ -31,6 +31,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
           height: isFooter ? "52px" : "42px",
           width: "auto",
           maxWidth: isFooter ? "240px" : "220px",
+          mixBlendMode: "screen",
         }}
       />
 
