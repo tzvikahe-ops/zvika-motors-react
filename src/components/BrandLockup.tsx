@@ -11,7 +11,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
 
   if (isFooter) {
     return (
-      <div dir="rtl">
+      <div dir="rtl" className="overflow-hidden max-w-full">
         <div className="flex items-center gap-1.5">
           <img
             src={logoCarTransparent}
@@ -19,12 +19,12 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
             className="object-contain shrink-0 h-[28px]"
             style={{ width: "auto", filter: "drop-shadow(0 0 6px hsl(2 58% 42% / 0.15))" }}
           />
-          <div className="w-px h-7 bg-primary-foreground/10 mx-0.5" />
+          <div className="w-px h-7 bg-primary-foreground/10 mx-0.5 shrink-0" />
           <img
             src={logoTextTransparent}
             alt="המוסך של צביקה - אור-צת שירותי רכב"
-            className="object-contain h-[48px]"
-            style={{ width: "auto", filter: "drop-shadow(0 0 4px hsl(2 58% 42% / 0.1))" }}
+            className="object-contain h-[38px] min-w-0"
+            style={{ width: "auto", maxWidth: "100%", filter: "drop-shadow(0 0 4px hsl(2 58% 42% / 0.1))" }}
           />
         </div>
       </div>
