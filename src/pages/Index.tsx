@@ -1,6 +1,6 @@
 import { useLayoutEffect, useEffect, lazy, Suspense, Component, type ReactNode, type ErrorInfo } from "react";
 import { usePageNavigation } from "@/hooks/use-page-navigation";
-import { initScrollTracking, resetScrollTracking, trackWhatsAppClick } from "@/lib/analytics";
+import { initScrollTracking, resetScrollTracking, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import SeoHead from "@/components/SeoHead";
 import Navbar from "@/components/Navbar";
 import PassoverBanner from "@/components/PassoverBanner";
@@ -116,6 +116,16 @@ const Index = () => {
         aria-label="שלח הודעה בוואטסאפ"
       >
         <WhatsAppIcon />
+      </a>
+
+      {/* Phone Floating Button */}
+      <a
+        href="tel:02-6514446"
+        onClick={() => trackPhoneClick("floating")}
+        className="fixed bottom-24 md:bottom-6 right-5 z-50 w-14 h-14 bg-brand-red rounded-lg flex items-center justify-center shadow-[var(--shadow-lg)] hover:scale-105 transition-all duration-200"
+        aria-label="התקשרו 02-6514446"
+      >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.92 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.9 6.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
       </a>
     </div>
   );
