@@ -26,7 +26,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         <img
           src={logoCar}
           alt=""
-          className="object-contain lg:shrink-0 h-[44px] lg:h-[80px]"
+          className="object-contain lg:shrink-0 h-[44px] lg:h-[80px] hidden sm:block"
           style={{ width: "auto", mixBlendMode: "screen" }}
         />
         <img
