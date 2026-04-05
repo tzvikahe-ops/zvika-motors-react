@@ -21,7 +21,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
   }
 
   return (
-    <div className="min-w-0 w-full lg:shrink-0 lg:w-auto overflow-hidden" dir="rtl">
+    <div className="w-full lg:shrink-0 lg:w-auto" dir="rtl">
       <div className="flex items-center gap-1 lg:gap-2">
         <img
           src={logoCarTransparent}
@@ -33,7 +33,7 @@ export default function BrandLockup({ size = "navbar" }: BrandLockupProps) {
         <img
           src={logoTextTransparent}
           alt="המוסך של צביקה - אור-צת שירותי רכב"
-          className="object-contain min-w-0 h-[44px] lg:h-[78px]"
+          className="object-contain h-[44px] lg:h-[78px]"
           style={{ width: "auto", filter: "drop-shadow(0 0 4px hsl(2 58% 42% / 0.1))" }}
         />
       </div>
