@@ -56,7 +56,7 @@ export default function AccessibilityStatement() {
               לפניות בנושא נגישות ניתן לפנות לרכז הנגישות של העסק:
             </p>
             <div className="bg-gray-bg rounded-lg p-5 flex flex-col gap-2">
-              <p><strong className="text-foreground">צביקה — רכז נגישות</strong></p>
+              <p><strong className="text-foreground">צביקה - רכז נגישות</strong></p>
               <p><strong className="text-foreground">המוסך של צביקה (אור-צת שירותי רכב)</strong></p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
               <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>
