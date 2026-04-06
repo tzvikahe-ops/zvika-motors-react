@@ -323,6 +323,50 @@ export default function SeoHead() {
         </script>
       )}
 
+      {/* FAQPage structured data for spare parts article */}
+      {normalizedPathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "האם גנרי איכותי מקצר את חיי הרכב?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "לא בהכרח. חלק גנרי מיצרן מוכר בעל תו תקן מתפקד ברוב המקרים לאורך אותה תקופה כמו המקורי. הסיכון הוא בגנרי אנונימי ללא תקן מוכר.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "איך יודעים אם ספק גנרי אמין?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "מותגים כמו Bosch, Brembo, Valeo, Delphi, Mahle, Textar ו-FEBI מייצרים חלקים גם לחברות הרכב וגם לשוק החופשי. אלה ספקים שניתן לסמוך עליהם.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "האם שימוש בגנרי מבטל את אחריות הרכב?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "בישראל, לפי חוק הגנת הצרכן, היצרן אינו רשאי לבטל אחריות רק בגלל שימוש בחלק חלופי, אלא אם הוכח שאותו חלק גרם לנזק הספציפי.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "מה ההבדל בין OE לבין OEM?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "OEM הוא החלק שמגיע עם לוגו יצרן הרכב דרך יבואן מורשה. OE הוא אותו חלק מאותו מפעל, ללא הלוגו, בדרך כלל ב-20-40% פחות.",
+                },
+              },
+            ],
+          })}
+        </script>
+      )}
+
       {/* Speakable for FAQ page */}
       {normalizedPathname === "/faq" && (
         <script type="application/ld+json">
