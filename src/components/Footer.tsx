@@ -58,7 +58,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
           {/* Navigation */}
             <div className="grid grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-1">
-              <p className="text-primary-foreground/60 text-[10px] font-bold tracking-wider mb-3">ניווט</p>
+              <p className="text-primary-foreground/65 text-[12px] font-bold tracking-wider mb-3">ניווט</p>
               {[
                 { label: "בית", page: "home" as Page },
                 { label: "שירותים", page: "services" as Page },
