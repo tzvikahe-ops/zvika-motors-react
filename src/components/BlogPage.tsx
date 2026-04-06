@@ -149,7 +149,7 @@ export default function BlogPage() {
       {/* Trust bridge - not salesy, just helpful */}
       <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
         <div className="max-w-[600px] mx-auto text-center">
-          <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
+          <p className="text-muted-foreground text-[12px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
           <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
             שלחו לנו שאלה, נחזור אליכם עם תשובה
           </h2>
