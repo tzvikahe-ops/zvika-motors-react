@@ -1,39 +1,30 @@
 
 
-## תיקון 4 נקודות נגישות שנותרו
+## תיקון 3 פריטי נגישות אחרונים
 
-### נקודה 1: ניגודיות WhatsApp — טקסט לבן על #128C7E
-**בעיה:** יחס 4.12:1, צריך 4.5:1.
-**פתרון:** בכל כפתורי WhatsApp באתר, הצבע כבר `text-white`. לפי ההצעה שלך, נחליף ל-`text-black` (שחור מלא) → יחס 5.56:1. זה ישפיע על ~12 קבצים שמכילים `bg-[#128C7E]`.
+### נקודה 1: ניגודיות WhatsApp — SVG fill נחסם על ידי theme
+**בעיה:** `fill="black"` ב-SVG מתורגם ל-`rgb(24,28,37)` בגלל ה-theme. יחס 4.12:1 במקום 4.5:1.
 
-**קבצים:** HeroSection, CTASection, ProcessSection, Navbar, Footer, BlogPage, ContactPage, FAQPage, GalleryPage, AboutPage, Index.tsx (floating button), GoogleReviewsCarousel (אם רלוונטי).
+**פתרון:** שינוי `fill="black"` ל-`fill="#000000"` ב-3 מקומות:
+- `src/components/Icons.tsx` שורה 97 — `WhatsAppIcon` (כפתור צף)
+- `src/components/Navbar.tsx` שורה 110 — אייקון WhatsApp ב-navbar desktop
+- בדיקת כל שאר ה-SVGs עם `fill="black"` בפרויקט
 
----
+### נקודה 2: כפתור WhatsApp צף — שיפור aria-label
+**בעיה:** ה-aria-label הקיים ("שלח הודעה בוואטסאפ") לא מציין שנפתח בחלון חדש.
 
-### נקודה 2: כפתורי שפה (widget חיצוני)
-**לא בשליטתנו** — אלה מגיעים מ-cdn.enable.co.il. אין מה לתקן בקוד שלנו.
+**פתרון:** ב-`src/pages/Index.tsx` שורה 125, שינוי ל:
+```
+aria-label="שלחו לנו הודעה ב-WhatsApp (נפתח בחלון חדש)"
+```
 
----
-
-### נקודה 3: iframe ללא title
-**בעיה:** ה-iframe של Google Maps ב-MapSection.tsx **כבר מכיל title**. ה-iframe ה"חסר" כנראה מגיע מתוך ה-Google Maps embed עצמו (iframe פנימי שנוצר דינמית) — לא בשליטתנו. אם רוצים, אפשר להוסיף title גם ל-sandbox attribute.
-
----
-
-### נקודה 4: 2 קישורים חסרי sr-only
-**קישורים שזוהו:**
-1. `GoogleReviewsCarousel.tsx` שורה 233 — "כתוב ביקורת" (target=_blank, ללא sr-only)
-2. `AccessibilityStatement.tsx` שורה 79 — קישור וואטסאפ של רכז הנגישות (target=_blank, ללא sr-only)
-
-**פתרון:** הוספת `<span className="sr-only">(נפתח בחלון חדש)</span>` בכל אחד מהם.
+### נקודה 3: "מופעל על ידי" (upress.co.il)
+**ממצא:** הקישור הזה **לא קיים בקוד** — לא נמצא שום אזכור ל-`upress` בפרויקט. כנראה מגיע מ-widget חיצוני או מתוסף שאינו בשליטתנו.
 
 ---
 
-### סיכום שינויים
-| # | פעולה | קבצים |
-|---|-------|-------|
-| 1 | `text-white` → `text-black` בכפתורי WhatsApp | ~12 קבצים |
-| 2 | Widget חיצוני — דילוג | — |
-| 3 | iframe כבר עם title — דילוג | — |
-| 4 | הוספת sr-only ל-2 קישורים | GoogleReviewsCarousel.tsx, AccessibilityStatement.tsx |
+### קבצים מושפעים
+- `src/components/Icons.tsx` — `fill="#000000"`
+- `src/components/Navbar.tsx` — `fill="#000000"` ב-SVG
+- `src/pages/Index.tsx` — עדכון aria-label לכפתור צף
 
