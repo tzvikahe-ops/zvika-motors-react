@@ -248,7 +248,7 @@ export default function FAQPage() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("faq-cta")}
-              className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-black px-8 py-3.5 rounded-md font-bold text-[14px] no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)]"
+              className="inline-flex items-center justify-center gap-2 bg-white border border-[#0E7A6D] text-[#075E54] px-8 py-3.5 rounded-md font-bold text-[14px] no-underline transition-all duration-200 shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] hover:bg-[#f0faf8]"
             >
               <WhatsAppSVG />
               שאלו אותנו בוואטסאפ

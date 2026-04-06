@@ -126,7 +126,7 @@ export default function ServicesSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("services-main")}
-            className="inline-flex items-center gap-2.5 bg-[#128C7E] hover:bg-[#0e7a6d] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 no-underline"
+            className="inline-flex items-center gap-2.5 bg-white border border-[#0E7A6D] text-[#075E54] text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] hover:bg-[#f0faf8] hover:shadow-[0_4px_16px_-4px_rgba(7,94,84,0.3)] transition-all duration-200 no-underline"
           >
             <WhatsAppSVG />
             <span>תאמו טיפול בוואטסאפ</span>
