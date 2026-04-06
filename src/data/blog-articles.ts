@@ -16,7 +16,7 @@ export interface BlogArticle {
 }
 
 export interface ArticleSection {
-  type: "h2" | "p" | "ul" | "cta" | "internal-link" | "quote";
+  type: "h2" | "p" | "ul" | "cta" | "internal-link" | "quote" | "table";
   text?: string;
   cite?: string; // attribution for quote type
   items?: string[];
@@ -26,6 +26,8 @@ export interface ArticleSection {
   linkText?: string; // for internal-link type
   linkPage?: Page;   // target page for internal link
   linkSlug?: string; // slug for blog-article links
+  tableHeaders?: string[]; // headers for table type
+  tableRows?: string[][]; // rows for table type
 }
 
 export const blogArticles: BlogArticle[] = [
