@@ -26,6 +26,8 @@ const details = [
 ];
 
 const DiagnosticsPage = () => {
+  const { currentPage, setPage } = usePageNavigation();
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -48,7 +50,12 @@ const DiagnosticsPage = () => {
   };
 
   return (
-    <main dir="rtl" className="bg-background">
+    <div className="min-h-screen bg-background font-sans">
+      <SeoHead />
+      <header role="banner">
+        <Navbar currentPage={currentPage} setPage={setPage} />
+      </header>
+      <main dir="rtl" className="bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
