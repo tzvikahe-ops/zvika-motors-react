@@ -181,7 +181,7 @@ export default function BlogPage() {
       {/* Internal links for SEO + navigation */}
       <section className="py-10 px-5 sm:px-6 border-t border-border">
         <div className="max-w-[900px] mx-auto">
-          <p className="text-foreground/30 text-[11px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
+          <p className="text-muted-foreground text-[12px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
           <div className="flex flex-wrap gap-3">
             <InternalLink page="services" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">
               שירותי המוסך שלנו
