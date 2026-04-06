@@ -115,7 +115,7 @@ const AboutPage = () => {
               {milestones.map((m, i) => (
                 <div key={m.year} className="flex items-start gap-5 relative">
                   <div className="relative z-10 shrink-0 w-10 h-10 md:w-12 md:h-12 bg-brand-red rounded-lg flex items-center justify-center">
-                    <span className="text-accent-foreground text-[11px] md:text-[12px] font-black">{m.year}</span>
+                    <span className="text-accent-foreground text-[12px] font-black">{m.year}</span>
                   </div>
                   <div className="bg-card border border-border rounded-lg p-4 md:p-5 flex-1 hover:border-brand-red/20 transition-colors">
                     <p className="text-foreground/70 text-[13px] md:text-[14px] leading-[1.7]">{m.text}</p>
