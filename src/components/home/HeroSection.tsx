@@ -85,7 +85,7 @@ className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[
             <div className="flex items-center gap-6 mt-10 md:mt-12 pt-8 border-t border-primary-foreground/[0.06]">
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">30+</div>
-                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">שנות ניסיון</p>
+                <p className="text-primary-foreground/65 text-[12px] font-medium mt-1">שנות ניסיון</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
