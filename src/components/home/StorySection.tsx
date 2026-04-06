@@ -36,7 +36,7 @@ export default function StorySection({ setPage }: { setPage: (p: Page) => void }
           <div className="flex md:flex-col gap-4 md:gap-5">
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">30+</div>
-              <p className="text-muted-foreground text-[11px] font-medium">שנות ניסיון</p>
+              <p className="text-muted-foreground text-[12px] font-medium">שנות ניסיון</p>
             </div>
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">🏠</div>
