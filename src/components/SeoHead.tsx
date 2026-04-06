@@ -455,6 +455,63 @@ export default function SeoHead() {
         );
       })()}
 
+      {/* Article + FAQPage + BreadcrumbList structured data for car warning signs article */}
+      {normalizedPathname === "/blog/סימנים-שהרכב-צריך-טיפול" && (() => {
+        const articleUrl = "https://ortzat.co.il/blog/car-warning-signs";
+        return (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Article",
+                  headline: "8 סימנים שהרכב צריך טיפול מיידי במוסך (ואיך לזהות אותם)",
+                  description: "רכב שולח סימנים לפני שמתקלקל. נורת צ'ק אנג'ין, רעשים, דליפות, בלמים רכים - 8 סימנים שחייבים להכיר. המוסך של צביקה | אור-צת, גבעת שאול ירושלים.",
+                  datePublished: "2026-03-15T00:00:00+02:00",
+                  dateModified: "2026-04-06T00:00:00+02:00",
+                  inLanguage: "he-IL",
+                  author: {
+                    "@type": "Person",
+                    name: "צביקה",
+                    jobTitle: "בעל מוסך",
+                    worksFor: { "@type": "AutoRepair", name: "המוסך של צביקה (אור-צת)", url: "https://ortzat.co.il" },
+                  },
+                  publisher: {
+                    "@type": "AutoRepair",
+                    name: "המוסך של צביקה (אור-צת)",
+                    url: "https://ortzat.co.il",
+                    logo: { "@type": "ImageObject", url: "https://ortzat.co.il/logo.png" },
+                  },
+                  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+                  keywords: ["סימנים לתקלה ברכב", "טיפול מיידי ברכב", "נורת אזהרה", "בלמים רכים", "דליפת שמן", "מוסך ירושלים", "גבעת שאול", "המוסך של צביקה", "אור-צת"],
+                  articleSection: "תקלות ואבחון",
+                  speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".article-summary", ".faq-answer"] },
+                },
+                {
+                  "@type": "FAQPage",
+                  mainEntity: [
+                    { "@type": "Question", name: "מה הסימנים שהרכב צריך טיפול מיידי?", acceptedAnswer: { "@type": "Answer", text: "8 הסימנים העיקריים: נורת צ'ק אנג'ין שנדלקת, רעשים חריגים מהמנוע או הבלמים, רטט בהגה או בגוף הרכב, בלמים שמגיבים לאט, דליפות מתחת לרכב, צריכת דלק גבוהה מהרגיל, מזגן שלא מקרר, וקושי בהתנעה. כל אחד מהסימנים האלה מצריך בדיקה במוסך." } },
+                    { "@type": "Question", name: "מה הסכנה בהתעלמות מסימני אזהרה ברכב?", acceptedAnswer: { "@type": "Answer", text: "נתוני חברות הביטוח בישראל מראים שכ-60% מהתקלות שמביאות רכב לעצירה בצד הדרך היו ניתנות למניעה בטיפול מוקדם. נורת מנוע שמתעלמים ממנה יכולה להפוך תקלה של 300 שקלים לנזק של אלפי שקלים. הבלמים והצמיגים אחראים לכ-45% מתאונות הדרכים הקשורות לתקלה מכנית." } },
+                    { "@type": "Question", name: "מה עושים כשנשמע רעש חריג מהרכב?", acceptedAnswer: { "@type": "Answer", text: "רעש שלא היה קודם הוא תמיד סיבה לבדיקה. צרירות בבלימה מעידות על בלמים שחוקים, חריקות מהמנוע יכולות להעיד על בעיה בהיגוי או במנוע, נקישות בסיבוב ההגה עלולות להצביע על בעיה בפרזול. כדאי לתאם בדיקה במוסך בהקדם." } },
+                    { "@type": "Question", name: "מה אומר רטט בהגה או בגוף הרכב?", acceptedAnswer: { "@type": "Answer", text: "רטט חריג יכול להעיד על בעיה בגלגלים, בבלמים, או במערכת ההיגוי. רטט בהגה במהירות גבוהה לרוב מצריך איזון גלגלים. רטט שמורגש בבלימה עלול להעיד על דיסקים שחוקים שמצריכים החלפה." } },
+                    { "@type": "Question", name: "מה המשמעות של כתם מתחת לרכב?", acceptedAnswer: { "@type": "Answer", text: "כתמים על הקרקע מתחת לרכב יכולים להעיד על דליפת שמן, נוזל קירור, או נוזל בלמים. כתם ירוק הוא בדרך כלל נוזל קירור, כתם כהה הוא שמן מנוע. בכל מקרה של דליפה כדאי להגיע למוסך לבדיקה." } },
+                    { "@type": "Question", name: "מדוע הרכב פתאום צורך יותר דלק?", acceptedAnswer: { "@type": "Answer", text: "עלייה פתאומית בצריכת הדלק יכולה להעיד על בעיה במערכת ההזרקה, בחיישני המנוע, או במסנן האוויר. בדיקה ממוחשבת יכולה לאתר את הסיבה המדויקת ולמנוע המשך בזבוז דלק." } },
+                  ],
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "בית", item: "https://ortzat.co.il" },
+                    { "@type": "ListItem", position: 2, name: "בלוג", item: "https://ortzat.co.il/blog" },
+                    { "@type": "ListItem", position: 3, name: "8 סימנים שהרכב צריך טיפול מיידי", item: articleUrl },
+                  ],
+                },
+              ],
+            })}
+          </script>
+        );
+      })()}
+
       {/* Speakable for FAQ page */}
       {normalizedPathname === "/faq" && (
         <script type="application/ld+json">
