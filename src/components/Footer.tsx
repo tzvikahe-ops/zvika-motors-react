@@ -78,7 +78,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
               ))}
             </div>
             <div className="space-y-1">
-              <p className="text-primary-foreground/60 text-[10px] font-bold tracking-wider mb-3">משפטי</p>
+              <p className="text-primary-foreground/65 text-[12px] font-bold tracking-wider mb-3">משפטי</p>
               {[
                 { label: "מדיניות פרטיות", page: "privacy" as Page },
                 { label: "הצהרת נגישות", page: "accessibility" as Page },
