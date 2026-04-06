@@ -48,10 +48,10 @@ export default function WhyUsSection() {
           <div className="flex items-center gap-4 mb-8 bg-surface-warm border border-border px-5 py-4">
             <div>
               <p className="text-brand-red text-[28px] font-black leading-none tracking-[-0.03em]">96.1%</p>
-              <p className="text-foreground/50 text-[11px] font-bold mt-0.5">מרוצה מאוד מהשירות</p>
+              <p className="text-muted-foreground text-[12px] font-bold mt-0.5">מרוצה מאוד מהשירות</p>
             </div>
             <div className="w-px h-10 bg-border" />
-            <p className="text-foreground/45 text-[11px] leading-[1.6]">מתוך 594 לקוחות<br />שנסקרו אחרי הטיפול</p>
+            <p className="text-muted-foreground text-[12px] leading-[1.6]">מתוך 594 לקוחות<br />שנסקרו אחרי הטיפול</p>
           </div>
 
           <div>
