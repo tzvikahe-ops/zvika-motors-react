@@ -180,7 +180,11 @@ const DiagnosticsPage = () => {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+        <Footer setPage={setPage} />
+      </Suspense>
+    </div>
   );
 };
 
