@@ -161,7 +161,7 @@ export default function BlogPage() {
               href="https://wa.me/972526514446?text=שלום%2C%20קראתי%20מאמר%20באתר%20ויש%20לי%20שאלה%20נוספת%20%F0%9F%94%A7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)]"
+              className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)]"
             >
               <WhatsAppSVG />
               שלחו שאלה בוואטסאפ
