@@ -10,6 +10,7 @@ import IndexHtmlRedirect from "./components/IndexHtmlRedirect.tsx";
 const ImageStudioPage = lazy(() => import("./components/ImageStudioPage.tsx"));
 const AdminPage = lazy(() => import("./components/AdminPage.tsx"));
 const AuthPage = lazy(() => import("./components/AuthPage.tsx"));
+const DiagnosticsPage = lazy(() => import("./components/DiagnosticsPage.tsx"));
 
 // Lazy load toast components - not needed at initial render
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
@@ -51,6 +52,8 @@ const App = () => (
             <Route path="/accessibility/" element={<Index />} />
             <Route path="/image-generator" element={<Navigate to="/image-generator/" replace />} />
             <Route path="/image-generator/" element={<Index />} />
+            <Route path="/services/diagnostics" element={<Navigate to="/services/diagnostics/" replace />} />
+            <Route path="/services/diagnostics/" element={<Suspense fallback={null}><DiagnosticsPage /></Suspense>} />
             <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
             <Route path="/auth" element={<Suspense fallback={null}><AuthPage /></Suspense>} />
             <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />

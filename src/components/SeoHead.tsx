@@ -87,6 +87,12 @@ const seoConfig: Record<string, PageSeo> = {
     description: "מחולל תמונות פנימי.",
     robots: "noindex, nofollow",
   },
+  "/services/diagnostics": {
+    title: "דיאגנוסטיקה ממוחשבת לרכב בירושלים | המוסך של צביקה",
+    description:
+      "אבחון תקלות מדויק עם ציוד סריקה מתקדם. סריקת מחשב רכב, קודי תקלה, בדיקת חיישנים ומערכות בטיחות. המוסך של צביקה בירושלים.",
+    breadcrumbName: "דיאגנוסטיקה ממוחשבת",
+  },
 };
 
 function getBlogArticleSeo(pathname: string): PageSeo {
@@ -119,6 +125,9 @@ function buildBreadcrumbSchema(pathname: string, seo: PageSeo) {
 
   if (pathname.startsWith("/blog/")) {
     items.push({ "@type": "ListItem", position: 2, name: "בלוג", item: `${BASE_URL}/blog/` });
+    items.push({ "@type": "ListItem", position: 3, name: seo.breadcrumbName || seo.title });
+  } else if (pathname.startsWith("/services/")) {
+    items.push({ "@type": "ListItem", position: 2, name: "שירותים", item: `${BASE_URL}/services/` });
     items.push({ "@type": "ListItem", position: 3, name: seo.breadcrumbName || seo.title });
   } else {
     items.push({ "@type": "ListItem", position: 2, name: seo.breadcrumbName || seo.title });
