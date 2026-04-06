@@ -96,7 +96,7 @@ export default function Footer({ setPage }: { setPage: (p: Page) => void }) {
 
           {/* Info */}
           <div>
-             <p className="text-primary-foreground/60 text-[10px] font-bold tracking-wider mb-3">פרטים</p>
+             <p className="text-primary-foreground/65 text-[12px] font-bold tracking-wider mb-3">פרטים</p>
              <div className="space-y-3 text-primary-foreground/65 text-[12px] leading-[1.75]">
               <p>האופה 4, גבעת שאול<br />ירושלים</p>
               <p>א׳-ה׳ 08:00-16:30</p>
