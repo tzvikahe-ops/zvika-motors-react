@@ -71,7 +71,7 @@ export default function BlogPage() {
       {/* Sticky filter bar */}
       <section className="py-4 px-5 sm:px-6 border-b border-border bg-background sticky top-[60px] z-20">
         <div className="max-w-[900px] mx-auto flex items-center gap-3">
-          <span className="text-[11px] text-muted-foreground font-medium shrink-0 hidden sm:block">סינון:</span>
+          <span className="text-[12px] text-muted-foreground font-medium shrink-0 hidden sm:block">סינון:</span>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveTopic("הכל")}
