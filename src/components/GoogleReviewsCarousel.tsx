@@ -205,6 +205,7 @@ export default function GoogleReviewsCarousel() {
           לא ניתן לטעון ביקורות כרגע.{" "}
           <a href="https://reviewthis.biz/dry-bird-8259" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline font-semibold">
             צפו בביקורות שלנו בגוגל →
+            <span className="sr-only">(נפתח בחלון חדש)</span>
           </a>
         </p>
       </div>
