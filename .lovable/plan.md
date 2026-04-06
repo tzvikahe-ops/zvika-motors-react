@@ -1,30 +1,36 @@
 
 
-## תיקון 3 פריטי נגישות אחרונים
+## שינוי סגנון כפתורי WhatsApp — רקע לבן + ירוק כהה רשמי
 
-### נקודה 1: ניגודיות WhatsApp — SVG fill נחסם על ידי theme
-**בעיה:** `fill="black"` ב-SVG מתורגם ל-`rgb(24,28,37)` בגלל ה-theme. יחס 4.12:1 במקום 4.5:1.
+### הגדרה
+החלפת כל כפתורי WhatsApp מרקע ירוק (#128C7E) עם טקסט שחור → **רקע לבן, טקסט ואייקון ב-#075E54, גבול #0E7A6D**. יחס ניגודיות: 7.67:1.
 
-**פתרון:** שינוי `fill="black"` ל-`fill="#000000"` ב-3 מקומות:
-- `src/components/Icons.tsx` שורה 97 — `WhatsAppIcon` (כפתור צף)
-- `src/components/Navbar.tsx` שורה 110 — אייקון WhatsApp ב-navbar desktop
-- בדיקת כל שאר ה-SVGs עם `fill="black"` בפרויקט
-
-### נקודה 2: כפתור WhatsApp צף — שיפור aria-label
-**בעיה:** ה-aria-label הקיים ("שלח הודעה בוואטסאפ") לא מציין שנפתח בחלון חדש.
-
-**פתרון:** ב-`src/pages/Index.tsx` שורה 125, שינוי ל:
-```
-aria-label="שלחו לנו הודעה ב-WhatsApp (נפתח בחלון חדש)"
+### סגנון חדש (לכל הכפתורים)
+```text
+bg-white border border-[#0E7A6D] text-[#075E54]
+hover:bg-[#f0faf8]
+shadow קל
+SVG fill="#075E54"
 ```
 
-### נקודה 3: "מופעל על ידי" (upress.co.il)
-**ממצא:** הקישור הזה **לא קיים בקוד** — לא נמצא שום אזכור ל-`upress` בפרויקט. כנראה מגיע מ-widget חיצוני או מתוסף שאינו בשליטתנו.
+### כפתור צף (Index.tsx)
+כפתור icon-only — אותו עיקרון: רקע לבן, אייקון #075E54, גבול #0E7A6D.
 
----
+### קבצים מושפעים (12 קבצים)
+| קובץ | מה משתנה |
+|---|---|
+| `src/pages/Index.tsx` | כפתור צף |
+| `src/components/Navbar.tsx` | כפתור WhatsApp במובייל |
+| `src/components/Footer.tsx` | כפתור WhatsApp בפוטר |
+| `src/components/home/HeroSection.tsx` | CTA ראשי |
+| `src/components/home/CTASection.tsx` | CTA תחתון |
+| `src/components/home/ProcessSection.tsx` | CTA תהליך |
+| `src/components/home/ServicesSection.tsx` | CTA שירותים |
+| `src/components/ContactPage.tsx` | CTA צור קשר |
+| `src/components/FAQPage.tsx` | CTA שאלות נפוצות |
+| `src/components/GalleryPage.tsx` | 2 כפתורים |
+| `src/components/BlogPage.tsx` | CTA בלוג |
+| `src/components/AboutPage.tsx` | CTA אודות (אם קיים) |
 
-### קבצים מושפעים
-- `src/components/Icons.tsx` — `fill="#000000"`
-- `src/components/Navbar.tsx` — `fill="#000000"` ב-SVG
-- `src/pages/Index.tsx` — עדכון aria-label לכפתור צף
+בכל קובץ: החלפת `bg-[#128C7E] hover:bg-[#0e7a6d] text-black` → `bg-white border border-[#0E7A6D] text-[#075E54] hover:bg-[#f0faf8]` והחלפת `fill="black"` / `fill="#000000"` → `fill="#075E54"` ב-SVG.
 
