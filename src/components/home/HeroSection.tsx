@@ -90,7 +90,7 @@ className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">4.8</div>
-                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">דירוג בגוגל</p>
+                <p className="text-primary-foreground/65 text-[12px] font-medium mt-1">דירוג בגוגל</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
