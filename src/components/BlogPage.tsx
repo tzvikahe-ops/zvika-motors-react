@@ -40,7 +40,7 @@ export default function BlogPage() {
         <div className="max-w-[900px] mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
           </div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1] mb-4">
             מדריכים מעשיים לבעלי רכב
@@ -57,10 +57,10 @@ export default function BlogPage() {
                 <button
                   key={topic}
                   onClick={() => setActiveTopic(topic)}
-                  className="text-[11px] text-primary-foreground/35 hover:text-primary-foreground/70 bg-primary-foreground/5 hover:bg-primary-foreground/10 border border-primary-foreground/10 px-3 py-1.5 transition-colors duration-200 cursor-pointer"
+                  className="text-[12px] text-primary-foreground/60 hover:text-primary-foreground/80 bg-primary-foreground/5 hover:bg-primary-foreground/10 border border-primary-foreground/10 px-3 py-1.5 min-h-[44px] transition-colors duration-200 cursor-pointer"
                 >
                   {topic}
-                  <span className="mr-1 text-primary-foreground/20">({count})</span>
+                  <span className="mr-1 text-primary-foreground/40">({count})</span>
                 </button>
               );
             })}
@@ -71,7 +71,7 @@ export default function BlogPage() {
       {/* Sticky filter bar */}
       <section className="py-4 px-5 sm:px-6 border-b border-border bg-background sticky top-[60px] z-20">
         <div className="max-w-[900px] mx-auto flex items-center gap-3">
-          <span className="text-[11px] text-muted-foreground font-medium shrink-0 hidden sm:block">סינון:</span>
+          <span className="text-[12px] text-muted-foreground font-medium shrink-0 hidden sm:block">סינון:</span>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveTopic("הכל")}
@@ -117,10 +117,10 @@ export default function BlogPage() {
                 className="bg-card border border-border p-6 md:p-7 text-right hover:border-brand-red/20 transition-colors duration-200 group flex flex-col no-underline"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
+                  <span className="text-[12px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
                     {article.topic}
                   </span>
-                  <span className="text-muted-foreground text-[11px] font-medium">
+                  <span className="text-muted-foreground text-[12px] font-medium">
                     {article.readTime}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function BlogPage() {
       {/* Trust bridge - not salesy, just helpful */}
       <section className="py-12 md:py-16 px-5 sm:px-6 bg-surface-warm">
         <div className="max-w-[600px] mx-auto text-center">
-          <p className="text-foreground/40 text-[11px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
+          <p className="text-muted-foreground text-[12px] font-bold tracking-wider mb-3 uppercase">לא מצאתם תשובה?</p>
           <h2 className="text-[22px] md:text-[28px] font-black text-foreground tracking-[-0.02em] mb-3">
             שלחו לנו שאלה, נחזור אליכם עם תשובה
           </h2>
@@ -161,10 +161,11 @@ export default function BlogPage() {
               href="https://wa.me/972526514446?text=שלום%2C%20קראתי%20מאמר%20באתר%20ויש%20לי%20שאלה%20נוספת%20%F0%9F%94%A7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)]"
+              className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-white px-6 py-3 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)]"
             >
               <WhatsAppSVG />
               שלחו שאלה בוואטסאפ
+              <span className="sr-only">(נפתח בחלון חדש)</span>
             </a>
             <a
               href="tel:02-6514446"
@@ -180,7 +181,7 @@ export default function BlogPage() {
       {/* Internal links for SEO + navigation */}
       <section className="py-10 px-5 sm:px-6 border-t border-border">
         <div className="max-w-[900px] mx-auto">
-          <p className="text-foreground/30 text-[11px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
+          <p className="text-muted-foreground text-[12px] font-bold tracking-wider mb-4">עמודים שימושיים</p>
           <div className="flex flex-wrap gap-3">
             <InternalLink page="services" className="text-[12px] text-foreground/50 hover:text-brand-red border border-border hover:border-brand-red/20 px-4 py-2 transition-colors duration-200 no-underline">
               שירותי המוסך שלנו

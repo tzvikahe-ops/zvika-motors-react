@@ -28,7 +28,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-brand-red/50" />
-              <p className="text-primary-foreground/60 text-[11px] font-bold tracking-[0.15em] uppercase">
+              <p className="text-primary-foreground/65 text-[12px] font-bold tracking-[0.15em] uppercase">
                 מאז 1993 · גבעת שאול, ירושלים
               </p>
             </div>
@@ -64,10 +64,11 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("hero")}
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(37,211,102,0.45)] hover:-translate-y-px"
+className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(18,140,126,0.45)] hover:-translate-y-px"
               >
                 <WhatsAppSVG />
                 <span>שלחו וואטסאפ</span>
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
               {/* GA4: phone_click / hero */}
               <a
@@ -84,17 +85,17 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
             <div className="flex items-center gap-6 mt-10 md:mt-12 pt-8 border-t border-primary-foreground/[0.06]">
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">30+</div>
-                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">שנות ניסיון</p>
+                <p className="text-primary-foreground/65 text-[12px] font-medium mt-1">שנות ניסיון</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">4.8</div>
-                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">דירוג בגוגל</p>
+                <p className="text-primary-foreground/65 text-[12px] font-medium mt-1">דירוג בגוגל</p>
               </div>
               <div className="w-px h-8 bg-primary-foreground/[0.06]" />
               <div>
                 <div className="text-[22px] font-black text-primary-foreground leading-none">98%</div>
-                <p className="text-primary-foreground/55 text-[10px] font-medium mt-1">לקוחות חוזרים</p>
+                <p className="text-primary-foreground/65 text-[12px] font-medium mt-1">לקוחות חוזרים</p>
               </div>
             </div>
           </div>

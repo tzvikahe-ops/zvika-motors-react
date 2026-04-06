@@ -10,7 +10,7 @@ export default function MapSection() {
         <div className="mb-10 md:mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-wider">מיקום</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-wider">מיקום</p>
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.12] mb-3">
             בואו לבקר
@@ -29,14 +29,14 @@ export default function MapSection() {
 
             <div>
               <h3 className="font-black text-[15px] md:text-[16px] text-primary-foreground mb-1">אור-צת שירותי רכב</h3>
-              <p className="text-primary-foreground/55 text-[11px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
+              <p className="text-primary-foreground/65 text-[12px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
 
               <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start gap-3">
                   <MapPin size={15} className="text-brand-red/50 mt-0.5 shrink-0" />
                   <div>
                     <p className="font-bold text-[13px] text-primary-foreground">האופה 4, ירושלים</p>
-                    <p className="text-primary-foreground/55 text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
+                    <p className="text-primary-foreground/65 text-[12px] mt-0.5">גבעת שאול · חניה נוחה</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -61,6 +61,7 @@ export default function MapSection() {
                   <SiWaze className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 נווטו עם Waze
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
@@ -72,6 +73,7 @@ export default function MapSection() {
                   <SiGooglemaps className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 Google Maps
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
             </div>
           </div>

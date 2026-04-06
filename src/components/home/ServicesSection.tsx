@@ -84,7 +84,7 @@ export default function ServicesSection() {
         <div className="text-center mb-12 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-[2px] bg-brand-red/40" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
             <div className="w-8 h-[2px] bg-brand-red/40" />
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1]">
@@ -109,10 +109,11 @@ export default function ServicesSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(`service-card-${i}`)}
-                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[11px] md:text-[12px] text-[#25D366]/80 hover:text-[#25D366] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
+                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[12px] text-[#128C7E]/80 hover:text-[#128C7E] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
               >
                 <WhatsAppSVG />
                 <span>התייעצות בוואטסאפ</span>
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
             </div>
           ))}
@@ -125,10 +126,11 @@ export default function ServicesSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("services-main")}
-            className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 no-underline"
+            className="inline-flex items-center gap-2.5 bg-[#128C7E] hover:bg-[#0e7a6d] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 no-underline"
           >
             <WhatsAppSVG />
             <span>תאמו טיפול בוואטסאפ</span>
+            <span className="sr-only">(נפתח בחלון חדש)</span>
           </a>
           <InternalLink
             page="services"

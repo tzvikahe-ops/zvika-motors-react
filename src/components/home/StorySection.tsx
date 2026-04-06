@@ -10,7 +10,7 @@ export default function StorySection({ setPage }: { setPage: (p: Page) => void }
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-[2px] bg-brand-red/50" />
-              <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">הסיפור שלנו</p>
+              <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">הסיפור שלנו</p>
             </div>
 
             <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-5">
@@ -36,15 +36,15 @@ export default function StorySection({ setPage }: { setPage: (p: Page) => void }
           <div className="flex md:flex-col gap-4 md:gap-5">
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">30+</div>
-              <p className="text-muted-foreground text-[11px] font-medium">שנות ניסיון</p>
+              <p className="text-muted-foreground text-[12px] font-medium">שנות ניסיון</p>
             </div>
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">🏠</div>
-              <p className="text-muted-foreground text-[11px] font-medium">עסק משפחתי</p>
+              <p className="text-muted-foreground text-[12px] font-medium">עסק משפחתי</p>
             </div>
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">98%</div>
-              <p className="text-muted-foreground text-[11px] font-medium">לקוחות חוזרים</p>
+              <p className="text-muted-foreground text-[12px] font-medium">לקוחות חוזרים</p>
             </div>
           </div>
         </div>

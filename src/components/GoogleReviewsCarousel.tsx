@@ -77,7 +77,7 @@ function ReviewCard({ review }: { review: Review }) {
         )}
         <div className="min-w-0 flex-1">
           <p className="text-foreground font-semibold text-[13px] leading-tight truncate">{review.author.name}</p>
-          <p className="text-muted-foreground text-[11px] mt-0.5">{getRelativeTime(review.publishedAt)}</p>
+          <p className="text-muted-foreground text-[12px] mt-0.5">{getRelativeTime(review.publishedAt)}</p>
         </div>
         <Quote className="w-5 h-5 text-brand-red/20 shrink-0" />
       </div>
@@ -95,7 +95,7 @@ function ReviewCard({ review }: { review: Review }) {
 
       <div className="flex items-center gap-1.5 mt-auto pt-2 border-t border-border/50">
         <GoogleIcon />
-        <span className="text-muted-foreground text-[10px]">ביקורת Google</span>
+        <span className="text-muted-foreground text-[12px]">ביקורת Google</span>
       </div>
     </div>
   );
@@ -205,6 +205,7 @@ export default function GoogleReviewsCarousel() {
           לא ניתן לטעון ביקורות כרגע.{" "}
           <a href="https://reviewthis.biz/dry-bird-8259" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline font-semibold">
             צפו בביקורות שלנו בגוגל →
+            <span className="sr-only">(נפתח בחלון חדש)</span>
           </a>
         </p>
       </div>
@@ -270,6 +271,7 @@ export default function GoogleReviewsCarousel() {
         <div className="text-center pt-2">
           <a href={writeReviewUrl.replace("!12e1", "!12e0")} target="_blank" rel="noopener noreferrer" className="text-brand-red text-[13px] font-semibold hover:underline inline-flex items-center gap-1">
             צפו בכל הביקורות בגוגל
+            <span className="sr-only">(נפתח בחלון חדש)</span>
             <ChevronLeft className="w-3.5 h-3.5" />
           </a>
         </div>

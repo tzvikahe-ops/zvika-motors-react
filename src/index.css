@@ -20,6 +20,17 @@
   inset-inline-start: 0;
 }
 
+/* WCAG 2.4.7 - Focus visible indicator */
+:focus-visible {
+  outline: 3px solid hsl(220 80% 56%);
+  outline-offset: 2px;
+}
+
+/* Remove focus-visible from elements that have their own styles */
+.skip-link:focus-visible {
+  outline: none;
+}
+
 @layer base {
   :root {
     --background: 220 6% 97%;

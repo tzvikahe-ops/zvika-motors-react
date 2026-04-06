@@ -31,7 +31,7 @@ export default function ProcessSection() {
         <div className="text-center mb-10 md:mb-14">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-px bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-wider">תהליך העבודה</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-wider">תהליך העבודה</p>
             <div className="w-8 h-px bg-brand-red/50" />
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-3">
@@ -64,10 +64,11 @@ export default function ProcessSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("process")}
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-7 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(37,211,102,0.45)] hover:-translate-y-px"
+            className="inline-flex items-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-white px-7 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(18,140,126,0.45)] hover:-translate-y-px"
           >
             <WhatsAppSVG />
             <span>בואו נתחיל</span>
+            <span className="sr-only">(נפתח בחלון חדש)</span>
           </a>
         </div>
       </div>
