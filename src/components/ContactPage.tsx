@@ -71,7 +71,7 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("contact-block")}
-              className="flex flex-col items-center text-center gap-2.5 group no-underline p-3 rounded-lg hover:bg-[#128C7E]/[0.04] transition-colors"
+              className="flex flex-col items-center text-center gap-2.5 group no-underline p-3 rounded-lg hover:bg-[#075E54]/[0.04] transition-colors"
             >
               <div className="w-14 h-14 rounded-2xl bg-[#128C7E]/10 flex items-center justify-center group-hover:bg-[#128C7E]/20 transition-colors">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#128C7E">
