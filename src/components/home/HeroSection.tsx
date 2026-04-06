@@ -64,10 +64,11 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("hero")}
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(37,211,102,0.45)] hover:-translate-y-px"
+className="inline-flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-white px-8 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(18,140,126,0.45)] hover:-translate-y-px"
               >
                 <WhatsAppSVG />
                 <span>שלחו וואטסאפ</span>
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
               {/* GA4: phone_click / hero */}
               <a
