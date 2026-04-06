@@ -36,7 +36,7 @@ export default function MapSection() {
                   <MapPin size={15} className="text-brand-red/50 mt-0.5 shrink-0" />
                   <div>
                     <p className="font-bold text-[13px] text-primary-foreground">האופה 4, ירושלים</p>
-                    <p className="text-primary-foreground/55 text-[11px] mt-0.5">גבעת שאול · חניה נוחה</p>
+                    <p className="text-primary-foreground/65 text-[12px] mt-0.5">גבעת שאול · חניה נוחה</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
