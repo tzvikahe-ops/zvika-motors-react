@@ -64,7 +64,7 @@ export default function ProcessSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("process")}
-            className="inline-flex items-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-black px-7 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] hover:shadow-[0_6px_28px_-4px_rgba(18,140,126,0.45)] hover:-translate-y-px"
+            className="inline-flex items-center gap-2 bg-white border border-[#0E7A6D] text-[#075E54] px-7 py-3.5 text-[13px] font-bold no-underline transition-all duration-200 shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] hover:bg-[#f0faf8] hover:shadow-[0_4px_16px_-4px_rgba(7,94,84,0.3)] hover:-translate-y-px"
           >
             <WhatsAppSVG />
             <span>בואו נתחיל</span>

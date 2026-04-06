@@ -121,7 +121,7 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackWhatsAppClick("floating")}
-        className="fixed bottom-24 md:bottom-6 left-5 z-50 w-14 h-14 bg-[#128C7E] rounded-lg flex items-center justify-center shadow-[var(--shadow-lg)] hover:scale-105 transition-all duration-200"
+        className="fixed bottom-24 md:bottom-6 left-5 z-50 w-14 h-14 bg-white border border-[#0E7A6D] rounded-lg flex items-center justify-center shadow-[0_2px_12px_-4px_rgba(7,94,84,0.25)] hover:bg-[#f0faf8] hover:scale-105 transition-all duration-200"
         aria-label="שלחו לנו הודעה ב-WhatsApp (נפתח בחלון חדש)"
       >
         <WhatsAppIcon />

@@ -109,7 +109,7 @@ export default function ServicesSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(`service-card-${i}`)}
-                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[12px] text-[#128C7E]/80 hover:text-[#128C7E] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
+                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[12px] text-[#075E54]/80 hover:text-[#075E54] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
               >
                 <WhatsAppSVG />
                 <span>התייעצות בוואטסאפ</span>
@@ -126,7 +126,7 @@ export default function ServicesSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("services-main")}
-            className="inline-flex items-center gap-2.5 bg-[#128C7E] hover:bg-[#0e7a6d] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 no-underline"
+            className="inline-flex items-center gap-2.5 bg-white border border-[#0E7A6D] text-[#075E54] text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-lg shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] hover:bg-[#f0faf8] hover:shadow-[0_4px_16px_-4px_rgba(7,94,84,0.3)] transition-all duration-200 no-underline"
           >
             <WhatsAppSVG />
             <span>תאמו טיפול בוואטסאפ</span>
