@@ -165,6 +165,7 @@ export default function BlogPage() {
             >
               <WhatsAppSVG />
               שלחו שאלה בוואטסאפ
+              <span className="sr-only">(נפתח בחלון חדש)</span>
             </a>
             <a
               href="tel:02-6514446"
