@@ -76,7 +76,7 @@ export default function AccessibilityStatement() {
               <p><strong className="text-foreground">צביקה - רכז נגישות</strong></p>
               <p><strong className="text-foreground">המוסך של צביקה (אור-צת שירותי רכב)</strong></p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
-              <p>וואטסאפ: <a href="https://wa.me/972526814446" className="text-primary underline" target="_blank" rel="noopener noreferrer">052-681-4446</a></p>
+              <p>וואטסאפ: <a href="https://wa.me/972526814446" className="text-primary underline" target="_blank" rel="noopener noreferrer">052-681-4446 <span className="sr-only">(נפתח בחלון חדש)</span></a></p>
               <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>
               <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
               <p className="text-xs text-muted-foreground/70 mt-1">זמן מענה: עד 5 ימי עסקים</p>

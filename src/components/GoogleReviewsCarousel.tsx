@@ -231,6 +231,7 @@ export default function GoogleReviewsCarousel() {
             >
               <Star className="w-3.5 h-3.5 fill-current" />
               כתוב ביקורת
+              <span className="sr-only">(נפתח בחלון חדש)</span>
             </a>
           )}
         </div>
