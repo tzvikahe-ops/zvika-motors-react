@@ -60,7 +60,7 @@ export default function ServiceStrip({ setPage }: { setPage: (p: Page) => void }
   return (
     <div className="bg-surface-dark border-t border-b border-primary-foreground/[0.06] relative" dir="rtl">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-3 md:grid-cols-6">
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {services.map(({ icon, label }, i) => (
             <button
               key={label}
