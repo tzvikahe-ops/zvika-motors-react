@@ -28,7 +28,7 @@ export default function HeroSection({ setPage }: { setPage: (p: Page) => void })
           <div className="relative px-6 sm:px-10 md:px-12 lg:px-16 py-20 md:py-0">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px] bg-brand-red/50" />
-              <p className="text-primary-foreground/60 text-[11px] font-bold tracking-[0.15em] uppercase">
+              <p className="text-primary-foreground/65 text-[12px] font-bold tracking-[0.15em] uppercase">
                 מאז 1993 · גבעת שאול, ירושלים
               </p>
             </div>

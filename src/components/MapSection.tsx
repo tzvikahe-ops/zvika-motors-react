@@ -73,6 +73,7 @@ export default function MapSection() {
                   <SiGooglemaps className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 Google Maps
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
             </div>
           </div>

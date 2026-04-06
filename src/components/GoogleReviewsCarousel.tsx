@@ -77,7 +77,7 @@ function ReviewCard({ review }: { review: Review }) {
         )}
         <div className="min-w-0 flex-1">
           <p className="text-foreground font-semibold text-[13px] leading-tight truncate">{review.author.name}</p>
-          <p className="text-muted-foreground text-[11px] mt-0.5">{getRelativeTime(review.publishedAt)}</p>
+          <p className="text-muted-foreground text-[12px] mt-0.5">{getRelativeTime(review.publishedAt)}</p>
         </div>
         <Quote className="w-5 h-5 text-brand-red/20 shrink-0" />
       </div>

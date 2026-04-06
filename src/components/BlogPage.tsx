@@ -117,10 +117,10 @@ export default function BlogPage() {
                 className="bg-card border border-border p-6 md:p-7 text-right hover:border-brand-red/20 transition-colors duration-200 group flex flex-col no-underline"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
+                  <span className="text-[12px] font-bold text-brand-red/70 bg-brand-red/5 px-2 py-0.5 border border-brand-red/10">
                     {article.topic}
                   </span>
-                  <span className="text-muted-foreground text-[11px] font-medium">
+                  <span className="text-muted-foreground text-[12px] font-medium">
                     {article.readTime}
                   </span>
                 </div>
