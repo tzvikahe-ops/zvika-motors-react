@@ -109,7 +109,7 @@ export default function ServicesSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(`service-card-${i}`)}
-                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[12px] text-[#128C7E]/80 hover:text-[#128C7E] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
+                className="inline-flex items-center gap-1.5 mt-3 pt-2 border-t border-primary-foreground/[0.06] text-[12px] text-[#075E54]/80 hover:text-[#075E54] font-medium transition-colors duration-200 md:opacity-0 md:group-hover:opacity-100 min-h-[36px] no-underline"
               >
                 <WhatsAppSVG />
                 <span>התייעצות בוואטסאפ</span>
