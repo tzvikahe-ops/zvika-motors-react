@@ -29,7 +29,7 @@ export default function MapSection() {
 
             <div>
               <h3 className="font-black text-[15px] md:text-[16px] text-primary-foreground mb-1">אור-צת שירותי רכב</h3>
-              <p className="text-primary-foreground/55 text-[11px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
+              <p className="text-primary-foreground/65 text-[12px] mb-6 md:mb-8 font-medium">המוסך של צביקה · מאז 1993</p>
 
               <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start gap-3">
