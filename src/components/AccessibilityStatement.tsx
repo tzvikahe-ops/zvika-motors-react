@@ -5,7 +5,7 @@ export default function AccessibilityStatement() {
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
       <div className="max-w-[800px] mx-auto px-6 py-20">
         <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">הצהרת נגישות</h1>
-        <p className="text-muted-foreground text-sm mb-10">עדכון אחרון: 6 באפריל 2026</p>
+        <p className="text-muted-foreground text-sm mb-10">עדכון אחרון: 7 באפריל 2026</p>
 
         <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 text-sm leading-7 text-muted-foreground flex flex-col gap-6">
           <p>
@@ -21,14 +21,16 @@ export default function AccessibilityStatement() {
             <h2 className="text-lg font-bold text-primary mb-2">2. פעולות שבוצעו להנגשת האתר</h2>
             <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4">
               <li>קישור "דלג לתוכן הראשי" לדילוג על הניווט</li>
-              <li>שימוש בניגודיות צבעים מתאימה</li>
+              <li>שימוש בניגודיות צבעים מתאימה (יחס 4.5:1 לפחות לכל טקסט, כולל כפתורי WhatsApp)</li>
               <li>תמיכה בכיוון קריאה מימין לשמאל (RTL)</li>
-              <li>שימוש בגופנים קריאים ובגודל טקסט מתאים</li>
+              <li>שימוש בגופנים קריאים ובגודל טקסט מינימלי של 12px</li>
               <li>תיאור חלופי (alt) לתמונות</li>
               <li>מבנה סמנטי של דפי האתר עם תגיות ARIA</li>
-              <li>תמיכה בניווט באמצעות מקלדת</li>
-              <li>הגדרת Landmark Roles לאזורי העמוד (ניווט, תוכן ראשי, פוטר)</li>
+              <li>תמיכה בניווט באמצעות מקלדת עם מסגרות פוקוס נראות (focus-visible) לכל רכיב אינטראקטיבי</li>
+              <li>הגדרת Landmark Roles לאזורי העמוד (header, ניווט, תוכן ראשי, פוטר)</li>
               <li>תוויות aria-label לכל האלמנטים האינטראקטיביים</li>
+              <li>התראת קורא מסך (sr-only) בכל קישור הנפתח בחלון חדש</li>
+              <li>יעדי לחיצה מינימליים של 44×44 פיקסלים לפי WCAG 2.5.5</li>
             </ul>
           </section>
 
@@ -54,7 +56,15 @@ export default function AccessibilityStatement() {
 
           <section>
             <h2 className="text-lg font-bold text-primary mb-2">5. סקירת נגישות</h2>
-            <p>סקירת הנגישות האחרונה של האתר בוצעה באפריל 2026 על ידי צוות הפיתוח, וכללה בדיקות ידניות עם קורא מסך, ניווט מקלדת ובדיקת ניגודיות צבעים.</p>
+            <p>סקירת הנגישות האחרונה של האתר בוצעה ב-7 באפריל 2026, על בסיס דוח WCAG 2.1 AA מקיף. כל הממצאים שזוהו בדוח טופלו, לרבות:</p>
+            <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4 mt-2">
+              <li>תיקון ניגודיות כפתורי WhatsApp ליחס של 4.5:1 לפחות</li>
+              <li>הוספת מסגרות פוקוס נראות לכל 84 הרכיבים האינטראקטיביים</li>
+              <li>הגדלת גודל פונט מינימלי ל-12px בכל רחבי האתר</li>
+              <li>הוספת התראות sr-only ל-19 קישורים הנפתחים בחלון חדש</li>
+              <li>הוספת תגית header (banner landmark) ברמת הדף</li>
+              <li>הגדלת יעדי לחיצה לרכיבים קטנים מ-24px</li>
+            </ul>
           </section>
 
           <section>
