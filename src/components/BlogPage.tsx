@@ -40,7 +40,7 @@ export default function BlogPage() {
         <div className="max-w-[900px] mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-brand-red/50" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
           </div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1] mb-4">
             מדריכים מעשיים לבעלי רכב
