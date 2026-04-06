@@ -40,7 +40,7 @@ export default function StorySection({ setPage }: { setPage: (p: Page) => void }
             </div>
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">🏠</div>
-              <p className="text-muted-foreground text-[11px] font-medium">עסק משפחתי</p>
+              <p className="text-muted-foreground text-[12px] font-medium">עסק משפחתי</p>
             </div>
             <div className="bg-card border border-border p-4 md:p-5 text-center min-w-[110px]">
               <div className="text-[24px] font-black text-brand-red leading-none mb-1">98%</div>
