@@ -95,7 +95,7 @@ function ReviewCard({ review }: { review: Review }) {
 
       <div className="flex items-center gap-1.5 mt-auto pt-2 border-t border-border/50">
         <GoogleIcon />
-        <span className="text-muted-foreground text-[10px]">ביקורת Google</span>
+        <span className="text-muted-foreground text-[12px]">ביקורת Google</span>
       </div>
     </div>
   );
