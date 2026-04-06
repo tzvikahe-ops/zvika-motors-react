@@ -28,6 +28,7 @@ const ServicesPage = () => {
         "בדיקת מערכת מתלים ותיקון בעיות הגה",
         "החלפת מצברים ובדיקת מערכת חשמל",
       ],
+      link: "/services/general/",
     },
     {
       anchor: "diagnostics",
