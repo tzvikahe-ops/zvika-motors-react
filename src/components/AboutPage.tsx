@@ -314,7 +314,7 @@ const AboutPage = () => {
       <section className="py-16 md:py-20 bg-surface-dark" aria-label="יצירת קשר">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center">
           <h2 className="text-[22px] md:text-[32px] font-black text-primary-foreground mb-3 tracking-[-0.03em]">רוצים להכיר אותנו מקרוב?</h2>
-          <p className="text-primary-foreground/45 mb-9 text-[13px] md:text-[14px] leading-[1.8] max-w-md mx-auto">
+          <p className="text-primary-foreground/65 mb-9 text-[13px] md:text-[14px] leading-[1.8] max-w-md mx-auto">
             בואו לביקור במוסך, התקשרו או שלחו הודעה. נשמח להכיר ולטפל ברכב שלכם.
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
