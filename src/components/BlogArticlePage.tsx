@@ -57,6 +57,29 @@ function renderSection(section: ArticleSection, index: number) {
           </a>
         </div>
       );
+    case "table":
+      return (
+        <div key={index} className="my-6 overflow-x-auto" dir="rtl">
+          <table className="w-full border-collapse text-[13px] md:text-[14px] text-right">
+            <thead>
+              <tr className="bg-surface-darker text-primary-foreground">
+                {section.tableHeaders?.map((header, j) => (
+                  <th key={j} className="border border-border px-4 py-3 font-bold text-[13px]">{header}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.tableRows?.map((row, j) => (
+                <tr key={j} className={j % 2 === 0 ? "bg-card" : "bg-surface-warm"}>
+                  {row.map((cell, k) => (
+                    <td key={k} className={`border border-border px-4 py-3 ${k === 0 ? "font-bold text-foreground" : "text-foreground/65"}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     case "quote":
       return (
         <blockquote key={index} className="border-r-4 border-brand-red/50 pr-5 my-6 bg-surface-warm p-5">
