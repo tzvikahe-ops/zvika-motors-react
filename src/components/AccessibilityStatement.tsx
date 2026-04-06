@@ -5,7 +5,7 @@ export default function AccessibilityStatement() {
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
       <div className="max-w-[800px] mx-auto px-6 py-20">
         <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">הצהרת נגישות</h1>
-        <p className="text-muted-foreground text-sm mb-10">עדכון אחרון: אפריל 2026</p>
+        <p className="text-muted-foreground text-sm mb-10">עדכון אחרון: 6 באפריל 2026</p>
 
         <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 text-sm leading-7 text-muted-foreground flex flex-col gap-6">
           <p>
@@ -27,6 +27,8 @@ export default function AccessibilityStatement() {
               <li>תיאור חלופי (alt) לתמונות</li>
               <li>מבנה סמנטי של דפי האתר עם תגיות ARIA</li>
               <li>תמיכה בניווט באמצעות מקלדת</li>
+              <li>הגדרת Landmark Roles לאזורי העמוד (ניווט, תוכן ראשי, פוטר)</li>
+              <li>תוויות aria-label לכל האלמנטים האינטראקטיביים</li>
             </ul>
           </section>
 
@@ -51,7 +53,12 @@ export default function AccessibilityStatement() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-primary mb-2">5. רכז נגישות</h2>
+            <h2 className="text-lg font-bold text-primary mb-2">5. סקירת נגישות</h2>
+            <p>סקירת הנגישות האחרונה של האתר בוצעה באפריל 2026 על ידי צוות הפיתוח, וכללה בדיקות ידניות עם קורא מסך, ניווט מקלדת ובדיקת ניגודיות צבעים.</p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-primary mb-2">6. רכז נגישות</h2>
             <p className="mb-3">
               לפניות בנושא נגישות ניתן לפנות לרכז הנגישות של העסק:
             </p>
@@ -59,6 +66,7 @@ export default function AccessibilityStatement() {
               <p><strong className="text-foreground">צביקה - רכז נגישות</strong></p>
               <p><strong className="text-foreground">המוסך של צביקה (אור-צת שירותי רכב)</strong></p>
               <p>טלפון: <a href="tel:02-6514446" className="text-primary underline" dir="ltr">02-6514446</a></p>
+              <p>וואטסאפ: <a href="https://wa.me/972526814446" className="text-primary underline" target="_blank" rel="noopener noreferrer">052-681-4446</a></p>
               <p>אימייל: <a href={`mailto:${getContactEmail()}`} className="text-primary underline">{getContactEmail()}</a></p>
               <p>כתובת: רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים</p>
               <p className="text-xs text-muted-foreground/70 mt-1">זמן מענה: עד 5 ימי עסקים</p>
@@ -66,8 +74,18 @@ export default function AccessibilityStatement() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-primary mb-2">6. נגישות המוסך הפיזי</h2>
+            <h2 className="text-lg font-bold text-primary mb-2">7. נגישות המוסך הפיזי</h2>
             <p>המוסך נגיש לאנשים עם מוגבלות פיזית, כולל כניסה נגישה וחניית נכים ייעודית.</p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-primary mb-2">8. פנייה לנציבות שוויון זכויות</h2>
+            <p>
+              אם נתקלתם בבעיית נגישות שלא נפתרה, ניתן לפנות לנציבות שוויון זכויות לאנשים עם מוגבלות:{" "}
+              <a href="https://www.gov.il/he/departments/topics/equal_rights_commission" className="text-primary underline" target="_blank" rel="noopener noreferrer">
+                אתר הנציבות
+              </a>
+            </p>
           </section>
         </div>
       </div>
