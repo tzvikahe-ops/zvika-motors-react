@@ -54,8 +54,6 @@ const services = [
   { icon: <ScanSVG />, label: "דיאגנוסטיקה" },
   { icon: <ACSvg />, label: "מיזוג אוויר" },
   { icon: <ClipboardSVG />, label: "הכנה לטסט" },
-  { icon: <OilSVG />, label: "החלפת שמנים" },
-  { icon: <BrakeSVG />, label: "בלמים" },
 ];
 
 export default function ServiceStrip({ setPage }: { setPage: (p: Page) => void }) {
