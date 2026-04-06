@@ -126,6 +126,9 @@ function buildBreadcrumbSchema(pathname: string, seo: PageSeo) {
   if (pathname.startsWith("/blog/")) {
     items.push({ "@type": "ListItem", position: 2, name: "בלוג", item: `${BASE_URL}/blog/` });
     items.push({ "@type": "ListItem", position: 3, name: seo.breadcrumbName || seo.title });
+  } else if (pathname.startsWith("/services/")) {
+    items.push({ "@type": "ListItem", position: 2, name: "שירותים", item: `${BASE_URL}/services/` });
+    items.push({ "@type": "ListItem", position: 3, name: seo.breadcrumbName || seo.title });
   } else {
     items.push({ "@type": "ListItem", position: 2, name: seo.breadcrumbName || seo.title });
   }
