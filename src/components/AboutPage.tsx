@@ -146,7 +146,7 @@ const AboutPage = () => {
           <div className="text-center mb-10">
             <p className="text-[64px] md:text-[80px] font-black text-brand-red leading-none tracking-[-0.04em]">96.1%</p>
             <p className="text-foreground/60 text-[15px] md:text-[16px] font-bold mt-2">מרוצה מאוד מהשירות</p>
-            <p className="text-foreground/35 text-[12px] mt-1">מתוך 594 משובים שנאספו</p>
+            <p className="text-muted-foreground text-[12px] mt-1">מתוך 594 משובים שנאספו</p>
           </div>
 
           {/* Breakdown */}
