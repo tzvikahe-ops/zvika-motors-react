@@ -5,7 +5,7 @@ export default function AccessibilityStatement() {
     <div dir="rtl" className="pt-[72px] min-h-screen bg-gray-bg-light">
       <div className="max-w-[800px] mx-auto px-6 py-20">
         <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">הצהרת נגישות</h1>
-        <p className="text-muted-foreground text-sm mb-10"><p className="text-muted-foreground text-sm mb-10">עדכון אחרון: 6 באפריל 2026</p></p>
+        <p className="text-muted-foreground text-sm mb-10">עדכון אחרון: 6 באפריל 2026</p>
 
         <div className="bg-background rounded-xl p-8 shadow-[var(--shadow-sm)] border border-border/40 text-sm leading-7 text-muted-foreground flex flex-col gap-6">
           <p>
@@ -56,14 +56,15 @@ export default function AccessibilityStatement() {
 
           <section>
             <h2 className="text-lg font-bold text-primary mb-2">5. סקירת נגישות</h2>
-            <p>סקירת הנגישות האחרונה של האתר בוצעה <p>סקירת הנגישות האחרונה של האתר בוצעה ב-6 באפריל 2026, על בסיס דוח WCAG 2.1 AA מקיף. כל הממצאים שזוהו בדוח טופלו, לרבות:</p>, על בסיס דוח WCAG 2.1 AA מקיף. כל הממצאים שזוהו בדוח טופלו, לרבות:</p>
+            <p>סקירת הנגישות האחרונה של האתר בוצעה ב-6 באפריל 2026, על בסיס דוח WCAG 2.1 AA מקיף. כל הממצאים שזוהו בדוח טופלו, לרבות:</p>
             <ul className="list-disc list-inside flex flex-col gap-1.5 pr-4 mt-2">
-              <li>תיקון ניגודיות כפתורי WhatsApp ליחס של 4.5:1 לפחות</li>
-              <li>הוספת מסגרות פוקוס נראות לכל 84 הרכיבים האינטראקטיביים</li>
+              <li>תיקון ניגודיות כפתורי WhatsApp ליחס של 5.56:1 (fill מפורש #000000 במקום ערך theme)</li>
+              <li>הוספת מסגרות פוקוס נראות לכל הרכיבים האינטראקטיביים</li>
               <li>הגדלת גודל פונט מינימלי ל-12px בכל רחבי האתר</li>
-              <li>הוספת התראות sr-only ל-19 קישורים הנפתחים בחלון חדש</li>
+              <li>הוספת התראות sr-only לכל הקישורים הנפתחים בחלון חדש</li>
               <li>הוספת תגית header (banner landmark) ברמת הדף</li>
-              <li>הגדלת יעדי לחיצה לרכיבים קטנים מ-24px</li>
+              <li>הגדלת יעדי לחיצה לרכיבים קטנים מ-24px ל-44×44px</li>
+              <li>עדכון aria-label בכפתור WhatsApp צף עם ציון פתיחה בחלון חדש</li>
             </ul>
           </section>
 
