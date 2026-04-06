@@ -1,85 +1,39 @@
 
 
-## תוכנית תיקון נגישות - לפי דוח WCAG 2.1
+## תיקון 4 נקודות נגישות שנותרו
 
-הדוח זיהה 5 בעיות קריטיות ו-4 אזהרות. להלן תוכנית היישום:
+### נקודה 1: ניגודיות WhatsApp — טקסט לבן על #128C7E
+**בעיה:** יחס 4.12:1, צריך 4.5:1.
+**פתרון:** בכל כפתורי WhatsApp באתר, הצבע כבר `text-white`. לפי ההצעה שלך, נחליף ל-`text-black` (שחור מלא) → יחס 5.56:1. זה ישפיע על ~12 קבצים שמכילים `bg-[#128C7E]`.
 
----
-
-### שלב 1: מסגרות פוקוס (focus-visible) - P1
-**הבעיה:** 84 רכיבים אינטראקטיביים ללא מסגרת פוקוס נראית (WCAG 2.4.7)
-
-**הפתרון:** הוספת כלל `:focus-visible` גלובלי ב-`src/index.css` שיחול על כל הקישורים, כפתורים ושדות קלט. מסגרת כחולה עם offset.
+**קבצים:** HeroSection, CTASection, ProcessSection, Navbar, Footer, BlogPage, ContactPage, FAQPage, GalleryPage, AboutPage, Index.tsx (floating button), GoogleReviewsCarousel (אם רלוונטי).
 
 ---
 
-### שלב 2: ניגודיות כפתור WhatsApp - P1
-**הבעיה:** רקע `#25D366` עם טקסט לבן = יחס 1.98:1 (דרוש 4.5:1)
-
-**הפתרון:** שינוי רקע כפתורי WhatsApp ל-`#128C7E` (ירוק כהה יותר, יחס ~4.9:1) בכל הקבצים:
-- `HeroSection.tsx`, `CTASection.tsx`, `ProcessSection.tsx`
-- `Navbar.tsx`, `Footer.tsx`, `BlogPage.tsx`
-- `AboutPage.tsx`, `Index.tsx` (floating button)
+### נקודה 2: כפתורי שפה (widget חיצוני)
+**לא בשליטתנו** — אלה מגיעים מ-cdn.enable.co.il. אין מה לתקן בקוד שלנו.
 
 ---
 
-### שלב 3: ניגודיות טקסטים שקופים - P1
-**הבעיה:** טקסטים עם opacity נמוך (0.45-0.5) = יחס ~1.23:1
-
-**הפתרון:**
-- `WhyUsSection.tsx`: שינוי `text-foreground/50` ו-`text-foreground/45` ל-`text-muted-foreground` (יחס 4.5+)
-- ספרות דקורטיביות (`text-brand-red/60`) - הוספת `aria-hidden="true"` כי הן דקורטיביות
-- תגית "למה אנחנו" ב-11px: הגדלה ל-12px + הכהת הצבע
+### נקודה 3: iframe ללא title
+**בעיה:** ה-iframe של Google Maps ב-MapSection.tsx **כבר מכיל title**. ה-iframe ה"חסר" כנראה מגיע מתוך ה-Google Maps embed עצמו (iframe פנימי שנוצר דינמית) — לא בשליטתנו. אם רוצים, אפשר להוסיף title גם ל-sandbox attribute.
 
 ---
 
-### שלב 4: title ל-iFrames - P1
-**הבעיה:** iFrame של Google Maps ללא title
+### נקודה 4: 2 קישורים חסרי sr-only
+**קישורים שזוהו:**
+1. `GoogleReviewsCarousel.tsx` שורה 233 — "כתוב ביקורת" (target=_blank, ללא sr-only)
+2. `AccessibilityStatement.tsx` שורה 79 — קישור וואטסאפ של רכז הנגישות (target=_blank, ללא sr-only)
 
-**הפתרון:** ה-iframe ב-`MapSection.tsx` כבר מכיל `title`. יש לוודא שגם iframes בקומפוננטות אחרות (אם קיימים) מכילים title.
-
----
-
-### שלב 5: `<header>` landmark - P2
-**הבעיה:** חסר `<header role="banner">` ברמת הדף
-
-**הפתרון:** עטיפת ה-Navbar ב-`<header role="banner">` בתוך `Index.tsx`.
+**פתרון:** הוספת `<span className="sr-only">(נפתח בחלון חדש)</span>` בכל אחד מהם.
 
 ---
 
-### שלב 6: התראה לקישורי target="_blank" - P2
-**הבעיה:** 19 קישורים נפתחים בחלון חדש ללא הודעה
-
-**הפתרון:** הוספת `<span className="sr-only">(נפתח בחלון חדש)</span>` לכל קישור עם `target="_blank"` ברכיבים הרלוונטיים.
-
----
-
-### שלב 7: הגדלת יעדי לחיצה - P2
-**הבעיה:** 17 רכיבים קטנים מ-24x24px
-
-**הפתרון:** הוספת `min-h-[44px] min-w-[44px]` לקישורים קטנים (בעיקר תגיות קטגוריה, קישורי footer).
-
----
-
-### שלב 8: הגדלת פונט קטן - P3
-**הבעיה:** 57 רכיבים עם font-size מתחת ל-12px
-
-**הפתרון:** שינוי כל `text-[11px]` ל-`text-[12px]` לפחות ברכיבי טקסט (לא דקורטיביים).
-
----
-
-### קבצים מושפעים
-- `src/index.css` - כלל focus-visible גלובלי
-- `src/pages/Index.tsx` - header landmark
-- `src/components/home/HeroSection.tsx` - WhatsApp color
-- `src/components/home/CTASection.tsx` - WhatsApp color
-- `src/components/home/ProcessSection.tsx` - WhatsApp color
-- `src/components/home/WhyUsSection.tsx` - contrast fixes, font sizes
-- `src/components/Navbar.tsx` - WhatsApp color, sr-only hints
-- `src/components/Footer.tsx` - WhatsApp color, sr-only hints
-- `src/components/MapSection.tsx` - sr-only hints
-- `src/components/BlogPage.tsx` - WhatsApp color
-- `src/components/AboutPage.tsx` - WhatsApp color, sr-only hints
-- `src/components/GoogleReviewsCarousel.tsx` - sr-only hints
-- רכיבים נוספים עם target="_blank"
+### סיכום שינויים
+| # | פעולה | קבצים |
+|---|-------|-------|
+| 1 | `text-white` → `text-black` בכפתורי WhatsApp | ~12 קבצים |
+| 2 | Widget חיצוני — דילוג | — |
+| 3 | iframe כבר עם title — דילוג | — |
+| 4 | הוספת sr-only ל-2 קישורים | GoogleReviewsCarousel.tsx, AccessibilityStatement.tsx |
 
