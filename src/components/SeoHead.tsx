@@ -87,6 +87,12 @@ const seoConfig: Record<string, PageSeo> = {
     description: "מחולל תמונות פנימי.",
     robots: "noindex, nofollow",
   },
+  "/services/diagnostics": {
+    title: "דיאגנוסטיקה ממוחשבת לרכב בירושלים | המוסך של צביקה",
+    description:
+      "אבחון תקלות מדויק עם ציוד סריקה מתקדם. סריקת מחשב רכב, קודי תקלה, בדיקת חיישנים ומערכות בטיחות. המוסך של צביקה בירושלים.",
+    breadcrumbName: "דיאגנוסטיקה ממוחשבת",
+  },
 };
 
 function getBlogArticleSeo(pathname: string): PageSeo {

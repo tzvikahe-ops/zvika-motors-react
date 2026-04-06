@@ -45,11 +45,6 @@ const DiagnosticsPage = () => {
 
   return (
     <main dir="rtl" className="bg-background">
-      <SeoHead
-        title="דיאגנוסטיקה ממוחשבת לרכב בירושלים | המוסך של צביקה"
-        description="אבחון תקלות מדויק עם ציוד סריקה מתקדם. סריקת מחשב רכב, קודי תקלה, בדיקת חיישנים ומערכות בטיחות. המוסך של צביקה בירושלים."
-        canonical="https://www.ortzat.co.il/services/diagnostics/"
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

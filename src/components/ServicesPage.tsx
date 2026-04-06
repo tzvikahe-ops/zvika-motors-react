@@ -44,6 +44,7 @@ const ServicesPage = () => {
         "בדיקת פליטת מזהמים ויעילות ממיר קטליטי",
         "קריאת נתוני זמן אמת מחיישני הרכב",
       ],
+      link: "/services/diagnostics/",
     },
     {
       anchor: "ac",
