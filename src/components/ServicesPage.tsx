@@ -220,6 +220,13 @@ const ServicesPage = () => {
                       ))}
                     </ul>
                   </div>
+                  {('link' in service && service.link) && (
+                    <div className="mt-4">
+                      <a href={service.link} className="text-brand-red text-[13px] font-medium hover:underline no-underline">
+                        מידע נוסף על {service.title} ←
+                      </a>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
