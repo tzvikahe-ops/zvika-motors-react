@@ -57,10 +57,10 @@ export default function BlogPage() {
                 <button
                   key={topic}
                   onClick={() => setActiveTopic(topic)}
-                  className="text-[11px] text-primary-foreground/35 hover:text-primary-foreground/70 bg-primary-foreground/5 hover:bg-primary-foreground/10 border border-primary-foreground/10 px-3 py-1.5 transition-colors duration-200 cursor-pointer"
+                  className="text-[12px] text-primary-foreground/60 hover:text-primary-foreground/80 bg-primary-foreground/5 hover:bg-primary-foreground/10 border border-primary-foreground/10 px-3 py-1.5 min-h-[44px] transition-colors duration-200 cursor-pointer"
                 >
                   {topic}
-                  <span className="mr-1 text-primary-foreground/20">({count})</span>
+                  <span className="mr-1 text-primary-foreground/40">({count})</span>
                 </button>
               );
             })}
