@@ -82,7 +82,9 @@ const Index = () => {
       </a>
       <SeoHead />
       <PassoverBanner />
-      <Navbar currentPage={currentPage} setPage={setPage} />
+      <header role="banner">
+        <Navbar currentPage={currentPage} setPage={setPage} />
+      </header>
 
       <main id="main-content" role="main" tabIndex={-1}>
         <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
