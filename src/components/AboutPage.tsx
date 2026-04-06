@@ -30,7 +30,7 @@ const AboutPage = () => {
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">אודות המוסך</div>
+          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[12px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">אודות המוסך</div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
             המוסך של צביקה - הסיפור שלנו
           </h1>
