@@ -394,6 +394,67 @@ export default function SeoHead() {
         </script>
       )}
 
+      {/* Article + FAQPage + BreadcrumbList structured data for check engine article */}
+      {normalizedPathname === "/blog/נורת-צק-אנגין-מה-לעשות" && (() => {
+        const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent("נורת-צק-אנגין-מה-לעשות")}/`;
+        return (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Article",
+                  headline: "נורת צ'ק אנג'ין נדלקה? המדריך המלא למה זה קורה ומה לעשות",
+                  description: "נורת צ'ק אנג'ין נדלקה? מסביר מה זה אומר, מה ההבדל בין נורה דולקת למהבהבת, 5 הסיבות הנפוצות ביותר, ומה לעשות עכשיו. המוסך של צביקה | אור-צת, גבעת שאול ירושלים.",
+                  datePublished: "2025-03-28T00:00:00+02:00",
+                  dateModified: "2026-04-06T00:00:00+02:00",
+                  inLanguage: "he-IL",
+                  author: {
+                    "@type": "Person",
+                    name: "צביקה",
+                    jobTitle: "בעל מוסך",
+                    worksFor: {
+                      "@type": "AutoRepair",
+                      name: "המוסך של צביקה (אור-צת)",
+                      url: "https://ortzat.co.il",
+                    },
+                  },
+                  publisher: {
+                    "@type": "AutoRepair",
+                    name: "המוסך של צביקה (אור-צת)",
+                    url: "https://ortzat.co.il",
+                    logo: { "@type": "ImageObject", url: "https://ortzat.co.il/logo.png" },
+                  },
+                  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+                  keywords: ["נורת צ'ק אנג'ין", "check engine", "בדיקה ממוחשבת", "OBD", "מוסך ירושלים", "גבעת שאול", "חיישן חמצן", "ממיר קטליטי", "המוסך של צביקה", "אור-צת"],
+                  articleSection: "תקלות ואבחון",
+                  speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".article-summary", ".faq-answer"] },
+                },
+                {
+                  "@type": "FAQPage",
+                  mainEntity: [
+                    { "@type": "Question", name: "מה זה נורת צ'ק אנג'ין?", acceptedAnswer: { "@type": "Answer", text: "נורת הצ'ק אנג'ין היא חלק ממערכת האבחון הממוחשבת של הרכב (OBD). כשמחשב הרכב מזהה תקלה באחת המערכות, הוא מדליק את הנורה ושומר קוד תקלה בזיכרון. הנורה לא מציינת את סוג התקלה, אלא מסמנת שיש משהו שצריך לבדוק." } },
+                    { "@type": "Question", name: "מה ההבדל בין נורת צ'ק אנג'ין דולקת למהבהבת?", acceptedAnswer: { "@type": "Answer", text: "נורה דולקת קבוע מעידה על תקלה שאינה דחופה ברמת שניות, אך כדאי לבדוק בקרוב. נורה מהבהבת היא סימן לתקלה חמורה יותר, לרוב מיספייר (שריפה לא תקינה בגליל). במצב של נורה מהבהבת יש להפחית מהירות, להימנע מלחיצה חזקה על הגז, ולהגיע למוסך בהקדם כדי למנוע נזק לממיר הקטליטי." } },
+                    { "@type": "Question", name: "מה הסיבות הנפוצות לנורת צ'ק אנג'ין?", acceptedAnswer: { "@type": "Answer", text: "הסיבות הנפוצות ביותר: חיישן חמצן (O2 Sensor) תקול, פקק מיכל הדלק רופף, בעיה בסלילי הצתה או מצתים, ממיר קטליטי פגום, ובעיה במערכת אידוי דלק (EVAP). בלמעלה מ-40% מהמקרים מדובר בתקלה פשוטה שעולה עד כמה מאות שקלים לתיקון." } },
+                    { "@type": "Question", name: "האם אפשר להמשיך לנסוע כשנורת צ'ק אנג'ין דולקת?", acceptedAnswer: { "@type": "Answer", text: "אם הנורה דולקת קבוע ולא מהבהבת, ניתן להמשיך לנסוע בזהירות ולתאם בדיקה בימים הקרובים. אם הנורה מהבהבת, יש להפחית מהירות מיד ולהגיע למוסך בהקדם. נסיעה ממושכת עם נורה מהבהבת עלולה לגרום נזק לממיר הקטליטי, שתיקונו עולה אלפי שקלים." } },
+                    { "@type": "Question", name: "כמה עולה בדיקה ממוחשבת לנורת צ'ק אנג'ין?", acceptedAnswer: { "@type": "Answer", text: "בדיקת מחשב (סריקת OBD) היא הצעד הראשון והחשוב ביותר. הסריקה מוציאה את קודי התקלה ומראה מה המערכת מדווחת. לאחר הסריקה מציגים הערכת מחיר לפני שמתחילים לעבוד. ניתן לתאם בדיקה ממוחשבת במוסך של צביקה (אור-צת) בגבעת שאול, ירושלים." } },
+                    { "@type": "Question", name: "מה לעשות כשנורת צ'ק אנג'ין נדלקת?", acceptedAnswer: { "@type": "Answer", text: "1. לא להיבהל. 2. לבדוק שפקק הדלק סגור היטב. 3. לשים לב אם הנורה דולקת קבוע או מהבהבת. 4. אם מהבהבת, להפחית מהירות ולהגיע למוסך מיד. 5. אם דולקת קבוע, לתאם בדיקה ממוחשבת בימים הקרובים. לא למחוק את קוד התקלה בלי לטפל בבעיה." } },
+                  ],
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "בית", item: "https://ortzat.co.il" },
+                    { "@type": "ListItem", position: 2, name: "בלוג", item: "https://ortzat.co.il/blog" },
+                    { "@type": "ListItem", position: 3, name: "נורת צ'ק אנג'ין נדלקה?", item: articleUrl },
+                  ],
+                },
+              ],
+            })}
+          </script>
+        );
+      })()}
+
       {/* Speakable for FAQ page */}
       {normalizedPathname === "/faq" && (
         <script type="application/ld+json">
