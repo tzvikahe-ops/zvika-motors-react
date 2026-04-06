@@ -168,7 +168,7 @@ const AboutPage = () => {
             ))}
           </div>
 
-          <p className="text-foreground/35 text-[11px] text-center mt-4">נתונים מסקר שביעות רצון פנימי, אור-צת שירותי רכב</p>
+          <p className="text-muted-foreground text-[12px] text-center mt-4">נתונים מסקר שביעות רצון פנימי, אור-צת שירותי רכב</p>
         </div>
       </section>
 
