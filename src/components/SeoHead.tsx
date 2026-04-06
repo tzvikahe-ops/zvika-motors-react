@@ -219,6 +219,58 @@ export default function SeoHead() {
         </script>
       )}
 
+      {/* FAQPage structured data for AC article */}
+      {normalizedPathname === "/blog/מתי-לבדוק-מזגן-ברכב" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "כמה עולה תיקון מזגן רכב?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "נכון ל-2025: החלפת פילטר קבינה 100-200 שקל. איתור דליפה ומילוי גז 400-800 שקל. החלפת מדחס מתחיל מ-1,500 שקל ברכבים רגילים ועד 6,000-8,000 שקל ברכבי יוקרה אירופאיים.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "מה עושים כשהמזגן לא מקרר?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "לא למלא גז לפני אבחון. תביאו לבדיקה. הטכנאי יבדוק לחצים, יאתר דליפה אם יש, ויאבחן את הרכיב התקול. מילוי גז ללא אבחון הוא פלסטר על פצע.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "כמה זמן לוקח לאתר דליפת גז במזגן רכב?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "בדיקה בסיסית עם גלאי אלקטרוני לוקחת 20-30 דקות. איתור מדויק עם צבע UV כשעה. טיפול בדליפה עצמה תלוי במיקומה.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "האם אפשר להסתדר בלי מזגן בקיץ ירושלמי?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "בטמפרטורות מעל 35 מעלות חום פוגע בריכוז ובזמן תגובה. זו בעיה בטיחותית אמיתית, לא עניין של נוחות.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "מזגן שעובד בנסיעה אבל לא בעמידה, האם זו תקלה רצינית?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "כן. זה סימן קלאסי למעבה סתום או מאוורר תקול. אם לא מטפלים, המדחס עובד בעומס יתר ועלול להינזק.",
+                },
+              },
+            ],
+          })}
+        </script>
+      )}
+
       {/* Speakable for FAQ page */}
       {normalizedPathname === "/faq" && (
         <script type="application/ld+json">
