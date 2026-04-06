@@ -548,8 +548,8 @@ export default function SeoHead() {
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "האופה 4",
-                  addressLocality: "גבעת שאול, ירושלים",
-                  addressRegion: "ירושלים",
+                  addressLocality: "ירושלים",
+                  addressRegion: "Jerusalem",
                   postalCode: "9546433",
                   addressCountry: "IL",
                 },
