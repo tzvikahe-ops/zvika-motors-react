@@ -84,7 +84,7 @@ export default function ServicesSection() {
         <div className="text-center mb-12 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-[2px] bg-brand-red/40" />
-            <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
+            <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">השירותים שלנו</p>
             <div className="w-8 h-[2px] bg-brand-red/40" />
           </div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-primary-foreground tracking-[-0.03em] leading-[1.1]">
