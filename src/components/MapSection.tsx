@@ -61,6 +61,7 @@ export default function MapSection() {
                   <SiWaze className="w-[20px] h-[20px] block" aria-hidden="true" />
                 </span>
                 נווטו עם Waze
+                <span className="sr-only">(נפתח בחלון חדש)</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=האופה+4,+ירושלים"
