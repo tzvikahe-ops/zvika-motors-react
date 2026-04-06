@@ -55,6 +55,8 @@ const App = () => (
             <Route path="/image-generator/" element={<Index />} />
             <Route path="/services/diagnostics" element={<Navigate to="/services/diagnostics/" replace />} />
             <Route path="/services/diagnostics/" element={<Suspense fallback={null}><DiagnosticsPage /></Suspense>} />
+            <Route path="/services/ac" element={<Navigate to="/services/ac/" replace />} />
+            <Route path="/services/ac/" element={<Suspense fallback={null}><ACPage /></Suspense>} />
             <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
             <Route path="/auth" element={<Suspense fallback={null}><AuthPage /></Suspense>} />
             <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
