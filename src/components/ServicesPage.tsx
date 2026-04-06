@@ -163,7 +163,7 @@ const ServicesPage = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("services-hero")}
-            className="inline-flex items-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-black px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] no-underline"
+            className="inline-flex items-center gap-2 bg-white border border-[#0E7A6D] text-[#075E54] hover:bg-[#f0faf8] px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] no-underline"
           >
             <WhatsAppSVG />
             תארו את הבעיה בוואטסאפ
@@ -295,7 +295,7 @@ const ServicesPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("services-cta")}
-              className="inline-flex items-center gap-2 bg-[#128C7E] hover:bg-[#0e7a6d] text-black px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_4px_24px_-6px_rgba(18,140,126,0.35)] no-underline"
+              className="inline-flex items-center gap-2 bg-white border border-[#0E7A6D] text-[#075E54] hover:bg-[#f0faf8] px-8 py-3.5 rounded-md font-bold text-[15px] transition-all duration-200 shadow-[0_2px_12px_-4px_rgba(7,94,84,0.2)] no-underline"
             >
               <WhatsAppSVG />
               שלחו תיאור הבעיה בוואטסאפ
