@@ -13,6 +13,7 @@ const AuthPage = lazy(() => import("./components/AuthPage.tsx"));
 const DiagnosticsPage = lazy(() => import("./components/DiagnosticsPage.tsx"));
 const ACPage = lazy(() => import("./components/ACPage.tsx"));
 const TestPrepPage = lazy(() => import("./components/TestPrepPage.tsx"));
+const GeneralMechanicPage = lazy(() => import("./components/GeneralMechanicPage.tsx"));
 
 // Lazy load toast components - not needed at initial render
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
@@ -60,6 +61,8 @@ const App = () => (
             <Route path="/services/ac/" element={<Suspense fallback={null}><ACPage /></Suspense>} />
             <Route path="/services/test" element={<Navigate to="/services/test/" replace />} />
             <Route path="/services/test/" element={<Suspense fallback={null}><TestPrepPage /></Suspense>} />
+            <Route path="/services/general" element={<Navigate to="/services/general/" replace />} />
+            <Route path="/services/general/" element={<Suspense fallback={null}><GeneralMechanicPage /></Suspense>} />
             <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
             <Route path="/auth" element={<Suspense fallback={null}><AuthPage /></Suspense>} />
             <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
