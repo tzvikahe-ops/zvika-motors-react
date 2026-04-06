@@ -99,6 +99,12 @@ const seoConfig: Record<string, PageSeo> = {
       "מילוי גז מזגן, איתור דליפות, תיקון מדחס ומערכת קירור לרכב. טיפול מקצועי במיזוג אוויר במוסך של צביקה בירושלים.",
     breadcrumbName: "מיזוג אוויר לרכב",
   },
+  "/services/test": {
+    title: "הכנה לטסט שנתי בירושלים | המוסך של צביקה",
+    description:
+      "בדיקה מקיפה לפני מבחן רישוי שנתי כולל תיקון ממצאים במקום. מעבר בפעם הראשונה בלי הפתעות. המוסך של צביקה בירושלים.",
+    breadcrumbName: "הכנה לטסט שנתי",
+  },
 };
 
 function getBlogArticleSeo(pathname: string): PageSeo {
