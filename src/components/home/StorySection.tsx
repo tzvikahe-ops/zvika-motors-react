@@ -10,7 +10,7 @@ export default function StorySection({ setPage }: { setPage: (p: Page) => void }
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-[2px] bg-brand-red/50" />
-              <p className="text-brand-red text-[11px] font-bold tracking-[0.15em] uppercase">הסיפור שלנו</p>
+              <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">הסיפור שלנו</p>
             </div>
 
             <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-black text-foreground tracking-[-0.03em] leading-[1.12] mb-5">
