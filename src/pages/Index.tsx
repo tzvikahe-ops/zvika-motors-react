@@ -107,7 +107,7 @@ const Index = () => {
             {currentPage === "faq" && <FAQPage />}
             {currentPage === "blog" && <BlogPage />}
             {currentPage === "blog-article" && <BlogArticlePage slug={articleSlug} />}
-            {currentPage === "home" && (
+            {(currentPage === "home" || currentPage === "contact") && (
               <LazySection rootMargin="300px" minHeight="300px">
                 <MapSection />
               </LazySection>
