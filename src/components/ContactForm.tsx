@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 import { trackFormSubmit } from "@/lib/analytics";
 
@@ -80,6 +79,9 @@ export default function ContactForm() {
             .catch(reject);
         });
       });
+
+      // Dynamic import to avoid initialization errors
+      const { supabase } = await import("@/integrations/supabase/client");
 
       const { data, error } = await supabase.functions.invoke("verify-recaptcha", {
         body: { token, ...result.data, consentAt: new Date().toISOString() },

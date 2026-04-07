@@ -28,9 +28,14 @@ const BlogArticlePage = lazy(() => import("@/components/BlogArticlePage"));
 class LazyErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
   state = { hasError: false };
   static getDerivedStateFromError() { return { hasError: true }; }
-  componentDidCatch(err: Error, info: ErrorInfo) { console.error("LazyErrorBoundary:", err, info); }
+  componentDidCatch(err: Error, info: ErrorInfo) {
+    console.error("LazyErrorBoundary:", err, info);
+    // Don't hide the error, let it show
+  }
   render() {
-    if (this.state.hasError) return null;
+    if (this.state.hasError) {
+      return <div className="p-4 bg-red-100 text-red-800">שגיאה בטעינת עמוד</div>;
+    }
     return this.props.children;
   }
 }
@@ -87,14 +92,14 @@ const Index = () => {
       </header>
 
       <main id="main-content" role="main" tabIndex={-1}>
-        <div className={currentPage === "home" ? "block" : "hidden"} aria-hidden={currentPage !== "home"}>
+        {currentPage === "home" && (
           <HomePage setPage={setPage} />
-        </div>
+        )}
         <Suspense fallback={null}>
           <LazyErrorBoundary>
             {currentPage === "services" && <ServicesPage />}
             {currentPage === "gallery" && <GalleryPage />}
-            {currentPage === "contact" && <ContactPage />}
+            {currentPage === "contact" && (() => { console.log("Rendering ContactPage"); return <ContactPage />; })()}
             {currentPage === "about" && <AboutPage />}
             {currentPage === "privacy" && <PrivacyPolicy />}
             {currentPage === "accessibility" && <AccessibilityStatement />}

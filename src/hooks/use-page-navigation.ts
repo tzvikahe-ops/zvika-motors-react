@@ -50,6 +50,8 @@ export function usePageNavigation() {
 
   const articleSlug = params.slug || "";
 
+  // console.log('usePageNavigation:', { normalizedPath, currentPage, articleSlug });
+
   const setPage = useCallback(
     (page: Page, slug?: string, hash?: string) => {
       if (page === "blog-article" && slug) {
