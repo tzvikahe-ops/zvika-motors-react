@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 // ✅ תיקון 1: CORS מוגבל לדומיין האתר בלבד (לא *)
-const ALLOWED_ORIGIN = "https://www.ortzat.co.il";
+const ALLOWED_ORIGIN = "https://ortzat.co.il";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": ALLOWED_ORIGIN,

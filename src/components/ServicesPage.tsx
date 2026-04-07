@@ -114,9 +114,9 @@ const ServicesPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
-    "@id": "https://www.ortzat.co.il/#business",
+    "@id": "https://ortzat.co.il/#business",
     name: "המוסך של צביקה - אור-צת שירותי רכב",
-    url: "https://www.ortzat.co.il/services",
+    url: "https://ortzat.co.il/services",
     telephone: "+972-2-6514446",
     areaServed: { "@type": "City", name: "ירושלים" },
     speakable: {
@@ -130,7 +130,7 @@ const ServicesPage = () => {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          "@id": `https://www.ortzat.co.il/services#${s.anchor}`,
+          "@id": `https://ortzat.co.il/services#${s.anchor}`,
           name: s.title,
           description: s.description,
           provider: {
@@ -329,7 +329,7 @@ const ServicesPage = () => {
         "@context": "https://schema.org",
         "@type": "AutoRepair",
         "name": "המוסך של צביקה - אור-צת שירותי רכב",
-        "url": "https://www.ortzat.co.il/services",
+        "url": "https://ortzat.co.il/services",
         "telephone": "+972-2-6514446",
         "address": {
           "@type": "PostalAddress",

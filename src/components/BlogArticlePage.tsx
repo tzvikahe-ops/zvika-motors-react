@@ -129,7 +129,7 @@ export default function BlogArticlePage({ slug }: BlogArticlePageProps) {
     .filter((a) => a.topic === article.topic && a.slug !== article.slug)
     .slice(0, 2);
 
-  const articleUrl = `https://www.ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
+  const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
 
   return (
     <div className="bg-background" dir="rtl">

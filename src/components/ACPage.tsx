@@ -31,13 +31,13 @@ const ACPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.ortzat.co.il/services/ac/#service",
+    "@id": "https://ortzat.co.il/services/ac/#service",
     name: "טיפול במיזוג אוויר לרכב",
     description: "מילוי גז, איתור דליפות ותיקון מערכות קירור. נדאג שתיהנו מנסיעה נעימה גם בימי הקיץ החמים בירושלים.",
     provider: {
       "@type": "AutoRepair",
       name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://www.ortzat.co.il",
+      url: "https://ortzat.co.il",
       telephone: "+972-2-6514446",
       address: {
         "@type": "PostalAddress",

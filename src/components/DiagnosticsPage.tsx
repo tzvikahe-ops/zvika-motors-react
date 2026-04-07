@@ -31,13 +31,13 @@ const DiagnosticsPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.ortzat.co.il/services/diagnostics/#service",
+    "@id": "https://ortzat.co.il/services/diagnostics/#service",
     name: "דיאגנוסטיקה ממוחשבת לרכב",
     description: "איתור תקלות מדויק עם ציוד סריקה מתקדם. חוסך לכם זמן וכסף על ידי אבחון ממוקד שמונע תיקונים מיותרים.",
     provider: {
       "@type": "AutoRepair",
       name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://www.ortzat.co.il",
+      url: "https://ortzat.co.il",
       telephone: "+972-2-6514446",
       address: {
         "@type": "PostalAddress",

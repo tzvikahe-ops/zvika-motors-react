@@ -32,7 +32,7 @@ function cssPreloadPlugin(): Plugin {
  * so crawlers see per-page HTML without needing a JS runtime.
  */
 function prerenderPlugin(): Plugin {
-  const BASE_URL = "https://www.ortzat.co.il";
+  const BASE_URL = "https://ortzat.co.il";
   type RouteMeta = { path: string; title: string; description: string; robots?: string; date?: string };
 
   const routes: RouteMeta[] = [

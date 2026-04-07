@@ -32,13 +32,13 @@ const TestPrepPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.ortzat.co.il/services/test/#service",
+    "@id": "https://ortzat.co.il/services/test/#service",
     name: "הכנה לטסט שנתי",
     description: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.",
     provider: {
       "@type": "AutoRepair",
       name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://www.ortzat.co.il",
+      url: "https://ortzat.co.il",
       telephone: "+972-2-6514446",
       address: {
         "@type": "PostalAddress",

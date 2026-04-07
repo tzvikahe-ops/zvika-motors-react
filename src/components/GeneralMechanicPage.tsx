@@ -32,13 +32,13 @@ const GeneralMechanicPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.ortzat.co.il/services/general/#service",
+    "@id": "https://ortzat.co.il/services/general/#service",
     name: "מכונאות רכב כללית",
     description: "טיפולים שוטפים, החלפת שמנים ופילטרים, ותיקוני מנוע מקצועיים לכל סוגי הרכבים. הרכב שלכם יוצא מהמוסך במצב מושלם ובטוח לנהיגה.",
     provider: {
       "@type": "AutoRepair",
       name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://www.ortzat.co.il",
+      url: "https://ortzat.co.il",
       telephone: "+972-2-6514446",
       address: {
         "@type": "PostalAddress",

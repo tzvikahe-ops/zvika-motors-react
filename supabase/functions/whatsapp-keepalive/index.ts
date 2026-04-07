@@ -1,5 +1,5 @@
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "https://www.ortzat.co.il",
+  "Access-Control-Allow-Origin": "https://ortzat.co.il",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
 };

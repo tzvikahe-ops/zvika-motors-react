@@ -11,7 +11,7 @@
 - **כתובת:** רחוב האופה 4 (בית הדפוס 24), גבעת שאול, ירושלים, ישראל 9546313
 - **טלפון:** 02-6514446
 - **וואטסאפ:** 052-651-4446
-- **אתר:** https://www.ortzat.co.il
+- **אתר:** https://ortzat.co.il
 - **אימייל:** ortzat1@gmail.com
 - **שעות פעילות:** א׳-ה׳ 08:00-16:30, שישי ושבת סגור
 - **דירוג גוגל:** 4.8 מתוך 5 (108+ ביקורות)
@@ -40,9 +40,9 @@
 
 ## תוכן נוסף
 
-- [בלוג עם מדריכים לתחזוקת רכב](https://www.ortzat.co.il/blog)
-- [שאלות נפוצות](https://www.ortzat.co.il/faq)
-- [רשימת שירותים מלאה](https://www.ortzat.co.il/services)
-- [אודות המוסך](https://www.ortzat.co.il/about)
-- [צור קשר](https://www.ortzat.co.il/contact)
-- [גרסה מורחבת עם כל התוכן](https://www.ortzat.co.il/llms-full.txt)
+- [בלוג עם מדריכים לתחזוקת רכב](https://ortzat.co.il/blog)
+- [שאלות נפוצות](https://ortzat.co.il/faq)
+- [רשימת שירותים מלאה](https://ortzat.co.il/services)
+- [אודות המוסך](https://ortzat.co.il/about)
+- [צור קשר](https://ortzat.co.il/contact)
+- [גרסה מורחבת עם כל התוכן](https://ortzat.co.il/llms-full.txt)

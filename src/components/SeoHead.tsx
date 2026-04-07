@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { blogArticles } from "@/data/blog-articles";
 
-const BASE_URL = "https://www.ortzat.co.il";
+const BASE_URL = "https://ortzat.co.il";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 interface PageSeo {
