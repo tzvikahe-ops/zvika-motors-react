@@ -191,7 +191,7 @@ export default function ContactForm() {
             />
             <span className="text-[12px] text-muted-foreground leading-relaxed">
               אני מסכים/ה שהמוסך של צביקה ישמור את פרטיי (שם וטלפון) ויצור איתי קשר בנוגע לפנייה זו.{" "}
-              <a href="/privacy" className="underline hover:text-foreground transition-colors">מדיניות פרטיות</a>
+              <a href="/privacy/" className="underline hover:text-foreground transition-colors">מדיניות פרטיות</a>
             </span>
           </label>
           {errors.consent && (

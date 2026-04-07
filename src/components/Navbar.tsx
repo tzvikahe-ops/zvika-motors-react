@@ -12,12 +12,12 @@ interface NavbarProps {
 
 const pageToPath: Record<string, string> = {
   home: "/",
-  services: "/services",
-  about: "/about",
-  gallery: "/gallery",
-  faq: "/faq",
-  blog: "/blog",
-  contact: "/contact",
+  services: "/services/",
+  about: "/about/",
+  gallery: "/gallery/",
+  faq: "/faq/",
+  blog: "/blog/",
+  contact: "/contact/",
 };
 
 export default function Navbar({ currentPage, setPage }: NavbarProps) {
