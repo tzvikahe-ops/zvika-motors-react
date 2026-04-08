@@ -1,36 +1,44 @@
 
 
-## שינוי סגנון כפתורי WhatsApp — רקע לבן + ירוק כהה רשמי
+## תוכנית ביצוע — ליקויים שבאמת צריכים טיפול
 
-### הגדרה
-החלפת כל כפתורי WhatsApp מרקע ירוק (#128C7E) עם טקסט שחור → **רקע לבן, טקסט ואייקון ב-#075E54, גבול #0E7A6D**. יחס ניגודיות: 7.67:1.
+### מצב קיים — רוב הליקויים כבר מטופלים
 
-### סגנון חדש (לכל הכפתורים)
-```text
-bg-white border border-[#0E7A6D] text-[#075E54]
-hover:bg-[#f0faf8]
-shadow קל
-SVG fill="#075E54"
+אחרי בדיקת הקוד, רוב הפריטים ברשימה **כבר מיושמים**:
+
+- **Banner חג פסח** — קיים וידפיק עד 9.4
+- **Schema LocalBusiness + AutoRepair** — קיים ב-index.html עם address, geo, openingHours, founder, services
+- **Schema AggregateRating** — קיים (4.8, 108 ביקורות)
+- **www → non-www redirect** — מוגדר ברמת DNS/דומיין (Lovable לא משתמש ב-Netlify _redirects)
+- **slugs בלוג** — רובם בעברית, רק הראשון (musach-mumla-yerushalayim) בלטינית בכוונה
+
+### מה נשאר לתקן (2 פריטים בלבד)
+
+#### 1. Schema Person לצביקה (index.html)
+כרגע יש רק `founder` ליהושע. צריך להוסיף סכימת `Person` נפרדת לצביקה:
+- `name`: "צביקה הרשקוביץ"
+- `jobTitle`: "מנהל המוסך"
+- `worksFor`: הפניה ל-LocalBusiness הקיים
+- `sameAs`: קישור לוואטסאפ
+
+הסכימה תתווסף כבלוק JSON-LD נפרד ב-index.html, ו/או כחלק מ-`employee` בתוך הסכימה הקיימת.
+
+#### 2. H1 בעמוד אודות (AboutPage.tsx)
+שינוי שורה אחת מ:
+```
+מוסך משפחתי בירושלים מאז 1993
+```
+ל:
+```
+המוסך של צביקה – מוסך משפחתי בירושלים מאז 1993
 ```
 
-### כפתור צף (Index.tsx)
-כפתור icon-only — אותו עיקרון: רקע לבן, אייקון #075E54, גבול #0E7A6D.
+### קבצים מושפעים
+| קובץ | שינוי |
+|-------|--------|
+| `index.html` | הוספת Person schema לצביקה |
+| `src/components/AboutPage.tsx` | עדכון טקסט H1 |
 
-### קבצים מושפעים (12 קבצים)
-| קובץ | מה משתנה |
-|---|---|
-| `src/pages/Index.tsx` | כפתור צף |
-| `src/components/Navbar.tsx` | כפתור WhatsApp במובייל |
-| `src/components/Footer.tsx` | כפתור WhatsApp בפוטר |
-| `src/components/home/HeroSection.tsx` | CTA ראשי |
-| `src/components/home/CTASection.tsx` | CTA תחתון |
-| `src/components/home/ProcessSection.tsx` | CTA תהליך |
-| `src/components/home/ServicesSection.tsx` | CTA שירותים |
-| `src/components/ContactPage.tsx` | CTA צור קשר |
-| `src/components/FAQPage.tsx` | CTA שאלות נפוצות |
-| `src/components/GalleryPage.tsx` | 2 כפתורים |
-| `src/components/BlogPage.tsx` | CTA בלוג |
-| `src/components/AboutPage.tsx` | CTA אודות (אם קיים) |
-
-בכל קובץ: החלפת `bg-[#128C7E] hover:bg-[#0e7a6d] text-black` → `bg-white border border-[#0E7A6D] text-[#075E54] hover:bg-[#f0faf8]` והחלפת `fill="black"` / `fill="#000000"` → `fill="#075E54"` ב-SVG.
+### הערה לגבי redirect
+האתר מפורסם ב-Lovable (לא Netlify), כך שקובץ `_redirects` לא פועל. ה-redirect מ-www מנוהל ברמת DNS/דומיין דרך Wix. אם ה-redirect לא עובד כרגע, זה דורש שינוי ברשומות DNS, לא בקוד.
 
