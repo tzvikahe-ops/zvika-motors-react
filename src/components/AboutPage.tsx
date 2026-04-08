@@ -33,7 +33,7 @@ const AboutPage = () => {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[12px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">אודות המוסך</div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
-            מוסך משפחתי בירושלים מאז 1993
+            המוסך של צביקה – מוסך משפחתי בירושלים מאז 1993
           </h1>
           <p className="hero-stats text-[14px] md:text-[16px] text-brand-red font-bold mb-5">
             98% לקוחות חוזרים | 4.8 ★ בגוגל | מעל 30 שנה של ניסיון
