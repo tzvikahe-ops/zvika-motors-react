@@ -31,7 +31,7 @@ function sanitize(input: string, maxLen: number): string {
 
 // ✅ Rate limiting: בדיקת מספר בקשות בחלון זמן נתון
 async function checkRateLimit(
-  supabase: ReturnType<typeof createClient>,
+  supabase: any,
   identifier: string,
   idType: "phone" | "ip",
   maxRequests: number,
@@ -48,7 +48,7 @@ async function checkRateLimit(
 }
 
 async function recordRequest(
-  supabase: ReturnType<typeof createClient>,
+  supabase: any,
   identifier: string,
   idType: "phone" | "ip"
 ): Promise<void> {
