@@ -14,7 +14,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "..", "dist");
-const BASE_URL = "https://www.ortzat.co.il";
+const BASE_URL = "https://ortzat.co.il";
 
 /** Mirrors the seoConfig in src/components/SeoHead.tsx */
 const routes = [

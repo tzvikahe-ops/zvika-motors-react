@@ -528,6 +528,73 @@ export default function SeoHead() {
         </script>
       )}
 
+      {/* Home page structured data */}
+      {normalizedPathname === "/" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "AutoRepair",
+                name: "המוסך של צביקה (אור-צת)",
+                alternateName: ["אור-צת שירותי רכב", "מוסך אור צת", "אור צת"],
+                description: "מוסך משפחתי מקצועי בגבעת שאול, ירושלים. מעל 30 שנה של ניסיון, 98% לקוחות חוזרים, דירוג 4.8 בגוגל. מתמחים בדיאגנוסטיקה ממוחשבת, מכונאות כללית, בלמים, מזגן רכב וטיפולים תקופתיים.",
+                url: "https://ortzat.co.il",
+                logo: "https://ortzat.co.il/logo.png",
+                image: "https://ortzat.co.il/logo.png",
+                telephone: "+972-2-6514446",
+                foundingDate: "1993",
+                numberOfEmployees: { "@type": "QuantitativeValue", value: 4 },
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "האופה 4",
+                  addressLocality: "ירושלים",
+                  addressRegion: "Jerusalem",
+                  postalCode: "9546433",
+                  addressCountry: "IL",
+                },
+                geo: { "@type": "GeoCoordinates", latitude: 31.7888, longitude: 35.1878 },
+                openingHoursSpecification: [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+                    opens: "08:00",
+                    closes: "16:30",
+                  },
+                ],
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.8",
+                  reviewCount: "107",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+                priceRange: "₪₪",
+                areaServed: ["ירושלים", "גבעת שאול", "מבשרת ציון", "מעלה אדומים", "בית שמש"],
+                sameAs: ["https://www.facebook.com/ortzat", "https://g.page/ortzat"],
+              },
+              {
+                "@type": "Person",
+                name: "צביקה הרשקוביץ",
+                jobTitle: "בעל מוסך ומנהל",
+                description: "צביקה הרשקוביץ מנהל את המוסך של צביקה (אור-צת) בגבעת שאול מאז 2011. גדל במוסך של אביו יהושע מ-1993, מתמחה בדיאגנוסטיקה ממוחשבת ואבחון תקלות מורכבות.",
+                worksFor: { "@type": "AutoRepair", name: "המוסך של צביקה (אור-צת)" },
+                knowsAbout: ["דיאגנוסטיקה ממוחשבת", "מכונאות רכב", "אבחון תקלות", "טיפול תקופתי לרכב"],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://ortzat.co.il/",
+                name: "המוסך של צביקה (אור-צת) | מוסך מקצועי בירושלים",
+                description: "המוסך של צביקה (אור-צת) - מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט.",
+                inLanguage: "he-IL",
+                url: "https://ortzat.co.il/",
+                speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".hero-stats"] },
+              },
+            ],
+          })}
+        </script>
+      )}
+
       {/* About page structured data */}
       {normalizedPathname === "/about" && (
         <script type="application/ld+json">

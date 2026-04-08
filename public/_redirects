@@ -1,5 +1,5 @@
-# Canonical domain: non-www → www (301 permanent)
-https://ortzat.co.il/* https://www.ortzat.co.il/:splat 301!
+# Canonical domain: www → non-www (301 permanent)
+https://www.ortzat.co.il/* https://ortzat.co.il/:splat 301!
 
 # 301 redirects: /index.html → clean URL (prevents duplicate content if old links exist)
 /services/index.html /services 301
