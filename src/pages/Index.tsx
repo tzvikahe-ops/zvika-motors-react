@@ -3,7 +3,7 @@ import { usePageNavigation } from "@/hooks/use-page-navigation";
 import { initScrollTracking, resetScrollTracking, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import SeoHead from "@/components/SeoHead";
 import Navbar from "@/components/Navbar";
-import PassoverBanner from "@/components/PassoverBanner";
+
 import HomePage from "@/components/HomePage";
 import LazySection from "@/components/LazySection";
 import { WhatsAppIcon } from "@/components/Icons";
@@ -86,7 +86,7 @@ const Index = () => {
         דלג לתוכן הראשי
       </a>
       <SeoHead />
-      <PassoverBanner />
+      
       <header role="banner">
         <Navbar currentPage={currentPage} setPage={setPage} />
       </header>
