@@ -46,6 +46,7 @@ const App = () => (
             <Route path="/faq/" element={<Index />} />
             <Route path="/blog" element={<Navigate to="/blog/" replace />} />
             <Route path="/blog/" element={<Index />} />
+            <Route path="/blog/:slug" element={<Navigate to={`${window.location.pathname}/`} replace />} />
             <Route path="/blog/:slug/" element={<Index />} />
             {/* 301-style redirect from old article slug to new one */}
             <Route path="/blog/איך-לבחור-מוסך-אמין-בירושלים/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
