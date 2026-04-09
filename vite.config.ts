@@ -166,7 +166,7 @@ function prerenderPlugin(): Plugin {
   }
 
   function patchHtml(html: string, route: RouteMeta): string {
-    const canonicalUrl = route.path === "/" ? `${BASE_URL}/` : `${BASE_URL}${route.path}`;
+    const canonicalUrl = route.path === "/" ? `${BASE_URL}/` : `${BASE_URL}${route.path}/`;
     const t = escapeAttr(route.title);
     const d = escapeAttr(route.description);
     const u = escapeAttr(canonicalUrl);
