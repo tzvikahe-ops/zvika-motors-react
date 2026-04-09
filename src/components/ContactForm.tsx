@@ -80,10 +80,9 @@ export default function ContactForm() {
         });
       });
 
-      // Dynamic import to avoid initialization errors
-      const { supabase } = await import("@/integrations/supabase/client");
+      const { lovableCloud } = await import("@/lib/lovable-cloud");
 
-      const { data, error } = await supabase.functions.invoke("verify-recaptcha", {
+      const { data, error } = await lovableCloud.functions.invoke("verify-recaptcha", {
         body: { token, ...result.data, consentAt: new Date().toISOString() },
       });
 

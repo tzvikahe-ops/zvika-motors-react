@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { supabase } from "@/integrations/supabase/client";
+import { lovableCloud } from "@/lib/lovable-cloud";
 import { Loader2, Download, ImageIcon, Sparkles, History } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
@@ -48,7 +48,7 @@ export default function ImageGeneratorPage() {
 
     setIsGenerating(true);
     try {
-      const { data, error } = await supabase.functions.invoke("generate-image", {
+      const { data, error } = await lovableCloud.functions.invoke("generate-image", {
         body: { prompt: prompt.trim(), style, aspectRatio },
       });
 

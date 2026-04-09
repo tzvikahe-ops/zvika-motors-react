@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { lovableCloud } from "@/lib/lovable-cloud";
 
 interface Submission {
   id: string;
@@ -23,7 +23,7 @@ export default function AdminPage() {
     setLoading(true);
 
     try {
-      const { data, error: fnError } = await supabase.functions.invoke("get-submissions", {
+      const { data, error: fnError } = await lovableCloud.functions.invoke("get-submissions", {
         body: { password },
       });
 
@@ -35,8 +35,7 @@ export default function AdminPage() {
       setSubmissions(data.submissions);
       setAuthenticated(true);
 
-      // Auto-assign admin role if applicable
-      supabase.functions.invoke("assign-admin-role").catch(() => {});
+      lovableCloud.functions.invoke("assign-admin-role").catch(() => {});
     } catch {
       setError("שגיאה בהתחברות");
     } finally {
@@ -47,7 +46,7 @@ export default function AdminPage() {
   const refresh = async () => {
     setLoading(true);
     try {
-      const { data } = await supabase.functions.invoke("get-submissions", {
+      const { data } = await lovableCloud.functions.invoke("get-submissions", {
         body: { password },
       });
       if (data?.success) setSubmissions(data.submissions);

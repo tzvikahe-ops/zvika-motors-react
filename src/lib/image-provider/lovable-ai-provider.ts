@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+import { lovableCloud } from "@/lib/lovable-cloud";
 import type {
   ImageProvider,
   ImageProviderCapabilities,
@@ -33,7 +33,7 @@ export class LovableAIProvider implements ImageProvider {
   };
 
   async generate(request: GenerateImageRequest): Promise<GenerateImageResponse> {
-    const { data, error } = await supabase.functions.invoke("generate-image", {
+    const { data, error } = await lovableCloud.functions.invoke("generate-image", {
       body: {
         prompt: request.prompt,
         negativePrompt: request.negativePrompt || undefined,
