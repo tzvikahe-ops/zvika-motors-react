@@ -58,6 +58,8 @@ const App = () => (
             {/* 301-style redirect from old article slug to new one */}
             <Route path="/blog/איך-לבחור-מוסך-אמין-בירושלים/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
             <Route path="/blog/%D7%90%D7%99%D7%9A-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%9E%D7%95%D7%A1%D7%9A-%D7%90%D7%9E%D7%99%D7%9F-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
+            <Route path="/blog/check-engine/" element={<Navigate to="/blog/" replace />} />
+            <Route path="/blog/check-engine" element={<Navigate to="/blog/" replace />} />
             <Route path="/privacy" element={<Navigate to="/privacy/" replace />} />
             <Route path="/privacy/" element={<Index />} />
             <Route path="/accessibility" element={<Navigate to="/accessibility/" replace />} />
