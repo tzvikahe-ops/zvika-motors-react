@@ -2,7 +2,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { z } from "https://esm.sh/zod@3.23.8";
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "https://ortzat.co.il",
+  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
 };
@@ -27,6 +27,53 @@ Deno.serve(async (req) => {
 
     const { password } = parsed.data;
 
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Option 1: Check if user is authenticated as admin via JWT
+    if (password === "__session_auth__") {
+      const authHeader = req.headers.get("authorization");
+      if (authHeader) {
+        const token = authHeader.replace("Bearer ", "");
+        const { data: { user } } = await supabase.auth.getUser(token);
+        if (user) {
+          const { data: roles } = await supabase
+            .from("user_roles")
+            .select("role")
+            .eq("user_id", user.id)
+            .eq("role", "admin");
+
+          if (roles && roles.length > 0) {
+            // Authenticated admin - fetch submissions
+            const { data, error } = await supabase
+              .from("contact_submissions")
+              .select("*")
+              .order("created_at", { ascending: false })
+              .limit(100);
+
+            if (error) {
+              console.error("DB error:", error);
+              return new Response(
+                JSON.stringify({ error: "שגיאה בשליפת הנתונים" }),
+                { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+              );
+            }
+
+            return new Response(
+              JSON.stringify({ success: true, submissions: data }),
+              { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+            );
+          }
+        }
+      }
+      return new Response(
+        JSON.stringify({ error: "אין הרשאת אדמין" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Option 2: Password-based auth (legacy)
     const ADMIN_PASSWORD = Deno.env.get("ADMIN_PASSWORD");
     if (!ADMIN_PASSWORD) {
       console.error("ADMIN_PASSWORD secret not configured");
@@ -42,10 +89,6 @@ Deno.serve(async (req) => {
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
 
     const { data, error } = await supabase
       .from("contact_submissions")
