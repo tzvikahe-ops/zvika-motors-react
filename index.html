@@ -90,7 +90,7 @@
         if(!s){var slug=decodeURIComponent(p.replace("/blog/","")).replace(/-/g," ");s={t:slug+" | בלוג המוסך של צביקה",d:"קראו על "+slug+". מאמר מקצועי מהבלוג של המוסך של צביקה - מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון."};}
       }
       if(!s)return; // homepage - already correct in HTML
-      var c=p==="/"?B+"/":B+p;
+      var c=p==="/"?B+"/":B+p+(p.charAt(p.length-1)==="/"?"":"/");
       document.title=s.t;
       function setM(sel,val){var e=document.querySelector(sel);if(e)e.setAttribute("content",val);}
       function setP(prop,val){var e=document.querySelector('meta[property="'+prop+'"]');if(e)e.setAttribute("content",val);}
