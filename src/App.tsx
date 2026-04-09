@@ -60,6 +60,8 @@ const App = () => (
             <Route path="/blog/%D7%90%D7%99%D7%9A-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%9E%D7%95%D7%A1%D7%9A-%D7%90%D7%9E%D7%99%D7%9F-%D7%91%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
             <Route path="/blog/check-engine/" element={<Navigate to="/blog/" replace />} />
             <Route path="/blog/check-engine" element={<Navigate to="/blog/" replace />} />
+            <Route path="/blog/מורת-צק-אנגין-מה-לעשות/" element={<Navigate to="/blog/נורת-צק-אנגין-מה-לעשות/" replace />} />
+            <Route path="/blog/מורת-צק-אנגין-מה-לעשות" element={<Navigate to="/blog/נורת-צק-אנגין-מה-לעשות/" replace />} />
             <Route path="/privacy" element={<Navigate to="/privacy/" replace />} />
             <Route path="/privacy/" element={<Index />} />
             <Route path="/accessibility" element={<Navigate to="/accessibility/" replace />} />
