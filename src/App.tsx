@@ -10,6 +10,7 @@ import IndexHtmlRedirect from "./components/IndexHtmlRedirect.tsx";
 const ImageStudioPage = lazy(() => import("./components/ImageStudioPage.tsx"));
 const AdminPage = lazy(() => import("./components/AdminPage.tsx"));
 const AuthPage = lazy(() => import("./components/AuthPage.tsx"));
+const ResetPasswordPage = lazy(() => import("./components/ResetPasswordPage.tsx"));
 const DiagnosticsPage = lazy(() => import("./components/DiagnosticsPage.tsx"));
 const ACPage = lazy(() => import("./components/ACPage.tsx"));
 const TestPrepPage = lazy(() => import("./components/TestPrepPage.tsx"));
