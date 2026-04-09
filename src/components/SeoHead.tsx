@@ -15,11 +15,21 @@ interface PageSeo {
   datePublished?: string;
 }
 
-function normalizePathname(pathname: string): string {
+function getRoutePathname(pathname: string): string {
   let normalized = pathname.replace(/\/index\.html$/, "");
   if (normalized === "") normalized = "/";
   if (normalized.length > 1 && normalized.endsWith("/")) {
     normalized = normalized.slice(0, -1);
+  }
+  return normalized;
+}
+
+function ensureTrailingSlash(pathname: string): string {
+  let normalized = pathname.replace(/\/index\.html$/, "");
+  if (normalized === "") normalized = "/";
+  if (!normalized.startsWith("/")) normalized = `/${normalized}`;
+  if (normalized !== "/" && !normalized.endsWith("/")) {
+    normalized = `${normalized}/`;
   }
   return normalized;
 }
@@ -160,17 +170,18 @@ function buildBreadcrumbSchema(pathname: string, seo: PageSeo) {
 
 export default function SeoHead() {
   const { pathname } = useLocation();
-  const normalizedPathname = normalizePathname(pathname);
+  const routePathname = getRoutePathname(pathname);
+  const canonicalPathname = ensureTrailingSlash(pathname);
 
-  const seo = normalizedPathname.startsWith("/blog/")
-    ? getBlogArticleSeo(normalizedPathname)
-    : seoConfig[normalizedPathname] || seoConfig["/"];
+  const seo = routePathname.startsWith("/blog/")
+    ? getBlogArticleSeo(routePathname)
+    : seoConfig[routePathname] || seoConfig["/"];
 
-  const canonicalUrl = normalizedPathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${normalizedPathname}/`;
+  const canonicalUrl = `${BASE_URL}${canonicalPathname}`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
-  const breadcrumb = buildBreadcrumbSchema(normalizedPathname, seo);
+  const breadcrumb = buildBreadcrumbSchema(routePathname, seo);
 
   return (
     <Helmet>
@@ -247,7 +258,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for AC article */}
-      {normalizedPathname === "/blog/מתי-לבדוק-מזגן-ברכב" && (
+      {routePathname === "/blog/מתי-לבדוק-מזגן-ברכב" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -299,7 +310,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for garage guide article */}
-      {normalizedPathname === "/blog/musach-mumla-yerushalayim" && (
+      {routePathname === "/blog/musach-mumla-yerushalayim" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -351,7 +362,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for spare parts article */}
-      {normalizedPathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב" && (
+      {routePathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -395,7 +406,7 @@ export default function SeoHead() {
       )}
 
       {/* Article + FAQPage + BreadcrumbList structured data for check engine article */}
-      {normalizedPathname === "/blog/נורת-צק-אנגין-מה-לעשות" && (() => {
+      {routePathname === "/blog/נורת-צק-אנגין-מה-לעשות" && (() => {
         const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent("נורת-צק-אנגין-מה-לעשות")}/`;
         return (
           <script type="application/ld+json">
@@ -456,7 +467,7 @@ export default function SeoHead() {
       })()}
 
       {/* Article + FAQPage + BreadcrumbList structured data for car warning signs article */}
-      {normalizedPathname === "/blog/סימנים-שהרכב-צריך-טיפול" && (() => {
+      {routePathname === "/blog/סימנים-שהרכב-צריך-טיפול" && (() => {
         const articleUrl = "https://ortzat.co.il/blog/car-warning-signs";
         return (
           <script type="application/ld+json">
@@ -513,7 +524,7 @@ export default function SeoHead() {
       })()}
 
       {/* Speakable for FAQ page */}
-      {normalizedPathname === "/faq" && (
+      {routePathname === "/faq" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -529,7 +540,7 @@ export default function SeoHead() {
       )}
 
       {/* Home page structured data */}
-      {normalizedPathname === "/" && (
+      {routePathname === "/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -596,7 +607,7 @@ export default function SeoHead() {
       )}
 
       {/* About page structured data */}
-      {normalizedPathname === "/about" && (
+      {routePathname === "/about" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
