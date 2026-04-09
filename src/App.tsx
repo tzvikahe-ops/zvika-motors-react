@@ -17,6 +17,12 @@ const ACPage = lazy(() => import("./components/ACPage.tsx"));
 const TestPrepPage = lazy(() => import("./components/TestPrepPage.tsx"));
 const GeneralMechanicPage = lazy(() => import("./components/GeneralMechanicPage.tsx"));
 
+/** Redirects /blog/:slug → /blog/:slug/ */
+function BlogSlugRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={`/blog/${slug}/`} replace />;
+}
+
 // Lazy load toast components - not needed at initial render
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
