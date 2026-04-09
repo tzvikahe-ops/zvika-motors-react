@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { useParams } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -46,7 +47,7 @@ const App = () => (
             <Route path="/faq/" element={<Index />} />
             <Route path="/blog" element={<Navigate to="/blog/" replace />} />
             <Route path="/blog/" element={<Index />} />
-            <Route path="/blog/:slug" element={<Navigate to={`${window.location.pathname}/`} replace />} />
+            <Route path="/blog/:slug" element={<BlogSlugRedirect />} />
             <Route path="/blog/:slug/" element={<Index />} />
             {/* 301-style redirect from old article slug to new one */}
             <Route path="/blog/איך-לבחור-מוסך-אמין-בירושלים/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
