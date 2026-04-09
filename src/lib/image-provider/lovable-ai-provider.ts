@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+import { lovableCloud } from "@/lib/lovable-cloud";
 import type {
   ImageProvider,
   ImageProviderCapabilities,
