@@ -15,16 +15,7 @@ interface PageSeo {
   datePublished?: string;
 }
 
-function getRoutePathname(pathname: string): string {
-  let normalized = pathname.replace(/\/index\.html$/, "");
-  if (normalized === "") normalized = "/";
-  if (normalized.length > 1 && normalized.endsWith("/")) {
-    normalized = normalized.slice(0, -1);
-  }
-  return normalized;
-}
-
-function ensureTrailingSlash(pathname: string): string {
+function normalizePathname(pathname: string): string {
   let normalized = pathname.replace(/\/index\.html$/, "");
   if (normalized === "") normalized = "/";
   if (!normalized.startsWith("/")) normalized = `/${normalized}`;
@@ -42,80 +33,80 @@ const seoConfig: Record<string, PageSeo> = {
       "המוסך של צביקה (אור-צת) - מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט. שקיפות מלאה, מחיר הוגן ושירות אישי. 02-6514446.",
     ogImage: `${BASE_URL}/og-home.jpg`,
   },
-  "/services": {
+  "/services/": {
     title: "שירותי מוסך בירושלים | רשימת השירותים המלאה - המוסך של צביקה",
     description:
       "כל שירותי המוסך של צביקה בגבעת שאול, ירושלים: טיפולים שוטפים, דיאגנוסטיקה ממוחשבת, מיזוג אוויר, הכנה לטסט, בדיקת רכב לפני קנייה, טיפול בבעיות חשמל ומנוע. 02-6514446.",
     breadcrumbName: "שירותים",
   },
-  "/about": {
+  "/about/": {
     title: "אודות המוסך של צביקה (אור-צת) | מוסך בירושלים מאז 1993",
     description:
       "המוסך של צביקה (אור-צת) בגבעת שאול, ירושלים. מוסך משפחתי מאז 1993. 98% לקוחות חוזרים, דירוג 4.8 בגוגל, מעל 30 שנה של ניסיון. אור-צת שירותי רכב.",
     ogImage: `${BASE_URL}/og-about.jpg`,
     breadcrumbName: "אודות",
   },
-  "/gallery": {
+  "/gallery/": {
     title: "הצצה למוסך | המוסך של צביקה בגבעת שאול, ירושלים",
     description:
       "כרגע מוצגת בעמוד תמונה אמיתית אחת של חזית המוסך של צביקה ברחוב האופה 4, גבעת שאול. תמונות נוספות מתוך המוסך והעבודה השוטפת יתווספו בהמשך.",
     breadcrumbName: "גלריה",
   },
-  "/contact": {
+  "/contact/": {
     title: "צור קשר | טלפון, וואטסאפ והגעה למוסך של צביקה בירושלים",
     description:
       "צרו קשר עם המוסך של צביקה בגבעת שאול, ירושלים. טלפון: 02-6514446, וואטסאפ: 052-651-4446, כתובת: רחוב האופה 4. ניווט ב-Waze, שעות פעילות ואפשרות להשאיר פרטים.",
     breadcrumbName: "צור קשר",
   },
-  "/faq": {
+  "/faq/": {
     title: "שאלות נפוצות | המוסך של צביקה - ירושלים",
     description:
       "תשובות לשאלות נפוצות על שירותי המוסך של צביקה: עלויות טיפול, הכנה לטסט, זמני טיפול, סוגי רכבים ועוד. מוסך מקצועי בירושלים מאז 1993.",
     breadcrumbName: "שאלות נפוצות",
   },
-  "/blog": {
+  "/blog/": {
     title: "טיפים, תקלות ותחזוקת רכב | בלוג המוסך של צביקה - ירושלים",
     description:
       "מדריכים מעשיים על תחזוקת רכב, זיהוי תקלות, הכנה לטסט, החלפת שמן, מיזוג אוויר, רעשים חריגים ועוד. טיפים מקצועיים מהמוסך של צביקה בירושלים.",
     breadcrumbName: "בלוג",
   },
-  "/privacy": {
+  "/privacy/": {
     title: "מדיניות פרטיות | המוסך של צביקה (אור-צת)",
     description:
       "מדיניות הפרטיות של המוסך של צביקה (אור-צת). מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
     breadcrumbName: "מדיניות פרטיות",
     robots: "noindex, follow",
   },
-  "/accessibility": {
+  "/accessibility/": {
     title: "הצהרת נגישות | המוסך של צביקה (אור-צת)",
     description:
       "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
     breadcrumbName: "הצהרת נגישות",
   },
-  "/image-generator": {
+  "/image-generator/": {
     title: "מחולל תמונות | המוסך של צביקה",
     description: "מחולל תמונות פנימי.",
     robots: "noindex, nofollow",
   },
-  "/services/diagnostics": {
+  "/services/diagnostics/": {
     title: "דיאגנוסטיקה ממוחשבת לרכב בירושלים | המוסך של צביקה",
     description:
       "אבחון תקלות מדויק עם ציוד סריקה מתקדם. סריקת מחשב רכב, קודי תקלה, בדיקת חיישנים ומערכות בטיחות. המוסך של צביקה בירושלים.",
     breadcrumbName: "דיאגנוסטיקה ממוחשבת",
   },
-  "/services/ac": {
+  "/services/ac/": {
     title: "טיפול במיזוג אוויר לרכב בירושלים | המוסך של צביקה",
     description:
       "מילוי גז מזגן, איתור דליפות, תיקון מדחס ומערכת קירור לרכב. טיפול מקצועי במיזוג אוויר במוסך של צביקה בירושלים.",
     breadcrumbName: "מיזוג אוויר לרכב",
   },
-  "/services/test": {
+  "/services/test/": {
     title: "הכנה לטסט שנתי בירושלים | המוסך של צביקה",
     description:
       "בדיקה מקיפה לפני מבחן רישוי שנתי כולל תיקון ממצאים במקום. מעבר בפעם הראשונה בלי הפתעות. המוסך של צביקה בירושלים.",
     breadcrumbName: "הכנה לטסט שנתי",
   },
-  "/services/general": {
+  "/services/general/": {
     title: "מכונאות רכב כללית בירושלים | המוסך של צביקה",
     description:
       "טיפולים שוטפים, החלפת שמנים ופילטרים, תיקוני מנוע ובלמים לכל סוגי הרכבים. מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון. 02-6514446.",
@@ -124,7 +115,7 @@ const seoConfig: Record<string, PageSeo> = {
 };
 
 function getBlogArticleSeo(pathname: string): PageSeo {
-  const slug = decodeURIComponent(pathname.replace("/blog/", ""));
+  const slug = decodeURIComponent(pathname.replace("/blog/", "").replace(/\/$/, ""));
   const article = blogArticles.find((a) => a.slug === slug);
   if (article) {
     return {
@@ -170,18 +161,17 @@ function buildBreadcrumbSchema(pathname: string, seo: PageSeo) {
 
 export default function SeoHead() {
   const { pathname } = useLocation();
-  const routePathname = getRoutePathname(pathname);
-  const canonicalPathname = ensureTrailingSlash(pathname);
+  const normalizedPathname = normalizePathname(pathname);
 
-  const seo = routePathname.startsWith("/blog/")
-    ? getBlogArticleSeo(routePathname)
-    : seoConfig[routePathname] || seoConfig["/"];
+  const seo = normalizedPathname.startsWith("/blog/")
+    ? getBlogArticleSeo(normalizedPathname)
+    : seoConfig[normalizedPathname] || seoConfig["/"];
 
-  const canonicalUrl = `${BASE_URL}${canonicalPathname}`;
+  const canonicalUrl = `${BASE_URL}${normalizedPathname}`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
-  const breadcrumb = buildBreadcrumbSchema(routePathname, seo);
+  const breadcrumb = buildBreadcrumbSchema(normalizedPathname, seo);
 
   return (
     <Helmet>
@@ -258,7 +248,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for AC article */}
-      {routePathname === "/blog/מתי-לבדוק-מזגן-ברכב" && (
+      {normalizedPathname === "/blog/מתי-לבדוק-מזגן-ברכב/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -310,7 +300,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for garage guide article */}
-      {routePathname === "/blog/musach-mumla-yerushalayim" && (
+      {normalizedPathname === "/blog/musach-mumla-yerushalayim/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -362,7 +352,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for spare parts article */}
-      {routePathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב" && (
+      {normalizedPathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -406,7 +396,7 @@ export default function SeoHead() {
       )}
 
       {/* Article + FAQPage + BreadcrumbList structured data for check engine article */}
-      {routePathname === "/blog/נורת-צק-אנגין-מה-לעשות" && (() => {
+      {normalizedPathname === "/blog/נורת-צק-אנגין-מה-לעשות/" && (() => {
         const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent("נורת-צק-אנגין-מה-לעשות")}/`;
         return (
           <script type="application/ld+json">
@@ -467,7 +457,7 @@ export default function SeoHead() {
       })()}
 
       {/* Article + FAQPage + BreadcrumbList structured data for car warning signs article */}
-      {routePathname === "/blog/סימנים-שהרכב-צריך-טיפול" && (() => {
+      {normalizedPathname === "/blog/סימנים-שהרכב-צריך-טיפול/" && (() => {
         const articleUrl = "https://ortzat.co.il/blog/car-warning-signs";
         return (
           <script type="application/ld+json">
@@ -524,7 +514,7 @@ export default function SeoHead() {
       })()}
 
       {/* Speakable for FAQ page */}
-      {routePathname === "/faq" && (
+      {normalizedPathname === "/faq/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -540,7 +530,7 @@ export default function SeoHead() {
       )}
 
       {/* Home page structured data */}
-      {routePathname === "/" && (
+      {normalizedPathname === "/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -607,7 +597,7 @@ export default function SeoHead() {
       )}
 
       {/* About page structured data */}
-      {routePathname === "/about" && (
+      {normalizedPathname === "/about/" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
