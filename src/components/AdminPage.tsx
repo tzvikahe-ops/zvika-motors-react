@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { lovableCloud } from "@/lib/lovable-cloud";
 
 interface Submission {
@@ -14,8 +14,48 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  // Check if user is already logged in as admin
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const { data: { session } } = await lovableCloud.auth.getSession();
+        if (session) {
+          // User is authenticated, check if admin
+          const { data: roles } = await lovableCloud
+            .from("user_roles")
+            .select("role")
+            .eq("user_id", session.user.id)
+            .eq("role", "admin");
+
+          if (roles && roles.length > 0) {
+            // User is admin, load submissions directly
+            await loadSubmissions();
+            setAuthenticated(true);
+          }
+        }
+      } catch {
+        // Not authenticated, show password form
+      } finally {
+        setLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const loadSubmissions = async () => {
+    const { data, error: fnError } = await lovableCloud.functions.invoke("get-submissions", {
+      body: { password: "__session_auth__" },
+    });
+    // If session auth didn't work, we'll fall back to password
+    if (!fnError && data?.success) {
+      setSubmissions(data.submissions);
+      return true;
+    }
+    return false;
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,13 +87,21 @@ export default function AdminPage() {
     setLoading(true);
     try {
       const { data } = await lovableCloud.functions.invoke("get-submissions", {
-        body: { password },
+        body: { password: password || "__session_auth__" },
       });
       if (data?.success) setSubmissions(data.submissions);
     } finally {
       setLoading(false);
     }
   };
+
+  if (loading && !authenticated) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center" dir="rtl">
+        <p className="text-muted-foreground">טוען...</p>
+      </div>
+    );
+  }
 
   if (!authenticated) {
     return (
@@ -120,7 +168,7 @@ export default function AdminPage() {
                 )}
                 <div className="flex gap-3 mt-3">
                   <a
-                    href={`https://wa.me/972${s.phone.replace(/^0/, "").replace(/[\-\s\(\)]/g, "")}`}
+                    href={`https://wa.me/972${s.phone.replace(/^0/, "").replace(/[-\s()]/g, "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-green-600 hover:underline font-medium"
