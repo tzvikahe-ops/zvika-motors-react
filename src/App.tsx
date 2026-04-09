@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { useParams } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -15,6 +16,12 @@ const DiagnosticsPage = lazy(() => import("./components/DiagnosticsPage.tsx"));
 const ACPage = lazy(() => import("./components/ACPage.tsx"));
 const TestPrepPage = lazy(() => import("./components/TestPrepPage.tsx"));
 const GeneralMechanicPage = lazy(() => import("./components/GeneralMechanicPage.tsx"));
+
+/** Redirects /blog/:slug → /blog/:slug/ */
+function BlogSlugRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={`/blog/${slug}/`} replace />;
+}
 
 // Lazy load toast components - not needed at initial render
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
@@ -46,6 +53,7 @@ const App = () => (
             <Route path="/faq/" element={<Index />} />
             <Route path="/blog" element={<Navigate to="/blog/" replace />} />
             <Route path="/blog/" element={<Index />} />
+            <Route path="/blog/:slug" element={<BlogSlugRedirect />} />
             <Route path="/blog/:slug/" element={<Index />} />
             {/* 301-style redirect from old article slug to new one */}
             <Route path="/blog/איך-לבחור-מוסך-אמין-בירושלים/" element={<Navigate to="/blog/musach-mumla-yerushalayim/" replace />} />
