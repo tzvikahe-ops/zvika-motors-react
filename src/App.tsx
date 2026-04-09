@@ -10,6 +10,7 @@ import IndexHtmlRedirect from "./components/IndexHtmlRedirect.tsx";
 const ImageStudioPage = lazy(() => import("./components/ImageStudioPage.tsx"));
 const AdminPage = lazy(() => import("./components/AdminPage.tsx"));
 const AuthPage = lazy(() => import("./components/AuthPage.tsx"));
+const ResetPasswordPage = lazy(() => import("./components/ResetPasswordPage.tsx"));
 const DiagnosticsPage = lazy(() => import("./components/DiagnosticsPage.tsx"));
 const ACPage = lazy(() => import("./components/ACPage.tsx"));
 const TestPrepPage = lazy(() => import("./components/TestPrepPage.tsx"));
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/services/general/" element={<Suspense fallback={null}><GeneralMechanicPage /></Suspense>} />
             <Route path="/image-studio" element={<Suspense fallback={null}><ImageStudioPage /></Suspense>} />
             <Route path="/auth" element={<Suspense fallback={null}><AuthPage /></Suspense>} />
+            <Route path="/reset-password" element={<Suspense fallback={null}><ResetPasswordPage /></Suspense>} />
             <Route path="/admin-panel" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
