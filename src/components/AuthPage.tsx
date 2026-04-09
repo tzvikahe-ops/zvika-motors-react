@@ -25,7 +25,7 @@ export default function AuthPage() {
     setError("");
     setMessage("");
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      const { error } = await lovableCloud.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/reset-password`,
       });
       if (error) throw error;
@@ -45,18 +45,17 @@ export default function AuthPage() {
 
     try {
       if (mode === "login") {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        const { error } = await lovableCloud.auth.signInWithPassword({ email, password });
         if (error) throw error;
 
-        // Assign admin role if applicable
-        await supabase.functions.invoke("assign-admin-role").catch(() => {});
+        await lovableCloud.functions.invoke("assign-admin-role").catch(() => {});
 
         setMessage("התחברת בהצלחה! מעביר...");
         setTimeout(() => {
           window.location.href = "/admin-panel";
         }, 1000);
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { error } = await lovableCloud.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: window.location.origin },

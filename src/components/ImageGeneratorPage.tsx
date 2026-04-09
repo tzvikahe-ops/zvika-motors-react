@@ -48,7 +48,7 @@ export default function ImageGeneratorPage() {
 
     setIsGenerating(true);
     try {
-      const { data, error } = await supabase.functions.invoke("generate-image", {
+      const { data, error } = await lovableCloud.functions.invoke("generate-image", {
         body: { prompt: prompt.trim(), style, aspectRatio },
       });
 

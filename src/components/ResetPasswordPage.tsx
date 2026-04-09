@@ -14,14 +14,12 @@ export default function ResetPasswordPage() {
   const [isRecovery, setIsRecovery] = useState(false);
 
   useEffect(() => {
-    // Listen for the PASSWORD_RECOVERY event
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+    const { data: { subscription } } = lovableCloud.auth.onAuthStateChange((event) => {
       if (event === "PASSWORD_RECOVERY") {
         setIsRecovery(true);
       }
     });
 
-    // Check if there's a recovery token in the URL hash
     const hash = window.location.hash;
     if (hash.includes("type=recovery")) {
       setIsRecovery(true);
@@ -41,7 +39,7 @@ export default function ResetPasswordPage() {
     setMessage("");
 
     try {
-      const { error } = await supabase.auth.updateUser({ password });
+      const { error } = await lovableCloud.auth.updateUser({ password });
       if (error) throw error;
       setMessage("הסיסמה עודכנה בהצלחה! מעביר להתחברות...");
       setTimeout(() => {
