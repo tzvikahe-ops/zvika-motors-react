@@ -18,8 +18,8 @@ interface PageSeo {
 function getRoutePathname(pathname: string): string {
   let normalized = pathname.replace(/\/index\.html$/, "");
   if (normalized === "") normalized = "/";
-  if (normalized.length > 1 && normalized.endsWith("/")) {
-    normalized = normalized.slice(0, -1);
+  if (normalized !== "/" && !normalized.endsWith("/")) {
+    normalized = `${normalized}/`;
   }
   return normalized;
 }
