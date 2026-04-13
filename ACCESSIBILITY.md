@@ -1,4 +1,4 @@
-# נגישות WCAG 2.1 AA — תיעוד ביקורת ותיקונים
+# נגישות WCAG 2.1 AA - תיעוד ביקורת ותיקונים
 
 **אתר:** ortzat.co.il
 **תאריך ביקורת:** 6 אפריל 2026
@@ -20,7 +20,7 @@
 
 ---
 
-## ביקורת ראשונית — ממצאים
+## ביקורת ראשונית - ממצאים
 
 הביקורת בוצעה כ-audit ידני של ה-DOM (axe-core נחסם על-ידי Content Security Policy של האתר). נבדקו 14 קטגוריות WCAG כולל ניגודיות צבעים, landmarks, ARIA, ניווט מקלדת ועוד.
 
@@ -28,26 +28,26 @@
 
 | # | ממצא | WCAG | לפני |
 |---|---|---|---|
-| 1 | ניגודיות צבע WhatsApp — כפתורים ורכיבים (4 מופעים) | 1.4.3 | 1.98:1 ❌ |
-| 2 | מסגרות פוקוס חסרות — 84 רכיבים אינטראקטיביים עם `outline:none` | 2.4.7 | חסר ❌ |
-| 3 | טקסטים שקופים למחצה — opacity 0.45–0.5, יחס ~1.23:1 (45 מופעים) | 1.4.3 | ~45 מופעים ❌ |
-| 4 | iFrame Google Maps ללא `title` — קורא מסך לא מזהה את המפה | 4.1.2 | חסר ❌ |
-| 5 | Header landmark חסר — חסר `<header>` / `role="banner"` ברמת הדף | 1.3.6 | חסר ❌ |
+| 1 | ניגודיות צבע WhatsApp - כפתורים ורכיבים (4 מופעים) | 1.4.3 | 1.98:1 ❌ |
+| 2 | מסגרות פוקוס חסרות - 84 רכיבים אינטראקטיביים עם `outline:none` | 2.4.7 | חסר ❌ |
+| 3 | טקסטים שקופים למחצה - opacity 0.45-0.5, יחס ~1.23:1 (45 מופעים) | 1.4.3 | ~45 מופעים ❌ |
+| 4 | iFrame Google Maps ללא `title` - קורא מסך לא מזהה את המפה | 4.1.2 | חסר ❌ |
+| 5 | Header landmark חסר - חסר `<header>` / `role="banner"` ברמת הדף | 1.3.6 | חסר ❌ |
 
 ### אזהרות (4)
 
 | # | ממצא | WCAG | לפני |
 |---|---|---|---|
-| 6 | קישורים לחלון חדש ללא התראה — `target="_blank"` ללא sr-only (19 קישורים) | 3.2.2 | 19 קישורים ❌ |
-| 7 | יעדי לחיצה קטנים — רכיבים מתחת ל-24×24px (17 רכיבים) | 2.5.8 | 17 רכיבים ❌ |
-| 8 | פונט קטן מ-12px — תגיות קטגוריה, ביקורות (57 רכיבים) | Best Practice | 57 רכיבים ❌ |
-| 9 | כפתור WhatsApp צף — icon-only ללא `aria-label` | 4.1.2 | חסר ❌ |
+| 6 | קישורים לחלון חדש ללא התראה - `target="_blank"` ללא sr-only (19 קישורים) | 3.2.2 | 19 קישורים ❌ |
+| 7 | יעדי לחיצה קטנים - רכיבים מתחת ל-24×24px (17 רכיבים) | 2.5.8 | 17 רכיבים ❌ |
+| 8 | פונט קטן מ-12px - תגיות קטגוריה, ביקורות (57 רכיבים) | Best Practice | 57 רכיבים ❌ |
+| 9 | כפתור WhatsApp צף - icon-only ללא `aria-label` | 4.1.2 | חסר ❌ |
 
 ---
 
 ## תיקונים שבוצעו
 
-### 1. מסגרות פוקוס — `:focus-visible` גלובלי
+### 1. מסגרות פוקוס - `:focus-visible` גלובלי
 
 **קובץ:** `src/index.css`
 
@@ -61,11 +61,11 @@
 }
 ```
 
-**WCAG SC:** 2.4.7 — Focus Visible
+**WCAG SC:** 2.4.7 - Focus Visible
 
 ---
 
-### 2. ניגודיות WhatsApp — סגנון חדש: ירוק רשמי על רקע לבן
+### 2. ניגודיות WhatsApp - סגנון חדש: ירוק רשמי על רקע לבן
 
 **קבצים:** `WhatsAppButton.tsx`, `Navbar.tsx`, `FloatingWhatsApp.tsx` + 9 קבצים נוספים (סה"כ 12 קבצים)
 
@@ -89,15 +89,15 @@ className="bg-white text-[#075E54] border border-[#0E7A6D]"
 fill="#075E54"
 ```
 
-יחס ניגודיות סופי: **7.67:1** — עולה פי 2 על הדרישה המינימלית (4.5:1).
+יחס ניגודיות סופי: **7.67:1** - עולה פי 2 על הדרישה המינימלית (4.5:1).
 
-**WCAG SC:** 1.4.3 — Contrast (Minimum)
+**WCAG SC:** 1.4.3 - Contrast (Minimum)
 
 ---
 
-### 3. ניגודיות טקסט — opacity נמוך + aria-hidden לספרות דקורטיביות
+### 3. ניגודיות טקסט - opacity נמוך + aria-hidden לספרות דקורטיביות
 
-שינוי opacity חצי-שקוף לצבע `text-muted-foreground` מלא. הוספת `aria-hidden="true"` לספרות הדקורטיביות 01–05 לביטול דרישת הניגודיות עליהן.
+שינוי opacity חצי-שקוף לצבע `text-muted-foreground` מלא. הוספת `aria-hidden="true"` לספרות הדקורטיביות 01-05 לביטול דרישת הניגודיות עליהן.
 
 ```tsx
 // לפני
@@ -110,11 +110,11 @@ className="text-muted-foreground"  // → 4.5:1+ ✅
 <span aria-hidden="true">01</span>
 ```
 
-**WCAG SC:** 1.4.3 — Contrast (Minimum)
+**WCAG SC:** 1.4.3 - Contrast (Minimum)
 
 ---
 
-### 4. iFrame Google Maps — title
+### 4. iFrame Google Maps - title
 
 **קובץ:** `MapSection.tsx`
 
@@ -122,16 +122,16 @@ className="text-muted-foreground"  // → 4.5:1+ ✅
 
 ```tsx
 <iframe
-  title="מפת גוגל — מיקום מוסך אור-צת"
+  title="מפת גוגל - מיקום מוסך אור-צת"
   src="..."
 />
 ```
 
-**WCAG SC:** 4.1.2 — Name, Role, Value
+**WCAG SC:** 4.1.2 - Name, Role, Value
 
 ---
 
-### 5. Header landmark — עטיפת Navbar
+### 5. Header landmark - עטיפת Navbar
 
 **קובץ:** `Layout.tsx`
 
@@ -143,7 +143,7 @@ className="text-muted-foreground"  // → 4.5:1+ ✅
 </header>
 ```
 
-**WCAG SC:** 1.3.6 — Identify Purpose
+**WCAG SC:** 1.3.6 - Identify Purpose
 
 ---
 
@@ -160,11 +160,11 @@ className="text-muted-foreground"  // → 4.5:1+ ✅
 </a>
 ```
 
-**WCAG SC:** 3.2.2 — On Input
+**WCAG SC:** 3.2.2 - On Input
 
 ---
 
-### 7. יעדי לחיצה — min 44×44px
+### 7. יעדי לחיצה - min 44×44px
 
 הרחבת אזור הלחיצה של כפתור WhatsApp ב-Navbar לגודל מינימלי של 44×44px.
 
@@ -172,11 +172,11 @@ className="text-muted-foreground"  // → 4.5:1+ ✅
 className="... min-h-[44px] min-w-[44px]"
 ```
 
-**WCAG SC:** 2.5.8 — Target Size (Minimum)
+**WCAG SC:** 2.5.8 - Target Size (Minimum)
 
 ---
 
-### 8. פונט מינימלי — 12px
+### 8. פונט מינימלי - 12px
 
 כל הגדרות `text-[11px]` בקוד הוגדלו ל-`text-[12px]` כמינימום קריא.
 
@@ -205,11 +205,11 @@ className="text-[12px]"
 >
 ```
 
-**WCAG SC:** 4.1.2 — Name, Role, Value
+**WCAG SC:** 4.1.2 - Name, Role, Value
 
 ---
 
-## מדדים — לפני ואחרי
+## מדדים - לפני ואחרי
 
 | מדד | לפני | אחרי | שיפור |
 |---|---|---|---|
@@ -224,7 +224,7 @@ className="text-[12px]"
 
 ---
 
-## נקודות חוזק — תקינות לאורך כל הביקורת
+## נקודות חוזק - תקינות לאורך כל הביקורת
 
 אלו הממצאים שהיו תקינים מלכתחילה ולא דרשו תיקון:
 
@@ -237,11 +237,11 @@ className="text-[12px]"
 | viewport מאפשר זום (ללא `user-scalable=no`) | 1.4.4 |
 | ללא ID כפולים בדף | 4.1.1 |
 | ללא `aria-hidden` על רכיבים פוקוסביליים | 4.1.2 |
-| ללא קישורי "לחץ כאן" — כל הקישורים תיאוריים | 2.4.6 |
+| ללא קישורי "לחץ כאן" - כל הקישורים תיאוריים | 2.4.6 |
 
 ---
 
-## רכיבי צד שלישי — מחוץ לשליטת הפרויקט
+## רכיבי צד שלישי - מחוץ לשליטת הפרויקט
 
 3 ממצאים אינם ניתנים לתיקון בקוד הפרויקט:
 
@@ -268,10 +268,10 @@ WCAG SC: 3.2.2
 לפרסום עתידי: מדידת ניגודיות של SVG elements דורשת בדיקת ה-`fill` attribute ישירות (לא ה-`color` של CSS), כי SVG `fill` עוקף את `color` בחישוב הניגודיות הוויזואלית.
 
 ### כלי בדיקה מומלצים להמשך
-- [axe DevTools](https://www.deque.com/axe/devtools/) — בדיקה מקומית בדפדפן
-- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) — בדיקת ניגודיות
-- [NVDA](https://www.nvaccess.org/) + Chrome — בדיקת קורא מסך
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/) — סריקה אוטומטית ב-DevTools
+- [axe DevTools](https://www.deque.com/axe/devtools/) - בדיקה מקומית בדפדפן
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - בדיקת ניגודיות
+- [NVDA](https://www.nvaccess.org/) + Chrome - בדיקת קורא מסך
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/) - סריקה אוטומטית ב-DevTools
 
 ---
 
