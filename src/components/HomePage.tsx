@@ -66,7 +66,7 @@ export default function HomePage({ setPage }: { setPage: (p: Page) => void }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <HeroSection setPage={setPage} />
-      <h1 className="sr-only">המוסך של צביקה – מוסך משפחתי בירושלים מאז 1993</h1>
+      <h1 className="sr-only">המוסך של צביקה - מוסך משפחתי בירושלים מאז 1993</h1>
       <ServiceStrip setPage={setPage} />
 
       {/* Trust building - why choose us */}
