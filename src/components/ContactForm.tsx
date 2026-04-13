@@ -4,7 +4,7 @@ import { trackFormSubmit } from "@/lib/analytics";
 
 const RECAPTCHA_SITE_KEY = "6LddXZosAAAAAMqBHbxXsPEvVgcCZPiL9y5E2LZw";
 
-// סינון תווי בקרת RTL מסוכנים (U+202A–U+202E, U+2066–U+2069)
+// סינון תווי בקרת RTL מסוכנים (U+202A-U+202E, U+2066-U+2069)
 function stripRTLChars(value: string): string {
   return value.replace(/[\u202A-\u202E\u2066-\u2069]/g, "");
 }
