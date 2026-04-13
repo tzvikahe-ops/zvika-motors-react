@@ -1,9 +1,10 @@
 # Canonical domain: www → non-www (301 permanent)
 https://www.ortzat.co.il/* https://ortzat.co.il/:splat 301!
 
-# 301 redirects for removed/renamed blog articles (MUST come before SPA fallback)
+# 301 redirects for removed/renamed blog articles (MUST come before generic slug rule)
 /blog/check-engine/  /blog/  301
 /blog/check-engine   /blog/  301
+/blog/car            /blog/  301
 
 # 301 redirects: /index.html → clean URL (prevents duplicate content if old links exist)
 /services/index.html /services 301
@@ -14,6 +15,12 @@ https://www.ortzat.co.il/* https://ortzat.co.il/:splat 301!
 /blog/index.html /blog 301
 /privacy/index.html /privacy 301
 /accessibility/index.html /accessibility 301
+
+# Trailing slash normalization for service sub-pages
+/services/general  /services/general/  301
+/services/diagnostics  /services/diagnostics/  301
+/services/ac  /services/ac/  301
+/services/test  /services/test/  301
 
 # Blog article routes
 /blog/:slug/index.html /blog/:slug 301
