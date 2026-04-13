@@ -1,6 +1,10 @@
 # Canonical domain: www → non-www (301 permanent)
 https://www.ortzat.co.il/* https://ortzat.co.il/:splat 301!
 
+# 301 redirects for removed/renamed blog articles (MUST come before SPA fallback)
+/blog/check-engine/  /blog/  301
+/blog/check-engine   /blog/  301
+
 # 301 redirects: /index.html → clean URL (prevents duplicate content if old links exist)
 /services/index.html /services 301
 /about/index.html /about 301
