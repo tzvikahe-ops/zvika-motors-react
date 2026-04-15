@@ -114,9 +114,9 @@ const ServicesPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
-    "@id": "https://ortzat.co.il/#business",
+    "@id": "https://www.ortzat.co.il/#business",
     name: "המוסך של צביקה - אור-צת שירותי רכב",
-    url: "https://ortzat.co.il/services",
+    url: "https://www.ortzat.co.il/services",
     telephone: "+972-2-6514446",
     areaServed: { "@type": "City", name: "ירושלים" },
     speakable: {
@@ -130,7 +130,7 @@ const ServicesPage = () => {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          "@id": `https://ortzat.co.il/services#${s.anchor}`,
+          "@id": `https://www.ortzat.co.il/services#${s.anchor}`,
           name: s.title,
           description: s.description,
           provider: {
@@ -155,6 +155,14 @@ const ServicesPage = () => {
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
+          {/* Breadcrumb */}
+          <nav aria-label="breadcrumb" className="mb-5 text-right" dir="rtl">
+            <ol className="flex flex-wrap items-center gap-1 text-[11px] text-primary-foreground/40">
+              <li><a href="/" className="hover:text-primary-foreground/60 transition-colors">דף הבית</a></li>
+              <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+              <li className="text-primary-foreground/60" aria-current="page">שירותים</li>
+            </ol>
+          </nav>
           <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">פתרונות לכל בעיה ברכב</div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
             משהו לא בסדר ברכב? אנחנו נמצא את הבעיה ונתקן
@@ -329,7 +337,7 @@ const ServicesPage = () => {
         "@context": "https://schema.org",
         "@type": "AutoRepair",
         "name": "המוסך של צביקה - אור-צת שירותי רכב",
-        "url": "https://ortzat.co.il/services",
+        "url": "https://www.ortzat.co.il/services",
         "telephone": "+972-2-6514446",
         "address": {
           "@type": "PostalAddress",

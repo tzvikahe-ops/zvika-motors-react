@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { blogArticles } from "@/data/blog-articles";
 
-const BASE_URL = "https://ortzat.co.il";
+const BASE_URL = "https://www.ortzat.co.il";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 interface PageSeo {
@@ -18,9 +18,8 @@ interface PageSeo {
 function normalizePathname(pathname: string): string {
   let normalized = pathname.replace(/\/index\.html$/, "");
   if (normalized === "") normalized = "/";
-  if (!normalized.startsWith("/")) normalized = `/${normalized}`;
-  if (normalized !== "/" && !normalized.endsWith("/")) {
-    normalized = `${normalized}/`;
+  if (normalized.length > 1 && normalized.endsWith("/")) {
+    normalized = normalized.slice(0, -1);
   }
   return normalized;
 }
@@ -30,83 +29,83 @@ const seoConfig: Record<string, PageSeo> = {
   "/": {
     title: "המוסך של צביקה (אור-צת) | מוסך מקצועי בירושלים",
     description:
-      "המוסך של צביקה (אור-צת) - מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט. שקיפות מלאה, מחיר הוגן ושירות אישי. 02-6514446.",
+      "מוסך מקצועי בגבעת שאול, ירושלים. דיאגנוסטיקה ממוחשבת, מיזוג אוויר, הכנה לטסט וטיפולים שוטפים לכל סוגי הרכבים. 30+ שנות ניסיון, שקיפות מלאה. ☎ 02-6514446.",
     ogImage: `${BASE_URL}/og-home.jpg`,
   },
-  "/services/": {
+  "/services": {
     title: "שירותי מוסך בירושלים | רשימת השירותים המלאה - המוסך של צביקה",
     description:
       "כל שירותי המוסך של צביקה בגבעת שאול, ירושלים: טיפולים שוטפים, דיאגנוסטיקה ממוחשבת, מיזוג אוויר, הכנה לטסט, בדיקת רכב לפני קנייה, טיפול בבעיות חשמל ומנוע. 02-6514446.",
     breadcrumbName: "שירותים",
   },
-  "/about/": {
+  "/about": {
     title: "אודות המוסך של צביקה (אור-צת) | מוסך בירושלים מאז 1993",
     description:
-      "המוסך של צביקה (אור-צת) בגבעת שאול, ירושלים. מוסך משפחתי מאז 1993. 98% לקוחות חוזרים, דירוג 4.8 בגוגל, מעל 30 שנה של ניסיון. אור-צת שירותי רכב.",
+      "המוסך של צביקה (אור-צת) בגבעת שאול, ירושלים. מוסך משפחתי מאז 1993 עם 98% לקוחות חוזרים, דירוג 4.8 בגוגל ומעל 30 שנות ניסיון. שקיפות מחירים ויחס אישי.",
     ogImage: `${BASE_URL}/og-about.jpg`,
     breadcrumbName: "אודות",
   },
-  "/gallery/": {
+  "/gallery": {
     title: "הצצה למוסך | המוסך של צביקה בגבעת שאול, ירושלים",
     description:
       "כרגע מוצגת בעמוד תמונה אמיתית אחת של חזית המוסך של צביקה ברחוב האופה 4, גבעת שאול. תמונות נוספות מתוך המוסך והעבודה השוטפת יתווספו בהמשך.",
     breadcrumbName: "גלריה",
   },
-  "/contact/": {
+  "/contact": {
     title: "צור קשר | טלפון, וואטסאפ והגעה למוסך של צביקה בירושלים",
     description:
       "צרו קשר עם המוסך של צביקה בגבעת שאול, ירושלים. טלפון: 02-6514446, וואטסאפ: 052-651-4446, כתובת: רחוב האופה 4. ניווט ב-Waze, שעות פעילות ואפשרות להשאיר פרטים.",
     breadcrumbName: "צור קשר",
   },
-  "/faq/": {
+  "/faq": {
     title: "שאלות נפוצות | המוסך של צביקה - ירושלים",
     description:
-      "תשובות לשאלות נפוצות על שירותי המוסך של צביקה: עלויות טיפול, הכנה לטסט, זמני טיפול, סוגי רכבים ועוד. מוסך מקצועי בירושלים מאז 1993.",
+      "תשובות לשאלות נפוצות על שירותי המוסך של צביקה בירושלים: עלויות טיפול, הכנה לטסט, זמני המתנה, ציוד, חלקים ואחריות לאחר תיקון. מוסך מקצועי מאז 1993.",
     breadcrumbName: "שאלות נפוצות",
   },
-  "/blog/": {
+  "/blog": {
     title: "טיפים, תקלות ותחזוקת רכב | בלוג המוסך של צביקה - ירושלים",
     description:
-      "מדריכים מעשיים על תחזוקת רכב, זיהוי תקלות, הכנה לטסט, החלפת שמן, מיזוג אוויר, רעשים חריגים ועוד. טיפים מקצועיים מהמוסך של צביקה בירושלים.",
+      "מאמרים ומדריכים מקצועיים על תחזוקת רכב, זיהוי תקלות, הכנה לטסט, החלפת שמן, מיזוג אוויר ורעשים חריגים. טיפים שימושיים ממוסך בגבעת שאול, ירושלים.",
     breadcrumbName: "בלוג",
   },
-  "/privacy/": {
+  "/privacy": {
     title: "מדיניות פרטיות | המוסך של צביקה (אור-צת)",
     description:
       "מדיניות הפרטיות של המוסך של צביקה (אור-צת). מידע על איסוף, שימוש והגנה על מידע אישי בהתאם לחוק הגנת הפרטיות.",
     breadcrumbName: "מדיניות פרטיות",
     robots: "noindex, follow",
   },
-  "/accessibility/": {
+  "/accessibility": {
     title: "הצהרת נגישות | המוסך של צביקה (אור-צת)",
     description:
       "הצהרת הנגישות של אתר המוסך של צביקה. מחויבות להנגשת האתר לאנשים עם מוגבלויות בהתאם לתקנות הנגישות.",
     breadcrumbName: "הצהרת נגישות",
   },
-  "/image-generator/": {
+  "/image-generator": {
     title: "מחולל תמונות | המוסך של צביקה",
     description: "מחולל תמונות פנימי.",
     robots: "noindex, nofollow",
   },
-  "/services/diagnostics/": {
+  "/services/diagnostics": {
     title: "דיאגנוסטיקה ממוחשבת לרכב בירושלים | המוסך של צביקה",
     description:
       "אבחון תקלות מדויק עם ציוד סריקה מתקדם. סריקת מחשב רכב, קודי תקלה, בדיקת חיישנים ומערכות בטיחות. המוסך של צביקה בירושלים.",
     breadcrumbName: "דיאגנוסטיקה ממוחשבת",
   },
-  "/services/ac/": {
+  "/services/ac": {
     title: "טיפול במיזוג אוויר לרכב בירושלים | המוסך של צביקה",
     description:
       "מילוי גז מזגן, איתור דליפות, תיקון מדחס ומערכת קירור לרכב. טיפול מקצועי במיזוג אוויר במוסך של צביקה בירושלים.",
     breadcrumbName: "מיזוג אוויר לרכב",
   },
-  "/services/test/": {
+  "/services/test": {
     title: "הכנה לטסט שנתי בירושלים | המוסך של צביקה",
     description:
       "בדיקה מקיפה לפני מבחן רישוי שנתי כולל תיקון ממצאים במקום. מעבר בפעם הראשונה בלי הפתעות. המוסך של צביקה בירושלים.",
     breadcrumbName: "הכנה לטסט שנתי",
   },
-  "/services/general/": {
+  "/services/general": {
     title: "מכונאות רכב כללית בירושלים | המוסך של צביקה",
     description:
       "טיפולים שוטפים, החלפת שמנים ופילטרים, תיקוני מנוע ובלמים לכל סוגי הרכבים. מוסך מקצועי בירושלים עם מעל 30 שנות ניסיון. 02-6514446.",
@@ -115,7 +114,7 @@ const seoConfig: Record<string, PageSeo> = {
 };
 
 function getBlogArticleSeo(pathname: string): PageSeo {
-  const slug = decodeURIComponent(pathname.replace("/blog/", "").replace(/\/$/, ""));
+  const slug = decodeURIComponent(pathname.replace("/blog/", ""));
   const article = blogArticles.find((a) => a.slug === slug);
   if (article) {
     return {
@@ -167,7 +166,7 @@ export default function SeoHead() {
     ? getBlogArticleSeo(normalizedPathname)
     : seoConfig[normalizedPathname] || seoConfig["/"];
 
-  const canonicalUrl = `${BASE_URL}${normalizedPathname}`;
+  const canonicalUrl = normalizedPathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${normalizedPathname}/`;
   const ogImage = seo.ogImage || DEFAULT_OG_IMAGE;
   const ogType = seo.ogType || "website";
   const robotsContent = seo.robots || "index, follow";
@@ -248,7 +247,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for AC article */}
-      {normalizedPathname === "/blog/מתי-לבדוק-מזגן-ברכב/" && (
+      {normalizedPathname === "/blog/מתי-לבדוק-מזגן-ברכב" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -300,7 +299,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for garage guide article */}
-      {normalizedPathname === "/blog/musach-mumla-yerushalayim/" && (
+      {normalizedPathname === "/blog/musach-mumla-yerushalayim" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -352,7 +351,7 @@ export default function SeoHead() {
       )}
 
       {/* FAQPage structured data for spare parts article */}
-      {normalizedPathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב/" && (
+      {normalizedPathname === "/blog/מקורי-מול-גנרי-חלקי-חילוף-לרכב" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -396,7 +395,7 @@ export default function SeoHead() {
       )}
 
       {/* Article + FAQPage + BreadcrumbList structured data for check engine article */}
-      {normalizedPathname === "/blog/נורת-צק-אנגין-מה-לעשות/" && (() => {
+      {normalizedPathname === "/blog/נורת-צק-אנגין-מה-לעשות" && (() => {
         const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent("נורת-צק-אנגין-מה-לעשות")}/`;
         return (
           <script type="application/ld+json">
@@ -457,7 +456,7 @@ export default function SeoHead() {
       })()}
 
       {/* Article + FAQPage + BreadcrumbList structured data for car warning signs article */}
-      {normalizedPathname === "/blog/סימנים-שהרכב-צריך-טיפול/" && (() => {
+      {normalizedPathname === "/blog/סימנים-שהרכב-צריך-טיפול" && (() => {
         const articleUrl = "https://ortzat.co.il/blog/car-warning-signs";
         return (
           <script type="application/ld+json">
@@ -514,7 +513,7 @@ export default function SeoHead() {
       })()}
 
       {/* Speakable for FAQ page */}
-      {normalizedPathname === "/faq/" && (
+      {normalizedPathname === "/faq" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -529,75 +528,8 @@ export default function SeoHead() {
         </script>
       )}
 
-      {/* Home page structured data */}
-      {normalizedPathname === "/" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "AutoRepair",
-                name: "המוסך של צביקה (אור-צת)",
-                alternateName: ["אור-צת שירותי רכב", "מוסך אור צת", "אור צת"],
-                description: "מוסך משפחתי מקצועי בגבעת שאול, ירושלים. מעל 30 שנה של ניסיון, 98% לקוחות חוזרים, דירוג 4.8 בגוגל. מתמחים בדיאגנוסטיקה ממוחשבת, מכונאות כללית, בלמים, מזגן רכב וטיפולים תקופתיים.",
-                url: "https://ortzat.co.il",
-                logo: "https://ortzat.co.il/logo.png",
-                image: "https://ortzat.co.il/logo.png",
-                telephone: "+972-2-6514446",
-                foundingDate: "1993",
-                numberOfEmployees: { "@type": "QuantitativeValue", value: 4 },
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "האופה 4",
-                  addressLocality: "ירושלים",
-                  addressRegion: "Jerusalem",
-                  postalCode: "9546433",
-                  addressCountry: "IL",
-                },
-                geo: { "@type": "GeoCoordinates", latitude: 31.7888, longitude: 35.1878 },
-                openingHoursSpecification: [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-                    opens: "08:00",
-                    closes: "16:30",
-                  },
-                ],
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.8",
-                  reviewCount: "107",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-                priceRange: "₪₪",
-                areaServed: ["ירושלים", "גבעת שאול", "מבשרת ציון", "מעלה אדומים", "בית שמש"],
-                sameAs: ["https://www.facebook.com/ortzat", "https://g.page/ortzat"],
-              },
-              {
-                "@type": "Person",
-                name: "צביקה הרשקוביץ",
-                jobTitle: "בעל מוסך ומנהל",
-                description: "צביקה הרשקוביץ מנהל את המוסך של צביקה (אור-צת) בגבעת שאול מאז 2011. גדל במוסך של אביו יהושע מ-1993, מתמחה בדיאגנוסטיקה ממוחשבת ואבחון תקלות מורכבות.",
-                worksFor: { "@type": "AutoRepair", name: "המוסך של צביקה (אור-צת)" },
-                knowsAbout: ["דיאגנוסטיקה ממוחשבת", "מכונאות רכב", "אבחון תקלות", "טיפול תקופתי לרכב"],
-              },
-              {
-                "@type": "WebPage",
-                "@id": "https://ortzat.co.il/",
-                name: "המוסך של צביקה (אור-צת) | מוסך מקצועי בירושלים",
-                description: "המוסך של צביקה (אור-צת) - מוסך מקצועי בירושלים, גבעת שאול. מעל 30 שנות ניסיון במכונאות רכב, דיאגנוסטיקה ממוחשבת, מיזוג אוויר והכנה לטסט.",
-                inLanguage: "he-IL",
-                url: "https://ortzat.co.il/",
-                speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".hero-stats"] },
-              },
-            ],
-          })}
-        </script>
-      )}
-
       {/* About page structured data */}
-      {normalizedPathname === "/about/" && (
+      {normalizedPathname === "/about" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

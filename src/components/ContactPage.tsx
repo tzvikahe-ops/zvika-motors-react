@@ -7,6 +7,14 @@ export default function ContactPage() {
   return (
     <div dir="rtl" className="pt-[64px] md:pt-[72px] min-h-screen bg-background">
       <div className="max-w-[900px] mx-auto px-5 sm:px-6 pt-0 md:pt-1 pb-16 md:pb-20">
+        {/* Breadcrumb */}
+        <nav aria-label="breadcrumb" className="mb-4 pt-2" dir="rtl">
+          <ol className="flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+            <li><a href="/" className="hover:text-foreground transition-colors">דף הבית</a></li>
+            <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+            <li className="text-foreground/70" aria-current="page">צור קשר</li>
+          </ol>
+        </nav>
         {/* Hero - tight */}
         <div className="text-center mb-5 md:mb-6">
           <div className="inline-flex items-center gap-2 bg-brand-red/[0.08] text-brand-red text-[11px] font-bold px-3 py-1 rounded-full mb-2 tracking-wider">
@@ -122,6 +130,20 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Google Maps embed */}
+        <div className="mb-8 rounded-xl overflow-hidden border border-border shadow-[var(--shadow-sm)]">
+          <iframe
+            title="מיקום המוסך של צביקה - האופה 4, גבעת שאול, ירושלים"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.8!2d35.1930!3d31.7850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDQ3JzA2LjAiTiAzNcKwMTEnMzQuOCJF!5e0!3m2!1siw!2sil!4v1!5m2!1siw!2sil&q=%D7%94%D7%90%D7%95%D7%A4%D7%94+4+%D7%92%D7%91%D7%A2%D7%AA+%D7%A9%D7%90%D7%95%D7%9C+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D"
+            width="100%"
+            height="280"
+            style={{ border: 0, display: "block" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         {/* Main grid: Form + Info */}

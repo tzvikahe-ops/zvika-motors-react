@@ -129,7 +129,7 @@ export default function BlogArticlePage({ slug }: BlogArticlePageProps) {
     .filter((a) => a.topic === article.topic && a.slug !== article.slug)
     .slice(0, 2);
 
-  const articleUrl = `https://ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
+  const articleUrl = `https://www.ortzat.co.il/blog/${encodeURIComponent(article.slug)}`;
 
   return (
     <div className="bg-background" dir="rtl">
@@ -138,6 +138,16 @@ export default function BlogArticlePage({ slug }: BlogArticlePageProps) {
       <section className="pt-28 pb-8 md:pt-32 md:pb-12 px-5 sm:px-6 bg-surface-darker relative">
         <div className="absolute inset-0 pattern-dots opacity-30" />
         <div className="max-w-[750px] mx-auto relative z-10">
+          {/* Breadcrumb */}
+          <nav aria-label="breadcrumb" className="mb-4" dir="rtl">
+            <ol className="flex flex-wrap items-center gap-1 text-[11px] text-primary-foreground/40">
+              <li><a href="/" className="hover:text-primary-foreground/60 transition-colors">דף הבית</a></li>
+              <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+              <li><a href="/blog/" className="hover:text-primary-foreground/60 transition-colors">בלוג</a></li>
+              <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+              <li className="text-primary-foreground/60 truncate max-w-[240px]" aria-current="page">{article.title}</li>
+            </ol>
+          </nav>
           <InternalLink
             page="blog"
             className="inline-flex items-center gap-1.5 text-primary-foreground/40 text-[12px] font-bold mb-5 hover:text-primary-foreground/70 transition-colors no-underline"

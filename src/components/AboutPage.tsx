@@ -31,9 +31,17 @@ const AboutPage = () => {
       <section className="relative pt-[68px] py-20 md:py-28 bg-surface-dark">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(90deg, hsl(var(--primary-foreground)) 0px, transparent 1px, transparent 60px)" }} />
         <div className="max-w-[1100px] mx-auto px-5 sm:px-6 text-center relative z-10">
+          {/* Breadcrumb */}
+          <nav aria-label="breadcrumb" className="mb-5 text-right" dir="rtl">
+            <ol className="flex flex-wrap items-center gap-1 text-[11px] text-primary-foreground/40">
+              <li><a href="/" className="hover:text-primary-foreground/60 transition-colors">דף הבית</a></li>
+              <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+              <li className="text-primary-foreground/60" aria-current="page">אודות</li>
+            </ol>
+          </nav>
           <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red text-[12px] font-bold px-3 py-1 rounded-full mb-5 tracking-wider">אודות המוסך</div>
           <h1 className="text-[28px] sm:text-[34px] md:text-[42px] font-black text-primary-foreground mb-5 leading-tight tracking-[-0.03em]">
-            המוסך של צביקה - מוסך משפחתי בירושלים מאז 1993
+            מוסך משפחתי בירושלים מאז 1993
           </h1>
           <p className="hero-stats text-[14px] md:text-[16px] text-brand-red font-bold mb-5">
             98% לקוחות חוזרים | 4.8 ★ בגוגל | מעל 30 שנה של ניסיון

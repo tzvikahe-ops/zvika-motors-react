@@ -32,13 +32,13 @@ const TestPrepPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://ortzat.co.il/services/test/#service",
+    "@id": "https://www.ortzat.co.il/services/test/#service",
     name: "הכנה לטסט שנתי",
     description: "בדיקה מקיפה לפני מבחן הרישוי. אנחנו מטפלים בכל מה שצריך כדי שתעברו בראש שקט, בלי חזרות מיותרות.",
     provider: {
       "@type": "AutoRepair",
       name: "המוסך של צביקה - אור-צת שירותי רכב",
-      url: "https://ortzat.co.il",
+      url: "https://www.ortzat.co.il",
       telephone: "+972-2-6514446",
       address: {
         "@type": "PostalAddress",
@@ -90,6 +90,16 @@ const TestPrepPage = () => {
         {/* Content */}
         <section className="py-16 md:py-24 bg-background">
           <div className="max-w-[1100px] mx-auto px-5 sm:px-6">
+            {/* Breadcrumb */}
+            <nav aria-label="breadcrumb" className="mb-5" dir="rtl">
+              <ol className="flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+                <li><a href="/" className="hover:text-foreground transition-colors">דף הבית</a></li>
+                <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+                <li><a href="/services/" className="hover:text-foreground transition-colors">שירותים</a></li>
+                <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+                <li className="text-foreground/70" aria-current="page">הכנה לטסט שנתי</li>
+              </ol>
+            </nav>
             <article className="bg-card border border-border rounded-lg overflow-hidden">
               <div className="p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-4">

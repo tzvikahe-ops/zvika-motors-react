@@ -38,6 +38,14 @@ export default function BlogPage() {
       <section className="pt-28 pb-12 md:pt-32 md:pb-16 px-5 sm:px-6 bg-surface-darker relative">
         <div className="absolute inset-0 pattern-dots opacity-30" />
         <div className="max-w-[900px] mx-auto relative z-10">
+          {/* Breadcrumb */}
+          <nav aria-label="breadcrumb" className="mb-5" dir="rtl">
+            <ol className="flex flex-wrap items-center gap-1 text-[11px] text-primary-foreground/40">
+              <li><a href="/" className="hover:text-primary-foreground/60 transition-colors">דף הבית</a></li>
+              <li aria-hidden="true" className="mx-0.5 select-none">›</li>
+              <li className="text-primary-foreground/60" aria-current="page">בלוג</li>
+            </ol>
+          </nav>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-brand-red/50" />
             <p className="text-brand-red text-[12px] font-bold tracking-[0.15em] uppercase">מרכז הידע של המוסך</p>
