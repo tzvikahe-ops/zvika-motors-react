@@ -126,7 +126,7 @@ export default function GoogleReviewsCarousel() {
   }, [getVisible]);
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(API_URL, { cache: "no-store" })
       .then((r) => r.json())
       .then((data: ApiResponse) => {
         if (data.success && data.widget?.reviews) {
