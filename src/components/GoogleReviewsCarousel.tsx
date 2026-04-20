@@ -130,9 +130,11 @@ export default function GoogleReviewsCarousel() {
       .then((r) => r.json())
       .then((data: ApiResponse) => {
         if (data.success && data.widget?.reviews) {
-          const filtered = data.widget.reviews.filter(
-            (r) => (r.originalText || r.text).trim().length > 0 && r.rating.value >= 4
-          );
+          const filtered = data.widget.reviews
+            .filter((r) => (r.originalText || r.text).trim().length > 0 && r.rating.value >= 4)
+            .sort(
+              (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+            );
           setReviews(filtered);
           const summary = data.widget.gbpLocationSummary;
           setAvgRating(summary?.rating ?? 0);
